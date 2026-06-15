@@ -1,0 +1,44 @@
+{
+  "stats": {
+    "rating": "4.9",
+    "customers": "5000+",
+    "badge": "Trusted by 5000+ Happy Travelers"
+  },
+
+  "reviews": [
+
+    {
+      "name":"Raj Kumar",
+      "initials":"RK",
+      "location":"Chennai",
+      "month":"May 2026",
+      "rating":5,
+      "verified":true,
+      "source":"Google Review",
+      "review":"Excellent airport transfer service. Driver arrived early and the vehicle was spotless."
+    },
+
+    {
+      "name":"Priya S",
+      "initials":"PS",
+      "location":"Coimbatore",
+      "month":"June 2026",
+      "rating":5,
+      "verified":true,
+      "source":"Google Review",
+      "review":"Very professional driver and smooth booking process."
+    },
+
+    {
+      "name":"Arun R",
+      "initials":"AR",
+      "location":"Madurai",
+      "month":"April 2026",
+      "rating":5,
+      "verified":true,
+      "source":"Google Review",
+      "review":"Best family trip service with clean vehicle and courteous driver."
+    }
+
+  ]
+}
