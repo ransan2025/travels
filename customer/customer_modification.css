@@ -1,0 +1,538 @@
+/*=========================================================
+BOOKING MODIFICATION ENGINE
+Version 1.0
+=========================================================*/
+
+/*=========================================================
+POPUP BODY
+=========================================================*/
+
+.modificationPopup{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+
+/*=========================================================
+BOOKING SUMMARY
+=========================================================*/
+
+.modBookingSummary{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
+
+.modBookingIcon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    background:linear-gradient(135deg,#1e88e5,#26c6da);
+
+    color:#fff;
+
+    flex-shrink:0;
+
+}
+
+.modBookingInfo{
+
+    flex:1;
+
+}
+
+.modBookingTitle{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.modBookingSubTitle{
+
+    margin-top:6px;
+
+    font-size:14px;
+
+    color:rgba(255,255,255,.70);
+
+}
+
+
+/*=========================================================
+BOOKING INFO GRID
+=========================================================*/
+
+.modBookingGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.modInfoItem{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:14px 16px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+
+}
+
+.modInfoItem label{
+
+    font-size:12px;
+
+    color:rgba(255,255,255,.55);
+
+    margin-bottom:6px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.modInfoItem span{
+
+    font-size:15px;
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+
+/*=========================================================
+FORM
+=========================================================*/
+
+.modFormGroup{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.modFormGroup label{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+
+/*=========================================================
+INPUT
+=========================================================*/
+
+.modInput,
+
+.modSelect,
+
+.modTextarea{
+
+    width:100%;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:14px;
+
+    transition:.25s;
+
+    outline:none;
+
+}
+
+.modInput:focus,
+
+.modSelect:focus,
+
+.modTextarea:focus{
+
+    border-color:#26c6da;
+
+    box-shadow:0 0 0 3px rgba(38,198,218,.18);
+
+}
+
+.modTextarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+
+/*=========================================================
+SELECT
+=========================================================*/
+
+.modSelect option{
+
+    color:#222;
+
+}
+
+
+/*=========================================================
+READONLY
+=========================================================*/
+
+.modInput[readonly]{
+
+    opacity:.8;
+
+    cursor:not-allowed;
+
+}
+
+
+/*=========================================================
+TWO COLUMN
+=========================================================*/
+
+.modTwoColumn{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+
+/*=========================================================
+WARNING
+=========================================================*/
+
+.modWarning{
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    background:#fff5d8;
+
+    color:#8a5d00;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    border-left:5px solid #ffb300;
+
+}
+
+
+/*=========================================================
+DYNAMIC AREA
+=========================================================*/
+
+#modificationDynamicArea{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:8px;
+
+}
+
+
+/*=========================================================
+BUTTONS
+=========================================================*/
+
+.bookingPrimaryBtn{
+
+    background:linear-gradient(135deg,#1976d2,#26c6da);
+
+    color:#fff;
+
+    border:none;
+
+}
+
+.bookingPrimaryBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+
+}
+
+
+/*=========================================================
+SMOOTH ANIMATION
+=========================================================*/
+
+#modificationDynamicArea>*{
+
+    animation:fadeForm .28s ease;
+
+}
+
+@keyframes fadeForm{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px){
+
+.modBookingGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.modTwoColumn{
+
+    grid-template-columns:1fr;
+
+}
+
+.modBookingSummary{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.modBookingIcon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:30px;
+
+}
+
+}
+
+/* Validation */
+
+.modError{
+
+    border:2px solid #ff4d4f !important;
+
+    background:#fff5f5 !important;
+
+}
+
+/*=========================================================
+  CUSTOMER MODIFICATION STATUS
+=========================================================*/
+
+.customerModificationStatus {
+    margin: 12px 0 16px 0;
+}
+
+
+.customerModificationStatusBox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background: rgba(255,255,255,0.06);
+
+}
+
+
+.customerModificationStatusIcon {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+}
+
+
+.customerModificationStatusContent {
+
+    flex: 1;
+
+}
+
+
+.customerModificationStatusTitle {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.customerModificationStatusType {
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    opacity: 0.8;
+
+}
+
+
+.customerModificationStatusRequestId {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    opacity: 0.7;
+
+}
+
+
+/*=========================================================
+  PENDING
+=========================================================*/
+
+.customerModificationStatus_pending {
+
+    border-color: rgba(245, 158, 11, 0.35);
+
+    background: rgba(245, 158, 11, 0.08);
+
+}
+
+
+/*=========================================================
+  APPROVED
+=========================================================*/
+
+.customerModificationStatus_approved {
+
+    border-color: rgba(34, 197, 94, 0.35);
+
+    background: rgba(34, 197, 94, 0.08);
+
+}
+
+
+/*=========================================================
+  REJECTED
+=========================================================*/
+
+.customerModificationStatus_rejected {
+
+    border-color: rgba(239, 68, 68, 0.35);
+
+    background: rgba(239, 68, 68, 0.08);
+
+}
+
+
+/*=========================================================
+  LOADING
+=========================================================*/
+
+.customerModificationStatusLoading {
+
+    font-size: 12px;
+
+    opacity: 0.65;
+
+}

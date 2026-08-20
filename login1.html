@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Login | Ransan Travels
+    </title>
+
+    <meta
+        name="theme-color"
+        content="#0f172a">
+
+    <link
+        rel="stylesheet"
+        href="customer/customer.css">
+
+</head>
+
+
+<body>
+
+<div class="customerPortalApp">
+
+    <div class="portalBackground">
+
+        <div class="bgBlur bg1"></div>
+        <div class="bgBlur bg2"></div>
+        <div class="bgBlur bg3"></div>
+
+    </div>
+
+
+    <div class="portalAuth">
+
+        <div class="portalGlass portalAuthCard">
+
+            <div class="portalLogo">
+                🌍
+            </div>
+
+            <div class="portalAuthTitle">
+                Ransan Travels
+            </div>
+
+            <div class="portalAuthSubtitle">
+                Secure Dashboard Login
+            </div>
+
+
+            <!-- ENVIRONMENT -->
+
+            <div class="portalInputGroup">
+
+                <label>
+                    Environment
+                </label>
+
+                <select
+                    id="loginEnvironment"
+                    class="portalInput">
+
+                    <option value="LIVE">
+                        Live
+                    </option>
+
+                    <option value="TEST">
+                        Test
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- USERNAME -->
+
+            <div class="portalInputGroup">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    id="loginUsername"
+                    class="portalInput"
+                    type="text"
+                    autocomplete="username"
+                    placeholder="Enter username">
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="portalInputGroup">
+
+                <label>
+                    Password
+                </label>
+
+                <div style="position:relative;">
+
+                    <input
+                        id="loginPassword"
+                        class="portalInput"
+                        type="password"
+                        autocomplete="current-password"
+                        placeholder="Enter password"
+                        style="padding-right:70px;">
+
+                    <button
+                        type="button"
+                        id="togglePasswordBtn"
+                        style="
+                            position:absolute;
+                            right:10px;
+                            top:50%;
+                            transform:translateY(-50%);
+                            background:none;
+                            border:none;
+                            color:#94a3b8;
+                            cursor:pointer;
+                        ">
+
+                        Show
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                id="portalLoginBtn"
+                class="portalPrimaryBtn">
+
+                🔐 Login
+
+            </button>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="loginError"
+                class="portalLoginMessage"
+                style="margin-top:15px;">
+
+            </div>
+
+
+            <div
+                style="
+                    margin-top:20px;
+                    text-align:center;
+                    font-size:12px;
+                    opacity:.65;
+                ">
+
+                Ransan Travels • Secure Access
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="dashboard/api.js"></script>
+
+
+<script>
+
+(function () {
+
+
+    /* =====================================================
+       ALREADY LOGGED IN
+       ===================================================== */
+
+    if (
+        sessionStorage.getItem("portalLoggedIn") === "true"
+    ) {
+
+        window.location.replace(
+            "dashboard.html"
+        );
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
+
+    const username =
+        document.getElementById(
+            "loginUsername"
+        );
+
+    const password =
+        document.getElementById(
+            "loginPassword"
+        );
+
+    const environment =
+        document.getElementById(
+            "loginEnvironment"
+        );
+
+    const loginButton =
+        document.getElementById(
+            "portalLoginBtn"
+        );
+
+    const error =
+        document.getElementById(
+            "loginError"
+        );
+
+    const togglePassword =
+        document.getElementById(
+            "togglePasswordBtn"
+        );
+
+
+    /* =====================================================
+       REMEMBER LAST ENVIRONMENT
+       ===================================================== */
+
+    const savedEnvironment =
+        localStorage.getItem(
+            "portalEnvironment"
+        );
+
+
+    if (
+        savedEnvironment
+    ) {
+
+        environment.value =
+            savedEnvironment;
+
+    }
+
+
+    /* =====================================================
+       PASSWORD TOGGLE
+       ===================================================== */
+
+    togglePassword.addEventListener(
+        "click",
+        function () {
+
+            if (
+                password.type === "password"
+            ) {
+
+                password.type = "text";
+
+                togglePassword.textContent =
+                    "Hide";
+
+            }
+            else {
+
+                password.type = "password";
+
+                togglePassword.textContent =
+                    "Show";
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       LOGIN
+       ===================================================== */
+
+    loginButton.addEventListener(
+        "click",
+        login
+    );
+
+
+    password.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                login();
+
+            }
+
+        }
+    );
+
+
+    async function login() {
+
+        error.textContent = "";
+
+
+        const user =
+            username.value.trim();
+
+        const pass =
+            password.value;
+
+
+        const env =
+            environment.value;
+
+
+        if (!user || !pass) {
+
+            error.textContent =
+                "Please enter username and password.";
+
+            return;
+
+        }
+
+
+        loginButton.disabled = true;
+
+        loginButton.textContent =
+            "Checking...";
+
+
+        try {
+
+
+            const response =
+                await callPortalAPI(
+                    "loginPortalUser",
+                    {
+
+                        username:
+                            user,
+
+                        password:
+                            pass,
+
+                        env:
+                            env
+
+                    }
+                );
+
+
+            console.log(
+                "[PORTAL LOGIN] Response:",
+                response
+            );
+
+
+            if (
+                !response ||
+                !response.success
+            ) {
+
+                error.textContent =
+                    response &&
+                    (
+                        response.message ||
+                        response.error
+                    )
+                        ? (
+                            response.message ||
+                            response.error
+                        )
+                        : "Invalid username or password.";
+
+                return;
+
+            }
+
+
+            /* =============================================
+               STORE SESSION
+               ============================================= */
+
+            sessionStorage.setItem(
+                "portalLoggedIn",
+                "true"
+            );
+
+
+            sessionStorage.setItem(
+                "portalEnvironment",
+                response.env || env
+            );
+
+
+            sessionStorage.setItem(
+                "portalUsername",
+                response.username || user
+            );
+
+
+            sessionStorage.setItem(
+                "portalRole",
+                response.role || ""
+            );
+
+
+            sessionStorage.setItem(
+                "portalAccess",
+                response.access || ""
+            );
+
+
+            /* =============================================
+               STORE LAST ENVIRONMENT
+               ============================================= */
+
+            localStorage.setItem(
+                "portalEnvironment",
+                response.env || env
+            );
+
+
+            /* =============================================
+               REDIRECT
+               ============================================= */
+
+            window.location.replace(
+                "dashboard.html"
+            );
+
+        }
+
+
+        catch (err) {
+
+            console.error(
+                "[PORTAL LOGIN] Error:",
+                err
+            );
+
+
+            error.textContent =
+                "Unable to connect to login service.";
+
+        }
+
+
+        finally {
+
+            loginButton.disabled =
+                false;
+
+            loginButton.textContent =
+                "🔐 Login";
+
+        }
+
+    }
+
+
+})();
+
+</script>
+
+</body>
+
+</html>
