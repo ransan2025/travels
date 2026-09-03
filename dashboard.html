@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>
+
+        RanSan Travel Operations Center
+
+    </title>
+
+    <script src="dashboard/auth-guard.js"></script>
+
+    <link rel="stylesheet" href="dashboard/dashboard.css">
+    <link rel="stylesheet" href="dashboard/dashboard-card.css">
+    <link rel="stylesheet" href="dashboard/dashboard-live.css">
+    <link rel="stylesheet" href="dashboard/customerDrawerV2.css">
+    <link rel="stylesheet" href="dashboard/customerDrawerV3.css">
+    <link rel="stylesheet" href="dashboard/priority-support.css">
+    <link rel="stylesheet" href="dashboard/lead-center.css">
+    <link rel="stylesheet" href="dashboard/booking_process.css">
+    <link rel="stylesheet" href="dashboard/dashboard_modification.css">
+    <link rel="stylesheet" href="dashboard/dash_notification.css">
+
+</head>
+
+<body>
+
+
+
+    <!--         <script>
+
+(function protectDashboard() {
+
+    const loggedIn =
+        sessionStorage.getItem(
+            "isLoggedIn"
+        );
+
+
+    if (
+        loggedIn !== "true"
+    ) {
+
+        window.location.replace(
+            "login.html"
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * Restore logged-in environment
+     */
+
+    const env =
+        (
+            sessionStorage.getItem(
+                "env"
+            ) ||
+            "LIVE"
+        )
+        .toUpperCase();
+
+
+    window.DASHBOARD_ENV =
+        env;
+
+
+})();
+
+</script> -->
+
+    <!-- <div id="customerPortalApp"> -->
+
+    <div class="dashboard">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div class="brandSection">
+
+                <div>
+
+                    <div id="festivalBanner"></div>
+
+                    <div class="brand">
+
+                        ✈ RanSan Travels
+
+                    </div>
+
+                    <div class="subtitle">
+
+                        Travel Operations Center
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="top-actions">
+
+                <!-- GLOBAL SEARCH -->
+                <div class="globalSearchWrap">
+
+                    <span class="globalSearchIcon">
+                        🔍
+                    </span>
+
+                    <input id="globalSearch" type="text" placeholder="Search customer, phone, booking..."
+                        autocomplete="off">
+
+                </div>
+
+
+                <!-- ENVIRONMENT SWITCHER -->
+                <div class="envSwitcher">
+
+                    <span id="envLabel" class="envLive">
+                        LIVE
+                    </span>
+
+                    <label class="switch">
+
+                        <input id="envToggle" type="checkbox">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- ENVIRONMENT LOADER -->
+                <div id="envLoader" class="envLoader">
+
+                    <div class="loaderBox">
+
+                        <div class="loaderCircle"></div>
+
+                        <div id="loaderText">
+                            Switching Environment...
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+NOTIFICATION CENTER
+========================================= -->
+
+                <div class="notificationWrap">
+
+                    <button type="button" id="notificationBtn" class="notificationBtn" title="Attention Needed"
+                        aria-label="Open notifications" aria-expanded="false">
+
+                        <span class="notificationBell">
+                            🔔
+                        </span>
+
+                        <span id="notificationCount" class="notificationCount" hidden>
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <!-- =========================================
+    NOTIFICATION DROPDOWN
+    ========================================== -->
+
+                    <div id="notificationPanel" class="notificationPanel" aria-hidden="true">
+
+
+                        <!-- =====================================
+        HEADER
+        ====================================== -->
+
+                        <div class="notificationHeader">
+
+                            <div class="notificationHeaderText">
+
+                                <div class="notificationTitle">
+                                    Attention Needed
+                                </div>
+
+                                <div id="notificationSubtitle" class="notificationSubtitle">
+                                    You're all caught up
+                                </div>
+
+                            </div>
+
+
+                            <div class="notificationHeaderActions">
+
+                                <!-- ALL FILTER -->
+
+                                <button type="button" id="notificationAllBtn" class="notificationAllBtn active"
+                                    aria-pressed="true">
+                                    All
+                                </button>
+
+
+                                <!-- CLOSE -->
+
+                                <button type="button" id="notificationCloseBtn" class="notificationCloseBtn"
+                                    aria-label="Close notifications">
+                                    ✕
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =====================================
+        SUMMARY / FILTERS
+        ====================================== -->
+
+                        <div id="notificationSummary" class="notificationSummary">
+
+
+                            <!-- OVERDUE -->
+
+                            <button type="button" class="notificationStat overdue" data-notification-filter="overdue"
+                                aria-pressed="false">
+
+                                <span class="notificationStatIcon">
+                                    🔴
+                                </span>
+
+                                <div class="notificationStatContent">
+
+                                    <strong id="notificationOverdueCount">
+                                        0
+                                    </strong>
+
+                                    <small>
+                                        Overdue
+                                    </small>
+
+                                </div>
+
+                            </button>
+
+
+                            <!-- TODAY -->
+
+                            <button type="button" class="notificationStat today" data-notification-filter="today"
+                                aria-pressed="false">
+
+                                <span class="notificationStatIcon">
+                                    📅
+                                </span>
+
+                                <div class="notificationStatContent">
+
+                                    <strong id="notificationTodayCount">
+                                        0
+                                    </strong>
+
+                                    <small>
+                                        Today
+                                    </small>
+
+                                </div>
+
+                            </button>
+
+
+                            <!-- MODIFICATIONS -->
+
+                            <button type="button" class="notificationStat modification"
+                                data-notification-filter="modification" aria-pressed="false">
+
+                                <span class="notificationStatIcon">
+                                    🔄
+                                </span>
+
+                                <div class="notificationStatContent">
+
+                                    <strong id="notificationModificationCount">
+                                        0
+                                    </strong>
+
+                                    <small>
+                                        Changes
+                                    </small>
+
+                                </div>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- =====================================
+        BODY
+        ====================================== -->
+
+                        <div id="notificationList" class="notificationList">
+
+                            <div class="notificationEmpty">
+
+                                <div class="notificationEmptyIcon">
+                                    ✓
+                                </div>
+
+                                <strong>
+                                    All caught up
+                                </strong>
+
+                                <span>
+                                    No items currently need attention.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =====================================
+        FOOTER
+        ====================================== -->
+
+                        <div class="notificationFooter">
+
+                            <span>
+                                Live from CRM
+                            </span>
+
+                            <button type="button" onclick="window.DashNotification?.refresh()">
+                                ↻ Refresh
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <button type="button" class="reportShortcutBtn" onclick="window.location.href='Dashboard_Report.html'">
+                    📊 Reports
+                </button>
+
+
+                <!-- LOGOUT -->
+                <button type="button" id="logoutBtn" class="logoutBtn">
+                    <span class="logoutIcon">
+                        ↪
+                    </span>
+
+                    <span class="logoutText">
+                        Logout
+                    </span>
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- KPI -->
+
+        <section class="kpi-grid">
+
+            <div class="kpi glass flight" data-tab="Flight">
+
+                <div class="kpi-icon">
+
+                    ✈
+
+                </div>
+
+                <div class="kpi-content">
+
+                    <div id="flightCount" class="kpi-value">
+
+                        0
+
+                    </div>
+
+                    <div class="kpi-live-status">
+
+                        <span class="liveDot"></span>
+
+                        LIVE
+
+                    </div>
+
+                </div>
+
+                <div class="kpi-badge" id="flightBadge">
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+            <div class="kpi glass train" data-tab="Train">
+
+                <div class="kpi-icon">
+                    🚆
+                </div>
+
+                <div class="kpi-content">
+
+                    <div id="trainCount" class="kpi-value">
+
+                        0
+
+                    </div>
+
+                    <div class="kpi-live-status">
+
+                        <span class="liveDot"></span>
+
+                        LIVE
+
+                    </div>
+                </div>
+
+                <div class="kpi-badge" id="trainBadge">
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+            <div class="kpi glass bus" data-tab="Bus">
+
+                <div class="kpi-icon">
+                    🚌
+                </div>
+
+                <div class="kpi-content">
+
+                    <div id="busCount" class="kpi-value">
+
+                        0
+
+                    </div>
+
+                    <div class="kpi-live-status">
+
+                        <span class="liveDot"></span>
+
+                        LIVE
+
+                    </div>
+                </div>
+
+                <div class="kpi-badge" id="busBadge">
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+            <div class="kpi glass car" data-tab="Car">
+
+                <div class="kpi-icon">
+                    🚖
+                </div>
+
+                <div class="kpi-content">
+
+                    <div id="carCount" class="kpi-value">
+
+                        0
+
+                    </div>
+
+                    <div class="kpi-live-status">
+
+                        <span class="liveDot"></span>
+
+                        LIVE
+
+                    </div>
+                </div>
+
+                <div class="kpi-badge" id="carBadge">
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+            <div class="kpi glass package" data-tab="Package">
+
+                <div class="kpi-icon">
+                    🏖
+                </div>
+
+                <div class="kpi-content">
+
+                    <div id="packageCount" class="kpi-value">
+
+                        0
+
+                    </div>
+
+                    <div class="kpi-live-status">
+
+                        <span class="liveDot"></span>
+
+                        LIVE
+
+                    </div>
+                </div>
+
+                <div class="kpi-badge" id="packageBadge">
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+            <div class="kpi glass quote" data-tab="Quote">
+
+                <div class="kpi-icon">
+                    💬
+                </div>
+
+                <div class="kpi-content">
+
+                    <div id="quoteCount" class="kpi-value">
+
+                        0
+
+                    </div>
+
+                    <div class="kpi-live-status">
+
+                        <span class="liveDot"></span>
+
+                        LIVE
+
+                    </div>
+                </div>
+
+                <div class="kpi-badge" id="quoteBadge">
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTENT -->
+
+        <section class="content-grid">
+
+            <!-- LEFT -->
+
+            <div>
+
+                <div class="liveActivity modernActivity">
+
+                    <div class="crmKPIGrid">
+
+                        <div class="crmKPICard">
+                            <div class="crmKPIIcon">💰</div>
+                            <div id="kpiRevenue" class="crmKPINumber">
+
+                                ₹0
+
+                            </div>
+
+                            <small id="kpiRevenueTrend">
+
+                                +0%
+
+                            </small>
+
+                            <span>
+
+                                Today's Revenue
+
+                            </span>
+                        </div>
+
+                        <div class="crmKPICard">
+                            <div class="crmKPIIcon">🔥</div>
+                            <div id="kpiLeads" class="crmKPINumber">
+
+                                0
+
+                            </div>
+
+                            <small>
+
+                                Today
+
+                            </small>
+                            <span>New Leads Today</span>
+                        </div>
+
+                        <div class="crmKPICard">
+
+                            <div id="kpiActivityIcon" class="crmKPIIcon">
+                                ⚡
+                            </div>
+
+                            <div id="kpiLastActivity" class="crmKPINumber">
+                                -
+                            </div>
+
+                            <small id="kpiLastTime">
+                                -
+                            </small>
+
+                            <span id="kpiActivityLabel">
+                                Last CRM Activity
+                            </span>
+
+                        </div>
+
+                        <div class="crmKPICard">
+
+                            <div class="crmKPIIcon">
+                                📅
+                            </div>
+
+                            <div id="kpiFollowups" class="crmKPINumber">
+                                0
+                            </div>
+
+                            <span>
+                                Today's Follow Ups
+                            </span>
+
+                            <small id="kpiFollowupDetail">
+                                0 Pending • 0 Overdue
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activityHeader">
+
+                        <span>⚡ Live CRM Activity</span>
+
+                        <span id="activityTime">
+                            Updating...
+                        </span>
+
+                    </div>
+
+                    <div id="liveOperations" class="crmTimelineContainer"></div>
+
+                </div>
+
+
+                <!-- =========================================================
+     BOOKING MODIFICATION REQUESTS
+========================================================= -->
+
+                <div class="glass modificationCenter">
+
+                    <div class="modificationHeader">
+
+                        <div>
+                            <div class="section-title">
+                                🔄 Booking Modification Requests
+                            </div>
+
+                            <div class="modificationSubtitle">
+                                Customer requests requiring operations review
+                            </div>
+                        </div>
+
+                        <div class="modificationHeaderActions">
+
+                            <button class="modFilterBtn active" data-status="" onclick="filterModificationRequests('')">
+                                All
+                            </button>
+
+                            <button class="modFilterBtn" data-status="Pending"
+                                onclick="filterModificationRequests('Pending')">
+                                Pending
+                                <span id="modPendingCount">0</span>
+                            </button>
+
+                            <button class="modFilterBtn" data-status="Approved"
+                                onclick="filterModificationRequests('Approved')">
+                                Approved
+                                <span id="modApprovedCount">0</span>
+                            </button>
+
+                            <button class="modFilterBtn" data-status="Rejected"
+                                onclick="filterModificationRequests('Rejected')">
+                                Rejected
+                                <span id="modRejectedCount">0</span>
+                            </button>
+
+                            <button class="modRefreshBtn" onclick="loadModificationRequests()">
+                                ↻
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+
+                    <div class="modificationToolbar">
+
+                        <input id="modificationSearch" type="text"
+                            placeholder="Search booking, customer, phone, request..."
+                            oninput="applyModificationSearch()">
+
+                    </div>
+
+
+                    <!-- REQUEST LIST -->
+
+                    <div id="modificationRequestList" class="modificationRequestList">
+
+                        <div class="modificationLoading">
+
+                            Loading modification requests...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="glass crmGlass tabs">
+
+                    <div class="tab-head">
+
+                        <button class="tab flight active" onclick="changeTab('Flight',this)">
+                            ✈ Flight
+                            <span id="countFlight" class="tabCounter">0</span>
+                        </button>
+
+                        <button class="tab train" onclick="changeTab('Train',this)">
+                            🚆 Train
+                            <span id="countTrain" class="tabCounter">0</span>
+                        </button>
+
+                        <button class="tab bus" onclick="changeTab('Bus',this)">
+                            🚌 Bus
+                            <span id="countBus" class="tabCounter">0</span>
+                        </button>
+
+                        <button class="tab car" onclick="changeTab('Car',this)">
+                            🚖 Car
+                            <span id="countCar" class="tabCounter">0</span>
+                        </button>
+
+                        <button class="tab package" onclick="changeTab('Package',this)">
+                            🏖 Package
+                            <span id="countPackage" class="tabCounter">0</span>
+                        </button>
+
+                        <button class="tab quote" onclick="changeTab('Quote',this)">
+                            💬 Quote
+                            <span id="countQuote" class="tabCounter">0</span>
+                        </button>
+
+                    </div>
+
+                    <!-- ===========================================
+CRM Toolbar
+=========================================== -->
+
+                    <div class="crmToolbar">
+
+                        <select id="crmSort" onchange="applyCRMFilters()">
+
+                            <option value="default">Sort</option>
+
+                            <option value="name">Customer Name</option>
+
+                            <option value="date">Travel Date</option>
+
+                            <option value="status">Status</option>
+
+                            <option value="priority">Priority</option>
+
+                        </select>
+
+                        <select id="crmFilter" onchange="applyCRMFilters()">
+
+                            <option value="All">All Status</option>
+
+                            <option>New</option>
+
+                            <option>Pending</option>
+
+                            <option>Processing</option>
+
+                            <option>Follow Up</option>
+
+                            <option>Called</option>
+
+                            <option>WhatsApp Sent</option>
+
+                            <option>Completed</option>
+
+                        </select>
+
+                        <input id="crmSearch" type="search" autocomplete="off"
+                            placeholder="Search customer, phone, booking ID, route..." oninput="applyCRMFilters()">
+
+                    </div>
+
+                    <!-- Cards render HERE -->
+                    <div id="tabContent">
+
+                        Loading...
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div>
+
+                <!-- ==========================================
+ LEAD CENTER V2
+========================================== -->
+
+                <div class="glass leadCenterV2">
+
+                    <div class="leadCenterHeader">
+
+                        <div class="section-title">
+                            Lead Center
+                        </div>
+
+                        <div class="leadCenterSub">
+                            Sales Pipeline
+                        </div>
+
+                    </div>
+
+                    <div id="leadCenterGridV2" class="leadCenterGridV2">
+
+                        <!-- JS renders cards here -->
+
+                    </div>
+
+                </div>
+
+                <div class="glass support">
+
+                    <div class="section-title">
+
+                        Priority Support
+
+                    </div>
+
+                    <div id="priorityList"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- CUSTOMER DRAWER -->
+
+    <div class="customerDrawer" id="customerDrawer">
+
+        <div class="drawerHead">
+
+            Customer Details
+
+            <span class="drawerClose" onclick="closeDrawer()">
+
+                ✖
+
+            </span>
+
+        </div>
+
+        <div id="drawerContent">
+
+            Select a customer
+
+        </div>
+
+
+    </div>
+
+    <!-- ===========================================================
+     CRM GLASS DRAWER V2
+     (New Drawer - Does NOT affect existing drawer)
+=========================================================== -->
+
+    <div id="customerDrawerV2" class="crmGlassV2Drawer">
+
+        <div class="crmGlassV2Container">
+
+            <!-- Header -->
+
+            <div class="crmGlassV2TopBar">
+
+                <div class="crmGlassV2Title">
+
+                    👤 Customer Workspace
+
+                </div>
+
+                <button id="crmGlassV2CloseBtn" class="crmGlassV2CloseBtn" onclick="closeCustomerDrawerV2()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <!-- Dynamic Content -->
+
+            <div id="crmGlassV2Content" class="crmGlassV2Content">
+
+                <div class="crmGlassV2Empty">
+
+                    Select a customer...
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ========================================================= -->
+        <!-- BOOKING PROGRESS -->
+        <!-- ========================================================= -->
+
+        <div id="bookingProgressContainer">
+
+            <div class="bookingProgressLoading">
+
+                Loading Booking Workflow...
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div id="leadModal" class="leadModal">
+
+        <div class="leadModalContent">
+
+            <div class="leadModalHeader">
+
+                <h3 id="leadModalTitle">
+
+                    Lead Details
+
+                </h3>
+
+                <button onclick="closeLeadModal()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div id="leadModalBody">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="priorityModal" class="priorityModal">
+
+        <div class="priorityModalContent">
+
+            <!-- HEADER -->
+
+            <div class="priorityModalHeader">
+
+                <div>
+
+                    <div id="priorityModalTitle" class="priorityTitle">
+
+                        Priority Support
+
+                    </div>
+
+                    <div id="priorityModalSubtitle" class="prioritySubtitle">
+
+                        Urgent CRM Queue
+
+                    </div>
+
+                </div>
+
+                <button class="priorityCloseBtn" onclick="closePriorityModal()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <!-- TOOLBAR -->
+
+            <div class="priorityToolbar">
+
+                <input id="prioritySearch" class="prioritySearch" type="text"
+                    placeholder="Search customer, phone, destination..." autocomplete="off">
+
+                <div id="priorityRecordCount" class="priorityRecordCount">
+
+                    0 Records
+
+                </div>
+
+            </div>
+
+            <!-- STATISTICS -->
+
+            <div id="priorityStatsRibbon" class="priorityStatsRibbon">
+
+            </div>
+
+            <!-- TABLE -->
+
+            <div id="priorityModalBody" class="priorityTableWrap">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===========================================
+CRM STATUS MODAL
+=========================================== -->
+
+    <div id="statusModal" class="crmModal">
+
+        <div class="crmModalContent">
+
+            <div class="crmHeader">
+
+                <div class="crmIcon statusIcon">
+
+                    ✏
+
+                </div>
+
+                <div>
+
+                    <h2>
+
+                        Update Status
+
+                    </h2>
+
+                    <small id="statusCustomerName">
+                        Customer
+                    </small>
+
+                </div>
+
+                <button class="crmClose" onclick="closeStatusModal()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div class="crmBody">
+
+                <label>
+
+                    Status
+
+                </label>
+
+                <select id="crmStatus">
+
+                    <option value="NEW">NEW</option>
+
+                    <option value="Follow Up">Follow Up</option>
+
+                    <option value="WhatsApp Sent">WhatsApp Sent</option>
+
+                    <option value="Confirmed">Confirmed</option>
+
+                    <option value="Processing">Processing</option>
+
+                    <option value="Completed">Completed</option>
+
+                    <option value="Cancelled">Cancelled</option>
+
+                </select>
+
+                <div class="crm-field">
+
+                    <label>Revenue (₹)</label>
+
+                    <input type="number" id="crmRevenue" placeholder="Enter Final Fare" disabled>
+
+                </div>
+
+                <label>
+
+                    Notes
+
+                </label>
+
+                <textarea id="crmNotes" rows="5" placeholder="Write Notes...">
+
+            </textarea>
+
+            </div>
+
+            <div class="crmFooter">
+
+                <button class="crmCancel" onclick="closeStatusModal()">
+
+                    Cancel
+
+                </button>
+
+                <button id="saveStatusBtn" class="crmSave" onclick="saveStatus()">
+
+                    Save Status
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================================
+CRM FOLLOWUP MODAL
+=========================================== -->
+
+    <div id="followupModal" class="crmModal">
+
+        <div class="crmModalContent">
+
+            <div class="crmHeader">
+
+                <div class="crmIcon followIcon">
+
+                    📅
+
+                </div>
+
+                <div>
+
+                    <h2>
+
+                        Set Follow Up
+
+                    </h2>
+
+                    <small id="followupCustomer">
+                        Customer
+                    </small>
+
+                </div>
+
+                <button class="crmClose" onclick="closeFollowupModal()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div class="crmBody">
+
+                <label>
+
+                    Follow Up Date
+
+                </label>
+
+                <input type="date" id="crmFollowDate">
+
+                <label>
+
+                    Notes
+
+                </label>
+
+                <textarea id="crmFollowNotes" rows="5" placeholder="Write Follow Up Notes...">
+
+            </textarea>
+
+            </div>
+
+            <div class="crmFooter">
+
+                <button class="crmCancel" onclick="closeFollowupModal()">
+
+                    Cancel
+
+                </button>
+
+                <button id="saveFollowBtn" class="crmSave" onclick="saveFollowup()">
+
+                    Save Follow Up
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =======================================================
+     LEAD CENTER V2 MODAL
+======================================================= -->
+
+    <div id="leadCenterModalV2" class="leadCenterModalV2">
+
+        <div class="leadCenterWindowV2">
+
+            <!-- HEADER -->
+
+            <div class="leadCenterHeaderV2">
+
+                <div>
+
+                    <div id="leadCenterTitleV2" class="leadCenterTitleV2">
+
+                        Lead Center
+
+                    </div>
+
+                    <div id="leadCenterSubtitleV2" class="leadCenterSubtitleV2">
+
+                        Sales Pipeline
+
+                    </div>
+
+                </div>
+
+                <button class="leadCenterCloseV2" onclick="closeLeadCenterModalV2()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="leadCenterToolbarV2">
+
+                <input id="leadSearchInputV2" class="leadSearchInputV2" type="text"
+                    placeholder="Search customer, phone, destination..." autocomplete="off">
+
+                <div id="leadCenterCountV2" class="leadCenterCountV2">
+
+                    0 Leads
+
+                </div>
+
+            </div>
+
+
+            <!-- SERVICE FILTER -->
+
+            <div id="leadCenterChips" class="leadCenterChipsV2">
+
+            </div>
+
+
+            <!-- TABLE -->
+
+            <div id="leadCenterTableWrap" class="leadCenterTableWrapV2">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================================
+CRM TOAST
+=========================================== -->
+
+    <div id="crmToast">
+
+        <div id="crmToastIcon">
+
+            ✔
+
+        </div>
+
+        <div id="crmToastText">
+
+            Success
+
+        </div>
+
+    </div>
+
+
+    <!-- ===========================================
+CRM LOADER
+=========================================== -->
+
+    <div id="crmLoader">
+
+        <div class="crmSpinner"></div>
+
+        <div>
+
+            Updating CRM...
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+WHATSAPP MODAL
+========================================== -->
+
+    <div id="whatsappModal" class="crmModal">
+
+        <div class="crmModalContent">
+
+            <div class="crmHeader">
+
+                <div class="crmIcon followIcon">
+                    💬
+                </div>
+
+                <div>
+
+                    <h2>Send WhatsApp</h2>
+
+                    <small id="whatsappCustomer">
+                        Customer
+                    </small>
+
+                </div>
+
+                <button class="crmClose" onclick="closeWhatsappModal()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div class="crmBody">
+
+                <label>
+
+                    Template
+
+                </label>
+
+                <select id="whatsappTemplate" onchange="loadWhatsappTemplate()">
+
+                    <option value="Holiday Package">
+
+                        Holiday Package
+
+                    </option>
+
+                    <option value="Quotation">
+
+                        Quotation
+
+                    </option>
+
+                    <option value="Reminder">
+
+                        Reminder
+
+                    </option>
+
+                    <option value="Follow Up">
+
+                        Follow Up
+
+                    </option>
+
+                    <option value="Payment Reminder">
+
+                        Payment Reminder
+
+                    </option>
+
+                    <option value="Custom">
+
+                        Custom Message
+
+                    </option>
+
+                </select>
+
+                <label>
+
+                    Message
+
+                </label>
+
+                <textarea id="whatsappMessage" rows="8">
+
+            </textarea>
+
+            </div>
+
+            <div class="crmFooter">
+
+                <button class="crmCancel" onclick="closeWhatsappModal()">
+
+                    Cancel
+
+                </button>
+
+                <button id="sendWhatsappBtn" class="crmSave" onclick="sendCRMWhatsapp()">
+
+                    Send WhatsApp
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="kpiModal" class="kpiDrillModal">
+
+        <div class="kpiDrillContent">
+
+            <div class="kpiDrillHeader">
+
+                <h2 id="kpiModalTitle"></h2>
+
+                <button class="kpiDrillClose" onclick="closeKPIModal()">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+            <div id="kpiModalBody" class="kpiDrillBody">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="bookingModal" class="bookingModal">
+
+        <div class="bookingModalBox">
+
+            <div class="bookingModalHeader">
+
+                Booking Details
+
+                <span onclick="closeBookingModal()">
+
+                    ✕
+
+                </span>
+
+            </div>
+
+            <div id="bookingModalBody">
+
+                Loading...
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <input type="hidden" id="crmSheet">
+
+    <input type="hidden" id="crmRow">
+
+    <input type="hidden" id="crmBooking">
+
+    <script>
+
+        const toggle =
+            document.getElementById("envToggle");
+
+        const label =
+            document.getElementById("envLabel");
+
+        const loader =
+            document.getElementById("envLoader");
+
+        DASHBOARD_ENV =
+            localStorage.getItem("dashboardEnv")
+            || "LIVE";
+
+        updateEnvironmentUI();
+
+        toggle.checked =
+            (DASHBOARD_ENV === "TEST");
+
+        toggle.addEventListener(
+
+            "change",
+
+            async function () {
+
+                toggle.disabled = true;
+
+                loader.style.display = "flex";
+
+                DASHBOARD_ENV =
+
+                    this.checked
+
+                        ?
+
+                        "TEST"
+
+                        :
+
+                        "LIVE";
+
+                localStorage.setItem(
+
+                    "dashboardEnv",
+
+                    DASHBOARD_ENV
+
+                );
+
+                updateEnvironmentUI();
+
+                await loadDashboardData();
+
+                loader.style.display = "none";
+
+                toggle.disabled = false;
+
+            }
+
+        );
+
+        function updateEnvironmentUI() {
+
+            const toggle = document.getElementById("envToggle");
+            const label = document.getElementById("envLabel");
+
+            if (DASHBOARD_ENV === "TEST") {
+
+                toggle.checked = true;
+
+                label.innerHTML = "TEST";
+
+                label.className = "envTest";
+
+            }
+
+            else {
+
+                toggle.checked = false;
+
+                label.innerHTML = "LIVE";
+
+                label.className = "envLive";
+
+            }
+
+        }
+
+
+        /*====================================================
+LOGOUT
+====================================================*/
+
+        document
+            .getElementById("logoutBtn")
+            ?.addEventListener(
+                "click",
+                function () {
+
+                    const logoutBtn =
+                        document.getElementById(
+                            "logoutBtn"
+                        );
+
+
+                    if (!logoutBtn) {
+                        return;
+                    }
+
+
+                    /*
+                     * Prevent multiple clicks.
+                     */
+
+                    if (
+                        logoutBtn.classList.contains(
+                            "loading"
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    /*================================================
+                    SHOW LOADING STATE
+                    ================================================*/
+
+                    logoutBtn.classList.add(
+                        "loading"
+                    );
+
+
+                    logoutBtn.disabled =
+                        true;
+
+
+                    logoutBtn.setAttribute(
+                        "aria-busy",
+                        "true"
+                    );
+
+
+                    /*
+                     * Allow browser to paint the loading
+                     * state before redirecting.
+                     */
+
+                    requestAnimationFrame(
+                        function () {
+
+                            requestAnimationFrame(
+                                function () {
+
+                                    setTimeout(
+                                        performPortalLogout,
+                                        400
+                                    );
+
+                                }
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /*====================================================
+        PERFORM LOGOUT
+        ====================================================*/
+
+        function performPortalLogout() {
+
+            try {
+
+                /*----------------------------------------------
+                CLEAR PORTAL SESSION
+                ----------------------------------------------*/
+
+                sessionStorage.removeItem(
+                    "portalLoggedIn"
+                );
+
+                sessionStorage.removeItem(
+                    "portalEnvironment"
+                );
+
+                sessionStorage.removeItem(
+                    "portalUsername"
+                );
+
+                sessionStorage.removeItem(
+                    "portalRole"
+                );
+
+                sessionStorage.removeItem(
+                    "portalAccess"
+                );
+
+
+                /*----------------------------------------------
+                REDIRECT
+                ----------------------------------------------*/
+
+                window.location.replace(
+                    "login.html"
+                );
+
+            }
+            catch (error) {
+
+                console.error(
+                    "Logout failed:",
+                    error
+                );
+
+
+                /*
+                 * Restore button if something unexpectedly
+                 * fails before navigation.
+                 */
+
+                const logoutBtn =
+                    document.getElementById(
+                        "logoutBtn"
+                    );
+
+
+                if (logoutBtn) {
+
+                    logoutBtn.classList.remove(
+                        "loading"
+                    );
+
+
+                    logoutBtn.disabled =
+                        false;
+
+
+                    logoutBtn.removeAttribute(
+                        "aria-busy"
+                    );
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+    <script src="asset/travel/hero-data.js"></script>
+
+
+    <script src="dashboard/dashboard-icons.js"></script>
+
+    <script src="dashboard/dashboard-theme.js"></script>
+
+    <script src="dashboard/dashboard-data.js"></script>
+
+    <script src="dashboard/dashboard.js"></script>
+
+    <script src="dashboard/dashboard-card.js"></script>
+    <script src="dashboard/dashboard-live.js"></script>
+    <script src="dashboard/customerDrawerV2.js"></script>
+    <script src="dashboard/customerDrawerV3.js"></script>
+    <script src="dashboard/customerDrawerActions.js"></script>
+    <script src="dashboard/customerDeleteModal.js"></script>
+    <script src="dashboard/customerUnsavedModal.js"></script>
+    <script src="dashboard/customerInsights.js"></script>
+    <script src="dashboard/priority-support.js"></script>
+    <script src="dashboard/lead-center.js"></script>
+    <script src="dashboard/leadCenterCards.js"></script>
+    <script src="dashboard/LeadCenterV2Helpers.js"></script>
+    <script src="dashboard/LeadCenterV2TableRow.js"></script>
+    <script src="dashboard/LeadCenterV2-Interaction.js"></script>
+    <script src="dashboard/LeadCenterV2-Pagination.js"></script>
+    <script src="dashboard/booking_process.js"></script>
+    <script src="dashboard/api.js"></script>
+
+    <script src="dashboard/dashboard_modification.js"></script>
+    <script src="dashboard/dash_notification.js"></script>
+
+
+
+</body>
+
+</html>

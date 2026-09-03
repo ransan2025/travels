@@ -1,0 +1,2580 @@
+/*=========================================================
+ RANSAN TRAVELS
+ COMPLETE TRAVEL BOOKING HUB
+ MODERN ENHANCEMENT
+=========================================================*/
+
+
+/*=========================================================
+ SECTION
+=========================================================*/
+
+.rs-service-hub-v3.rs-booking-hub-modern {
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 110px 20px;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(14, 165, 233, .16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 93% 78%,
+            rgba(139, 92, 246, .13),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #07101d 0%,
+            #0a1424 46%,
+            #07111f 100%
+        );
+
+}
+
+
+/*=========================================================
+ MAIN WRAPPER
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-hub-wrap-v3 {
+
+    position: relative;
+    z-index: 5;
+
+    width: min(1220px, 100%);
+    max-width: none;
+
+    margin: 0 auto;
+
+}
+
+
+/*=========================================================
+ BACKGROUND GRID
+=========================================================*/
+
+.rs-booking-grid-bg {
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .24;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 52px 52px;
+
+}
+
+
+/*=========================================================
+ ORBS
+=========================================================*/
+
+.rs-booking-orb {
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+
+    pointer-events: none;
+
+    opacity: .15;
+
+}
+
+
+.rs-booking-orb-one {
+
+    top: -180px;
+    left: -160px;
+
+    background: #0ea5e9;
+
+}
+
+
+.rs-booking-orb-two {
+
+    right: -180px;
+    bottom: -180px;
+
+    background: #8b5cf6;
+
+}
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-hub-header-v3 {
+
+    max-width: 850px;
+
+    margin: 0 auto 34px;
+
+    text-align: center;
+
+}
+
+
+/* EYEBROW */
+
+.rs-booking-eyebrow {
+
+    margin-bottom: 18px;
+
+    padding: 9px 15px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border:
+        1px solid rgba(103,232,249,.18);
+
+    border-radius: 999px;
+
+    background:
+        rgba(14,165,233,.08);
+
+    color: #67e8f9;
+
+    font-size: 13px;
+    font-weight: 850;
+
+    letter-spacing: .7px;
+
+    text-transform: uppercase;
+
+}
+
+
+.rs-booking-eyebrow-icon {
+
+    width: 23px;
+    height: 23px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(103,232,249,.10);
+
+}
+
+
+/* TITLE */
+
+.rs-booking-hub-modern
+.rs-service-hub-header-v3 h2 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(44px, 5vw, 66px);
+
+    line-height: 1.05;
+
+    font-weight: 950;
+
+    letter-spacing: -2.2px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-service-hub-header-v3 h2 span {
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #67e8f9,
+            #38bdf8,
+            #a78bfa
+        );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+/* DESCRIPTION */
+
+.rs-booking-hub-modern
+.rs-service-hub-header-v3 > p {
+
+    max-width: 740px;
+
+    margin: 20px auto 0;
+
+    color:
+        rgba(203, 213, 225, .84);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+}
+
+
+/*=========================================================
+ CONFIDENCE
+=========================================================*/
+
+.rs-booking-confidence {
+
+    margin-top: 23px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+}
+
+
+.rs-booking-confidence span {
+
+    padding: 7px 11px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    color:
+        rgba(226,232,240,.75);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.rs-booking-confidence i {
+
+    color: #6ee7b7;
+
+}
+
+
+/*=========================================================
+ LIVE CAPABILITY STRIP
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-hub-strip-v3 {
+
+    margin:
+        0 auto 34px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-service-hub-strip-v3 > div {
+
+    min-height: 64px;
+
+    padding: 10px 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    color: inherit;
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+}
+
+
+.rs-hub-strip-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 38px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+}
+
+
+.rs-hub-strip-icon.blue {
+    background: rgba(59,130,246,.13);
+}
+
+.rs-hub-strip-icon.violet {
+    background: rgba(139,92,246,.13);
+}
+
+.rs-hub-strip-icon.green {
+    background: rgba(16,185,129,.13);
+}
+
+.rs-hub-strip-icon.whatsapp {
+    background: rgba(34,197,94,.13);
+}
+
+
+.rs-booking-hub-modern
+.rs-service-hub-strip-v3 strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-service-hub-strip-v3 small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color:
+        rgba(148,163,184,.88);
+
+    font-size: 11px;
+
+}
+
+
+/*=========================================================
+ STACK
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-stack-v3 {
+
+    display: grid;
+
+    gap: 14px;
+
+}
+
+
+/*=========================================================
+ SERVICE WRAPPER
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-wrap-item-v3 {
+
+    margin: 0;
+
+}
+
+
+/*=========================================================
+ SERVICE HEADER CARD
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-block-v3 {
+
+    position: relative;
+
+    min-height: 132px;
+
+    padding: 20px 22px;
+
+    display: grid;
+
+    grid-template-columns:
+        42px 66px minmax(0,1fr) auto;
+
+    align-items: center;
+
+    gap: 16px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,.085);
+
+    border-left-width: 1px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 16px 50px rgba(0,0,0,.16);
+
+    backdrop-filter: blur(17px);
+
+    -webkit-backdrop-filter: blur(17px);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-service-block-v3:hover {
+
+    /*
+     * Do NOT move accordion headers vertically.
+     * Moving the clicked element while its panel expands
+     * can cause pointer enter/leave fluctuation.
+     */
+
+    transform: none;
+
+    border-color:
+        rgba(103, 232, 249, .18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.082),
+            rgba(255,255,255,.038)
+        );
+
+    box-shadow:
+        0 18px 52px rgba(0,0,0,.19);
+
+}
+
+
+/* accent line */
+
+.rs-booking-hub-modern
+.rs-service-block-v3::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+
+    width: 3px;
+
+    border-radius:
+        0 999px 999px 0;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-ticket-v3::before {
+    background: #3b82f6;
+}
+
+.rs-booking-hub-modern
+.rs-package-v3::before {
+    background: #f97316;
+}
+
+.rs-booking-hub-modern
+.rs-rental-v3::before {
+    background: #10b981;
+}
+
+.rs-booking-hub-modern
+.rs-utility-v3::before {
+    background: #a855f7;
+}
+
+
+/*=========================================================
+ NUMBER
+=========================================================*/
+
+.rs-service-index {
+
+    color:
+        rgba(148,163,184,.55);
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+/*=========================================================
+ ICON
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-icon-v3 {
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius: 18px;
+
+    background:
+        rgba(59,130,246,.10);
+
+    font-size: 27px;
+
+}
+
+
+.rs-booking-hub-modern
+[data-rs-service="package"]
+.rs-icon-v3 {
+
+    background:
+        rgba(249,115,22,.10);
+
+}
+
+
+.rs-booking-hub-modern
+[data-rs-service="rental"]
+.rs-icon-v3 {
+
+    background:
+        rgba(16,185,129,.10);
+
+}
+
+
+.rs-booking-hub-modern
+[data-rs-service="utility"]
+.rs-icon-v3 {
+
+    background:
+        rgba(168,85,247,.10);
+
+}
+
+
+/*=========================================================
+ SERVICE COPY
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-content-v3 {
+
+    min-width: 0;
+
+}
+
+
+.rs-service-kicker {
+
+    margin-bottom: 5px;
+
+    color: #60a5fa;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.1px;
+
+}
+
+
+[data-rs-service="package"]
+.rs-service-kicker {
+    color: #fb923c;
+}
+
+[data-rs-service="rental"]
+.rs-service-kicker {
+    color: #34d399;
+}
+
+[data-rs-service="utility"]
+.rs-service-kicker {
+    color: #c084fc;
+}
+
+
+.rs-booking-hub-modern
+.rs-content-v3 h3 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    letter-spacing: -.4px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-content-v3 p {
+
+    max-width: 690px;
+
+    margin: 7px 0 0;
+
+    color:
+        rgba(203,213,225,.72);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+/*=========================================================
+ TAGS
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-mini-tags-v3 {
+
+    margin-top: 11px;
+
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-mini-tags-v3 span {
+
+    padding: 5px 9px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    color:
+        rgba(226,232,240,.80);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/*=========================================================
+ META / STATUS
+=========================================================*/
+
+.rs-service-meta {
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.rs-service-status {
+
+    padding: 7px 9px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    border:
+        1px solid rgba(52,211,153,.13);
+
+    border-radius: 999px;
+
+    background:
+        rgba(16,185,129,.07);
+
+    color: #6ee7b7;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+.rs-service-status.package {
+
+    border-color:
+        rgba(249,115,22,.14);
+
+    background:
+        rgba(249,115,22,.07);
+
+    color: #fdba74;
+
+}
+
+
+.rs-service-status.rental {
+
+    color: #6ee7b7;
+
+}
+
+
+.rs-service-status.utility {
+
+    border-color:
+        rgba(192,132,252,.14);
+
+    background:
+        rgba(168,85,247,.07);
+
+    color: #d8b4fe;
+
+}
+
+
+.rs-service-live-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+
+    box-shadow:
+        0 0 8px currentColor;
+
+}
+
+
+/*=========================================================
+ PLUS / MINUS
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-action-v3 {
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        background .25s ease,
+        transform .25s ease,
+        color .25s ease;
+
+}
+
+
+.rs-service-wrap-item-v3.active
+.rs-action-v3 {
+
+    background:
+        #ffffff;
+
+    color: #0f172a;
+
+}
+
+
+/*=========================================================
+ EXPANDED PANEL
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-expand-v3 {
+
+    margin-top: -7px;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    border:
+        1px solid rgba(15,23,42,.08);
+
+    border-top: 0;
+
+    border-left-width: 1px;
+
+    border-radius:
+        0 0 22px 22px;
+
+    color: #0f172a;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f8fafc
+        );
+
+    box-shadow:
+        0 24px 60px rgba(2,6,23,.14);
+
+}
+
+
+/*
+ Existing 1400px can cut long dynamically-loaded
+ package/rental content.
+*/
+
+.rs-booking-hub-modern
+.rs-expand-v3.open {
+
+    /*
+     * Large enough for dynamic rental/package results
+     * while preserving your existing accordion animation.
+     */
+
+    max-height: 12000px;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 26px;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+}
+
+/*=========================================================
+ ACCORDION WIDTH SAFETY
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-wrap-item-v3 {
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-service-block-v3 {
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-expand-v3 {
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* Dynamic package / rental containers */
+
+.rs-booking-hub-modern
+#rsPackageContainer,
+
+.rs-booking-hub-modern
+#rsRentalContainer {
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* Rental Swiper safety */
+
+.rs-booking-hub-modern
+.rs-rental-swiper-wrap,
+
+.rs-booking-hub-modern
+.rsRentalSwiper {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-width: 0 !important;
+
+    box-sizing: border-box;
+
+}
+
+
+/* Swiper wrapper can be wider internally.
+   The Swiper viewport itself contains it. */
+
+.rs-booking-hub-modern
+.rsRentalSwiper {
+
+    overflow: hidden !important;
+
+}
+
+
+/* active header */
+
+.rs-booking-hub-modern
+.rs-service-wrap-item-v3.active
+.rs-service-block-v3 {
+
+    border-radius:
+        22px 22px 0 0;
+
+    border-color:
+        rgba(255,255,255,.12);
+
+}
+
+
+/*=========================================================
+ PANEL INTRO
+=========================================================*/
+
+.rs-panel-intro {
+
+    margin-bottom: 22px;
+
+    padding-bottom: 18px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    border-bottom:
+        1px solid #e8edf4;
+
+}
+
+
+.rs-panel-kicker {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: .9px;
+
+}
+
+
+.rs-panel-kicker.orange {
+    color: #ea580c;
+}
+
+.rs-panel-kicker.green {
+    color: #059669;
+}
+
+.rs-panel-kicker.violet {
+    color: #9333ea;
+}
+
+
+.rs-panel-intro h4 {
+
+    margin: 0;
+
+    color: #0f172a;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    font-weight: 900;
+
+}
+
+
+.rs-panel-intro p {
+
+    max-width: 650px;
+
+    margin: 6px 0 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+.rs-panel-secure {
+
+    padding: 8px 10px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex: 0 0 auto;
+
+    border:
+        1px solid #dcfce7;
+
+    border-radius: 999px;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+/*=========================================================
+ TABS
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-tabs-v3 {
+
+    margin-bottom: 22px;
+
+    padding: 5px;
+
+    width: fit-content;
+
+    display: flex;
+
+    gap: 4px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    background: #f8fafc;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-tab-v3 {
+
+    min-height: 42px;
+
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition: .2s ease;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-tab-v3.active {
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 18px rgba(15,23,42,.15);
+
+}
+
+
+/*=========================================================
+ FORM MODE TITLE
+=========================================================*/
+
+.rs-form-section-title {
+
+    margin-bottom: 17px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.rs-form-section-title > span {
+
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #eff6ff;
+
+    font-size: 16px;
+
+}
+
+
+.rs-form-section-title strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+}
+
+
+.rs-form-section-title small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+}
+
+
+/*=========================================================
+ COMMON FORM FIELDS
+=========================================================*/
+
+.rs-booking-field {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.rs-booking-field label,
+.rs-booking-hub-modern
+.rs-travel-inline-v3 label {
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+}
+
+
+.rs-booking-field label small {
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+/* INPUTS */
+
+.rs-booking-hub-modern
+.rs-booking-field input,
+
+.rs-booking-hub-modern
+.rs-booking-field select,
+
+.rs-booking-hub-modern
+.rs-booking-field textarea,
+
+.rs-booking-hub-modern
+.rs-travel-inline-v3 select {
+
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 13px;
+
+    border:
+        1px solid #dbe3ed;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 550;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-booking-field textarea {
+
+    min-height: 92px;
+
+    padding: 12px 13px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-booking-field input::placeholder,
+
+.rs-booking-hub-modern
+.rs-booking-field textarea::placeholder {
+
+    color: #94a3b8;
+
+}
+
+
+/* FOCUS */
+
+.rs-booking-hub-modern
+.rs-booking-field input:focus,
+
+.rs-booking-hub-modern
+.rs-booking-field select:focus,
+
+.rs-booking-hub-modern
+.rs-booking-field textarea:focus,
+
+.rs-booking-hub-modern
+.rs-travel-inline-v3 select:focus {
+
+    border-color: #60a5fa;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(59,130,246,.10);
+
+}
+
+
+/*=========================================================
+ AIR GRID
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-air-row-v3 {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(12, minmax(0,1fr));
+
+    gap: 14px;
+
+    align-items: end;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-field-customer {
+    grid-column: span 4;
+}
+
+.rs-booking-hub-modern
+.rs-field-mobile {
+    grid-column: span 4;
+}
+
+.rs-booking-hub-modern
+.rs-field-date {
+    grid-column: span 4;
+}
+
+.rs-booking-hub-modern
+.rs-field-from {
+    grid-column: span 6;
+}
+
+.rs-booking-hub-modern
+.rs-field-to {
+    grid-column: span 6;
+}
+
+
+.rs-booking-hub-modern
+.rs-travel-inline-v3 {
+
+    grid-column: span 2;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-field-notes {
+
+    grid-column: span 6;
+
+}
+
+
+/* override old forced input height */
+.rs-booking-hub-modern
+.rs-air-row-v3 input,
+
+.rs-booking-hub-modern
+.rs-air-row-v3 select {
+
+    height: 50px;
+
+    font-size: 14px;
+
+}
+
+
+/*=========================================================
+ TRAIN / BUS GRID
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-grid-v3 {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 14px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-grid-notes {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* prevent old generic direct-child styles interfering */
+
+.rs-booking-hub-modern
+.rs-grid-v3
+.rs-booking-field input,
+
+.rs-booking-hub-modern
+.rs-grid-v3
+.rs-booking-field select {
+
+    padding:
+        0 13px;
+
+}
+
+
+/*=========================================================
+ POPULAR ROUTES
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-popular-routes {
+
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.rs-popular-route-title {
+
+    margin-right: 3px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-popular-routes button {
+
+    min-height: 34px;
+
+    padding: 0 11px;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius: 999px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-popular-routes button:hover {
+
+    border-color: #93c5fd;
+
+    background: #dbeafe;
+
+}
+
+
+/*=========================================================
+ SUBMIT AREA
+=========================================================*/
+
+.rs-enquiry-submit-wrap {
+
+    margin-top: 23px;
+
+    padding-top: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    border-top:
+        1px solid #e8edf4;
+
+}
+
+
+.rs-submit-assurance {
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+}
+
+
+.rs-submit-assurance > i {
+
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 34px;
+
+    border-radius: 10px;
+
+    background: #ecfdf5;
+
+    color: #059669;
+
+}
+
+
+.rs-submit-assurance span {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.rs-submit-assurance strong {
+
+    color: #334155;
+
+    font-size: 12px;
+
+}
+
+
+.rs-submit-assurance small {
+
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+}
+
+
+/* EXISTING SUBMIT CLASS */
+
+.rs-booking-hub-modern
+.rs-search-btn-v3 {
+
+    width: auto;
+
+    min-width: 220px;
+
+    min-height: 50px;
+
+    margin: 0;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 13px;
+
+    color: #032025;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 12px 26px rgba(6,182,212,.18);
+
+    transition: .22s ease;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-search-btn-v3:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 32px rgba(6,182,212,.25);
+
+}
+
+
+/*=========================================================
+ PACKAGE / RENTAL SEARCH
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-package-search-wrap,
+
+.rs-booking-hub-modern
+.rs-rental-search-wrap {
+
+    position: relative;
+
+    margin-bottom: 15px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-package-search-wrap > i,
+
+.rs-booking-hub-modern
+.rs-rental-search-wrap > i {
+
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: #94a3b8;
+
+    z-index: 2;
+
+}
+
+
+.rs-booking-hub-modern
+#rsPackageSearch,
+
+.rs-booking-hub-modern
+#rsRentalSearch {
+
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+        0 15px 0 43px;
+
+    border:
+        1px solid #dbe3ed;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+}
+
+
+/*=========================================================
+ PACKAGE FILTERS
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-package-filter,
+
+.rs-booking-hub-modern
+.rs-rental-filter-wrap {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-filter-btn,
+
+.rs-booking-hub-modern
+.rs-rental-filter-btn {
+
+    min-height: 38px;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-filter-btn.active,
+
+.rs-booking-hub-modern
+.rs-rental-filter-btn.active {
+
+    border-color: #0f172a;
+
+    background: #0f172a;
+
+    color: #ffffff;
+
+}
+
+
+/*=========================================================
+ UTILITY PILLS
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-pill-row-v3 {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap: 10px;
+
+}
+
+
+.rs-booking-hub-modern
+.rs-pill-row-v3 span {
+
+    min-height: 64px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+}
+
+
+/*=========================================================
+ BOTTOM HELP BAR
+=========================================================*/
+
+.rs-booking-help-bar {
+
+    margin-top: 28px;
+
+    padding: 16px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 19px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter: blur(13px);
+
+}
+
+
+.rs-booking-help-copy {
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+.rs-booking-help-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 42px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(14,165,233,.11);
+
+    color: #67e8f9;
+
+}
+
+
+.rs-booking-help-copy > div {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.rs-booking-help-copy strong {
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+}
+
+
+.rs-booking-help-copy span {
+
+    margin-top: 2px;
+
+    color:
+        rgba(148,163,184,.90);
+
+    font-size: 12px;
+
+}
+
+
+/*=========================================================
+ HELP ACTIONS
+=========================================================*/
+
+.rs-booking-help-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.rs-booking-help-btn {
+
+    min-height: 42px;
+
+    padding: 0 13px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+}
+
+
+.rs-booking-help-btn.secondary {
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    background:
+        rgba(255,255,255,.06);
+
+    color: #ffffff;
+
+}
+
+
+.rs-booking-help-btn.whatsapp {
+
+    border:
+        1px solid rgba(34,197,94,.16);
+
+    background:
+        rgba(34,197,94,.10);
+
+    color: #86efac;
+
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 980px) {
+
+    .rs-booking-hub-modern
+    .rs-service-hub-strip-v3 {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-service-block-v3 {
+
+        grid-template-columns:
+            34px 58px minmax(0,1fr) auto;
+
+    }
+
+
+    .rs-service-status {
+
+        display: none;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-air-row-v3 {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-field-customer,
+    .rs-booking-hub-modern
+    .rs-field-mobile,
+    .rs-booking-hub-modern
+    .rs-field-date,
+    .rs-booking-hub-modern
+    .rs-field-from,
+    .rs-booking-hub-modern
+    .rs-field-to,
+    .rs-booking-hub-modern
+    .rs-travel-inline-v3,
+    .rs-booking-hub-modern
+    .rs-field-notes {
+
+        grid-column: auto;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-field-notes {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-pill-row-v3 {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    .rs-service-hub-v3.rs-booking-hub-modern {
+
+        padding:
+            82px 14px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-service-hub-header-v3 h2 {
+
+        font-size:
+            clamp(37px,10vw,48px);
+
+        letter-spacing:
+            -1.6px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-service-hub-header-v3 > p {
+
+        font-size: 15px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-service-hub-strip-v3 {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-service-block-v3 {
+
+        min-height: 0;
+
+        padding:
+            17px 15px;
+
+        grid-template-columns:
+            48px minmax(0,1fr) 38px;
+
+        gap: 11px;
+
+    }
+
+
+    .rs-service-index {
+
+        display: none;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-icon-v3 {
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 14px;
+
+        font-size: 22px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-content-v3 h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-content-v3 p {
+
+        font-size: 13px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-mini-tags-v3 {
+
+        display: none;
+
+    }
+
+
+    .rs-service-meta {
+
+        gap: 0;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-action-v3 {
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 12px;
+
+        font-size: 21px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-expand-v3.open {
+
+        padding:
+            21px 15px;
+
+    }
+
+
+    .rs-panel-intro {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .rs-panel-intro h4 {
+
+        font-size: 19px;
+
+    }
+
+
+    .rs-panel-intro p {
+
+        font-size: 13px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-tabs-v3 {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-tab-v3 {
+
+        padding: 0 8px;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-air-row-v3,
+
+    .rs-booking-hub-modern
+    .rs-grid-v3 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-field-notes,
+
+    .rs-booking-hub-modern
+    .rs-grid-notes {
+
+        grid-column: auto;
+
+    }
+
+
+    .rs-enquiry-submit-wrap {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-search-btn-v3 {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .rs-booking-help-bar {
+
+        align-items: stretch;
+
+        flex-direction: column;
+
+    }
+
+
+    .rs-booking-help-actions {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 460px) {
+
+    .rs-booking-hub-modern
+    .rs-service-hub-strip-v3 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-booking-hub-modern
+    .rs-pill-row-v3 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-booking-help-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/*=========================================================
+ REDUCED MOTION
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rs-booking-hub-modern
+    .rs-service-block-v3,
+
+    .rs-booking-hub-modern
+    .rs-search-btn-v3 {
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+/*=========================================================
+ DYNAMIC CONTAINER FIX
+ Package/Rental JS owns their internal layout.
+=========================================================*/
+
+.rs-booking-hub-modern
+#rsRentalContainer {
+
+    display: block !important;
+
+}
+
+
+.rs-booking-hub-modern
+#rsRentalContainer
+.rs-rental-swiper-wrap {
+
+    display: block;
+
+}
+
+
+.rs-booking-hub-modern
+#rsRentalContainer
+.rsRentalSwiper {
+
+    display: block;
+
+}
+
+
+/*
+ Package system may use its own generated layout.
+ Do not force inherited overflow outside the panel.
+*/
+
+.rs-booking-hub-modern
+#rsPackageContainer {
+
+    max-width: 100%;
+
+}
+
+/*=========================================================
+ STABLE ACTIVE SERVICE HEADER
+=========================================================*/
+
+.rs-booking-hub-modern
+.rs-service-wrap-item-v3.active
+.rs-service-block-v3 {
+
+    transform: none !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.045)
+        );
+
+    box-shadow:
+        0 16px 45px rgba(0,0,0,.18);
+
+}
+
+
+/* Ticket active */
+
+.rs-booking-hub-modern
+[data-rs-service="ticket"].active
+.rs-service-block-v3 {
+
+    border-color:
+        rgba(59,130,246,.25);
+
+}
+
+
+/* Package active */
+
+.rs-booking-hub-modern
+[data-rs-service="package"].active
+.rs-service-block-v3 {
+
+    border-color:
+        rgba(249,115,22,.24);
+
+}
+
+
+/* Rental active */
+
+.rs-booking-hub-modern
+[data-rs-service="rental"].active
+.rs-service-block-v3 {
+
+    border-color:
+        rgba(16,185,129,.24);
+
+}
+
+
+/* Utility active */
+
+.rs-booking-hub-modern
+[data-rs-service="utility"].active
+.rs-service-block-v3 {
+
+    border-color:
+        rgba(168,85,247,.24);
+
+}
+

@@ -1,0 +1,2530 @@
+/*=========================================================
+ RANSAN TRAVELS
+ LOCATION / CONTACT
+ MODERN OFFICE EXPERIENCE
+=========================================================*/
+
+
+/*=========================================================
+ SECTION
+
+ Outer section carries .reveal.
+ Do not apply transform here.
+=========================================================*/
+
+.rs-location-2026.rs-location-modern {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+        110px 20px;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8fbff 52%,
+            #ffffff 100%
+        );
+
+}
+
+
+/*=========================================================
+ VISUAL LAYER
+=========================================================*/
+
+.rs-location-modern
+.rs-location-visual-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/*=========================================================
+ ORBS
+=========================================================*/
+
+.rs-location-orb {
+
+    position: absolute;
+
+    width: 460px;
+    height: 460px;
+
+    border-radius: 50%;
+
+    filter:
+        blur(115px);
+
+}
+
+
+.rs-location-orb-one {
+
+    top: -220px;
+    left: -180px;
+
+    background:
+        rgba(14, 165, 233, .13);
+
+}
+
+
+.rs-location-orb-two {
+
+    right: -190px;
+    bottom: -220px;
+
+    background:
+        rgba(139, 92, 246, .12);
+
+}
+
+
+/*=========================================================
+ GRID PATTERN
+=========================================================*/
+
+.rs-location-grid-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .23;
+
+    background-image:
+
+        linear-gradient(
+            rgba(15, 23, 42, .026) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, .026) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 82%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 82%,
+            transparent 100%
+        );
+
+}
+
+
+/*=========================================================
+ WRAPPER
+=========================================================*/
+
+.rs-location-modern
+.wrap {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1220px, 100%);
+
+    max-width:
+        1220px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rs-location-modern
+.rs-location-header {
+
+    max-width:
+        860px;
+
+    margin:
+        0 auto 42px;
+
+    text-align:
+        center;
+
+}
+
+
+/*=========================================================
+ PILL
+=========================================================*/
+
+.rs-location-modern
+.rs-location-pill {
+
+    margin-bottom:
+        16px;
+
+    padding:
+        9px 14px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .88);
+
+    color:
+        #2563eb;
+
+    box-shadow:
+        0 9px 27px
+        rgba(37, 99, 235, .06);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+}
+
+
+.rs-location-pill-icon {
+
+    width: 24px;
+    height: 24px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        #eff6ff;
+
+}
+
+
+/*=========================================================
+ TITLE
+=========================================================*/
+
+.rs-location-modern
+.rs-location-title {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    background:
+        none;
+
+    font-size:
+        clamp(46px, 5vw, 66px);
+
+    line-height:
+        1.06;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.rs-location-modern
+.rs-location-title span {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #4f46e5 55%,
+            #8b5cf6
+        );
+
+    background-clip:
+        text;
+
+    -webkit-background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/*=========================================================
+ SUBTITLE
+=========================================================*/
+
+.rs-location-modern
+.rs-location-sub {
+
+    max-width:
+        730px;
+
+    margin:
+        19px auto 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/*=========================================================
+ TRUST ROW
+=========================================================*/
+
+.rs-location-trust-row {
+
+    margin-top:
+        22px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+}
+
+
+.rs-location-trust-row span {
+
+    min-height:
+        36px;
+
+    padding:
+        0 11px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .86);
+
+    color:
+        #475569;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        750;
+
+}
+
+
+.rs-location-trust-row i {
+
+    color:
+        #4f46e5;
+
+}
+
+
+/*=========================================================
+ QUICK CONTACT BAR
+=========================================================*/
+
+.rs-location-contact-bar {
+
+    margin-bottom:
+        18px;
+
+    padding:
+        13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255, 255, 255, .86);
+
+    box-shadow:
+        0 10px 31px
+        rgba(15, 23, 42, .045);
+
+}
+
+
+/*=========================================================
+ CONTACT COPY
+=========================================================*/
+
+.rs-location-contact-copy {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.rs-location-contact-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+}
+
+
+.rs-location-contact-copy strong {
+
+    display:
+        block;
+
+    color:
+        #0f172a;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.35;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-location-contact-copy p {
+
+    margin:
+        2px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.4;
+
+}
+
+
+/*=========================================================
+ CONTACT ACTIONS
+=========================================================*/
+
+.rs-location-contact-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    flex-wrap:
+        wrap;
+
+    justify-content:
+        flex-end;
+
+}
+
+
+.rs-location-contact-btn {
+
+    min-height:
+        40px;
+
+    padding:
+        0 11px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        11px;
+
+    background:
+        #ffffff;
+
+    color:
+        #334155;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+}
+
+
+.rs-location-contact-btn.whatsapp {
+
+    border-color:
+        rgba(34, 197, 94, .15);
+
+    background:
+        #f0fdf4;
+
+    color:
+        #15803d;
+
+}
+
+
+.rs-location-contact-btn.call {
+
+    border-color:
+        rgba(79, 70, 229, .14);
+
+    background:
+        #f8faff;
+
+    color:
+        #4338ca;
+
+}
+
+
+/*=========================================================
+ MAIN GRID
+=========================================================*/
+
+.rs-location-modern
+.rs-location-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(330px, .65fr);
+
+    gap:
+        18px;
+
+    align-items:
+        start;
+
+}
+
+
+/*=========================================================
+ MAP CARD
+=========================================================*/
+
+.rs-location-modern
+.rs-map-card {
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    padding:
+        14px;
+
+    overflow:
+        visible;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(255, 255, 255, .88);
+
+    box-shadow:
+        0 18px 55px
+        rgba(15, 23, 42, .08);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+}
+
+
+/*=========================================================
+ MAP CARD HEADER
+=========================================================*/
+
+.rs-map-card-header {
+
+    padding:
+        6px 5px 14px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        14px;
+
+}
+
+
+.rs-map-card-kicker {
+
+    display:
+        block;
+
+    margin-bottom:
+        4px;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .9px;
+
+}
+
+
+.rs-map-card-header h3 {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        900;
+
+}
+
+
+/*=========================================================
+ MAP BADGE
+
+ Existing class neutralised from absolute positioning.
+=========================================================*/
+
+.rs-location-modern
+.rs-map-badge {
+
+    position:
+        static;
+
+    margin:
+        0;
+
+    padding:
+        7px 9px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        1px solid rgba(34, 197, 94, .15);
+
+    border-radius:
+        999px;
+
+    background:
+        #f0fdf4;
+
+    color:
+        #15803d;
+
+    box-shadow:
+        none;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+}
+
+
+/*=========================================================
+ LIVE DOT
+=========================================================*/
+
+.rs-location-modern
+.rs-live-dot {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .10);
+
+}
+
+
+/*=========================================================
+ MAP CHIPS
+
+ Existing class preserved but repositioned.
+=========================================================*/
+
+.rs-location-modern
+.rs-map-chips {
+
+    position:
+        static;
+
+    margin-bottom:
+        11px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        8px;
+
+}
+
+
+/*=========================================================
+ MAP CHIP
+=========================================================*/
+
+.rs-location-modern
+.rs-map-chips
+.chip {
+
+    min-width:
+        0;
+
+    min-height:
+        56px;
+
+    padding:
+        9px 11px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-start;
+
+    gap:
+        9px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        13px;
+
+    background:
+        #ffffff;
+
+    color:
+        #475569;
+
+    font-family:
+        inherit;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    transform:
+        none;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.rs-location-modern
+.rs-map-chips
+.chip:hover {
+
+    transform:
+        none;
+
+    border-color:
+        rgba(79, 70, 229, .18);
+
+    background:
+        #f8faff;
+
+}
+
+
+.rs-location-modern
+.rs-map-chips
+.chip.active {
+
+    border-color:
+        rgba(79, 70, 229, .22);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8faff,
+            #f0f9ff
+        );
+
+    color:
+        #0f172a;
+
+    box-shadow:
+        0 8px 20px
+        rgba(79, 70, 229, .07);
+
+}
+
+
+.rs-map-chip-icon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 34px;
+
+    border-radius:
+        10px;
+
+    background:
+        #eef2ff;
+
+}
+
+
+.rs-location-modern
+.rs-map-chips
+.chip strong {
+
+    display:
+        block;
+
+    color:
+        #0f172a;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.25;
+
+    font-weight:
+        850;
+
+}
+
+
+.rs-location-modern
+.rs-map-chips
+.chip small {
+
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.25;
+
+}
+
+
+/*=========================================================
+ MAP FRAME
+=========================================================*/
+
+.rs-map-frame {
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        19px;
+
+    background:
+        #e2e8f0;
+
+}
+
+
+/*=========================================================
+ MAP IFRAME
+=========================================================*/
+
+.rs-location-modern
+.rs-map-card iframe {
+
+    width:
+        100%;
+
+    height:
+        430px;
+
+    display:
+        block;
+
+    border:
+        0;
+
+    border-radius:
+        0;
+
+}
+
+
+/*=========================================================
+ MAP OVERLAY
+
+ Existing class changed from floating absolute card
+ to stable panel under map.
+=========================================================*/
+
+.rs-location-modern
+.rs-map-overlay {
+
+    position:
+        static;
+
+    width:
+        auto;
+
+    margin-top:
+        11px;
+
+    padding:
+        17px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        17px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        none;
+
+    backdrop-filter:
+        none;
+
+    -webkit-backdrop-filter:
+        none;
+
+}
+
+
+/*=========================================================
+ OVERLAY HEAD
+=========================================================*/
+
+.rs-map-overlay-head {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.rs-location-modern
+.rs-map-overlay-logo {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    margin:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    background:
+        #eff6ff;
+
+    font-size:
+        18px;
+
+}
+
+
+.rs-map-overlay-head span {
+
+    display:
+        block;
+
+    margin-bottom:
+        2px;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .8px;
+
+}
+
+
+.rs-location-modern
+.rs-map-overlay h4 {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        900;
+
+}
+
+
+/*=========================================================
+ OVERLAY INTRO
+=========================================================*/
+
+.rs-location-modern
+.rs-map-overlay
+.rs-map-overlay-intro {
+
+    margin:
+        10px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/*=========================================================
+ LOCATION LIST
+=========================================================*/
+
+.rs-location-modern
+.rs-location-list {
+
+    margin:
+        14px 0;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        8px;
+
+}
+
+
+/*=========================================================
+ LOCATION ITEM
+=========================================================*/
+
+.rs-location-modern
+.rs-location-item {
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    padding:
+        10px 11px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        12px;
+
+    background:
+        #f8fafc;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+
+}
+
+
+.rs-location-modern
+.rs-location-item.active {
+
+    transform:
+        none;
+
+    border-color:
+        rgba(79, 70, 229, .18);
+
+    background:
+        #f8faff;
+
+    box-shadow:
+        none;
+
+}
+
+
+/* remove old active stripe */
+
+.rs-location-modern
+.rs-location-item.active::before {
+
+    display:
+        none;
+
+    content:
+        none;
+
+}
+
+
+/*=========================================================
+ LOCATION STATUS
+=========================================================*/
+
+.rs-location-modern
+.rs-location-status {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    flex:
+        0 0 8px;
+
+    border-radius:
+        50%;
+
+    background:
+        #cbd5e1;
+
+    box-shadow:
+        none;
+
+}
+
+
+.rs-location-modern
+.rs-location-item.active
+.rs-location-status {
+
+    background:
+        #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, .10);
+
+}
+
+
+/*=========================================================
+ LOCATION TEXT
+=========================================================*/
+
+.rs-location-modern
+.rs-location-item strong {
+
+    display:
+        block;
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        850;
+
+}
+
+
+.rs-location-modern
+.rs-location-item small {
+
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.3;
+
+}
+
+
+/*=========================================================
+ OFFICE ACTIONS
+=========================================================*/
+
+.rs-location-modern
+.rs-office-actions {
+
+    margin:
+        0;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        8px;
+
+}
+
+
+/*=========================================================
+ EXISTING LOCATION BUTTON
+=========================================================*/
+
+.rs-location-modern
+.rs-location-btn {
+
+    min-height:
+        43px;
+
+    padding:
+        0 11px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        11px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+    transform:
+        none;
+
+}
+
+
+.rs-location-modern
+.rs-location-btn:hover {
+
+    transform:
+        none;
+
+}
+
+
+/* CALL */
+
+.rs-location-modern
+.rs-location-btn.call {
+
+    border:
+        0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1
+        );
+
+    color:
+        #ffffff;
+
+}
+
+
+/* DIRECTIONS */
+
+.rs-location-modern
+.rs-location-btn.direction {
+
+    border:
+        1px solid #dfe6ee;
+
+    background:
+        #ffffff;
+
+    color:
+        #334155;
+
+}
+
+
+/*=========================================================
+ RIGHT INFO PANEL
+=========================================================*/
+
+.rs-location-modern
+.rs-location-info {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+/*=========================================================
+ INFO HEADER
+=========================================================*/
+
+.rs-location-info-head {
+
+    padding:
+        4px 2px 8px;
+
+}
+
+
+.rs-location-info-kicker {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .9px;
+
+}
+
+
+.rs-location-info-head h3 {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    font-size:
+        25px;
+
+    line-height:
+        1.25;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.45px;
+
+}
+
+
+.rs-location-info-head p {
+
+    margin:
+        8px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.55;
+
+}
+
+
+/*=========================================================
+ INFO CARDS
+=========================================================*/
+
+.rs-location-modern
+.rs-location-info-card {
+
+    min-width:
+        0;
+
+    padding:
+        17px;
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        11px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        17px;
+
+    background:
+        rgba(255, 255, 255, .92);
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, .045);
+
+    transform:
+        none;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+.rs-location-modern
+.rs-location-info-card:hover {
+
+    transform:
+        none;
+
+    border-color:
+        rgba(79, 70, 229, .16);
+
+    box-shadow:
+        0 15px 35px
+        rgba(15, 23, 42, .07);
+
+}
+
+
+/*=========================================================
+ INFO ICON
+=========================================================*/
+
+.rs-location-info-icon {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 40px;
+
+    border-radius:
+        11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+    font-size:
+        14px;
+
+}
+
+
+/* override old emoji span sizing */
+
+.rs-location-modern
+.rs-location-info-card
+.rs-location-info-icon {
+
+    font-size:
+        14px;
+
+}
+
+
+/*=========================================================
+ CARD BODY
+=========================================================*/
+
+.rs-location-card-body {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+}
+
+
+/*=========================================================
+ OFFICE BADGES
+
+ Existing class preserved.
+=========================================================*/
+
+.rs-location-modern
+.rs-office-badge {
+
+    margin-bottom:
+        7px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border-radius:
+        999px;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .5px;
+
+}
+
+
+.rs-location-modern
+.rs-office-badge.mumbai {
+
+    background:
+        #eff6ff;
+
+    color:
+        #2563eb;
+
+}
+
+
+.rs-location-modern
+.rs-office-badge.chennai {
+
+    background:
+        #f5f3ff;
+
+    color:
+        #7c3aed;
+
+}
+
+
+/*=========================================================
+ CARD TITLE
+=========================================================*/
+
+.rs-location-modern
+.rs-location-info-card h4 {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.35;
+
+    font-weight:
+        900;
+
+}
+
+
+/*=========================================================
+ CARD BODY TEXT
+=========================================================*/
+
+.rs-location-modern
+.rs-location-info-card p {
+
+    margin:
+        6px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.65;
+
+    overflow-wrap:
+        anywhere;
+
+}
+
+
+/*=========================================================
+ LINKS INSIDE CONTACT CARDS
+=========================================================*/
+
+.rs-location-modern
+.rs-location-info-card p a {
+
+    color:
+        #334155;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        750;
+
+}
+
+
+/*=========================================================
+ SMALL LABEL
+=========================================================*/
+
+.rs-location-small-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        4px;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .8px;
+
+}
+
+
+/*=========================================================
+ SELECT OFFICE BUTTON
+=========================================================*/
+
+.rs-location-card-select {
+
+    min-height:
+        35px;
+
+    margin-top:
+        10px;
+
+    padding:
+        0 9px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        9px;
+
+    background:
+        #ffffff;
+
+    color:
+        #475569;
+
+    font-family:
+        inherit;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+}
+
+
+/*=========================================================
+ INLINE CONTACT ACTION
+=========================================================*/
+
+.rs-location-inline-action {
+
+    margin-top:
+        8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+}
+
+
+/*=========================================================
+ BOTTOM CTA
+=========================================================*/
+
+.rs-location-bottom-cta {
+
+    margin-top:
+        20px;
+
+    padding:
+        16px 18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255, 255, 255, .86);
+
+    box-shadow:
+        0 11px 34px
+        rgba(15, 23, 42, .05);
+
+}
+
+
+/*=========================================================
+ BOTTOM COPY
+=========================================================*/
+
+.rs-location-bottom-copy {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+}
+
+
+.rs-location-bottom-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+}
+
+
+.rs-location-bottom-copy strong {
+
+    display:
+        block;
+
+    color:
+        #0f172a;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.35;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-location-bottom-copy p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/*=========================================================
+ BOTTOM ACTIONS
+=========================================================*/
+
+.rs-location-bottom-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.rs-location-bottom-btn {
+
+    min-height:
+        43px;
+
+    padding:
+        0 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        11px;
+
+    border:
+        0;
+
+    font-family:
+        inherit;
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+}
+
+
+.rs-location-bottom-btn.whatsapp {
+
+    background:
+        #16a34a;
+
+    color:
+        #ffffff;
+
+}
+
+
+.rs-location-bottom-btn.quote {
+
+    background:
+        #0f172a;
+
+    color:
+        #ffffff;
+
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 980px) {
+
+    .rs-location-modern
+    .rs-location-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-location-modern
+    .rs-location-info {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .rs-location-info-head {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    .rs-location-2026.rs-location-modern {
+
+        padding:
+            80px 15px;
+
+    }
+
+
+    .rs-location-modern
+    .rs-location-title {
+
+        font-size:
+            clamp(37px, 10vw, 48px);
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .rs-location-modern
+    .rs-location-sub {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .rs-location-contact-bar {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-location-contact-actions {
+
+        justify-content:
+            flex-start;
+
+    }
+
+
+    .rs-location-modern
+    .rs-map-card {
+
+        padding:
+            9px;
+
+        border-radius:
+            21px;
+
+    }
+
+
+    .rs-map-card-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-location-modern
+    .rs-map-card iframe {
+
+        height:
+            350px;
+
+    }
+
+
+    .rs-location-modern
+    .rs-location-info {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-location-bottom-cta {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-location-bottom-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 480px) {
+
+    .rs-location-trust-row {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .rs-location-trust-row span {
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .rs-location-contact-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-location-contact-btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .rs-location-modern
+    .rs-map-chips {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-location-modern
+    .rs-location-list {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-location-modern
+    .rs-office-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-location-bottom-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-location-bottom-btn {
+
+        width:
+            100%;
+
+    }
+
+}

@@ -1,0 +1,1436 @@
+/*=========================================================
+ RANSAN TRAVELS
+ MODERN FLOATING TRAVEL ASSISTANT
+=========================================================*/
+
+
+/*=========================================================
+ WIDGET POSITION
+=========================================================*/
+
+.rs-travel-widget.rs-travel-widget-modern {
+
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 9998;
+
+    font-family: inherit;
+
+}
+
+
+/*=========================================================
+ MAIN LAUNCHER
+
+ Existing .rs-travel-main preserved.
+=========================================================*/
+
+.rs-travel-widget-modern
+.rs-travel-main {
+
+    position: relative;
+
+    width: auto;
+    height: 60px;
+
+    min-width: 60px;
+
+    padding:
+        6px 7px 6px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 11px;
+
+    border:
+        1px solid rgba(255, 255, 255, .13);
+
+    border-radius: 18px;
+
+    color: #ffffff;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(125, 211, 252, .24),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #4c1d95,
+            #6d28d9 52%,
+            #2563eb
+        );
+
+    box-shadow:
+        0 16px 42px
+        rgba(76, 29, 149, .27);
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transform: none;
+
+    transition:
+        box-shadow .22s ease,
+        border-color .22s ease;
+
+}
+
+
+/* stable hover */
+
+.rs-travel-widget-modern
+.rs-travel-main:hover {
+
+    transform: none;
+
+    box-shadow:
+        0 20px 48px
+        rgba(76, 29, 149, .34);
+
+}
+
+
+/*=========================================================
+ LAUNCHER LABEL
+=========================================================*/
+
+.rs-travel-launcher-label {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    line-height: 1;
+
+}
+
+
+.rs-travel-launcher-label small {
+
+    color:
+        rgba(221, 214, 254, .80);
+
+    font-size: 8px;
+
+    line-height: 1.2;
+
+    font-weight: 850;
+
+    letter-spacing: .8px;
+
+}
+
+
+.rs-travel-launcher-label strong {
+
+    margin-top: 3px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+}
+
+
+/*=========================================================
+ LAUNCHER ICON
+=========================================================*/
+
+.rs-travel-launcher-icon {
+
+    width: 46px;
+    height: 46px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 46px;
+
+    border:
+        1px solid rgba(255, 255, 255, .13);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, .11);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+}
+
+
+/*=========================================================
+ ONLINE / STATUS DOT
+
+ Existing class retained.
+
+ It is now a visual assistance indicator, not an
+ "online now" business-hours claim.
+=========================================================*/
+
+.rs-travel-widget-modern
+.rs-online-dot {
+
+    position: absolute;
+
+    top: 5px;
+    right: 5px;
+
+    width: 10px;
+    height: 10px;
+
+    border:
+        2px solid #ffffff;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(34, 197, 94, .12);
+
+    animation: none;
+
+}
+
+
+/*=========================================================
+ OPEN STATE
+=========================================================*/
+
+.rs-travel-widget-modern
+.rs-travel-main.rs-widget-active {
+
+    border-color:
+        rgba(196, 181, 253, .25);
+
+}
+
+
+/*=========================================================
+ PANEL
+
+ Existing .rs-travel-menu preserved.
+=========================================================*/
+
+.rs-travel-widget-modern
+.rs-travel-menu {
+
+    position: absolute;
+
+    right: 0;
+
+    bottom: 72px;
+
+    width:
+        min(370px, calc(100vw - 32px));
+
+    max-height:
+        min(690px, calc(100vh - 115px));
+
+    padding: 0;
+
+    display: none;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    border:
+        1px solid rgba(148, 163, 184, .20);
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, .98);
+
+    box-shadow:
+        0 25px 75px
+        rgba(15, 23, 42, .22);
+
+    animation:
+        rsTravelWidgetOpen .22s ease;
+
+    scrollbar-width: thin;
+
+}
+
+
+/*=========================================================
+ PANEL ANIMATION
+=========================================================*/
+
+@keyframes rsTravelWidgetOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px)
+            scale(.98);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/*=========================================================
+ HEADER
+
+ Existing .travel-header preserved.
+=========================================================*/
+
+.rs-travel-widget-modern
+.travel-header {
+
+    position: relative;
+
+    padding: 17px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    color: #ffffff;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(96, 165, 250, .24),
+            transparent 33%
+        ),
+
+        linear-gradient(
+            140deg,
+            #17102e,
+            #30145e 52%,
+            #312e81
+        );
+
+}
+
+
+/*=========================================================
+ BRAND
+=========================================================*/
+
+.rs-travel-widget-brand {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+/*=========================================================
+ LOGO HOLDER
+=========================================================*/
+
+.rs-travel-widget-logo {
+
+    width: 48px;
+    height: 54px;
+
+    padding: 4px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 48px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, .13);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, .94);
+
+    box-sizing: border-box;
+
+}
+
+
+/*=========================================================
+ LOGO
+=========================================================*/
+
+.rs-travel-widget-logo img {
+
+    width: auto !important;
+    height: 45px !important;
+
+    max-width: 100% !important;
+
+    display: block;
+
+    object-fit: contain !important;
+
+    border-radius: 0 !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/*=========================================================
+ BRAND COPY
+=========================================================*/
+
+.rs-travel-widget-brand-copy {
+
+    min-width: 0;
+
+}
+
+
+.rs-widget-eyebrow {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #c4b5fd;
+
+    font-size: 8px;
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    letter-spacing: .8px;
+
+}
+
+
+.rs-travel-widget-modern
+.travel-header
+.rs-travel-widget-brand-copy > strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    font-weight: 900;
+
+    letter-spacing: -.25px;
+
+}
+
+
+.rs-travel-widget-modern
+.travel-header
+.rs-travel-widget-brand-copy > small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    max-width: 205px;
+
+    color:
+        rgba(226, 232, 240, .76);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+
+}
+
+
+/*=========================================================
+ CLOSE BUTTON
+=========================================================*/
+
+.rs-travel-widget-close {
+
+    width: 32px;
+    height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 32px;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    color:
+        rgba(255, 255, 255, .84);
+
+    cursor: pointer;
+
+}
+
+
+/*=========================================================
+ STATUS
+=========================================================*/
+
+.rs-travel-widget-status {
+
+    margin:
+        12px 13px 0;
+
+    padding: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fafaff,
+            #f8fbff
+        );
+
+}
+
+
+/*=========================================================
+ STATUS ICON
+=========================================================*/
+
+.rs-widget-status-icon {
+
+    width: 35px;
+    height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 35px;
+
+    border-radius: 10px;
+
+    background:
+        #eef2ff;
+
+    color:
+        #6d28d9;
+
+    font-size: 12px;
+
+}
+
+
+/*=========================================================
+ STATUS COPY
+=========================================================*/
+
+.rs-travel-widget-status strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 850;
+
+}
+
+
+.rs-travel-widget-status span:not(.rs-widget-status-icon) {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+}
+
+
+/*=========================================================
+ SECTION TITLE
+=========================================================*/
+
+.rs-travel-widget-section-title {
+
+    padding:
+        15px 15px 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.rs-travel-widget-section-title > span {
+
+    color: #0f172a;
+
+    font-size: 13px;
+
+    line-height: 1.3;
+
+    font-weight: 900;
+
+}
+
+
+.rs-travel-widget-section-title small {
+
+    color: #94a3b8;
+
+    font-size: 8px;
+
+    font-weight: 850;
+
+    letter-spacing: .7px;
+
+}
+
+
+/*=========================================================
+ SERVICES
+=========================================================*/
+
+.rs-travel-widget-services {
+
+    padding:
+        0 12px;
+
+    display: grid;
+
+    gap: 6px;
+
+}
+
+
+/*=========================================================
+ SERVICE BUTTON
+
+ Overrides old .rs-travel-menu a approach.
+=========================================================*/
+
+.rs-travel-service-link {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding:
+        8px 9px;
+
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #e7ebf0;
+
+    border-radius: 13px;
+
+    background: #ffffff;
+
+    color: inherit;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+}
+
+
+/* stable hover */
+
+.rs-travel-service-link:hover {
+
+    border-color:
+        rgba(109, 40, 217, .16);
+
+    background:
+        #faf9ff;
+
+    box-shadow:
+        0 7px 18px
+        rgba(76, 29, 149, .045);
+
+}
+
+
+/*=========================================================
+ SERVICE ICON
+=========================================================*/
+
+.rs-travel-service-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 38px;
+
+    border-radius: 11px;
+
+    font-size: 13px;
+
+}
+
+
+/* HOLIDAY */
+
+.rs-travel-service-icon.holiday {
+
+    background: #fff7ed;
+
+    color: #ea580c;
+
+}
+
+
+/* CAR */
+
+.rs-travel-service-icon.car {
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+}
+
+
+/* AIRPORT */
+
+.rs-travel-service-icon.airport {
+
+    background: #ecfeff;
+
+    color: #0891b2;
+
+}
+
+
+/* CORPORATE */
+
+.rs-travel-service-icon.corporate {
+
+    background: #f5f3ff;
+
+    color: #7c3aed;
+
+}
+
+
+/* INTERNATIONAL */
+
+.rs-travel-service-icon.international {
+
+    background: #ecfdf5;
+
+    color: #059669;
+
+}
+
+
+/*=========================================================
+ SERVICE COPY
+=========================================================*/
+
+.rs-travel-service-copy {
+
+    min-width: 0;
+
+}
+
+
+.rs-travel-service-copy strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 850;
+
+}
+
+
+.rs-travel-service-copy small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.35;
+
+}
+
+
+/*=========================================================
+ SERVICE ARROW
+=========================================================*/
+
+.rs-travel-service-arrow {
+
+    width: 27px;
+    height: 27px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #f8fafc;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+
+}
+
+
+/*=========================================================
+ CONTACT BUTTON AREA
+=========================================================*/
+
+.rs-travel-widget-contact {
+
+    margin:
+        12px 12px 0;
+
+    padding-top: 11px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+
+    border-top:
+        1px solid #edf1f5;
+
+}
+
+
+/*=========================================================
+ CONTACT BUTTON
+=========================================================*/
+
+.rs-widget-contact-btn {
+
+    min-width: 0;
+
+    min-height: 48px;
+
+    padding:
+        7px 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 11px;
+
+    text-decoration: none;
+
+}
+
+
+.rs-widget-contact-btn > i {
+
+    font-size: 13px;
+
+}
+
+
+.rs-widget-contact-btn span {
+
+    min-width: 0;
+
+}
+
+
+.rs-widget-contact-btn small {
+
+    display: block;
+
+    font-size: 7px;
+
+    line-height: 1.2;
+
+    font-weight: 850;
+
+    letter-spacing: .5px;
+
+}
+
+
+.rs-widget-contact-btn strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    font-weight: 850;
+
+}
+
+
+/* CALL */
+
+.rs-widget-contact-btn.call {
+
+    border:
+        1px solid #dbeafe;
+
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+}
+
+
+/* WHATSAPP */
+
+.rs-widget-contact-btn.whatsapp {
+
+    border:
+        1px solid #dcfce7;
+
+    background: #f0fdf4;
+
+    color: #15803d;
+
+}
+
+
+/*=========================================================
+ CUSTOM QUOTE CTA
+=========================================================*/
+
+.rs-widget-custom-quote {
+
+    width:
+        calc(100% - 24px);
+
+    min-height: 57px;
+
+    margin:
+        8px 12px 0;
+
+    padding:
+        8px 10px;
+
+    display: grid;
+
+    grid-template-columns:
+        auto minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(125, 211, 252, .18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #312e81,
+            #5b21b6
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+}
+
+
+/*=========================================================
+ CUSTOM ICON
+=========================================================*/
+
+.rs-widget-custom-icon {
+
+    width: 37px;
+    height: 37px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 37px;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+}
+
+
+/*=========================================================
+ CUSTOM COPY
+=========================================================*/
+
+.rs-widget-custom-quote strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+
+    font-weight: 850;
+
+}
+
+
+.rs-widget-custom-quote small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        rgba(226, 232, 240, .72);
+
+    font-size: 8px;
+
+    line-height: 1.35;
+
+}
+
+
+/*=========================================================
+ TRUST ROW
+=========================================================*/
+
+.rs-travel-widget-trust {
+
+    margin-top: 11px;
+
+    padding:
+        10px 12px 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    border-top:
+        1px solid #edf1f5;
+
+}
+
+
+.rs-travel-widget-trust span {
+
+    padding:
+        5px 7px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    border-radius: 999px;
+
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 8px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+
+}
+
+
+.rs-travel-widget-trust i {
+
+    color: #6d28d9;
+
+}
+
+
+/*=========================================================
+ TABLET / MOBILE
+
+ IMPORTANT:
+ Existing mobile sticky bar occupies the bottom area.
+
+ We put the assistant launcher beside the Back-to-Top
+ control rather than underneath the sticky bar.
+=========================================================*/
+
+@media (max-width: 768px) {
+
+    .rs-travel-widget.rs-travel-widget-modern {
+
+        right: 84px;
+
+        bottom: 96px;
+
+    }
+
+
+    .rs-travel-widget-modern
+    .rs-travel-main {
+
+        width: 56px;
+        height: 56px;
+
+        min-width: 56px;
+
+        padding: 5px;
+
+        border-radius: 17px;
+
+    }
+
+
+    /* hide launcher label on mobile */
+
+    .rs-travel-launcher-label {
+
+        display: none;
+
+    }
+
+
+    .rs-travel-launcher-icon {
+
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .rs-travel-widget-modern
+    .rs-travel-menu {
+
+        position: fixed;
+
+        right: 14px;
+
+        bottom: 163px;
+
+        width:
+            min(360px, calc(100vw - 28px));
+
+        max-height:
+            calc(100vh - 185px);
+
+    }
+
+}
+
+
+/*=========================================================
+ SHORT MOBILE VIEWPORT
+
+ Prevent panel from becoming too tall.
+=========================================================*/
+
+@media
+(max-width: 768px)
+and (max-height: 700px) {
+
+    .rs-travel-widget-modern
+    .rs-travel-menu {
+
+        max-height:
+            calc(100vh - 150px);
+
+        bottom: 135px;
+
+    }
+
+
+    .rs-travel-widget.rs-travel-widget-modern {
+
+        bottom: 93px;
+
+    }
+
+}
+
+
+/*=========================================================
+ VERY SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 380px) {
+
+    .rs-travel-widget.rs-travel-widget-modern {
+
+        right: 78px;
+
+    }
+
+
+    .rs-travel-widget-modern
+    .rs-travel-menu {
+
+        right: 10px;
+
+        width:
+            calc(100vw - 20px);
+
+    }
+
+
+    .rs-travel-widget-modern
+    .travel-header {
+
+        padding: 14px;
+
+    }
+
+
+    .rs-travel-widget-logo {
+
+        width: 44px;
+        height: 50px;
+
+        flex-basis: 44px;
+
+    }
+
+
+    .rs-travel-widget-logo img {
+
+        height: 41px !important;
+
+    }
+
+}
+
+
+/*=========================================================
+ REDUCED MOTION
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rs-travel-widget-modern
+    .rs-travel-menu {
+
+        animation: none;
+
+    }
+
+}
+
+/*=========================================================
+ DIRECT BOOKING ROUTE ICONS
+=========================================================*/
+
+
+/* FLIGHT */
+
+.rs-travel-service-icon.flight {
+
+    background:
+        #eff6ff;
+
+    color:
+        #2563eb;
+
+}
+
+
+/* TRAIN */
+
+.rs-travel-service-icon.train {
+
+    background:
+        #f5f3ff;
+
+    color:
+        #7c3aed;
+
+}
+
+
+/* BUS */
+
+.rs-travel-service-icon.bus {
+
+    background:
+        #ecfeff;
+
+    color:
+        #0891b2;
+
+}
+
+
+/* HOLIDAY */
+
+.rs-travel-service-icon.holiday {
+
+    background:
+        #fff7ed;
+
+    color:
+        #ea580c;
+
+}
+
+
+/* CAR */
+
+.rs-travel-service-icon.car {
+
+    background:
+        #ecfdf5;
+
+    color:
+        #059669;
+
+}

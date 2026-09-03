@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Login | Ransan Travels
+    </title>
+
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
+
+    <link
+        rel="stylesheet"
+        href="dashboard/login.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="loginPage">
+
+    <div class="loginCard">
+
+        <div class="loginLogo">
+            🌍
+        </div>
+
+        <h1>
+            Ransan Travels
+        </h1>
+
+        <p>
+            Secure Dashboard Login
+        </p>
+
+
+        <!-- =========================================
+             ENVIRONMENT
+        ========================================== -->
+
+        <div class="loginGroup">
+
+            <label>
+                Environment
+            </label>
+
+            <select
+                id="environment"
+                class="loginInput"
+            >
+
+                <option value="LIVE">
+                    Live
+                </option>
+
+                <option value="TEST">
+                    Test
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- =========================================
+             USERNAME
+        ========================================== -->
+
+        <div class="loginGroup">
+
+            <label>
+                Username
+            </label>
+
+            <input
+                id="username"
+                class="loginInput"
+                type="text"
+                autocomplete="username"
+                placeholder="Enter username"
+            >
+
+        </div>
+
+
+        <!-- =========================================
+             PASSWORD
+        ========================================== -->
+
+        <div class="loginGroup">
+
+            <label>
+                Password
+            </label>
+
+            <div class="passwordWrapper">
+
+                <input
+                    id="password"
+                    class="loginInput"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="Enter password"
+                    onkeydown="handleLoginKey(event)"
+                >
+
+                <button
+                    type="button"
+                    onclick="togglePassword()"
+                    class="passwordToggle"
+                >
+                    Show
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             LOGIN
+        ========================================== -->
+
+        <button
+            id="loginButton"
+            class="loginButton"
+            onclick="login()"
+        >
+
+            🔐 Login
+
+        </button>
+
+
+        <!-- =========================================
+             ERROR
+        ========================================== -->
+
+        <div
+            id="loginError"
+            class="loginError hidden"
+        ></div>
+
+
+        <!-- =========================================
+             ENVIRONMENT INFO
+        ========================================== -->
+
+        <div class="loginEnvironment">
+
+            Environment:
+
+            <strong id="environmentLabel">
+                LIVE
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================
+     EXISTING API
+========================================== -->
+
+<script src="dashboard/api.js"></script>
+
+
+<script>
+
+/*=========================================================
+ INITIALIZE
+=========================================================*/
+
+(function () {
+
+    const savedEnv =
+        (
+            localStorage.getItem("env") ||
+            "LIVE"
+        )
+        .toUpperCase();
+
+
+    const environment =
+        document.getElementById(
+            "environment"
+        );
+
+
+    const environmentLabel =
+        document.getElementById(
+            "environmentLabel"
+        );
+
+
+    /*
+     * Only accept LIVE / TEST
+     */
+
+    if (
+        savedEnv === "LIVE" ||
+        savedEnv === "TEST"
+    ) {
+
+        environment.value =
+            savedEnv;
+
+    }
+    else {
+
+        environment.value =
+            "LIVE";
+
+    }
+
+
+    environmentLabel.textContent =
+        environment.value;
+
+
+    /*
+     * Update environment immediately
+     */
+
+    environment.addEventListener(
+        "change",
+        function () {
+
+            const env =
+                environment.value.toUpperCase();
+
+
+            environmentLabel.textContent =
+                env;
+
+
+            localStorage.setItem(
+                "env",
+                env
+            );
+
+        }
+    );
+
+})();
+
+
+/*=========================================================
+ LOGIN
+=========================================================*/
+
+async function login() {
+
+    const username =
+        document
+            .getElementById("username")
+            .value
+            .trim();
+
+
+    const password =
+        document
+            .getElementById("password")
+            .value
+            .trim();
+
+
+    const environment =
+        document.getElementById(
+            "environment"
+        );
+
+
+    const error =
+        document.getElementById(
+            "loginError"
+        );
+
+
+    const button =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    /*
+     * Clear previous error
+     */
+
+    error.textContent = "";
+
+    error.classList.add(
+        "hidden"
+    );
+
+
+    /*
+     * Validate
+     */
+
+    if (
+        !username ||
+        !password
+    ) {
+
+        error.textContent =
+            "Please enter username and password.";
+
+        error.classList.remove(
+            "hidden"
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * Environment
+     */
+
+    const env =
+        environment.value
+            .toUpperCase();
+
+
+    /*
+     * Keep existing environment
+     * system working.
+     */
+
+    localStorage.setItem(
+        "env",
+        env
+    );
+
+
+    /*
+     * Button
+     */
+
+    button.disabled = true;
+
+    button.textContent =
+        "Signing in...";
+
+
+    try {
+
+
+        /*=================================================
+         IMPORTANT:
+         USE EXISTING WORKING HELPER
+        =================================================*/
+
+        const response =
+            await portalLogin(
+                username,
+                password,
+                env
+            );
+
+
+        console.log(
+            "[LOGIN] Response:",
+            response
+        );
+
+
+        /*=================================================
+         LOGIN FAILED
+        =================================================*/
+
+        if (
+            !response ||
+            !response.success
+        ) {
+
+            throw new Error(
+
+                response &&
+                (
+                    response.message ||
+                    response.error
+                )
+                    ? (
+                        response.message ||
+                        response.error
+                    )
+                    : "Invalid username or password."
+
+            );
+
+        }
+
+
+        /*=================================================
+         IMPORTANT:
+         USE EXISTING SESSION HELPER
+        =================================================*/
+
+        savePortalLoginSession(
+            response
+        );
+
+
+        console.log(
+            "[LOGIN] Session saved."
+        );
+
+
+        console.log(
+            "[LOGIN] Environment:",
+            env
+        );
+
+
+        /*=================================================
+         REDIRECT
+        =================================================*/
+
+        window.location.replace(
+            "dashboard.html"
+        );
+
+    }
+
+
+    catch (err) {
+
+        console.error(
+            "[LOGIN] Error:",
+            err
+        );
+
+
+        error.textContent =
+            err &&
+            err.message
+                ? err.message
+                : "Login failed.";
+
+
+        error.classList.remove(
+            "hidden"
+        );
+
+    }
+
+
+    finally {
+
+        button.disabled =
+            false;
+
+        button.textContent =
+            "🔐 Login";
+
+    }
+
+}
+
+
+/*=========================================================
+ ENTER KEY
+=========================================================*/
+
+function handleLoginKey(event) {
+
+    if (
+        event.key === "Enter"
+    ) {
+
+        login();
+
+    }
+
+}
+
+
+/*=========================================================
+ PASSWORD TOGGLE
+=========================================================*/
+
+function togglePassword() {
+
+    const field =
+        document.getElementById(
+            "password"
+        );
+
+
+    field.type =
+        field.type === "password"
+            ? "text"
+            : "password";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2632 @@
+/*=========================================================
+ RANSAN TRAVELS
+ MODERN HEADER / NAVIGATION
+ Isolated enhancement layer
+=========================================================*/
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rs-main-header {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    z-index:
+        9999;
+
+    background:
+        rgba(255, 255, 255, .88);
+
+    border-bottom:
+        1px solid rgba(226, 232, 240, .70);
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 8px 34px rgba(15, 23, 42, .055);
+
+    transition:
+        background .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease,
+        border-color .25s ease;
+
+}
+
+
+/*=========================================================
+ HEADER AFTER SCROLL
+=========================================================*/
+
+.rs-main-header.rs-header-scrolled {
+
+    background:
+        rgba(255, 255, 255, .96);
+
+    border-bottom-color:
+        rgba(203, 213, 225, .72);
+
+    box-shadow:
+        0 12px 38px rgba(15, 23, 42, .09);
+
+}
+
+
+/*=========================================================
+ NAV
+=========================================================*/
+
+.rs-main-header
+.rs-main-nav {
+
+    width:
+        min(1280px, calc(100% - 36px));
+
+    min-height:
+        72px;
+
+    margin:
+        0 auto;
+
+    padding:
+        8px 0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+}
+
+
+/*=========================================================
+ LOGO
+=========================================================*/
+
+.rs-main-header
+.logo {
+
+    min-width:
+        max-content;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    text-decoration:
+        none;
+
+    color:
+        #0f172a;
+
+}
+
+
+.rs-main-header
+.logo img {
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    flex:
+        0 0 44px;
+
+    padding:
+        3px;
+
+    border-radius:
+        14px;
+
+    object-fit:
+        cover;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid rgba(148, 163, 184, .15);
+
+    box-shadow:
+        0 8px 22px rgba(15, 23, 42, .09);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.rs-main-header
+.logo:hover img {
+
+    transform:
+        translateY(-1px) rotate(-2deg);
+
+    box-shadow:
+        0 12px 30px rgba(79, 70, 229, .14);
+
+}
+
+
+/*=========================================================
+ LOGO TEXT
+=========================================================*/
+
+.rs-logo-text {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        center;
+
+    gap:
+        1px;
+
+    line-height:
+        1;
+
+}
+
+
+.rs-logo-text strong {
+
+    font-size:
+        18px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.4px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed 52%,
+            #0ea5e9
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+.rs-logo-text small {
+
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+/*=========================================================
+ DESKTOP MENU
+=========================================================*/
+
+.rs-main-header
+.menu {
+
+    min-width:
+        0;
+
+    margin:
+        0 auto;
+
+    padding:
+        5px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        3px;
+
+    flex-wrap:
+        nowrap;
+
+    border:
+        1px solid rgba(226, 232, 240, .72);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(248, 250, 252, .76);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .90),
+        0 8px 25px rgba(15, 23, 42, .045);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+/*=========================================================
+ NAVIGATION LINKS
+=========================================================*/
+
+.rs-main-header
+.menu
+.nav-link {
+
+    position:
+        relative;
+
+    min-height:
+        36px;
+
+    padding:
+        0 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        999px;
+
+    color:
+        #475569;
+
+    font-size:
+        12px;
+
+    font-weight:
+        750;
+
+    line-height:
+        1;
+
+    text-decoration:
+        none;
+
+    white-space:
+        nowrap;
+
+    transition:
+        color .22s ease,
+        background .22s ease,
+        box-shadow .22s ease,
+        transform .22s ease;
+
+}
+
+
+/*=========================================================
+ NAV HOVER
+=========================================================*/
+
+.rs-main-header
+.menu
+.nav-link:hover {
+
+    color:
+        #4338ca;
+
+    background:
+        rgba(99, 102, 241, .075);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/*=========================================================
+ ACTIVE NAV
+=========================================================*/
+
+.rs-main-header
+.menu
+.nav-link.active {
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1 55%,
+            #0ea5e9
+        );
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, .22);
+
+}
+
+
+/*=========================================================
+ RIGHT SIDE ACTIONS
+=========================================================*/
+
+.rs-nav-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        8px;
+
+    flex:
+        0 0 auto;
+
+}
+
+
+/*=========================================================
+ WHATSAPP BUTTON
+=========================================================*/
+
+.rs-nav-whatsapp {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 40px;
+
+    border:
+        1px solid rgba(34, 197, 94, .18);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(34, 197, 94, .075);
+
+    color:
+        #16a34a;
+
+    font-size:
+        18px;
+
+    text-decoration:
+        none;
+
+    transition:
+        transform .22s ease,
+        background .22s ease,
+        color .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
+
+}
+
+
+.rs-nav-whatsapp:hover {
+
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(34, 197, 94, .30);
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #16a34a
+        );
+
+    box-shadow:
+        0 10px 24px rgba(34, 197, 94, .23);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/*=========================================================
+ BOOK NOW
+ Existing class preserved
+=========================================================*/
+
+.rs-main-header
+.rs-nav-cta {
+
+    min-height:
+        42px;
+
+    padding:
+        0 16px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    flex:
+        0 0 auto;
+
+    border-radius:
+        13px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        12px;
+
+    font-weight:
+        850;
+
+    line-height:
+        1;
+
+    text-decoration:
+        none;
+
+    white-space:
+        nowrap;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10b981,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 10px 25px rgba(16, 185, 129, .20);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        filter .22s ease;
+
+}
+
+
+.rs-main-header
+.rs-nav-cta:hover {
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        saturate(1.08);
+
+    box-shadow:
+        0 14px 30px rgba(16, 185, 129, .28);
+
+}
+
+
+.rs-nav-cta-icon {
+
+    font-size:
+        14px;
+
+}
+
+
+/*=========================================================
+ MOBILE MENU BUTTON
+=========================================================*/
+
+.rs-mobile-menu-btn {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    padding:
+        0;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-direction:
+        column;
+
+    gap:
+        4px;
+
+    flex:
+        0 0 42px;
+
+    border:
+        1px solid rgba(148, 163, 184, .18);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(248, 250, 252, .88);
+
+    cursor:
+        pointer;
+
+    transition:
+        .22s ease;
+
+}
+
+
+.rs-mobile-menu-btn span {
+
+    width:
+        17px;
+
+    height:
+        2px;
+
+    border-radius:
+        99px;
+
+    background:
+        #334155;
+
+    transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+}
+
+
+.rs-mobile-menu-btn:hover {
+
+    background:
+        #ffffff;
+
+    border-color:
+        rgba(99, 102, 241, .22);
+
+}
+
+
+/*=========================================================
+ MOBILE BUTTON OPEN STATE
+=========================================================*/
+
+.rs-mobile-menu-btn.active
+span:nth-child(1) {
+
+    transform:
+        translateY(6px) rotate(45deg);
+
+}
+
+
+.rs-mobile-menu-btn.active
+span:nth-child(2) {
+
+    opacity:
+        0;
+
+}
+
+
+.rs-mobile-menu-btn.active
+span:nth-child(3) {
+
+    transform:
+        translateY(-6px) rotate(-45deg);
+
+}
+
+
+/*=========================================================
+ MOBILE DRAWER
+=========================================================*/
+
+.rs-mobile-menu {
+
+    position:
+        fixed;
+
+    top:
+        0;
+
+    right:
+        0;
+
+    width:
+        min(390px, 91vw);
+
+    height:
+        100dvh;
+
+    z-index:
+        10002;
+
+    transform:
+        translateX(105%);
+
+    visibility:
+        hidden;
+
+    background:
+        rgba(255, 255, 255, .98);
+
+    border-left:
+        1px solid rgba(226, 232, 240, .82);
+
+    box-shadow:
+        -20px 0 60px rgba(15, 23, 42, .16);
+
+    transition:
+        transform .32s cubic-bezier(.22, .61, .36, 1),
+        visibility .32s ease;
+
+}
+
+
+.rs-mobile-menu.open {
+
+    transform:
+        translateX(0);
+
+    visibility:
+        visible;
+
+}
+
+
+/*=========================================================
+ MOBILE DRAWER INNER
+=========================================================*/
+
+.rs-mobile-menu-inner {
+
+    height:
+        100%;
+
+    padding:
+        20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    overflow-y:
+        auto;
+
+    overscroll-behavior:
+        contain;
+
+}
+
+
+/*=========================================================
+ MOBILE TOP
+=========================================================*/
+
+.rs-mobile-menu-top {
+
+    padding-bottom:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        14px;
+
+    border-bottom:
+        1px solid rgba(226, 232, 240, .75);
+
+}
+
+
+.rs-mobile-menu-brand {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+}
+
+
+.rs-mobile-menu-brand img {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    padding:
+        3px;
+
+    border-radius:
+        13px;
+
+    object-fit:
+        cover;
+
+    border:
+        1px solid rgba(148, 163, 184, .15);
+
+    box-shadow:
+        0 7px 20px rgba(15, 23, 42, .08);
+
+}
+
+
+.rs-mobile-menu-brand div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        3px;
+
+}
+
+
+.rs-mobile-menu-brand strong {
+
+    color:
+        #0f172a;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-mobile-menu-brand small {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        9px;
+
+    font-weight:
+        750;
+
+}
+
+
+/*=========================================================
+ CLOSE BUTTON
+=========================================================*/
+
+.rs-mobile-menu-close {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    flex:
+        0 0 38px;
+
+    border:
+        1px solid rgba(148, 163, 184, .17);
+
+    border-radius:
+        11px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #475569;
+
+    font-size:
+        22px;
+
+    line-height:
+        1;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.rs-mobile-menu-close:hover {
+
+    color:
+        #dc2626;
+
+    border-color:
+        rgba(239, 68, 68, .18);
+
+    background:
+        rgba(239, 68, 68, .06);
+
+}
+
+
+/*=========================================================
+ MOBILE LINKS
+=========================================================*/
+
+.rs-mobile-links {
+
+    margin-top:
+        18px;
+
+    display:
+        grid;
+
+    gap:
+        7px;
+
+}
+
+
+.rs-mobile-links
+.nav-link {
+
+    min-height:
+        50px;
+
+    padding:
+        0 13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        14px;
+
+    color:
+        #475569;
+
+    background:
+        transparent;
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    text-decoration:
+        none;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.rs-mobile-links
+.nav-link:hover {
+
+    color:
+        #4338ca;
+
+    background:
+        rgba(99, 102, 241, .06);
+
+}
+
+
+.rs-mobile-links
+.nav-link.active {
+
+    color:
+        #4338ca;
+
+    border-color:
+        rgba(99, 102, 241, .13);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(99, 102, 241, .10),
+            rgba(14, 165, 233, .055)
+        );
+
+}
+
+
+.rs-mobile-link-icon {
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 32px;
+
+    border-radius:
+        10px;
+
+    background:
+        #f8fafc;
+
+    font-size:
+        14px;
+
+}
+
+
+/*=========================================================
+ MOBILE CONTACT ACTIONS
+=========================================================*/
+
+.rs-mobile-menu-actions {
+
+    margin-top:
+        22px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        9px;
+
+}
+
+
+.rs-mobile-action {
+
+    min-height:
+        44px;
+
+    padding:
+        0 10px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        12px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+}
+
+
+.rs-mobile-call {
+
+    color:
+        #1d4ed8;
+
+    border:
+        1px solid rgba(59, 130, 246, .18);
+
+    background:
+        rgba(59, 130, 246, .07);
+
+}
+
+
+.rs-mobile-wa {
+
+    color:
+        #15803d;
+
+    border:
+        1px solid rgba(34, 197, 94, .18);
+
+    background:
+        rgba(34, 197, 94, .07);
+
+}
+
+
+/*=========================================================
+ MOBILE BOOK BUTTON
+=========================================================*/
+
+.rs-mobile-book-btn {
+
+    width:
+        100%;
+
+    min-height:
+        48px;
+
+    margin-top:
+        10px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    border:
+        0;
+
+    border-radius:
+        14px;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #10b981,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 12px 28px rgba(16, 185, 129, .20);
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+}
+
+
+/*=========================================================
+ MOBILE TRUST
+=========================================================*/
+
+.rs-mobile-trust {
+
+    margin-top:
+        auto;
+
+    padding-top:
+        20px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+}
+
+
+.rs-mobile-trust span {
+
+    padding:
+        6px 9px;
+
+    border:
+        1px solid rgba(148, 163, 184, .12);
+
+    border-radius:
+        999px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+
+    font-weight:
+        750;
+
+}
+
+
+/*=========================================================
+ BACKDROP
+=========================================================*/
+
+.rs-mobile-menu-backdrop {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        10001;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    background:
+        rgba(15, 23, 42, .52);
+
+    backdrop-filter:
+        blur(4px);
+
+    -webkit-backdrop-filter:
+        blur(4px);
+
+    transition:
+        opacity .28s ease,
+        visibility .28s ease;
+
+}
+
+
+.rs-mobile-menu-backdrop.show {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+}
+
+
+/*=========================================================
+ PREVENT BODY SCROLL
+=========================================================*/
+
+body.rs-mobile-menu-open {
+
+    overflow:
+        hidden;
+
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 1100px) {
+
+    .rs-main-header
+    .menu
+    .nav-link {
+
+        padding:
+            0 9px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .rs-main-header
+    .rs-nav-cta {
+
+        padding:
+            0 12px;
+
+    }
+
+
+    .rs-logo-text small {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE NAVIGATION
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .rs-main-header
+    .rs-main-nav {
+
+        width:
+            calc(100% - 26px);
+
+        min-height:
+            66px;
+
+    }
+
+
+    /*
+     * Your old travel.css hides .menu at 768px.
+     * We intentionally hide desktop menu slightly earlier.
+     */
+
+    .rs-main-header
+    .menu {
+
+        display:
+            none !important;
+
+    }
+
+
+    .rs-mobile-menu-btn {
+
+        display:
+            inline-flex;
+
+    }
+
+
+    .rs-nav-whatsapp {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 600px) {
+
+    .rs-main-header
+    .rs-main-nav {
+
+        width:
+            calc(100% - 22px);
+
+        min-height:
+            62px;
+
+        gap:
+            8px;
+
+    }
+
+
+    .rs-main-header
+    .logo img {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        flex-basis:
+            38px;
+
+        border-radius:
+            12px;
+
+    }
+
+
+    .rs-logo-text strong {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .rs-logo-text small {
+
+        display:
+            none;
+
+    }
+
+
+    .rs-main-header
+    .rs-nav-cta {
+
+        min-height:
+            38px;
+
+        padding:
+            0 10px;
+
+        font-size:
+            10px;
+
+        border-radius:
+            11px;
+
+    }
+
+
+    .rs-nav-cta-icon {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .rs-mobile-menu-btn {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+        flex-basis:
+            38px;
+
+        border-radius:
+            11px;
+
+    }
+
+}
+
+
+/*=========================================================
+ VERY SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 390px) {
+
+    .rs-logo-text {
+
+        display:
+            none;
+
+    }
+
+
+    .rs-main-header
+    .rs-nav-cta-text {
+
+        display:
+            none;
+
+    }
+
+
+    .rs-main-header
+    .rs-nav-cta {
+
+        width:
+            38px;
+
+        padding:
+            0;
+
+    }
+
+
+    .rs-main-header
+    .rs-nav-cta-icon {
+
+        font-size:
+            15px;
+
+    }
+
+}
+
+
+/*=========================================================
+ ACCESSIBILITY
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rs-main-header *,
+    .rs-mobile-menu,
+    .rs-mobile-menu-backdrop {
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+/*=========================================================
+ RANSAN HERO — READABILITY / FONT SCALE UPDATE
+ Add at VERY END of hero-modern.css
+=========================================================*/
+
+
+/* MAIN TITLE — already good, only slightly improve balance */
+
+.hero.rs-hero-modern h1 {
+    font-size: clamp(48px, 5.4vw, 74px);
+    line-height: 1.02;
+}
+
+
+/* TYPING TEXT */
+
+.hero.rs-hero-modern .typing {
+    font-size: clamp(18px, 1.8vw, 24px);
+    line-height: 1.35;
+    min-height: 34px;
+}
+
+
+/* TOP TRUST ROW */
+
+.hero.rs-hero-modern .rs-hero-trust-row {
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.hero.rs-hero-modern .rs-hero-trust-item i {
+    font-size: 11px;
+}
+
+
+/* EXPLORE TODAY LABEL */
+
+.hero.rs-hero-modern .rotating-text .label {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+}
+
+
+/* ROTATING DESTINATION */
+
+.hero.rs-hero-modern #rotateText {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* ROUTE ICON */
+
+.hero.rs-hero-modern .rs-route-icon {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    font-size: 15px;
+}
+
+
+/* LIVE TICKER */
+
+.hero.rs-hero-modern .hero-live-badge {
+    font-size: 10px;
+    min-height: 34px;
+    padding: 0 12px;
+}
+
+.hero.rs-hero-modern .hero-live-message {
+    font-size: 11px;
+    line-height: 1.35;
+    min-height: 34px;
+    padding: 7px 13px;
+}
+
+.hero.rs-hero-modern .hero-live-rating {
+    font-size: 10px;
+    min-height: 34px;
+    padding: 0 12px;
+}
+
+
+/* MAIN HERO DESCRIPTION */
+
+.hero.rs-hero-modern .premium-line {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, .78);
+}
+
+
+/* QUICK SERVICE CHIPS */
+
+.hero.rs-hero-modern .rs-hero-service-chips a {
+    min-height: 32px;
+    padding: 0 12px;
+    font-size: 11px;
+}
+
+
+/* PRIMARY CTA */
+
+.hero.rs-hero-modern .cta-main {
+    font-size: 15px;
+}
+
+.hero.rs-hero-modern .cta-pill {
+    font-size: 9px;
+    padding: 5px 10px;
+}
+
+
+/* SECONDARY CTA */
+
+.hero.rs-hero-modern .cta-chip {
+    font-size: 12px;
+}
+
+
+/* CONFIDENCE STRIP */
+
+.hero.rs-hero-modern .rs-hero-confidence {
+    font-size: 10px;
+}
+
+.hero.rs-hero-modern .rs-confidence-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+}
+
+
+/*=========================================================
+ RIGHT TRAVEL DESK CARD
+=========================================================*/
+
+/* Small LIVE heading */
+
+.hero.rs-hero-modern .rs-console-kicker {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+
+/* Main console heading */
+
+.hero.rs-hero-modern .rs-hero-console-top h3 {
+    font-size: clamp(22px, 2vw, 27px);
+    line-height: 1.2;
+}
+
+
+/* Greeting */
+
+.hero.rs-hero-modern .greet-top {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.hero.rs-hero-modern .greet-bottom {
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+
+/* LIVE TRAVEL INTELLIGENCE divider */
+
+.hero.rs-hero-modern .rs-console-divider span {
+    font-size: 9px;
+}
+
+
+/* Trending box */
+
+.hero.rs-hero-modern .spotlight {
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 11px 13px;
+}
+
+
+/* Booking counter */
+
+.hero.rs-hero-modern .rs-live-booking-copy strong {
+    font-size: 12px;
+}
+
+.hero.rs-hero-modern .rs-live-booking-copy small {
+    font-size: 10px;
+}
+
+
+/* Service availability */
+
+.hero.rs-hero-modern .rs-availability-item strong {
+    font-size: 11px;
+}
+
+.hero.rs-hero-modern .rs-availability-item small {
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.hero.rs-hero-modern .rs-av-status {
+    font-size: 8px;
+    padding: 5px 8px;
+}
+
+
+/* Console footer */
+
+.hero.rs-hero-modern .rs-console-footer {
+    font-size: 9px;
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .hero.rs-hero-modern h1 {
+        font-size: clamp(44px, 7vw, 60px);
+    }
+
+    .hero.rs-hero-modern .typing {
+        font-size: 19px;
+    }
+
+    .hero.rs-hero-modern .premium-line {
+        font-size: 13px;
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 600px) {
+
+    .hero.rs-hero-modern h1 {
+        font-size: clamp(36px, 10.5vw, 46px);
+        line-height: 1.04;
+    }
+
+    .hero.rs-hero-modern .typing {
+        font-size: 16px;
+        min-height: 28px;
+    }
+
+    .hero.rs-hero-modern .rs-hero-trust-row {
+        font-size: 10px;
+    }
+
+    .hero.rs-hero-modern .rotating-text .label {
+        font-size: 9px;
+    }
+
+    .hero.rs-hero-modern #rotateText {
+        font-size: 13px;
+    }
+
+    .hero.rs-hero-modern .premium-line {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .hero.rs-hero-modern .rs-hero-service-chips a {
+        font-size: 10px;
+    }
+
+    .hero.rs-hero-modern .cta-main {
+        font-size: 14px;
+    }
+
+    .hero.rs-hero-modern .cta-chip {
+        font-size: 11px;
+    }
+
+    .hero.rs-hero-modern .rs-hero-confidence {
+        font-size: 9px;
+    }
+
+    .hero.rs-hero-modern .rs-hero-console-top h3 {
+        font-size: 20px;
+    }
+
+    .hero.rs-hero-modern .greet-top {
+        font-size: 12px;
+    }
+
+    .hero.rs-hero-modern .greet-bottom {
+        font-size: 10px;
+    }
+
+    .hero.rs-hero-modern .spotlight {
+        font-size: 10px;
+    }
+
+    .hero.rs-hero-modern .rs-availability-item strong {
+        font-size: 10px;
+    }
+
+    .hero.rs-hero-modern .rs-availability-item small {
+        font-size: 8px;
+    }
+
+}
+
+/*=========================================================
+ RANSAN TRAVELS
+ OFFICIAL LOGO / BRAND ENHANCEMENT
+=========================================================*/
+
+
+/*=========================================================
+ BRAND LINK
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.logo.rs-header-brand {
+
+    min-width: 0;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    flex: 0 0 auto;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/*=========================================================
+ LOGO HOLDER
+
+ Important:
+ The uploaded RanSan logo is NOT square.
+ Therefore we do not force it into the old circular
+ 42px x 42px logo rule.
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-header-logo-wrap {
+
+    position: relative;
+
+    width: 54px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 54px;
+
+    padding: 4px;
+
+    overflow: visible;
+
+    border:
+        1px solid rgba(91, 33, 182, .09);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .98),
+            rgba(248, 250, 252, .96)
+        );
+
+    box-shadow:
+        0 7px 22px
+        rgba(76, 29, 149, .08);
+
+    box-sizing: border-box;
+
+}
+
+
+/* subtle purple brand accent */
+
+.rs-main-header.rs-header-brand-modern
+.rs-header-logo-wrap::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+    right: 12px;
+    bottom: -1px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #5b21b6,
+            #7c3aed,
+            transparent
+        );
+
+    opacity: .75;
+
+}
+
+
+/*=========================================================
+ OFFICIAL LOGO IMAGE
+
+ Override old:
+ .logo img {
+     width:42px;
+     height:42px;
+     border-radius:50%;
+     object-fit:cover;
+ }
+
+ Those old rules would distort this logo.
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.logo
+.rs-header-logo-image {
+
+    width: auto !important;
+    height: 52px !important;
+
+    max-width: 100% !important;
+
+    display: block;
+
+    object-fit: contain !important;
+
+    object-position: center !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    padding: 0 !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/*=========================================================
+ BRAND COPY
+
+ Existing .rs-logo-text retained.
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-logo-text {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    line-height: 1;
+
+}
+
+
+/*=========================================================
+ RANSAN TRAVELS
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-logo-text strong {
+
+    display: block;
+
+    margin: 0;
+
+    color: #111827;
+
+    font-size: 18px;
+
+    line-height: 1.15;
+
+    font-weight: 900;
+
+    letter-spacing: -.45px;
+
+    white-space: nowrap;
+
+}
+
+
+/*=========================================================
+ GROUP LINE
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-logo-text small {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.2;
+
+    font-weight: 750;
+
+    letter-spacing: .3px;
+
+    white-space: nowrap;
+
+}
+
+
+/*=========================================================
+ BRAND DOT
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-brand-dot {
+
+    width: 6px;
+    height: 6px;
+
+    display: inline-block;
+
+    flex: 0 0 6px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4c1d95,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 0 0 3px
+        rgba(124, 58, 237, .08);
+
+}
+
+
+/*=========================================================
+ NAV HEIGHT ADJUSTMENT
+
+ Allows the taller official logo without making
+ the header unnecessarily large.
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-main-nav {
+
+    min-height: 76px;
+
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+}
+
+
+/*=========================================================
+ LOGO HOVER
+
+ Stable — no translation / jumping.
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.logo.rs-header-brand:hover {
+
+    transform: none;
+
+}
+
+
+.rs-main-header.rs-header-brand-modern
+.logo.rs-header-brand:hover
+.rs-header-logo-wrap {
+
+    border-color:
+        rgba(124, 58, 237, .16);
+
+    box-shadow:
+        0 9px 25px
+        rgba(76, 29, 149, .11);
+
+}
+
+
+/*=========================================================
+ MOBILE DRAWER BRAND
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-mobile-menu-brand {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+/*=========================================================
+ MOBILE LOGO HOLDER
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-mobile-brand-logo {
+
+    width: 52px;
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 52px;
+
+    padding: 4px;
+
+    border:
+        1px solid #e8e5f2;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf9ff
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(76, 29, 149, .07);
+
+    box-sizing: border-box;
+
+}
+
+
+/*=========================================================
+ MOBILE LOGO IMAGE
+
+ Override generic mobile drawer image sizing.
+=========================================================*/
+
+.rs-main-header.rs-header-brand-modern
+.rs-mobile-brand-logo img {
+
+    width: auto !important;
+    height: 51px !important;
+
+    max-width: 100% !important;
+
+    display: block;
+
+    object-fit: contain !important;
+
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    padding: 0 !important;
+
+    box-shadow: none !important;
+
+}
+
+
+/*=========================================================
+ MOBILE BRAND COPY
+=========================================================*/
+
+.rs-mobile-brand-copy {
+
+    min-width: 0;
+
+}
+
+
+.rs-main-header.rs-header-brand-modern
+.rs-mobile-brand-copy strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 16px;
+
+    line-height: 1.25;
+
+    font-weight: 900;
+
+    letter-spacing: -.3px;
+
+}
+
+
+.rs-main-header.rs-header-brand-modern
+.rs-mobile-brand-copy small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    line-height: 1.35;
+
+    font-weight: 650;
+
+}
+
+
+/*=========================================================
+ MOBILE BRAND MESSAGE
+=========================================================*/
+
+.rs-mobile-brand-message {
+
+    margin: 14px 0 17px;
+
+    padding: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #e8eaf0;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fafaff,
+            #f8fbff
+        );
+
+}
+
+
+/*=========================================================
+ MESSAGE ICON
+=========================================================*/
+
+.rs-mobile-brand-message-icon {
+
+    width: 36px;
+    height: 36px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 36px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ede9fe,
+            #eef2ff
+        );
+
+    color: #6d28d9;
+
+    font-size: 12px;
+
+}
+
+
+/*=========================================================
+ MESSAGE COPY
+=========================================================*/
+
+.rs-mobile-brand-message strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+    font-weight: 850;
+
+}
+
+
+.rs-mobile-brand-message p {
+
+    margin: 2px 0 0;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+}
+
+
+/*=========================================================
+ TABLET
+
+ At intermediate widths, brand text consumes valuable
+ navigation space. Keep main name but hide group line.
+=========================================================*/
+
+@media (max-width: 1120px) {
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-logo-text small {
+
+        display: none;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-logo-text strong {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALLER DESKTOP / TABLET
+=========================================================*/
+
+@media (max-width: 980px) {
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-header-logo-wrap {
+
+        width: 49px;
+        height: 58px;
+
+        flex-basis: 49px;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .logo
+    .rs-header-logo-image {
+
+        height: 48px !important;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-main-nav {
+
+        min-height: 70px;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-main-nav {
+
+        min-height: 66px;
+
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .logo.rs-header-brand {
+
+        gap: 8px;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-header-logo-wrap {
+
+        width: 45px;
+        height: 54px;
+
+        flex-basis: 45px;
+
+        padding: 3px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .logo
+    .rs-header-logo-image {
+
+        height: 46px !important;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-logo-text strong {
+
+        font-size: 15px;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-logo-text small {
+
+        display: none;
+
+    }
+
+}
+
+
+/*=========================================================
+ VERY SMALL MOBILE
+
+ Protect space for hamburger / actions.
+=========================================================*/
+
+@media (max-width: 430px) {
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-header-logo-wrap {
+
+        width: 42px;
+        height: 51px;
+
+        flex-basis: 42px;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .logo
+    .rs-header-logo-image {
+
+        height: 43px !important;
+
+    }
+
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-logo-text strong {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/*=========================================================
+ EXTRA SMALL MOBILE
+
+ On extremely narrow screens the official logo is
+ sufficient branding; save space for menu controls.
+=========================================================*/
+
+@media (max-width: 360px) {
+
+    .rs-main-header.rs-header-brand-modern
+    .rs-logo-text {
+
+        display: none;
+
+    }
+
+}

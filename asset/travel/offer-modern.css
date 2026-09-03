@@ -1,0 +1,1548 @@
+/*=========================================================
+ RANSAN TRAVELS
+ WHAT WE OFFER
+ MODERN TRAVEL SOLUTIONS
+=========================================================*/
+
+
+/*=========================================================
+ SECTION
+
+ IMPORTANT:
+ The outer reveal-bearing section gets NO transform.
+=========================================================*/
+
+#offer.rs-offer-modern {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 110px 20px;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #ffffff 48%,
+            #f8fafc 100%
+        );
+
+}
+
+
+/*=========================================================
+ VISUAL BACKGROUND LAYER
+
+ Overflow is clipped HERE instead of on the actual section.
+=========================================================*/
+
+.rs-offer-modern
+.rs-offer-visual-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+/*
+ Disable the OLD #offer pseudo-element visuals.
+
+ They were animated and can conflict with the new
+ isolated visual background layer.
+*/
+
+#offer.rs-offer-modern::before,
+#offer.rs-offer-modern::after {
+
+    display: none;
+
+    content: none;
+
+}
+
+
+/*=========================================================
+ BACKGROUND ORBS
+=========================================================*/
+
+.rs-offer-orb {
+
+    position: absolute;
+
+    width: 440px;
+    height: 440px;
+
+    border-radius: 50%;
+
+    filter: blur(105px);
+
+    pointer-events: none;
+
+}
+
+
+.rs-offer-orb-one {
+
+    top: -210px;
+    left: -150px;
+
+    background:
+        rgba(14, 165, 233, .16);
+
+}
+
+
+.rs-offer-orb-two {
+
+    right: -170px;
+    bottom: -220px;
+
+    background:
+        rgba(139, 92, 246, .13);
+
+}
+
+
+/*=========================================================
+ SUBTLE BACKGROUND PATTERN
+=========================================================*/
+
+.rs-offer-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .28;
+
+    background-image:
+
+        linear-gradient(
+            rgba(15, 23, 42, .027) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, .027) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        48px 48px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 80%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 80%,
+            transparent 100%
+        );
+
+}
+
+
+/*=========================================================
+ WRAPPER
+=========================================================*/
+
+#offer.rs-offer-modern
+.wrap {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1220px, 100%);
+    max-width: 1220px;
+
+    margin: 0 auto;
+
+}
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rs-offer-header {
+
+    max-width: 850px;
+
+    margin:
+        0 auto 48px;
+
+    text-align: center;
+
+}
+
+
+/*=========================================================
+ EYEBROW
+=========================================================*/
+
+.rs-offer-eyebrow {
+
+    margin-bottom: 17px;
+
+    padding: 9px 15px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid rgba(59, 130, 246, .13);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, .82);
+
+    color: #2563eb;
+
+    box-shadow:
+        0 9px 27px rgba(37, 99, 235, .07);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    font-weight: 850;
+
+    letter-spacing: .45px;
+
+}
+
+
+.rs-offer-eyebrow-icon {
+
+    width: 23px;
+    height: 23px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(59, 130, 246, .08);
+
+}
+
+
+/*=========================================================
+ MAIN TITLE
+
+ Existing .title class preserved.
+=========================================================*/
+
+#offer.rs-offer-modern
+.title {
+
+    margin:
+        0 0 18px;
+
+    color: #0f172a;
+
+    font-size:
+        clamp(46px, 5vw, 66px);
+
+    line-height: 1.05;
+
+    font-weight: 950;
+
+    letter-spacing: -2px;
+
+    text-align: center;
+
+}
+
+
+#offer.rs-offer-modern
+.title span {
+
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #4f46e5 58%,
+            #8b5cf6
+        );
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+}
+
+
+/*=========================================================
+ SUBTITLE
+
+ Readability: 18px desktop.
+=========================================================*/
+
+#offer.rs-offer-modern
+.sub {
+
+    max-width: 760px;
+
+    margin:
+        0 auto;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    text-align: center;
+
+}
+
+
+/*=========================================================
+ MAIN SOLUTIONS GRID
+=========================================================*/
+
+#offer.rs-offer-modern
+.grid {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+}
+
+
+/*=========================================================
+ OUTER CARD
+
+ Old generic .card styling neutralised.
+=========================================================*/
+
+#offer.rs-offer-modern
+.card {
+
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    padding: 0;
+
+    overflow: visible;
+
+    border: 0;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    -webkit-backdrop-filter: none;
+
+    transform: none;
+
+    transition: none;
+
+}
+
+
+/*
+ Disable old card pseudo elements.
+*/
+
+#offer.rs-offer-modern
+.card::before,
+#offer.rs-offer-modern
+.card::after {
+
+    display: none;
+
+    content: none;
+
+}
+
+
+/*
+ Disable the old aggressive:
+ translateY(-14px) scale(1.03)
+*/
+
+#offer.rs-offer-modern
+.card:hover {
+
+    transform: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+}
+
+
+/*=========================================================
+ CARD SHELL
+=========================================================*/
+
+.rs-offer-card-shell {
+
+    position: relative;
+
+    height: 100%;
+
+    min-height: 390px;
+
+    padding: 27px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(226, 232, 240, .92);
+
+    border-radius: 26px;
+
+    background:
+        rgba(255, 255, 255, .86);
+
+    box-shadow:
+        0 14px 45px rgba(15, 23, 42, .07);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    box-sizing: border-box;
+
+    transition:
+        transform .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease,
+        background .28s ease;
+
+}
+
+
+/*=========================================================
+ FEATURED CARD
+=========================================================*/
+
+.rs-offer-card-featured
+.rs-offer-card-shell {
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(14, 165, 233, .08),
+            transparent 34%
+        ),
+
+        rgba(255, 255, 255, .93);
+
+}
+
+
+/*=========================================================
+ STABLE HOVER
+
+ Small movement only, and only with a real pointing device.
+=========================================================*/
+
+@media (hover: hover) and (pointer: fine) {
+
+    .rs-offer-card:hover
+    .rs-offer-card-shell {
+
+        transform:
+            translateY(-5px);
+
+        border-color:
+            rgba(99, 102, 241, .18);
+
+        background:
+            rgba(255, 255, 255, .97);
+
+        box-shadow:
+            0 23px 58px rgba(15, 23, 42, .11);
+
+    }
+
+}
+
+
+/*=========================================================
+ NUMBER
+=========================================================*/
+
+.rs-offer-number {
+
+    position: absolute;
+
+    top: 21px;
+    right: 22px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+/*=========================================================
+ ICON
+
+ Existing .offer-icon class preserved.
+ Old floating animation disabled.
+=========================================================*/
+
+#offer.rs-offer-modern
+.offer-icon {
+
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+
+    margin:
+        0 0 21px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex:
+        0 0 64px;
+
+    border:
+        1px solid rgba(255, 255, 255, .95);
+
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eff6ff,
+            #eef2ff
+        );
+
+    box-shadow:
+        0 12px 28px rgba(59, 130, 246, .11);
+
+    font-size: 27px;
+
+    animation: none;
+
+    transform: none;
+
+    transition:
+        transform .28s ease;
+
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+    .rs-offer-card:hover
+    .offer-icon {
+
+        transform:
+            scale(1.05);
+
+    }
+
+}
+
+
+/* Corporate */
+
+.rs-offer-card[data-rs-offer="corporate"]
+.offer-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5f3ff,
+            #faf5ff
+        );
+
+}
+
+
+/* Transfer */
+
+.rs-offer-card[data-rs-offer="transfer"]
+.offer-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ecfeff,
+            #eff6ff
+        );
+
+}
+
+
+/* Custom */
+
+.rs-offer-card[data-rs-offer="custom"]
+.offer-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ecfdf5,
+            #f0fdfa
+        );
+
+}
+
+
+/*=========================================================
+ CARD KICKER
+=========================================================*/
+
+.rs-offer-kicker {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #2563eb;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+}
+
+
+[data-rs-offer="corporate"]
+.rs-offer-kicker {
+
+    color: #7c3aed;
+
+}
+
+
+[data-rs-offer="transfer"]
+.rs-offer-kicker {
+
+    color: #0284c7;
+
+}
+
+
+[data-rs-offer="custom"]
+.rs-offer-kicker {
+
+    color: #059669;
+
+}
+
+
+/*=========================================================
+ CARD TITLE
+
+ Readable 24px.
+=========================================================*/
+
+#offer.rs-offer-modern
+.card h3 {
+
+    margin:
+        0 0 12px;
+
+    color: #0f172a;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    font-weight: 900;
+
+    letter-spacing: -.45px;
+
+}
+
+
+/*=========================================================
+ CARD BODY
+
+ Readable 15px.
+=========================================================*/
+
+#offer.rs-offer-modern
+.card p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+}
+
+
+/*=========================================================
+ FEATURE LIST
+=========================================================*/
+
+.rs-offer-feature-list {
+
+    margin-top: 20px;
+
+    padding-top: 17px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        10px 15px;
+
+    border-top:
+        1px solid #edf1f5;
+
+}
+
+
+.rs-offer-feature-list span {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+
+}
+
+
+.rs-offer-feature-list i {
+
+    width: 19px;
+    height: 19px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 19px;
+
+    border-radius: 50%;
+
+    background: #ecfdf5;
+
+    color: #059669;
+
+    font-size: 8px;
+
+}
+
+
+/*=========================================================
+ CARD FOOTER
+=========================================================*/
+
+.rs-offer-card-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: auto;
+
+    padding-top: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+}
+
+
+/*=========================================================
+ CARD ACTION
+=========================================================*/
+
+.rs-offer-card-link {
+
+    min-height: 42px;
+
+    padding:
+        0 13px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    font-weight: 850;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background .22s ease,
+        border-color .22s ease,
+        color .22s ease;
+
+}
+
+
+.rs-offer-link-button {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+}
+
+
+.rs-offer-card-link:hover {
+
+    border-color:
+        rgba(79, 70, 229, .20);
+
+    background: #f5f7ff;
+
+    color: #4338ca;
+
+}
+
+
+/*=========================================================
+ CARD MARK
+=========================================================*/
+
+.rs-offer-card-mark {
+
+    color: #cbd5e1;
+
+    font-size: 10px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: 1.1px;
+
+}
+
+
+/*=========================================================
+ BOTTOM ACCENT
+=========================================================*/
+
+.rs-offer-accent-line {
+
+    position: absolute;
+
+    left: 26px;
+    right: 26px;
+    bottom: 0;
+
+    height: 3px;
+
+    border-radius:
+        999px 999px 0 0;
+
+    transform:
+        scaleX(.25);
+
+    transform-origin: left;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0ea5e9,
+            #4f46e5
+        );
+
+    opacity: .75;
+
+    transition:
+        transform .30s ease,
+        opacity .30s ease;
+
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+
+    .rs-offer-card:hover
+    .rs-offer-accent-line {
+
+        transform:
+            scaleX(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+[data-rs-offer="corporate"]
+.rs-offer-accent-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #c084fc
+        );
+
+}
+
+
+[data-rs-offer="transfer"]
+.rs-offer-accent-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            #06b6d4,
+            #3b82f6
+        );
+
+}
+
+
+[data-rs-offer="custom"]
+.rs-offer-accent-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            #10b981,
+            #14b8a6
+        );
+
+}
+
+
+/*=========================================================
+ BOTTOM ASSISTANCE PANEL
+=========================================================*/
+
+.rs-offer-assist {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 24px;
+
+    padding: 18px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border:
+        1px solid rgba(226, 232, 240, .92);
+
+    border-radius: 21px;
+
+    background:
+        rgba(255, 255, 255, .82);
+
+    box-shadow:
+        0 12px 38px rgba(15, 23, 42, .055);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+}
+
+
+/*=========================================================
+ ASSIST COPY
+=========================================================*/
+
+.rs-offer-assist-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.rs-offer-assist-icon {
+
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 44px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color: #4f46e5;
+
+    font-size: 16px;
+
+}
+
+
+.rs-offer-assist-left > div {
+
+    min-width: 0;
+
+}
+
+
+.rs-offer-assist-left strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    font-weight: 900;
+
+}
+
+
+.rs-offer-assist-left p {
+
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/*=========================================================
+ ASSIST ACTIONS
+=========================================================*/
+
+.rs-offer-assist-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex: 0 0 auto;
+
+}
+
+
+.rs-offer-assist-btn {
+
+    min-height: 44px;
+
+    padding:
+        0 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    font-weight: 850;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background .22s ease,
+        border-color .22s ease,
+        box-shadow .22s ease;
+
+}
+
+
+.rs-offer-assist-btn.secondary {
+
+    border:
+        1px solid #e2e8f0;
+
+    background: #ffffff;
+
+    color: #475569;
+
+}
+
+
+.rs-offer-assist-btn.secondary:hover {
+
+    border-color:
+        rgba(79, 70, 229, .20);
+
+    background: #f8faff;
+
+    color: #4338ca;
+
+}
+
+
+.rs-offer-assist-btn.primary {
+
+    border: 0;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1 58%,
+            #0ea5e9
+        );
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, .20);
+
+}
+
+
+.rs-offer-assist-btn.primary:hover {
+
+    box-shadow:
+        0 14px 30px rgba(79, 70, 229, .27);
+
+}
+
+
+/*=========================================================
+ LARGE TABLET
+=========================================================*/
+
+@media (max-width: 980px) {
+
+    #offer.rs-offer-modern {
+
+        padding:
+            95px 18px;
+
+    }
+
+
+    .rs-offer-card-shell {
+
+        min-height:
+            420px;
+
+    }
+
+
+    .rs-offer-feature-list {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-offer-assist {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-offer-assist-actions {
+
+        justify-content:
+            flex-start;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    #offer.rs-offer-modern {
+
+        padding:
+            80px 15px;
+
+    }
+
+
+    .rs-offer-header {
+
+        margin-bottom:
+            36px;
+
+    }
+
+
+    .rs-offer-eyebrow {
+
+        font-size:
+            11px;
+
+    }
+
+
+    #offer.rs-offer-modern
+    .title {
+
+        font-size:
+            clamp(38px, 10vw, 48px);
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    #offer.rs-offer-modern
+    .sub {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    #offer.rs-offer-modern
+    .grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+
+    }
+
+
+    .rs-offer-card-shell {
+
+        min-height:
+            0;
+
+        padding:
+            23px 21px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    #offer.rs-offer-modern
+    .offer-icon {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        flex-basis:
+            58px;
+
+        margin-bottom:
+            18px;
+
+        font-size:
+            25px;
+
+    }
+
+
+    .rs-offer-kicker {
+
+        font-size:
+            11px;
+
+    }
+
+
+    #offer.rs-offer-modern
+    .card h3 {
+
+        font-size:
+            22px;
+
+    }
+
+
+    #offer.rs-offer-modern
+    .card p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .rs-offer-feature-list span {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .rs-offer-card-footer {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-offer-card-link {
+
+        width:
+            100%;
+
+    }
+
+
+    .rs-offer-card-mark {
+
+        display:
+            none;
+
+    }
+
+
+    .rs-offer-assist-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 480px) {
+
+    .rs-offer-assist-left {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .rs-offer-assist-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-offer-assist-btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/*=========================================================
+ TOUCH DEVICES
+
+ No fake hover motion on touch.
+=========================================================*/
+
+@media (hover: none) {
+
+    .rs-offer-card:hover
+    .rs-offer-card-shell {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/*=========================================================
+ REDUCED MOTION
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rs-offer-card-shell,
+    .rs-offer-card-link,
+    .rs-offer-accent-line,
+    .offer-icon {
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
