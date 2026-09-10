@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="color-scheme" content="dark">
+
+    <title>
+        RanSan Travels • Dashboard Report
+    </title>
+
+    <script src="dashboard/auth-guard.js"></script>
+
+    <link rel="stylesheet" href="dashboard/dashboard_report.css">
+    <link rel="stylesheet" href="dashboard/dashboard_report_add.css">
+
+</head>
+
+
+<body>
+
+
+    <div class="reportApp">
+
+
+        <!-- =========================================
+        TOP HEADER
+        ========================================== -->
+
+        <header class="reportTopbar">
+
+
+            <div class="reportBrand">
+
+                <div class="reportBrandIcon">
+                    ✈
+                </div>
+
+
+                <div>
+
+                    <div class="reportBrandName">
+
+                        RanSan Travels
+
+                    </div>
+
+
+                    <div class="reportBrandSub">
+
+                        Performance & Analytics Report
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="reportTopActions">
+
+
+                <!-- =========================================
+REPORT ENVIRONMENT SWITCHER
+========================================= -->
+
+                <div class="reportEnvSwitcher">
+
+                    <span id="reportEnvironment" class="reportEnvironment live">
+                        LIVE
+                    </span>
+
+
+                    <label class="reportEnvSwitch" for="reportEnvToggle">
+
+                        <input type="checkbox" id="reportEnvToggle"
+                            aria-label="Switch report between LIVE and TEST environment">
+
+                        <span class="reportEnvSlider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="reportSync">
+
+                    <span class="reportSyncDot"></span>
+
+                    <span id="reportLastSync">
+                        Waiting for data...
+                    </span>
+
+                </div>
+
+
+                <button type="button" id="reportRefreshBtn" class="reportIconBtn" title="Refresh report"
+                    aria-label="Refresh report">
+                    ↻
+                </button>
+
+
+                <button type="button" id="reportPrintBtn" class="reportIconBtn" title="Print report"
+                    aria-label="Print report">
+                    🖨
+                </button>
+
+
+                <button type="button" id="reportExportBtn" class="reportPrimaryBtn">
+
+                    <span>
+                        ⇩
+                    </span>
+
+                    Export CSV
+
+                </button>
+
+                <button type="button" class="reportBackBtn" onclick="window.location.href='dashboard.html'"
+                    title="Back to Dashboard">
+                    <span class="reportBackBtnIcon">
+                        ←
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+                </button>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =========================================
+        PAGE HEADING
+        ========================================== -->
+
+        <section class="reportHeading">
+
+
+            <div>
+
+                <div class="reportEyebrow">
+                    MANAGEMENT REPORT
+                </div>
+
+
+                <h1>
+                    Business Performance
+                </h1>
+
+
+                <p id="reportPeriodText">
+                    Showing current dashboard data
+                </p>
+
+            </div>
+
+
+            <div class="reportHealth">
+
+                <div class="reportHealthPulse"></div>
+
+                <div>
+
+                    <strong id="reportHealthLabel">
+                        Loading
+                    </strong>
+
+                    <span>
+                        Operations Health
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+        FILTER BAR
+        ========================================== -->
+
+        <section class="reportFilterBar">
+
+
+            <div class="reportFilterGroup">
+
+                <label for="reportDatePreset">
+                    Period
+                </label>
+
+
+                <select id="reportDatePreset">
+
+                    <option value="all">
+                        All Data
+                    </option>
+
+                    <option value="today">
+                        Today
+                    </option>
+
+                    <option value="7">
+                        Last 7 Days
+                    </option>
+
+                    <option value="30">
+                        Last 30 Days
+                    </option>
+
+                    <option value="month">
+                        This Month
+                    </option>
+
+                    <option value="custom">
+                        Custom Range
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div id="reportCustomDates" class="reportCustomDates" hidden>
+
+
+                <div class="reportFilterGroup">
+
+                    <label for="reportFromDate">
+                        From
+                    </label>
+
+                    <input id="reportFromDate" type="date">
+
+                </div>
+
+
+                <div class="reportFilterGroup">
+
+                    <label for="reportToDate">
+                        To
+                    </label>
+
+                    <input id="reportToDate" type="date">
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="reportFilterGroup">
+
+                <label for="reportServiceFilter">
+                    Service
+                </label>
+
+                <select id="reportServiceFilter">
+
+                    <option value="all">
+                        All Services
+                    </option>
+
+                    <option value="Flight">
+                        ✈ Flight
+                    </option>
+
+                    <option value="Train">
+                        🚆 Train
+                    </option>
+
+                    <option value="Bus">
+                        🚌 Bus
+                    </option>
+
+                    <option value="Car">
+                        🚖 Car
+                    </option>
+
+                    <option value="Package">
+                        🏖 Package
+                    </option>
+
+                    <option value="Quote">
+                        💬 Quote
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="reportFilterGroup">
+
+                <label for="reportStatusFilter">
+                    Status
+                </label>
+
+                <select id="reportStatusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="NEW">
+                        New
+                    </option>
+
+                    <option value="Follow Up">
+                        Follow Up
+                    </option>
+
+                    <option value="WhatsApp Sent">
+                        WhatsApp Sent
+                    </option>
+
+                    <option value="Confirmed">
+                        Confirmed
+                    </option>
+
+                    <option value="Processing">
+                        Processing
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                    <option value="Cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="reportFilterSearch">
+
+                <label for="reportSearch">
+                    Search
+                </label>
+
+                <div class="reportSearchBox">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input id="reportSearch" type="search" autocomplete="off"
+                        placeholder="Customer, booking ID, phone...">
+
+                </div>
+
+            </div>
+
+
+
+            <button type="button" id="reportResetBtn" class="reportResetBtn">
+                Reset
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+        KPI CARDS
+        ========================================== -->
+
+        <section class="reportKpiGrid">
+
+
+            <article class="reportKpiCard revenue">
+
+                <div class="reportKpiTop">
+
+                    <div class="reportKpiIcon">
+                        ₹
+                    </div>
+
+                    <span class="reportKpiTag">
+                        REVENUE
+                    </span>
+
+                </div>
+
+
+                <div id="reportRevenue" class="reportKpiValue">
+                    ₹0
+                </div>
+
+
+                <div class="reportKpiFooter">
+
+                    <span>
+                        Realised revenue
+                    </span>
+
+                    <strong id="reportRevenuePerBooking">
+                        ₹0 avg
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="reportKpiCard bookings">
+
+                <div class="reportKpiTop">
+
+                    <div class="reportKpiIcon">
+                        🧳
+                    </div>
+
+                    <span class="reportKpiTag">
+                        BOOKINGS
+                    </span>
+
+                </div>
+
+
+                <div id="reportBookings" class="reportKpiValue">
+                    0
+                </div>
+
+
+                <div class="reportKpiFooter">
+
+                    <span>
+                        Total records
+                    </span>
+
+                    <strong id="reportCompletedBookings">
+                        0 completed
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="reportKpiCard conversion">
+
+                <div class="reportKpiTop">
+
+                    <div class="reportKpiIcon">
+                        %
+                    </div>
+
+                    <span class="reportKpiTag">
+                        CONVERSION
+                    </span>
+
+                </div>
+
+
+                <div id="reportConversion" class="reportKpiValue">
+                    0%
+                </div>
+
+
+                <div class="reportKpiFooter">
+
+                    <span>
+                        Completed / total
+                    </span>
+
+                    <strong id="reportConfirmedBookings">
+                        0 confirmed
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article class="reportKpiCard followup">
+
+                <div class="reportKpiTop">
+
+                    <div class="reportKpiIcon">
+                        📅
+                    </div>
+
+                    <span class="reportKpiTag">
+                        FOLLOW UPS
+                    </span>
+
+                </div>
+
+
+                <div id="reportFollowups" class="reportKpiValue">
+                    0
+                </div>
+
+
+                <div class="reportKpiFooter">
+
+                    <span id="reportFollowupToday">
+                        0 today
+                    </span>
+
+                    <strong id="reportFollowupOverdue">
+                        0 overdue
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+        PRIMARY ANALYTICS
+        ========================================== -->
+
+        <section class="reportAnalyticsGrid">
+
+
+            <!-- SERVICE PERFORMANCE -->
+
+            <article class="reportPanel reportServicePanel">
+
+
+                <div class="reportPanelHeader">
+
+                    <div>
+
+                        <span class="reportPanelEyebrow">
+                            SERVICE MIX
+                        </span>
+
+                        <h2>
+                            Service Performance
+                        </h2>
+
+                    </div>
+
+
+                    <span id="reportServiceCount">
+                        0 records
+                    </span>
+
+                </div>
+
+
+                <div id="reportServicePerformance" class="reportServicePerformance"></div>
+
+
+            </article>
+
+
+
+            <!-- STATUS DISTRIBUTION -->
+
+            <article class="reportPanel">
+
+
+                <div class="reportPanelHeader">
+
+                    <div>
+
+                        <span class="reportPanelEyebrow">
+                            PIPELINE
+                        </span>
+
+                        <h2>
+                            Status Distribution
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reportDonutLayout">
+
+
+                    <div class="reportDonut">
+
+                        <svg id="reportStatusDonut" viewBox="0 0 120 120" role="img"
+                            aria-label="Booking status distribution">
+
+                            <circle cx="60" cy="60" r="46" class="reportDonutTrack"></circle>
+
+                            <g id="reportDonutSegments"></g>
+
+                        </svg>
+
+
+                        <div class="reportDonutCenter">
+
+                            <strong id="reportDonutTotal">
+                                0
+                            </strong>
+
+                            <span>
+                                Records
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="reportStatusLegend" class="reportStatusLegend"></div>
+
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+        SECONDARY ANALYTICS
+        ========================================== -->
+
+        <section class="reportAnalyticsGrid secondary">
+
+
+            <!-- FOLLOW UP HEALTH -->
+
+            <article class="reportPanel">
+
+
+                <div class="reportPanelHeader">
+
+                    <div>
+
+                        <span class="reportPanelEyebrow">
+                            CRM HEALTH
+                        </span>
+
+                        <h2>
+                            Follow Up Health
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reportHealthGrid">
+
+
+                    <div class="reportMiniMetric overdue">
+
+                        <span>
+                            ⏰
+                        </span>
+
+                        <strong id="reportOverdueMetric">
+                            0
+                        </strong>
+
+                        <small>
+                            Overdue
+                        </small>
+
+                    </div>
+
+
+                    <div class="reportMiniMetric today">
+
+                        <span>
+                            📅
+                        </span>
+
+                        <strong id="reportTodayMetric">
+                            0
+                        </strong>
+
+                        <small>
+                            Due Today
+                        </small>
+
+                    </div>
+
+
+                    <div class="reportMiniMetric future">
+
+                        <span>
+                            🗓
+                        </span>
+
+                        <strong id="reportFutureMetric">
+                            0
+                        </strong>
+
+                        <small>
+                            Upcoming
+                        </small>
+
+                    </div>
+
+
+                    <div class="reportMiniMetric healthy">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <strong id="reportNoFollowupMetric">
+                            0
+                        </strong>
+
+                        <small>
+                            No Follow Up
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- TOP CUSTOMERS -->
+
+            <article class="reportPanel">
+
+
+                <div class="reportPanelHeader">
+
+                    <div>
+
+                        <span class="reportPanelEyebrow">
+                            CUSTOMER VALUE
+                        </span>
+
+                        <h2>
+                            Top Customers
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div id="reportTopCustomers" class="reportTopCustomers"></div>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+        SERVICE SUMMARY TABLE
+        ========================================== -->
+
+        <section class="reportPanel reportServiceTablePanel">
+
+
+            <div class="reportPanelHeader">
+
+                <div>
+
+                    <span class="reportPanelEyebrow">
+                        SUMMARY
+                    </span>
+
+                    <h2>
+                        Service Overview
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="reportTableScroll">
+
+                <table class="reportTable">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Service
+                            </th>
+
+                            <th>
+                                Records
+                            </th>
+
+                            <th>
+                                Completed
+                            </th>
+
+                            <th>
+                                Follow Up
+                            </th>
+
+                            <th>
+                                Cancelled
+                            </th>
+
+                            <th>
+                                Revenue
+                            </th>
+
+                            <th>
+                                Conversion
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reportServiceTableBody"></tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+        DETAILED REPORT
+        ========================================== -->
+
+        <section class="reportPanel reportDetailPanel">
+
+
+            <div class="reportPanelHeader reportDetailHeader">
+
+                <div>
+
+                    <span class="reportPanelEyebrow">
+                        DETAIL
+                    </span>
+
+                    <h2>
+                        Booking Report
+                    </h2>
+
+                </div>
+
+
+                <div id="reportRecordCount" class="reportRecordCount">
+                    0 records
+                </div>
+
+            </div>
+
+
+            <div class="reportTableScroll">
+
+                <table class="reportTable detail">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Booking
+                            </th>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Service
+                            </th>
+
+                            <th>
+                                Travel
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Follow Up
+                            </th>
+
+                            <th>
+                                Revenue
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reportDetailBody"></tbody>
+
+                </table>
+
+            </div>
+
+
+            <div id="reportEmpty" class="reportEmpty" hidden>
+
+                <div>
+                    🔍
+                </div>
+
+                <strong>
+                    No matching records
+                </strong>
+
+                <span>
+                    Try changing the report filters.
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================================
+ADVANCED REPORTS
+===================================================== -->
+
+        <section class="reportPanel reportAdvancedReports" id="reportAdvancedReports">
+
+
+            <!-- =================================================
+    HEADER
+    ================================================== -->
+
+            <div class="reportPanelHeader reportAdvancedHeader">
+
+                <div>
+
+                    <span class="reportPanelEyebrow">
+                        ANALYTICS
+                    </span>
+
+                    <h2>
+                        Detailed Reports
+                    </h2>
+
+                    <p class="reportAdvancedSub">
+                        Revenue, conversion, customers and operational intelligence
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    REPORT NAVIGATION
+    ================================================== -->
+
+            <div class="reportAdvancedTabs">
+
+                <button type="button" class="reportAdvancedTab active" data-advanced-report="sales">
+                    💰
+                    Sales & Revenue
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="funnel">
+                    🔻
+                    Lead Funnel
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="source">
+                    📡
+                    Source Performance
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="service">
+                    📊
+                    Service Performance
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="cancellation">
+                    ❌
+                    Cancellation
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="customer">
+                    👥
+                    Customer Value
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="travel">
+                    🧳
+                    Upcoming Travel
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="passenger">
+                    🧑‍🤝‍🧑
+                    Passenger Volume
+                </button>
+
+
+                <button type="button" class="reportAdvancedTab" data-advanced-report="quality">
+                    🛡
+                    Data Quality
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+    SALES & REVENUE
+    ================================================== -->
+
+            <div class="reportAdvancedContent active" data-advanced-content="sales">
+
+                <div id="reportSalesKpis" class="reportAdvancedKpiGrid"></div>
+
+
+                <div class="reportAdvancedSplit">
+
+                    <div class="reportAdvancedBlock">
+
+                        <div class="reportAdvancedBlockHeader">
+
+                            <strong>
+                                Revenue by Service
+                            </strong>
+
+                            <span>
+                                Filtered period
+                            </span>
+
+                        </div>
+
+                        <div id="reportSalesService"></div>
+
+                    </div>
+
+
+                    <div class="reportAdvancedBlock">
+
+                        <div class="reportAdvancedBlockHeader">
+
+                            <strong>
+                                Revenue Summary
+                            </strong>
+
+                            <span>
+                                Commercial performance
+                            </span>
+
+                        </div>
+
+                        <div id="reportSalesSummary"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    LEAD FUNNEL
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="funnel">
+
+                <div id="reportLeadFunnel" class="reportFunnel"></div>
+
+            </div>
+
+
+            <!-- =================================================
+    SOURCE PERFORMANCE
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="source">
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Source</th>
+                                <th>Leads</th>
+                                <th>Completed</th>
+                                <th>Cancelled</th>
+                                <th>Conversion</th>
+                                <th>Revenue</th>
+                                <th>Avg Value</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportSourceBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    SERVICE PERFORMANCE
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="service">
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Service</th>
+                                <th>Records</th>
+                                <th>Completed</th>
+                                <th>Follow Up</th>
+                                <th>Cancelled</th>
+                                <th>Revenue</th>
+                                <th>Avg Value</th>
+                                <th>Conversion</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportProfitabilityBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    CANCELLATION
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="cancellation">
+
+                <div id="reportCancellationKpis" class="reportAdvancedKpiGrid"></div>
+
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Service</th>
+                                <th>Total</th>
+                                <th>Cancelled</th>
+                                <th>Cancellation Rate</th>
+                                <th>Lost Revenue</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportCancellationBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    CUSTOMER VALUE
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="customer">
+
+                <div id="reportCustomerValueKpis" class="reportAdvancedKpiGrid"></div>
+
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Customer</th>
+                                <th>Bookings</th>
+                                <th>Services</th>
+                                <th>Revenue</th>
+                                <th>Avg Value</th>
+                                <th>Last Travel</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportCustomerValueBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    UPCOMING TRAVEL
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="travel">
+
+                <div id="reportTravelKpis" class="reportAdvancedKpiGrid"></div>
+
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Travel</th>
+                                <th>Booking</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Passengers</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportTravelBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    PASSENGER VOLUME
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="passenger">
+
+                <div id="reportPassengerKpis" class="reportAdvancedKpiGrid"></div>
+
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Service</th>
+                                <th>Bookings</th>
+                                <th>Passengers</th>
+                                <th>Avg Pax / Booking</th>
+                                <th>Revenue</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportPassengerBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+    DATA QUALITY
+    ================================================== -->
+
+            <div class="reportAdvancedContent" data-advanced-content="quality">
+
+                <div id="reportQualityKpis" class="reportAdvancedKpiGrid"></div>
+
+
+                <div class="reportAdvancedTableWrap">
+
+                    <table class="reportAdvancedTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Issue</th>
+                                <th>Records</th>
+                                <th>Severity</th>
+                                <th>Recommendation</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="reportQualityBody"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+        FOOTER
+        ========================================== -->
+
+        <footer class="reportFooter">
+
+            <span>
+                RanSan Travel Operations Center
+            </span>
+
+            <span id="reportGeneratedAt">
+                Report generated —
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!--
+    Your normal shared project configuration/data files
+    can load before the report module if required.
+
+    Example:
+
+    <script src="dashboard/dashboard-data.js"></script>
+    -->
+
+    <script src="dashboard/dashboard_report.js"></script>
+
+
+    <!-- =====================================================
+REPORT ENVIRONMENT LOADER
+===================================================== -->
+
+    <div id="reportEnvironmentLoader" class="reportEnvironmentLoader" hidden aria-hidden="true">
+
+        <div class="reportEnvironmentLoaderBackdrop"></div>
+
+
+        <div class="reportEnvironmentLoaderCard" role="status" aria-live="polite">
+
+            <!-- ICON -->
+
+            <div class="reportEnvironmentLoaderVisual">
+
+                <svg class="reportEnvironmentProgress" viewBox="0 0 80 80" aria-hidden="true">
+
+                    <!-- BACKGROUND CIRCLE -->
+
+                    <circle class="reportEnvironmentProgressTrack" cx="40" cy="40" r="34"></circle>
+
+
+                    <!-- PROGRESS CIRCLE -->
+
+                    <circle id="reportEnvironmentProgressCircle" class="reportEnvironmentProgressCircle" cx="40" cy="40"
+                        r="34"></circle>
+
+                </svg>
+
+
+                <div class="reportEnvironmentLoaderCore">
+
+                    <span id="reportEnvironmentProgressValue" class="reportEnvironmentProgressValue">
+                        0%
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TEXT -->
+
+            <div class="reportEnvironmentLoaderText">
+
+                <span class="reportEnvironmentLoaderEyebrow">
+                    REPORT ENVIRONMENT
+                </span>
+
+
+                <h3 id="reportEnvironmentLoaderTitle">
+
+                    Switching environment
+
+                </h3>
+
+
+                <p id="reportEnvironmentLoaderMessage">
+
+                    Loading report data...
+
+                </p>
+
+            </div>
+
+
+            <!-- ENVIRONMENT BADGE -->
+
+            <div id="reportEnvironmentLoaderBadge" class="reportEnvironmentLoaderBadge">
+
+                LIVE
+
+            </div>
+
+
+            <!-- ANIMATED DOTS -->
+
+            <div class="reportEnvironmentLoaderDots">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="reportEnvironmentLoaderFooter">
+
+                <span class="reportEnvironmentLoaderShield">
+                    ✓
+                </span>
+
+                <span>
+                    RanSan Travels Reports
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
