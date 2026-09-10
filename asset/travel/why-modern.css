@@ -1,0 +1,2263 @@
+/*=========================================================
+ RANSAN TRAVELS
+ WHY TRAVELERS CHOOSE RANSAN
+ MODERN ENHANCEMENT
+=========================================================*/
+
+
+/*=========================================================
+ SECTION
+=========================================================*/
+
+.rs-why-section.rs-why-modern {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        110px 20px 100px;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(14, 165, 233, .10),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 91% 78%,
+            rgba(139, 92, 246, .08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #f8fbff 0%,
+            #ffffff 45%,
+            #f8fafc 100%
+        );
+
+}
+
+
+/*=========================================================
+ WRAPPER
+=========================================================*/
+
+.rs-why-modern
+.wrap {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        min(1240px, 100%);
+
+    margin:
+        0 auto;
+
+}
+
+
+/*=========================================================
+ BACKGROUND GLOWS
+ Keep existing class names
+=========================================================*/
+
+.rs-why-modern
+.rs-why-bg-glow {
+
+    pointer-events:
+        none;
+
+    z-index:
+        0;
+
+}
+
+
+.rs-why-modern
+.rs-glow-1 {
+
+    width:
+        440px;
+
+    height:
+        440px;
+
+    top:
+        -190px;
+
+    left:
+        -170px;
+
+    background:
+        #38bdf8;
+
+    opacity:
+        .12;
+
+}
+
+
+.rs-why-modern
+.rs-glow-2 {
+
+    width:
+        460px;
+
+    height:
+        460px;
+
+    right:
+        -170px;
+
+    bottom:
+        -190px;
+
+    background:
+        #8b5cf6;
+
+    opacity:
+        .10;
+
+}
+
+
+/*=========================================================
+ SUBTLE GRID PATTERN
+=========================================================*/
+
+.rs-why-grid-pattern {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    opacity:
+        .30;
+
+    background-image:
+
+        linear-gradient(
+            rgba(15, 23, 42, .025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, .025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        48px 48px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #000 20%,
+            #000 78%,
+            transparent
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #000 20%,
+            #000 78%,
+            transparent
+        );
+
+}
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rs-why-modern
+.rs-why-header {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        880px;
+
+    margin:
+        0 auto 54px;
+
+    text-align:
+        center;
+
+}
+
+
+/*=========================================================
+ BADGE
+=========================================================*/
+
+.rs-why-modern
+.rs-why-badge {
+
+    margin-bottom:
+        18px;
+
+    padding:
+        9px 15px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid rgba(59, 130, 246, .13);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .82);
+
+    color:
+        #2563eb;
+
+    box-shadow:
+        0 9px 26px rgba(37, 99, 235, .07);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .45px;
+
+}
+
+
+.rs-why-modern
+.rs-why-badge-icon {
+
+    width:
+        22px;
+
+    height:
+        22px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(59, 130, 246, .08);
+
+    font-size:
+        11px;
+
+}
+
+
+/*=========================================================
+ TITLE
+=========================================================*/
+
+.rs-why-modern
+.rs-why-title {
+
+    margin:
+        0 0 17px;
+
+    color:
+        #0f172a;
+
+    font-size:
+        clamp(42px, 4.8vw, 62px);
+
+    line-height:
+        1.04;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        -2.1px;
+
+    text-wrap:
+        balance;
+
+}
+
+
+.rs-why-modern
+.rs-why-title span {
+
+    display:
+        inline-block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #6366f1 52%,
+            #8b5cf6
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/*=========================================================
+ SUBTITLE
+=========================================================*/
+
+.rs-why-modern
+.rs-why-sub {
+
+    max-width:
+        730px;
+
+    margin:
+        0 auto;
+
+    color:
+        #64748b;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/*=========================================================
+ TRUST STRIP
+=========================================================*/
+
+.rs-why-trust-strip {
+
+    width:
+        max-content;
+
+    max-width:
+        100%;
+
+    margin:
+        28px auto 0;
+
+    padding:
+        10px 14px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        16px;
+
+    border:
+        1px solid rgba(226, 232, 240, .90);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255, 255, 255, .78);
+
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, .055);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+}
+
+
+.rs-why-trust-stat {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    text-align:
+        left;
+
+}
+
+
+.rs-trust-stat-icon {
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 35px;
+
+    border-radius:
+        11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0f9ff,
+            #eef2ff
+        );
+
+    font-size:
+        15px;
+
+}
+
+
+.rs-why-trust-stat div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.rs-why-trust-stat strong {
+
+    color:
+        #0f172a;
+
+    font-size:
+        14px;
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-why-trust-stat small {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        8px;
+
+    font-weight:
+        750;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.rs-why-trust-separator {
+
+    width:
+        1px;
+
+    height:
+        30px;
+
+    background:
+        #e2e8f0;
+
+}
+
+
+/*=========================================================
+ GRID
+=========================================================*/
+
+.rs-why-modern
+.rs-why-grid {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        18px;
+
+}
+
+
+/*=========================================================
+ OUTER CARD
+ IMPORTANT:
+ reveal-stagger controls this element
+=========================================================*/
+
+.rs-why-modern
+.rs-why-card {
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    padding:
+        0;
+
+    overflow:
+        visible;
+
+    border:
+        0;
+
+    border-radius:
+        0;
+
+    background:
+        transparent;
+
+    box-shadow:
+        none;
+
+}
+
+
+/*
+ Disable the OLD hover transform on outer card.
+ Hover animation happens on inner shell instead.
+*/
+
+.rs-why-modern
+.rs-why-card:hover {
+
+    transform:
+        none;
+
+    border-color:
+        transparent;
+
+    box-shadow:
+        none;
+
+}
+
+
+/*=========================================================
+ CARD SHELL
+=========================================================*/
+
+.rs-why-card-shell {
+
+    position:
+        relative;
+
+    height:
+        100%;
+
+    min-height:
+        430px;
+
+    padding:
+        25px 23px 21px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid rgba(226, 232, 240, .88);
+
+    border-radius:
+        25px;
+
+    background:
+        rgba(255, 255, 255, .83);
+
+    box-shadow:
+        0 12px 42px rgba(15, 23, 42, .07);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    transition:
+        transform .35s cubic-bezier(.22, .61, .36, 1),
+        box-shadow .35s ease,
+        border-color .35s ease,
+        background .35s ease;
+
+}
+
+
+/*=========================================================
+ CARD HOVER
+=========================================================*/
+
+.rs-why-card:hover
+.rs-why-card-shell {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(99, 102, 241, .20);
+
+    background:
+        rgba(255, 255, 255, .96);
+
+    box-shadow:
+        0 24px 65px rgba(15, 23, 42, .12);
+
+}
+
+
+/*=========================================================
+ CARD MOUSE LIGHT
+=========================================================*/
+
+.rs-why-card-shell::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    left:
+        var(--rs-light-x, 50%);
+
+    top:
+        var(--rs-light-y, 0%);
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(99, 102, 241, .11),
+            rgba(14, 165, 233, .045) 42%,
+            transparent 70%
+        );
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    transition:
+        opacity .30s ease;
+
+}
+
+
+.rs-why-card:hover
+.rs-why-card-shell::before {
+
+    opacity:
+        1;
+
+}
+
+
+/*=========================================================
+ EXISTING CARD GLOW
+=========================================================*/
+
+.rs-why-modern
+.rs-card-glow {
+
+    position:
+        absolute;
+
+    inset:
+        auto -70px -100px auto;
+
+    width:
+        230px;
+
+    height:
+        230px;
+
+    border-radius:
+        50%;
+
+    opacity:
+        .35;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(14, 165, 233, .13),
+            transparent 68%
+        );
+
+    transition:
+        .35s ease;
+
+    pointer-events:
+        none;
+
+}
+
+
+/*=========================================================
+ CARD-SPECIFIC ACCENTS
+=========================================================*/
+
+.rs-why-card[data-rs-why="fleet"]
+.rs-card-glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(14, 165, 233, .16),
+            transparent 68%
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="chauffeur"]
+.rs-card-glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 92, 246, .16),
+            transparent 68%
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="support"]
+.rs-card-glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(16, 185, 129, .16),
+            transparent 68%
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="pricing"]
+.rs-card-glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(245, 158, 11, .17),
+            transparent 68%
+        );
+
+}
+
+
+/*=========================================================
+ NUMBER
+=========================================================*/
+
+.rs-why-number {
+
+    position:
+        absolute;
+
+    top:
+        19px;
+
+    right:
+        20px;
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/*=========================================================
+ ICON
+=========================================================*/
+
+.rs-why-modern
+.rs-why-icon {
+
+    position:
+        relative;
+
+    width:
+        62px;
+
+    height:
+        62px;
+
+    margin:
+        0 0 21px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 62px;
+
+    border:
+        1px solid rgba(255, 255, 255, .92);
+
+    border-radius:
+        19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0f9ff,
+            #eef2ff
+        );
+
+    box-shadow:
+        0 11px 28px rgba(59, 130, 246, .11);
+
+    font-size:
+        27px;
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.rs-why-card:hover
+.rs-why-icon {
+
+    transform:
+        scale(1.06) rotate(-3deg);
+
+}
+
+
+.rs-why-card[data-rs-why="chauffeur"]
+.rs-why-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5f3ff,
+            #faf5ff
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="support"]
+.rs-why-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ecfdf5,
+            #f0fdfa
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="pricing"]
+.rs-why-icon {
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffbeb,
+            #fff7ed
+        );
+
+}
+
+
+/*=========================================================
+ CARD KICKER
+=========================================================*/
+
+.rs-why-card-kicker {
+
+    margin-bottom:
+        8px;
+
+    color:
+        #3b82f6;
+
+    font-size:
+        8px;
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.25px;
+
+}
+
+
+.rs-why-card[data-rs-why="chauffeur"]
+.rs-why-card-kicker {
+
+    color:
+        #8b5cf6;
+
+}
+
+
+.rs-why-card[data-rs-why="support"]
+.rs-why-card-kicker {
+
+    color:
+        #059669;
+
+}
+
+
+.rs-why-card[data-rs-why="pricing"]
+.rs-why-card-kicker {
+
+    color:
+        #d97706;
+
+}
+
+
+/*=========================================================
+ TITLE
+=========================================================*/
+
+.rs-why-modern
+.rs-why-card h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 10px;
+
+    color:
+        #0f172a;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.45px;
+
+}
+
+
+/*=========================================================
+ DESCRIPTION
+=========================================================*/
+
+.rs-why-modern
+.rs-why-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.72;
+
+}
+
+
+/*=========================================================
+ PROOF LIST
+=========================================================*/
+
+.rs-why-proof-list {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        17px 0 19px;
+
+    padding-top:
+        15px;
+
+    display:
+        grid;
+
+    gap:
+        8px;
+
+    border-top:
+        1px solid #eef2f7;
+
+}
+
+
+.rs-why-proof-list span {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        #475569;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.4;
+
+    font-weight:
+        700;
+
+}
+
+
+.rs-why-proof-list i {
+
+    width:
+        17px;
+
+    height:
+        17px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 17px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ecfdf5;
+
+    color:
+        #10b981;
+
+    font-size:
+        7px;
+
+}
+
+
+/*=========================================================
+ CARD FOOTER
+=========================================================*/
+
+.rs-why-card-footer {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-top:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+}
+
+
+/*=========================================================
+ PROOF PILL
+=========================================================*/
+
+.rs-why-proof-pill {
+
+    min-height:
+        28px;
+
+    padding:
+        0 9px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        999px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #64748b;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+}
+
+
+.rs-proof-dot {
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #22c55e;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 197, 94, .10);
+
+}
+
+
+/*=========================================================
+ CARD ARROW
+=========================================================*/
+
+.rs-why-arrow {
+
+    width:
+        31px;
+
+    height:
+        31px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 31px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        10px;
+
+    background:
+        #ffffff;
+
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.rs-why-card:hover
+.rs-why-arrow {
+
+    color:
+        #ffffff;
+
+    border-color:
+        #4f46e5;
+
+    background:
+        #4f46e5;
+
+    transform:
+        rotate(5deg);
+
+}
+
+
+/*=========================================================
+ EXISTING CARD LINE
+=========================================================*/
+
+.rs-why-modern
+.rs-card-line {
+
+    position:
+        absolute;
+
+    left:
+        24px;
+
+    right:
+        24px;
+
+    bottom:
+        0;
+
+    width:
+        auto;
+
+    height:
+        3px;
+
+    border-radius:
+        999px 999px 0 0;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0ea5e9,
+            #6366f1
+        );
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+.rs-why-card:hover
+.rs-card-line {
+
+    width:
+        auto;
+
+    transform:
+        scaleX(1);
+
+}
+
+
+.rs-why-card[data-rs-why="chauffeur"]
+.rs-card-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #c084fc
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="support"]
+.rs-card-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            #10b981,
+            #14b8a6
+        );
+
+}
+
+
+.rs-why-card[data-rs-why="pricing"]
+.rs-card-line {
+
+    background:
+        linear-gradient(
+            90deg,
+            #f59e0b,
+            #f97316
+        );
+
+}
+
+
+/*=========================================================
+ BOTTOM CONVERSION PANEL
+=========================================================*/
+
+.rs-why-bottom {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-top:
+        28px;
+
+    padding:
+        17px 19px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border:
+        1px solid rgba(226, 232, 240, .90);
+
+    border-radius:
+        21px;
+
+    background:
+        rgba(255, 255, 255, .78);
+
+    box-shadow:
+        0 12px 38px rgba(15, 23, 42, .055);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+}
+
+
+/*=========================================================
+ BOTTOM COPY
+=========================================================*/
+
+.rs-why-bottom-copy {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+}
+
+
+.rs-why-bottom-icon {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 40px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+    font-size:
+        15px;
+
+}
+
+
+.rs-why-bottom-copy > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.rs-why-bottom-copy strong {
+
+    color:
+        #0f172a;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-why-bottom-copy span:not(.rs-why-bottom-icon) {
+
+    color:
+        #64748b;
+
+    font-size:
+        10px;
+
+}
+
+
+/*=========================================================
+ BOTTOM ACTIONS
+=========================================================*/
+
+.rs-why-bottom-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+/*=========================================================
+ ACTION BUTTON
+=========================================================*/
+
+.rs-why-action {
+
+    min-height:
+        40px;
+
+    padding:
+        0 14px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        12px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease,
+        background .22s ease;
+
+}
+
+
+.rs-why-action-secondary {
+
+    border:
+        1px solid #e2e8f0;
+
+    background:
+        #ffffff;
+
+    color:
+        #475569;
+
+}
+
+
+.rs-why-action-secondary:hover {
+
+    color:
+        #4338ca;
+
+    border-color:
+        rgba(99, 102, 241, .20);
+
+    background:
+        #f8faff;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.rs-why-action-primary {
+
+    border:
+        0;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1 58%,
+            #0ea5e9
+        );
+
+    box-shadow:
+        0 10px 25px rgba(79, 70, 229, .20);
+
+}
+
+
+.rs-why-action-primary:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(79, 70, 229, .27);
+
+}
+
+
+/*=========================================================
+ LARGE TABLET
+=========================================================*/
+
+@media (max-width: 1100px) {
+
+    .rs-why-modern
+    .rs-why-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .rs-why-card-shell {
+
+        min-height:
+            390px;
+
+    }
+
+}
+
+
+/*=========================================================
+ TABLET / MOBILE
+=========================================================*/
+
+@media (max-width: 768px) {
+
+    .rs-why-section.rs-why-modern {
+
+        padding:
+            82px 16px 76px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-header {
+
+        margin-bottom:
+            38px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-title {
+
+        font-size:
+            clamp(36px, 9vw, 46px);
+
+        letter-spacing:
+            -1.6px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-sub {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .rs-why-trust-strip {
+
+        width:
+            100%;
+
+        justify-content:
+            space-between;
+
+        gap:
+            8px;
+
+        padding:
+            10px;
+
+    }
+
+
+    .rs-why-trust-stat {
+
+        gap:
+            6px;
+
+    }
+
+
+    .rs-trust-stat-icon {
+
+        width:
+            30px;
+
+        height:
+            30px;
+
+        flex-basis:
+            30px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .rs-why-trust-stat strong {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .rs-why-trust-stat small {
+
+        font-size:
+            7px;
+
+    }
+
+
+    .rs-why-trust-separator {
+
+        height:
+            26px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            14px;
+
+    }
+
+
+    .rs-why-card-shell {
+
+        min-height:
+            0;
+
+        padding:
+            23px 21px 19px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-card h3 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-card p {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .rs-why-bottom {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-why-bottom-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 520px) {
+
+    .rs-why-modern
+    .rs-why-badge {
+
+        padding:
+            8px 12px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-title {
+
+        font-size:
+            35px;
+
+    }
+
+
+    .rs-why-trust-strip {
+
+        overflow-x:
+            auto;
+
+        justify-content:
+            flex-start;
+
+        scrollbar-width:
+            none;
+
+    }
+
+
+    .rs-why-trust-strip::-webkit-scrollbar {
+
+        display:
+            none;
+
+    }
+
+
+    .rs-why-trust-stat {
+
+        flex:
+            0 0 auto;
+
+    }
+
+
+    .rs-why-modern
+    .rs-why-icon {
+
+        width:
+            56px;
+
+        height:
+            56px;
+
+        flex-basis:
+            56px;
+
+        font-size:
+            24px;
+
+    }
+
+
+    .rs-why-bottom-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-why-action {
+
+        min-height:
+            44px;
+
+    }
+
+}
+
+
+/*=========================================================
+ TOUCH DEVICES
+
+ Remove hover lifting where hover is not useful.
+=========================================================*/
+
+@media (hover: none) {
+
+    .rs-why-card:hover
+    .rs-why-card-shell {
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+/*=========================================================
+ REDUCED MOTION
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .rs-why-card-shell,
+
+    .rs-why-icon,
+
+    .rs-why-arrow,
+
+    .rs-card-line {
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+/*=========================================================
+ WHY SECTION — READABILITY / FONT SCALE UPDATE
+ Add at VERY END of why-modern.css
+=========================================================*/
+
+
+/* SECTION BADGE */
+
+.rs-why-modern
+.rs-why-badge {
+    font-size: 13px;
+    padding: 10px 17px;
+}
+
+
+/* MAIN TITLE */
+
+.rs-why-modern
+.rs-why-title {
+    font-size: clamp(46px, 5vw, 66px);
+    line-height: 1.05;
+}
+
+
+/* SUBTITLE */
+
+.rs-why-modern
+.rs-why-sub {
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+
+/* TRUST STRIP */
+
+.rs-why-trust-stat strong {
+    font-size: 16px;
+}
+
+.rs-why-trust-stat small {
+    font-size: 10px;
+}
+
+
+/* CARD KICKER */
+
+.rs-why-card-kicker {
+    font-size: 10px;
+    letter-spacing: 1.2px;
+}
+
+
+/* CARD TITLE */
+
+.rs-why-modern
+.rs-why-card h3 {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+
+/* CARD DESCRIPTION */
+
+.rs-why-modern
+.rs-why-card p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* FEATURE / PROOF LIST */
+
+.rs-why-proof-list span {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* PROOF PILL */
+
+.rs-why-proof-pill {
+    font-size: 10px;
+}
+
+
+/* NUMBER */
+
+.rs-why-number {
+    font-size: 13px;
+}
+
+
+/* BOTTOM COPY */
+
+.rs-why-bottom-copy strong {
+    font-size: 15px;
+}
+
+.rs-why-bottom-copy span:not(.rs-why-bottom-icon) {
+    font-size: 12px;
+}
+
+
+/* BUTTONS */
+
+.rs-why-action {
+    font-size: 12px;
+    min-height: 44px;
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 768px) {
+
+    .rs-why-modern
+    .rs-why-title {
+        font-size: clamp(38px, 9vw, 48px);
+    }
+
+    .rs-why-modern
+    .rs-why-sub {
+        font-size: 16px;
+    }
+
+    .rs-why-modern
+    .rs-why-card h3 {
+        font-size: 22px;
+    }
+
+    .rs-why-modern
+    .rs-why-card p {
+        font-size: 14px;
+    }
+
+    .rs-why-proof-list span {
+        font-size: 12px;
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 520px) {
+
+    .rs-why-modern
+    .rs-why-badge {
+        font-size: 11px;
+    }
+
+    .rs-why-modern
+    .rs-why-title {
+        font-size: 36px;
+    }
+
+    .rs-why-modern
+    .rs-why-sub {
+        font-size: 15px;
+    }
+
+    .rs-why-trust-stat strong {
+        font-size: 13px;
+    }
+
+    .rs-why-trust-stat small {
+        font-size: 9px;
+    }
+
+    .rs-why-modern
+    .rs-why-card h3 {
+        font-size: 21px;
+    }
+
+    .rs-why-modern
+    .rs-why-card p {
+        font-size: 13px;
+    }
+
+    .rs-why-proof-list span {
+        font-size: 11px;
+    }
+
+    .rs-why-proof-pill {
+        font-size: 9px;
+    }
+
+}

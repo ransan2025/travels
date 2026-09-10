@@ -1,0 +1,2147 @@
+/*=========================================================
+ RANSAN TRAVELS
+ FARE CALCULATOR
+ MODERN ESTIMATE EXPERIENCE
+=========================================================*/
+
+
+/*=========================================================
+ SECTION
+=========================================================*/
+
+.rs-fare-2026.rs-fare-modern-2026 {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+        110px 20px;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8fbff 52%,
+            #ffffff 100%
+        );
+
+}
+
+
+/*=========================================================
+ DECORATIVE VISUAL LAYER
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-visual-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/*=========================================================
+ ORBS
+=========================================================*/
+
+.rs-fare-orb {
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter:
+        blur(115px);
+
+}
+
+
+.rs-fare-orb-one {
+
+    top: -220px;
+    left: -180px;
+
+    background:
+        rgba(79, 70, 229, .13);
+
+}
+
+
+.rs-fare-orb-two {
+
+    right: -180px;
+    bottom: -220px;
+
+    background:
+        rgba(14, 165, 233, .12);
+
+}
+
+
+/*=========================================================
+ GRID PATTERN
+=========================================================*/
+
+.rs-fare-grid-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .23;
+
+    background-image:
+
+        linear-gradient(
+            rgba(15, 23, 42, .026) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, .026) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 82%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 82%,
+            transparent 100%
+        );
+
+}
+
+
+/*=========================================================
+ WRAPPER
+=========================================================*/
+
+.rs-fare-modern-2026
+.wrap {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1180px, 100%);
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-header {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto 46px;
+
+    text-align:
+        center;
+
+}
+
+
+/*=========================================================
+ HEADER PILL
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-header-pill {
+
+    margin-bottom:
+        16px;
+
+    padding:
+        9px 14px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .88);
+
+    color:
+        #2563eb;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+    box-shadow:
+        0 9px 27px
+        rgba(37, 99, 235, .06);
+
+}
+
+
+/*=========================================================
+ TITLE
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-title {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    background:
+        none;
+
+    font-size:
+        clamp(46px, 5vw, 66px);
+
+    line-height:
+        1.06;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-fare-title span {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #4f46e5 55%,
+            #8b5cf6
+        );
+
+    background-clip:
+        text;
+
+    -webkit-background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/*=========================================================
+ SUBTITLE
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-sub {
+
+    max-width:
+        740px;
+
+    margin:
+        19px auto 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/*=========================================================
+ TRUST ROW
+=========================================================*/
+
+.rs-fare-trust-row {
+
+    margin-top:
+        22px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+}
+
+
+.rs-fare-trust-row span {
+
+    min-height:
+        36px;
+
+    padding:
+        0 11px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .86);
+
+    color:
+        #475569;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        750;
+
+}
+
+
+.rs-fare-trust-row i {
+
+    color:
+        #4f46e5;
+
+}
+
+
+/*=========================================================
+ MAIN CARD
+
+ Existing class preserved.
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-card {
+
+    position: relative;
+
+    padding:
+        14px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, .92fr)
+        minmax(0, 1.08fr);
+
+    gap:
+        14px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(255, 255, 255, .80);
+
+    box-shadow:
+        0 22px 65px
+        rgba(15, 23, 42, .09);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+}
+
+
+/*=========================================================
+ FORM PANEL
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-form {
+
+    padding:
+        27px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        19px;
+
+    border:
+        1px solid #e8edf3;
+
+    border-radius:
+        23px;
+
+    background:
+        #ffffff;
+
+}
+
+
+/*=========================================================
+ FORM HEADER
+=========================================================*/
+
+.rs-fare-form-head {
+
+    padding-bottom:
+        17px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    border-bottom:
+        1px solid #edf1f5;
+
+}
+
+
+.rs-fare-step-number {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-fare-form-head strong {
+
+    display:
+        block;
+
+    color:
+        #0f172a;
+
+    font-size:
+        18px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-fare-form-head p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.45;
+
+}
+
+
+/*=========================================================
+ FIELD
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-field {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+
+/*=========================================================
+ LABEL
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-field label {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #334155;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        850;
+
+}
+
+
+.rs-fare-label-icon {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        8px;
+
+    background:
+        #f1f5ff;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        11px;
+
+}
+
+
+.rs-fare-label-unit {
+
+    margin-left:
+        auto;
+
+    padding:
+        4px 7px;
+
+    border-radius:
+        999px;
+
+    background:
+        #f1f5f9;
+
+    color:
+        #64748b;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        .7px;
+
+}
+
+
+/*=========================================================
+ INPUT WRAP
+=========================================================*/
+
+.rs-fare-input-wrap {
+
+    position:
+        relative;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-field input {
+
+    width:
+        100%;
+
+    height:
+        56px;
+
+    padding:
+        0 75px 0 15px;
+
+    border:
+        1px solid #dfe6ee;
+
+    border-radius:
+        14px;
+
+    background:
+        #fbfdff;
+
+    color:
+        #0f172a;
+
+    box-shadow:
+        none;
+
+    box-sizing:
+        border-box;
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+    font-weight:
+        650;
+
+    outline:
+        none;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-field input:focus {
+
+    border-color:
+        rgba(79, 70, 229, .38);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(79, 70, 229, .09);
+
+}
+
+
+.rs-fare-input-suffix {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        12px;
+
+    transform:
+        translateY(-50%);
+
+    padding:
+        5px 7px;
+
+    border-radius:
+        8px;
+
+    background:
+        #eef2ff;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+}
+
+
+/*=========================================================
+ VEHICLE SELECT
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-select-modern {
+
+    width:
+        100%;
+
+    height:
+        56px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid #dfe6ee;
+
+    border-radius:
+        14px;
+
+    background:
+        #fbfdff;
+
+    color:
+        #0f172a;
+
+    box-shadow:
+        none;
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    outline:
+        none;
+
+    cursor:
+        pointer;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-fare-select-modern:focus {
+
+    border-color:
+        rgba(79, 70, 229, .38);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(79, 70, 229, .09);
+
+}
+
+
+.rs-fare-modern-2026
+.rs-fare-select-modern option {
+
+    background:
+        #ffffff;
+
+    color:
+        #0f172a;
+
+}
+
+
+/*=========================================================
+ FIELD HELP
+=========================================================*/
+
+.rs-fare-field-help {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.45;
+
+}
+
+
+/*=========================================================
+ CALCULATE BUTTON
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-btn {
+
+    width:
+        100%;
+
+    min-height:
+        56px;
+
+    padding:
+        0 16px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    border:
+        0;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1 55%,
+            #0ea5e9
+        );
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 12px 27px
+        rgba(79, 70, 229, .20);
+
+    font-family:
+        inherit;
+
+    font-size:
+        14px;
+
+    font-weight:
+        850;
+
+    cursor:
+        pointer;
+
+    transform:
+        none;
+
+    transition:
+        box-shadow .22s ease;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-fare-btn:hover {
+
+    transform:
+        none;
+
+    box-shadow:
+        0 16px 34px
+        rgba(79, 70, 229, .27);
+
+}
+
+
+.rs-fare-btn-icon {
+
+    width:
+        29px;
+
+    height:
+        29px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, .13);
+
+}
+
+
+/*=========================================================
+ FORM NOTE
+=========================================================*/
+
+.rs-fare-form-note {
+
+    padding:
+        11px 12px;
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        8px;
+
+    border:
+        1px solid #e7edf4;
+
+    border-radius:
+        12px;
+
+    background:
+        #f8fafc;
+
+    color:
+        #64748b;
+
+}
+
+
+.rs-fare-form-note i {
+
+    margin-top:
+        2px;
+
+    color:
+        #4f46e5;
+
+    font-size:
+        11px;
+
+}
+
+
+.rs-fare-form-note p {
+
+    margin:
+        0;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.55;
+
+}
+
+
+/*=========================================================
+ RESULT PANEL
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-result-box {
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    padding:
+        28px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-start;
+
+    text-align:
+        left;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius:
+        23px;
+
+    color:
+        #ffffff;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(56, 189, 248, .17),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(139, 92, 246, .18),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            145deg,
+            #071426,
+            #0d1930
+        );
+
+}
+
+
+/*=========================================================
+ RESULT TOP
+=========================================================*/
+
+.rs-fare-result-top {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+}
+
+
+.rs-fare-result-kicker {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.rs-fare-result-top h3 {
+
+    margin:
+        0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        24px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        900;
+
+}
+
+
+/*=========================================================
+ STATUS BADGE
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-result-badge {
+
+    margin:
+        0;
+
+    padding:
+        7px 9px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        1px solid rgba(148, 163, 184, .15);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+}
+
+
+.rs-result-badge span {
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #94a3b8;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-result-badge.rs-fare-result-ready {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34, 197, 94, .17);
+
+    background:
+        rgba(34, 197, 94, .08);
+
+}
+
+
+.rs-fare-modern-2026
+.rs-result-badge.rs-fare-result-ready span {
+
+    background:
+        #22c55e;
+
+}
+
+
+/*=========================================================
+ DYNAMIC RESULT CONTAINER
+=========================================================*/
+
+.rs-fare-modern-2026
+#rsFareResult {
+
+    width:
+        100%;
+
+    margin-top:
+        22px;
+
+}
+
+
+/*=========================================================
+ EXISTING DYNAMIC PRICE CARD
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-price-card {
+
+    margin:
+        0;
+
+    padding:
+        21px;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    box-shadow:
+        none;
+
+    text-align:
+        left;
+
+    animation:
+        none;
+
+}
+
+
+/*=========================================================
+ PRICE LABEL
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-price-label {
+
+    color:
+        rgba(203, 213, 225, .76);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .7px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*=========================================================
+ PRICE
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-price {
+
+    margin-top:
+        7px;
+
+    padding:
+        0;
+
+    display:
+        block;
+
+    background:
+        none;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        none;
+
+    font-size:
+        clamp(42px, 5vw, 58px);
+
+    line-height:
+        1;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+/*=========================================================
+ DYNAMIC PILLS FROM EXISTING travel.js
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-modern-pills {
+
+    margin-top:
+        10px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+}
+
+
+.rs-fare-modern-2026
+.rs-fare-modern-pills
+.rs-pill {
+
+    padding:
+        7px 9px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        750;
+
+}
+
+
+/*=========================================================
+ EXISTING TRANSPARENT CARD
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-transparent-card {
+
+    margin-top:
+        12px;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid rgba(34, 197, 94, .14);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(34, 197, 94, .07);
+
+    color:
+        #86efac;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+}
+
+
+/*=========================================================
+ EXISTING NOTE GENERATED BY JS
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-note-modern {
+
+    margin-top:
+        9px;
+
+    color:
+        #fbbf24;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+    font-weight:
+        650;
+
+}
+
+
+/*=========================================================
+ ERROR
+=========================================================*/
+
+.rs-fare-modern-2026
+.rs-fare-error {
+
+    padding:
+        14px;
+
+    border:
+        1px solid rgba(248, 113, 113, .18);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(239, 68, 68, .08);
+
+    color:
+        #fecaca;
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    text-align:
+        left;
+
+}
+
+
+/*=========================================================
+ ESTIMATE ACTION AREA
+=========================================================*/
+
+.rs-fare-estimate-actions {
+
+    margin-top:
+        17px;
+
+    padding-top:
+        17px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .08);
+
+}
+
+
+/*=========================================================
+ ESTIMATE STATUS
+=========================================================*/
+
+.rs-fare-estimate-status {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        10px;
+
+}
+
+
+.rs-fare-estimate-status-icon {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 38px;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(99, 102, 241, .12);
+
+    color:
+        #a5b4fc;
+
+}
+
+
+.rs-fare-estimate-status strong {
+
+    display:
+        block;
+
+    color:
+        #f8fafc;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.35;
+
+    font-weight:
+        850;
+
+}
+
+
+.rs-fare-estimate-status p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        rgba(203, 213, 225, .68);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/*=========================================================
+ ENQUIRE BUTTON
+=========================================================*/
+
+.rs-fare-enquire-btn {
+
+    width:
+        100%;
+
+    min-height:
+        45px;
+
+    margin-top:
+        13px;
+
+    padding:
+        0 13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    border-radius:
+        12px;
+
+    background:
+        #ffffff;
+
+    color:
+        #0f172a;
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    font-weight:
+        850;
+
+    cursor:
+        pointer;
+
+}
+
+
+.rs-fare-enquire-btn:disabled {
+
+    opacity:
+        .42;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/*=========================================================
+ DISCLAIMER
+=========================================================*/
+
+.rs-fare-disclaimer {
+
+    margin-top:
+        14px;
+
+    padding:
+        12px;
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        9px;
+
+    border:
+        1px solid rgba(245, 158, 11, .13);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(245, 158, 11, .06);
+
+}
+
+
+.rs-fare-disclaimer-icon {
+
+    color:
+        #fbbf24;
+
+    font-size:
+        12px;
+
+}
+
+
+.rs-fare-disclaimer strong {
+
+    display:
+        block;
+
+    color:
+        #fde68a;
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+
+}
+
+
+.rs-fare-disclaimer p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        rgba(226, 232, 240, .70);
+
+    font-size:
+        10px;
+
+    line-height:
+        1.55;
+
+}
+
+
+/*=========================================================
+ BOTTOM STRIP
+=========================================================*/
+
+.rs-fare-bottom-strip {
+
+    margin-top:
+        20px;
+
+    padding:
+        16px 18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255, 255, 255, .84);
+
+    box-shadow:
+        0 11px 34px
+        rgba(15, 23, 42, .05);
+
+}
+
+
+.rs-fare-bottom-strip > div {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+}
+
+
+.rs-fare-bottom-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+}
+
+
+.rs-fare-bottom-strip strong {
+
+    display:
+        block;
+
+    color:
+        #0f172a;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.35;
+
+    font-weight:
+        900;
+
+}
+
+
+.rs-fare-bottom-strip p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/*=========================================================
+ BOTTOM BUTTON
+=========================================================*/
+
+.rs-fare-bottom-btn {
+
+    min-height:
+        43px;
+
+    padding:
+        0 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        0;
+
+    border-radius:
+        11px;
+
+    background:
+        #0f172a;
+
+    color:
+        #ffffff;
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    font-weight:
+        850;
+
+    cursor:
+        pointer;
+
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .rs-fare-modern-2026
+    .rs-fare-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-fare-result-box {
+
+        min-height:
+            0;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    .rs-fare-2026.rs-fare-modern-2026 {
+
+        padding:
+            80px 15px;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-fare-title {
+
+        font-size:
+            clamp(37px, 10vw, 48px);
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-fare-sub {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-fare-card {
+
+        padding:
+            8px;
+
+        border-radius:
+            23px;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-fare-form,
+    .rs-fare-modern-2026
+    .rs-fare-result-box {
+
+        padding:
+            21px;
+
+        border-radius:
+            19px;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-fare-price {
+
+        font-size:
+            clamp(40px, 13vw, 54px);
+
+    }
+
+
+    .rs-fare-bottom-strip {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-fare-bottom-btn {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 470px) {
+
+    .rs-fare-trust-row {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .rs-fare-trust-row span {
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .rs-fare-result-top {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rs-fare-modern-2026
+    .rs-result-badge {
+
+        align-self:
+            flex-start;
+
+    }
+
+}

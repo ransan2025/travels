@@ -1,0 +1,2691 @@
+/*=========================================================
+ RANSAN TRAVELS
+ HERO MODERN ENHANCEMENT
+ SAFE / SCOPED LAYER
+=========================================================*/
+
+
+/*=========================================================
+ HERO ROOT
+=========================================================*/
+
+.hero.rs-hero-modern {
+
+    position:
+        relative;
+
+    min-height:
+        100vh;
+
+    overflow:
+        hidden;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding:
+        118px 28px 92px;
+
+    background:
+        #06111f;
+
+}
+
+
+/*=========================================================
+ PREMIUM OVERLAY
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-modern-overlay {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        2;
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(3, 10, 22, .90) 0%,
+            rgba(4, 13, 28, .76) 37%,
+            rgba(4, 12, 24, .48) 64%,
+            rgba(3, 8, 18, .52) 100%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .16),
+            rgba(1, 8, 19, .22) 55%,
+            rgba(1, 8, 19, .70)
+        );
+
+}
+
+
+/*=========================================================
+ AMBIENT GLOWS
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-glow {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        3;
+
+    filter:
+        blur(100px);
+
+    opacity:
+        .28;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-glow-one {
+
+    width:
+        440px;
+
+    height:
+        440px;
+
+    left:
+        -180px;
+
+    bottom:
+        -120px;
+
+    background:
+        #06b6d4;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-glow-two {
+
+    width:
+        420px;
+
+    height:
+        420px;
+
+    right:
+        -160px;
+
+    top:
+        80px;
+
+    background:
+        #7c3aed;
+
+}
+
+
+/*=========================================================
+ SLIDER
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-slider {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    z-index:
+        1;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-slide {
+
+    transition:
+        opacity 1.2s ease,
+        transform 7s linear;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-slide.active {
+
+    transform:
+        scale(1.015);
+
+}
+
+
+/*=========================================================
+ WRAPPER
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-wrap {
+
+    position:
+        relative;
+
+    z-index:
+        10;
+
+    width:
+        min(1320px, 100%);
+
+    margin:
+        0 auto;
+
+}
+
+
+/*=========================================================
+ GRID
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(390px, .85fr);
+
+    align-items:
+        center;
+
+    gap:
+        clamp(42px, 6vw, 84px);
+
+}
+
+
+/*=========================================================
+ LEFT CONTENT
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-main-content {
+
+    position:
+        relative;
+
+    max-width:
+        760px;
+
+}
+
+
+/*=========================================================
+ HERO BADGE
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-badge {
+
+    margin-bottom:
+        13px;
+
+    padding:
+        8px 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, .16);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .10);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .10);
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .8px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*=========================================================
+ TRUST ROW
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-trust-row {
+
+    margin-bottom:
+        16px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    color:
+        rgba(255, 255, 255, .78);
+
+    font-size:
+        10px;
+
+    font-weight:
+        750;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-trust-item {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-trust-item i {
+
+    color:
+        #34d399;
+
+    font-size:
+        9px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-trust-divider {
+
+    width:
+        1px;
+
+    height:
+        12px;
+
+    background:
+        rgba(255, 255, 255, .20);
+
+}
+
+
+/*=========================================================
+ HERO TITLE
+=========================================================*/
+
+.hero.rs-hero-modern
+h1 {
+
+    max-width:
+        760px;
+
+    margin:
+        0 0 13px;
+
+    font-size:
+        clamp(46px, 5.3vw, 72px);
+
+    line-height:
+        .99;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        -3.2px;
+
+    text-wrap:
+        balance;
+
+    text-shadow:
+        0 16px 45px rgba(0, 0, 0, .24);
+
+}
+
+
+/* preserve existing dynamic highlighted span */
+
+.hero.rs-hero-modern
+h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #5eead4,
+            #67e8f9,
+            #ffffff,
+            #a5f3fc,
+            #5eead4
+        );
+
+    background-size:
+        220% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+/*=========================================================
+ TYPING TEXT
+=========================================================*/
+
+.hero.rs-hero-modern
+.typing {
+
+    min-height:
+        30px;
+
+    margin-bottom:
+        10px;
+
+    color:
+        #67e8f9;
+
+    font-size:
+        clamp(16px, 2vw, 21px);
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        -.25px;
+
+}
+
+
+/*=========================================================
+ TRAVEL EXPERIENCE CONTAINER
+=========================================================*/
+
+.hero.rs-hero-modern
+.travel-experience {
+
+    max-width:
+        720px;
+
+    margin-top:
+        14px;
+
+    padding:
+        15px;
+
+    display:
+        grid;
+
+    gap:
+        10px;
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    border-radius:
+        22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .105),
+            rgba(255, 255, 255, .045)
+        );
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .08),
+        0 18px 55px rgba(0, 0, 0, .16);
+
+}
+
+
+/*=========================================================
+ ROUTE / EXPLORE TODAY
+=========================================================*/
+
+.hero.rs-hero-modern
+.rotating-text {
+
+    margin:
+        0;
+
+    padding:
+        10px 12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    width:
+        100%;
+
+    border:
+        1px solid rgba(103, 232, 249, .10);
+
+    border-radius:
+        15px;
+
+    background:
+        rgba(6, 182, 212, .065);
+
+    box-shadow:
+        none;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-route-icon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 34px;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(34, 211, 238, .12);
+
+    color:
+        #67e8f9;
+
+    font-size:
+        13px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-route-copy {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.hero.rs-hero-modern
+.rotating-text
+.label {
+
+    color:
+        rgba(255, 255, 255, .52);
+
+    font-size:
+        8px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.hero.rs-hero-modern
+#rotateText {
+
+    color:
+        #ffffff;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+}
+
+
+/*=========================================================
+ LIVE TICKER
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-live-wrap {
+
+    margin:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    flex-wrap:
+        wrap;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-live-badge {
+
+    min-height:
+        30px;
+
+    padding:
+        0 10px;
+
+    gap:
+        6px;
+
+    border:
+        1px solid rgba(52, 211, 153, .17);
+
+    background:
+        rgba(16, 185, 129, .09);
+
+    color:
+        #6ee7b7;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .8px;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-live-dot {
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-live-message {
+
+    min-width:
+        0;
+
+    min-height:
+        30px;
+
+    padding:
+        0 11px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    background:
+        rgba(255, 255, 255, .07);
+
+    color:
+        #ffffff;
+
+    font-size:
+        9px;
+
+    font-weight:
+        750;
+
+    box-shadow:
+        none;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-live-rating {
+
+    min-height:
+        30px;
+
+    padding:
+        0 10px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    background:
+        rgba(245, 158, 11, .12);
+
+    border:
+        1px solid rgba(245, 158, 11, .18);
+
+    color:
+        #fde68a;
+
+    font-size:
+        9px;
+
+    box-shadow:
+        none;
+
+}
+
+
+/* Keep dynamic ticker text readable regardless of old color class */
+
+.hero.rs-hero-modern
+.hero-live-message.blue,
+
+.hero.rs-hero-modern
+.hero-live-message.green,
+
+.hero.rs-hero-modern
+.hero-live-message.orange,
+
+.hero.rs-hero-modern
+.hero-live-message.purple,
+
+.hero.rs-hero-modern
+.hero-live-message.teal,
+
+.hero.rs-hero-modern
+.hero-live-message.pink,
+
+.hero.rs-hero-modern
+.hero-live-message.gold,
+
+.hero.rs-hero-modern
+.hero-live-message.indigo {
+
+    color:
+        #ffffff;
+
+}
+
+
+/*=========================================================
+ PREMIUM MESSAGE
+=========================================================*/
+
+.hero.rs-hero-modern
+.premium-line {
+
+    margin:
+        0;
+
+    padding:
+        2px 2px 0;
+
+    color:
+        rgba(255, 255, 255, .72);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.65;
+
+    font-weight:
+        500;
+
+}
+
+
+/*=========================================================
+ QUICK SERVICE CHIPS
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-service-chips {
+
+    padding-top:
+        2px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        6px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-service-chips a {
+
+    min-height:
+        28px;
+
+    padding:
+        0 9px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border:
+        1px solid rgba(255, 255, 255, .10);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .055);
+
+    color:
+        rgba(255, 255, 255, .76);
+
+    font-size:
+        8px;
+
+    font-weight:
+        750;
+
+    text-decoration:
+        none;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-service-chips a:hover {
+
+    border-color:
+        rgba(34, 211, 238, .23);
+
+    background:
+        rgba(34, 211, 238, .10);
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/*=========================================================
+ CTA CONTAINER
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-actions-v2 {
+
+    margin-top:
+        13px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(210px, .85fr)
+        minmax(260px, 1.15fr);
+
+    gap:
+        9px;
+
+    align-items:
+        stretch;
+
+}
+
+
+/*=========================================================
+ PRIMARY CTA
+=========================================================*/
+
+.hero.rs-hero-modern
+.cta-primary {
+
+    min-height:
+        60px;
+
+    padding:
+        8px 16px;
+
+    border:
+        1px solid rgba(255, 255, 255, .14);
+
+    border-radius:
+        16px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 196, 190, .18);
+
+}
+
+
+.hero.rs-hero-modern
+.cta-primary:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 196, 190, .26);
+
+}
+
+
+.hero.rs-hero-modern
+.cta-main {
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+.hero.rs-hero-modern
+.cta-pill {
+
+    padding:
+        4px 9px;
+
+    font-size:
+        7px;
+
+    animation:
+        none;
+
+}
+
+
+/*=========================================================
+ SECONDARY CTA GROUP
+=========================================================*/
+
+.hero.rs-hero-modern
+.cta-group {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        8px;
+
+}
+
+
+.hero.rs-hero-modern
+.cta-chip {
+
+    min-height:
+        60px;
+
+    padding:
+        0 11px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255, 255, 255, .075);
+
+    color:
+        #ffffff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    text-decoration:
+        none;
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        .22s ease;
+
+}
+
+
+.hero.rs-hero-modern
+.cta-chip:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(103, 232, 249, .22);
+
+    background:
+        rgba(255, 255, 255, .12);
+
+}
+
+
+.hero.rs-hero-modern
+.cta-chip.live {
+
+    border-color:
+        rgba(52, 211, 153, .16);
+
+    background:
+        rgba(16, 185, 129, .09);
+
+}
+
+
+/*=========================================================
+ CONFIDENCE STRIP
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-confidence {
+
+    margin-top:
+        11px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px 15px;
+
+    color:
+        rgba(255, 255, 255, .60);
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-confidence > div {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-confidence-icon {
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(16, 185, 129, .12);
+
+    color:
+        #6ee7b7;
+
+    font-size:
+        8px;
+
+}
+
+
+/*=========================================================
+ RIGHT CONSOLE
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-console {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    max-width:
+        480px;
+
+    margin-left:
+        auto;
+
+    padding:
+        20px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, .13);
+
+    border-radius:
+        25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 28, 46, .83),
+            rgba(8, 20, 36, .72)
+        );
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .09),
+        0 30px 80px rgba(0, 0, 0, .34);
+
+}
+
+
+/* top cyan line */
+
+.hero.rs-hero-modern
+.rs-hero-console::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        28px;
+
+    right:
+        28px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(103, 232, 249, .70),
+            transparent
+        );
+
+}
+
+
+/*=========================================================
+ CONSOLE TOP
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-console-top {
+
+    margin-bottom:
+        15px;
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        14px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-kicker {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        #67e8f9;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.2px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-live-dot {
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #34d399;
+
+    box-shadow:
+        0 0 10px rgba(52, 211, 153, .65);
+
+    animation:
+        rsHeroLivePulse 1.8s infinite;
+
+}
+
+
+@keyframes rsHeroLivePulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .65;
+
+        transform:
+            scale(.88);
+
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-console-top h3 {
+
+    margin:
+        6px 0 0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(18px, 2vw, 23px);
+
+    line-height:
+        1.18;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.6px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-hero-console-top h3 span {
+
+    color:
+        #67e8f9;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-status {
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 35px;
+
+    border:
+        1px solid rgba(52, 211, 153, .16);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(16, 185, 129, .09);
+
+    color:
+        #6ee7b7;
+
+    font-size:
+        11px;
+
+}
+
+
+/*=========================================================
+ FESTIVAL ZONE
+=========================================================*/
+
+.hero.rs-hero-modern
+.festival-zone {
+
+    position:
+        relative;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-greeting-card {
+
+    width:
+        100%;
+
+    margin-bottom:
+        10px;
+
+    padding:
+        12px 14px;
+
+    border-radius:
+        15px;
+
+    box-shadow:
+        none;
+
+    animation:
+        heroGreetingFloat 3s ease-in-out infinite;
+
+}
+
+
+.hero.rs-hero-modern
+.greet-top {
+
+    font-size:
+        11px;
+
+}
+
+
+.hero.rs-hero-modern
+.greet-bottom {
+
+    font-size:
+        9px;
+
+}
+
+
+/*=========================================================
+ CONSOLE DIVIDER
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-console-divider {
+
+    position:
+        relative;
+
+    margin:
+        12px 0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-divider::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        0;
+
+    height:
+        1px;
+
+    background:
+        rgba(255, 255, 255, .08);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-divider span {
+
+    position:
+        relative;
+
+    padding:
+        0 9px;
+
+    background:
+        #0c1b2d;
+
+    color:
+        rgba(255, 255, 255, .42);
+
+    font-size:
+        7px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .8px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*=========================================================
+ SPOTLIGHT
+=========================================================*/
+
+.hero.rs-hero-modern
+.spotlight {
+
+    margin:
+        0 0 9px;
+
+    padding:
+        10px 12px;
+
+    border:
+        1px solid rgba(34, 211, 238, .15);
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(6, 182, 212, .13),
+            rgba(34, 211, 238, .08)
+        );
+
+    color:
+        #a5f3fc;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    box-shadow:
+        none;
+
+    animation:
+        none;
+
+}
+
+
+/*=========================================================
+ LIVE BOOKING
+=========================================================*/
+
+.hero.rs-hero-modern
+.live-booking {
+
+    margin:
+        0;
+
+    padding:
+        10px 12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255, 255, 255, .045);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-live-booking-icon {
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 32px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(52, 211, 153, .10);
+
+    color:
+        #6ee7b7;
+
+    font-size:
+        11px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-live-booking-copy {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-live-booking-copy strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-live-booking-copy small {
+
+    color:
+        rgba(255, 255, 255, .48);
+
+    font-size:
+        8px;
+
+}
+
+
+/*=========================================================
+ SERVICE AVAILABILITY
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-availability {
+
+    margin-top:
+        10px;
+
+    display:
+        grid;
+
+    gap:
+        6px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-availability-item {
+
+    min-height:
+        48px;
+
+    padding:
+        7px 9px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        30px minmax(0, 1fr) auto;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    border:
+        1px solid rgba(255, 255, 255, .07);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    transition:
+        .2s ease;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-availability-item:hover {
+
+    background:
+        rgba(255, 255, 255, .065);
+
+    border-color:
+        rgba(103, 232, 249, .13);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-av-icon {
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        9px;
+
+    font-size:
+        11px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-av-icon.flight {
+
+    background:
+        rgba(59, 130, 246, .12);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-av-icon.car {
+
+    background:
+        rgba(168, 85, 247, .12);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-av-icon.holiday {
+
+    background:
+        rgba(245, 158, 11, .12);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-availability-item strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-availability-item small {
+
+    display:
+        block;
+
+    margin-top:
+        1px;
+
+    color:
+        rgba(255, 255, 255, .45);
+
+    font-size:
+        7px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-av-status {
+
+    padding:
+        4px 7px;
+
+    border:
+        1px solid rgba(52, 211, 153, .13);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(16, 185, 129, .08);
+
+    color:
+        #6ee7b7;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .5px;
+
+}
+
+
+/*=========================================================
+ CONSOLE FOOTER
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-console-footer {
+
+    margin-top:
+        10px;
+
+    padding-top:
+        10px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .07);
+
+    color:
+        rgba(255, 255, 255, .43);
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-footer span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-console-footer i {
+
+    color:
+        #67e8f9;
+
+}
+
+
+/*=========================================================
+ HERO DOTS
+=========================================================*/
+
+.hero.rs-hero-modern
+.hero-dots {
+
+    bottom:
+        28px;
+
+    z-index:
+        15;
+
+    padding:
+        7px 10px;
+
+    gap:
+        6px;
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(4, 12, 24, .30);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.hero.rs-hero-modern
+.hero-dots span {
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .36);
+
+    transition:
+        width .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.hero.rs-hero-modern
+.hero-dots span.active {
+
+    width:
+        24px;
+
+    background:
+        #67e8f9;
+
+    box-shadow:
+        0 0 12px rgba(103, 232, 249, .45);
+
+}
+
+
+/*=========================================================
+ SCROLL CUE
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-modern-scroll-cue {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        64px;
+
+    z-index:
+        15;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        0;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        rgba(255, 255, 255, .52);
+
+    font-family:
+        inherit;
+
+    font-size:
+        7px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    animation:
+        rsHeroScrollFloat 2s ease-in-out infinite;
+
+}
+
+
+@keyframes rsHeroScrollFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, 5px);
+
+    }
+
+}
+
+
+/*=========================================================
+ DECORATIVE FLIGHT PATH
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-flight-path {
+
+    position:
+        absolute;
+
+    top:
+        118px;
+
+    right:
+        6%;
+
+    width:
+        180px;
+
+    height:
+        70px;
+
+    z-index:
+        4;
+
+    opacity:
+        .26;
+
+    pointer-events:
+        none;
+
+}
+
+
+.hero.rs-hero-modern
+.rs-flight-line {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    right:
+        10px;
+
+    top:
+        32px;
+
+    height:
+        1px;
+
+    border-top:
+        1px dashed rgba(255, 255, 255, .45);
+
+    transform:
+        rotate(-10deg);
+
+}
+
+
+.hero.rs-hero-modern
+.rs-flight-plane {
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        17px;
+
+    color:
+        #a5f3fc;
+
+    font-size:
+        15px;
+
+    transform:
+        rotate(12deg);
+
+}
+
+
+/*=========================================================
+ ENTRANCE POLISH
+=========================================================*/
+
+.hero.rs-hero-modern
+.rs-hero-main-content,
+
+.hero.rs-hero-modern
+.rs-hero-console {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.hero.rs-hero-modern.rs-hero-enhanced
+.rs-hero-main-content {
+
+    animation:
+        rsHeroContentEnter .75s ease both;
+
+}
+
+
+.hero.rs-hero-modern.rs-hero-enhanced
+.rs-hero-console {
+
+    animation:
+        rsHeroConsoleEnter .85s .08s ease both;
+
+}
+
+
+@keyframes rsHeroContentEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes rsHeroConsoleEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(22px) scale(.985);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0) scale(1);
+
+    }
+
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 1100px) {
+
+    .hero.rs-hero-modern {
+
+        padding:
+            108px 22px 96px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-grid {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(350px, .82fr);
+
+        gap:
+            34px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    h1 {
+
+        letter-spacing:
+            -2.5px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-actions-v2 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE / TABLET STACK
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .hero.rs-hero-modern {
+
+        min-height:
+            auto;
+
+        padding:
+            100px 18px 110px;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-grid {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            28px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-main-content {
+
+        max-width:
+            720px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-console {
+
+        max-width:
+            640px;
+
+        margin:
+            0;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-flight-path {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 600px) {
+
+    .hero.rs-hero-modern {
+
+        padding:
+            88px 14px 100px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-wrap {
+
+        width:
+            100%;
+
+    }
+
+
+    .hero.rs-hero-modern
+    h1 {
+
+        margin-bottom:
+            10px;
+
+        font-size:
+            clamp(36px, 11vw, 48px);
+
+        line-height:
+            1.02;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .typing {
+
+        min-height:
+            25px;
+
+        font-size:
+            15px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-trust-row {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .travel-experience {
+
+        padding:
+            12px;
+
+        border-radius:
+            18px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .premium-line {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-actions-v2 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .cta-group {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .hero.rs-hero-modern
+    .cta-primary {
+
+        min-height:
+            58px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .cta-chip {
+
+        min-height:
+            48px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-confidence {
+
+        gap:
+            6px 10px;
+
+        font-size:
+            7px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-console {
+
+        padding:
+            15px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-console-top h3 {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-availability-item {
+
+        grid-template-columns:
+            28px minmax(0, 1fr) auto;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-live-rating {
+
+        display:
+            none;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .hero-dots {
+
+        bottom:
+            22px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-modern-scroll-cue {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/*=========================================================
+ VERY SMALL PHONE
+=========================================================*/
+
+@media (max-width: 390px) {
+
+    .hero.rs-hero-modern
+    .rs-hero-service-chips {
+
+        gap:
+            5px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-hero-service-chips a {
+
+        font-size:
+            7px;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .cta-group {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero.rs-hero-modern
+    .rs-console-footer {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+}
+
+
+/*=========================================================
+ REDUCED MOTION
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero.rs-hero-modern
+    .rs-hero-main-content,
+
+    .hero.rs-hero-modern
+    .rs-hero-console,
+
+    .hero.rs-hero-modern
+    .rs-modern-scroll-cue,
+
+    .hero.rs-hero-modern
+    .rs-console-live-dot {
+
+        animation:
+            none !important;
+
+    }
+
+}

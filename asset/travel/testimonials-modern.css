@@ -1,0 +1,1998 @@
+/*=========================================================
+ RANSAN TRAVELS
+ TESTIMONIALS / CUSTOMER REVIEWS
+ MODERN TRUST EXPERIENCE
+=========================================================*/
+
+
+/*=========================================================
+ SECTION
+=========================================================*/
+
+.rsx-testimonial-section.rsx-testimonials-modern {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+        110px 0;
+
+    overflow: visible;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8fbff 52%,
+            #ffffff 100%
+        );
+
+}
+
+
+/*=========================================================
+ BACKGROUND VISUAL LAYER
+
+ We clip decorative elements here instead of the
+ entire section.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-testimonial-visual-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+/*=========================================================
+ GLOW ORBS
+=========================================================*/
+
+.rsx-testimonial-orb {
+
+    position: absolute;
+
+    width: 460px;
+    height: 460px;
+
+    border-radius: 50%;
+
+    filter:
+        blur(115px);
+
+    pointer-events: none;
+
+}
+
+
+.rsx-orb-one {
+
+    top: -220px;
+    left: -170px;
+
+    background:
+        rgba(59, 130, 246, .14);
+
+}
+
+
+.rsx-orb-two {
+
+    right: -190px;
+    bottom: -230px;
+
+    background:
+        rgba(139, 92, 246, .12);
+
+}
+
+
+/*=========================================================
+ GRID PATTERN
+=========================================================*/
+
+.rsx-testimonial-grid-pattern {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .24;
+
+    background-image:
+
+        linear-gradient(
+            rgba(15, 23, 42, .026) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, .026) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 82%,
+            transparent 100%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            #000 18%,
+            #000 82%,
+            transparent 100%
+        );
+
+}
+
+
+/*=========================================================
+ EXISTING CONTAINER
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1220px, calc(100% - 40px));
+
+    max-width:
+        1220px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/*=========================================================
+ HEADER
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-header {
+
+    max-width:
+        900px;
+
+    margin:
+        0 auto 44px;
+
+    text-align:
+        center;
+
+}
+
+
+/*=========================================================
+ EYEBROW
+=========================================================*/
+
+.rsx-testimonial-eyebrow {
+
+    margin-bottom:
+        15px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #2563eb;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .8px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.rsx-eyebrow-icon {
+
+    width:
+        25px;
+
+    height:
+        25px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        #eff6ff;
+
+    font-size:
+        12px;
+
+}
+
+
+/*=========================================================
+ EXISTING DYNAMIC TOP BADGE
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-top-badge {
+
+    margin:
+        0 auto 12px;
+
+    padding:
+        8px 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius:
+        999px;
+
+    background:
+        #f8fbff;
+
+    color:
+        #2563eb;
+
+    box-shadow:
+        none;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+}
+
+
+/*=========================================================
+ EXISTING GOOGLE RATING PILL
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-rating-pill {
+
+    margin:
+        0 auto 23px;
+
+    padding:
+        10px 15px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .90);
+
+    color:
+        #334155;
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, .055);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        800;
+
+}
+
+
+.rsx-testimonials-modern
+.rsx-rating-pill img {
+
+    width:
+        23px;
+
+    height:
+        23px;
+
+    object-fit:
+        contain;
+
+}
+
+
+.rsx-testimonials-modern
+.rsx-divider {
+
+    width:
+        1px;
+
+    height:
+        18px;
+
+    background:
+        #dbe3ed;
+
+}
+
+
+/*=========================================================
+ MAIN HEADING
+
+ Readable 46–64px desktop.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-header h2 {
+
+    max-width:
+        850px;
+
+    margin:
+        0 auto;
+
+    color:
+        #0f172a;
+
+    font-size:
+        clamp(46px, 5vw, 64px);
+
+    line-height:
+        1.06;
+
+    font-weight:
+        950;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.rsx-testimonials-modern
+.rsx-header h2 span {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #4f46e5 55%,
+            #8b5cf6
+        );
+
+    background-clip:
+        text;
+
+    -webkit-background-clip:
+        text;
+
+    color:
+        transparent;
+
+}
+
+
+/*=========================================================
+ HEADER DESCRIPTION
+
+ Explicit font size because old rule only provided
+ line-height and inherited size.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-header > p {
+
+    max-width:
+        730px;
+
+    margin:
+        20px auto 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/*=========================================================
+ TRUST ROW
+=========================================================*/
+
+.rsx-testimonial-trust-row {
+
+    margin-top:
+        23px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+}
+
+
+.rsx-testimonial-trust-row > span {
+
+    min-height:
+        36px;
+
+    padding:
+        0 11px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid #e6ebf1;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .85);
+
+    color:
+        #475569;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        750;
+
+}
+
+
+.rsx-testimonial-trust-row i {
+
+    color:
+        #4f46e5;
+
+}
+
+
+/*=========================================================
+ TOOLBAR
+=========================================================*/
+
+.rsx-testimonial-toolbar {
+
+    margin-bottom:
+        15px;
+
+    padding:
+        11px 12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    border:
+        1px solid #e6ebf1;
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255, 255, 255, .82);
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, .045);
+
+    backdrop-filter:
+        blur(13px);
+
+    -webkit-backdrop-filter:
+        blur(13px);
+
+}
+
+
+/*=========================================================
+ TOOLBAR COPY
+=========================================================*/
+
+.rsx-testimonial-toolbar-copy {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.rsx-toolbar-icon {
+
+    width:
+        37px;
+
+    height:
+        37px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 37px;
+
+    border-radius:
+        11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+    font-size:
+        13px;
+
+}
+
+
+.rsx-testimonial-toolbar-copy > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.rsx-testimonial-toolbar-copy strong {
+
+    color:
+        #0f172a;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        900;
+
+}
+
+
+.rsx-testimonial-toolbar-copy span {
+
+    margin-top:
+        2px;
+
+    color:
+        #64748b;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.4;
+
+}
+
+
+/*=========================================================
+ PAUSE / PLAY BUTTON
+=========================================================*/
+
+.rsx-testimonial-pause-btn {
+
+    min-height:
+        40px;
+
+    padding:
+        0 12px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        1px solid #e2e8f0;
+
+    border-radius:
+        11px;
+
+    background:
+        #ffffff;
+
+    color:
+        #334155;
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+    cursor:
+        pointer;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        color .2s ease;
+
+}
+
+
+.rsx-testimonial-pause-btn:hover {
+
+    border-color:
+        rgba(79, 70, 229, .20);
+
+    background:
+        #f8faff;
+
+    color:
+        #4338ca;
+
+}
+
+
+/*=========================================================
+ SLIDER
+
+ Existing .rsx-slider retained.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-slider {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    max-width:
+        100%;
+
+    padding:
+        13px 0 18px;
+
+    overflow:
+        hidden;
+
+}
+
+
+/*=========================================================
+ EDGE FADES
+=========================================================*/
+
+.rsx-slider-edge {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        75px;
+
+    z-index:
+        5;
+
+    pointer-events:
+        none;
+
+}
+
+
+.rsx-slider-edge-left {
+
+    left:
+        0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f9fbff 0%,
+            rgba(249, 251, 255, .88) 34%,
+            transparent 100%
+        );
+
+}
+
+
+.rsx-slider-edge-right {
+
+    right:
+        0;
+
+    background:
+        linear-gradient(
+            270deg,
+            #f9fbff 0%,
+            rgba(249, 251, 255, .88) 34%,
+            transparent 100%
+        );
+
+}
+
+
+/*=========================================================
+ EXISTING TRACK
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-track {
+
+    display:
+        flex;
+
+    gap:
+        16px;
+
+    width:
+        max-content;
+
+    animation:
+        rsxslide 42s linear infinite;
+
+    will-change:
+        transform;
+
+}
+
+
+/*=========================================================
+ TESTIMONIAL PLAY / PAUSE
+=========================================================*/
+
+
+/*
+ IMPORTANT:
+
+ Manual button is now the ONLY pause/play controller.
+
+ We intentionally do NOT pause on hover because that
+ caused Play to look broken when the mouse returned
+ over the testimonial cards.
+*/
+
+
+.rsx-testimonials-modern
+.rsx-track {
+
+    animation-play-state:
+        running;
+
+}
+
+
+/* Manual pause */
+
+.rsx-testimonials-modern
+.rsx-track.rsx-manually-paused {
+
+    animation-play-state:
+        paused !important;
+
+}
+
+
+/*
+ IMPORTANT:
+ Do not add:
+
+ .rsx-track:hover {
+     animation-play-state: paused;
+ }
+
+ and do not add:
+
+ .rsx-slider:focus-within .rsx-track {
+     animation-play-state: paused;
+ }
+
+ Manual Pause/Play is the single source of truth.
+*/
+
+
+/*=========================================================
+ MANUAL PLAY / PAUSE STATE
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-track.rsx-is-paused {
+
+    animation-play-state:
+        paused !important;
+
+}
+
+
+/*
+ Explicit running state used briefly by JS when Play
+ is clicked. This ensures the CSS animation resumes.
+*/
+
+.rsx-testimonials-modern
+.rsx-track:not(.rsx-is-paused) {
+
+    animation-play-state:
+        running;
+
+}
+
+
+/*=========================================================
+ GENERATED REVIEW CARD
+
+ Existing class preserved.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-card {
+
+    position:
+        relative;
+
+    width:
+        370px;
+
+    min-height:
+        330px;
+
+    padding:
+        25px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    flex-shrink:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        23px;
+
+    background:
+        rgba(255, 255, 255, .94);
+
+    box-shadow:
+        0 13px 39px
+        rgba(15, 23, 42, .065);
+
+    box-sizing:
+        border-box;
+
+    transform:
+        none;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+
+}
+
+
+/* quote watermark */
+
+.rsx-testimonials-modern
+.rsx-card::after {
+
+    content:
+        "“";
+
+    position:
+        absolute;
+
+    top:
+        13px;
+
+    right:
+        19px;
+
+    color:
+        rgba(79, 70, 229, .065);
+
+    font-family:
+        Georgia, serif;
+
+    font-size:
+        92px;
+
+    line-height:
+        1;
+
+    pointer-events:
+        none;
+
+}
+
+
+/*=========================================================
+ STABLE CARD HOVER
+
+ Remove old translateY(-10px).
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-card:hover {
+
+    transform:
+        none;
+
+    border-color:
+        rgba(99, 102, 241, .20);
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 20px 48px
+        rgba(15, 23, 42, .10);
+
+}
+
+
+/*=========================================================
+ STAR RATING
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-stars {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        fit-content;
+
+    margin:
+        0 0 17px;
+
+    padding:
+        7px 10px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border:
+        1px solid #fde68a;
+
+    border-radius:
+        999px;
+
+    background:
+        #fffbeb;
+
+    color:
+        #d97706;
+
+    font-size:
+        16px;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/*=========================================================
+ REVIEW COPY
+
+ Proper readable 15px.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-card > p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 24px;
+
+    color:
+        #475569;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.75;
+
+    font-weight:
+        500;
+
+}
+
+
+/*=========================================================
+ REVIEW USER
+
+ Push user area toward card bottom for consistent cards.
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-user {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-top:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+/*=========================================================
+ AVATAR
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-avatar {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    flex:
+        0 0 55px;
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #0ea5e9
+        );
+
+    color:
+        #ffffff;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    font-size:
+        15px;
+
+    font-weight:
+        850;
+
+    box-shadow:
+        0 8px 22px
+        rgba(79, 70, 229, .17);
+
+}
+
+
+/*
+ Existing reviews.js can create an outer .rsx-avatar
+ containing an image.
+ Keep nested fallback from becoming visually oversized.
+*/
+
+.rsx-testimonials-modern
+.rsx-avatar
+.rsx-avatar {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    flex-basis:
+        100%;
+
+}
+
+
+/*=========================================================
+ CUSTOMER PHOTO
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-avatar-img {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    border:
+        2px solid #ffffff;
+
+    border-radius:
+        50%;
+
+    object-fit:
+        cover;
+
+    box-shadow:
+        0 8px 22px
+        rgba(15, 23, 42, .12);
+
+}
+
+
+/*=========================================================
+ CUSTOMER NAME
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-user h4 {
+
+    margin:
+        0;
+
+    color:
+        #0f172a;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.25;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -.25px;
+
+}
+
+
+/*=========================================================
+ VERIFIED
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-verified {
+
+    margin-top:
+        5px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border-radius:
+        999px;
+
+    background:
+        #ecfdf5;
+
+    color:
+        #15803d;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        800;
+
+}
+
+
+/*=========================================================
+ LOCATION
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-location {
+
+    margin-top:
+        6px;
+
+    padding:
+        0;
+
+    display:
+        block;
+
+    background:
+        transparent;
+
+    color:
+        #64748b;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.4;
+
+}
+
+
+/*=========================================================
+ GOOGLE SOURCE
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-google {
+
+    margin-top:
+        6px;
+
+    padding:
+        4px 7px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius:
+        999px;
+
+    background:
+        #ffffff;
+
+    color:
+        #475569;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        750;
+
+}
+
+
+.rsx-testimonials-modern
+.rsx-google img {
+
+    width:
+        14px;
+
+    height:
+        14px;
+
+}
+
+
+/*=========================================================
+ BOTTOM CTA PANEL
+=========================================================*/
+
+.rsx-testimonial-bottom {
+
+    margin-top:
+        23px;
+
+    padding:
+        17px 18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    border:
+        1px solid #e5eaf1;
+
+    border-radius:
+        19px;
+
+    background:
+        rgba(255, 255, 255, .85);
+
+    box-shadow:
+        0 11px 34px
+        rgba(15, 23, 42, .05);
+
+    backdrop-filter:
+        blur(13px);
+
+    -webkit-backdrop-filter:
+        blur(13px);
+
+}
+
+
+/*=========================================================
+ BOTTOM COPY
+=========================================================*/
+
+.rsx-testimonial-bottom-copy {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+}
+
+
+.rsx-testimonial-bottom-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eef2ff,
+            #ecfeff
+        );
+
+    color:
+        #4f46e5;
+
+    font-size:
+        14px;
+
+}
+
+
+.rsx-testimonial-bottom-copy strong {
+
+    display:
+        block;
+
+    color:
+        #0f172a;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.35;
+
+    font-weight:
+        900;
+
+}
+
+
+.rsx-testimonial-bottom-copy p {
+
+    margin:
+        3px 0 0;
+
+    color:
+        #64748b;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/*=========================================================
+ BOTTOM ACTIONS
+=========================================================*/
+
+.rsx-testimonial-bottom-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.rsx-testimonial-action {
+
+    min-height:
+        43px;
+
+    padding:
+        0 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        11px;
+
+    font-family:
+        inherit;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.2;
+
+    font-weight:
+        850;
+
+    text-decoration:
+        none;
+
+    cursor:
+        pointer;
+
+}
+
+
+.rsx-testimonial-action.secondary {
+
+    border:
+        1px solid #e2e8f0;
+
+    background:
+        #ffffff;
+
+    color:
+        #475569;
+
+}
+
+
+.rsx-testimonial-action.primary {
+
+    border:
+        0;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #6366f1 58%,
+            #0ea5e9
+        );
+
+    box-shadow:
+        0 9px 22px
+        rgba(79, 70, 229, .18);
+
+}
+
+
+/*=========================================================
+ TABLET
+=========================================================*/
+
+@media (max-width: 900px) {
+
+    .rsx-testimonials-modern
+    .rsx-card {
+
+        width:
+            340px;
+
+    }
+
+
+    .rsx-testimonial-bottom {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .rsx-testimonial-bottom-actions {
+
+        justify-content:
+            flex-start;
+
+    }
+
+}
+
+
+/*=========================================================
+ MOBILE
+=========================================================*/
+
+@media (max-width: 700px) {
+
+    .rsx-testimonial-section.rsx-testimonials-modern {
+
+        padding:
+            80px 0;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-container {
+
+        width:
+            min(100% - 28px, 1220px);
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-header {
+
+        margin-bottom:
+            34px;
+
+    }
+
+
+    .rsx-testimonial-eyebrow {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-header h2 {
+
+        font-size:
+            clamp(37px, 10vw, 47px);
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-header > p {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-rating-pill {
+
+        max-width:
+            100%;
+
+        padding:
+            9px 11px;
+
+        flex-wrap:
+            wrap;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .rsx-testimonial-toolbar {
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .rsx-testimonial-toolbar-copy span {
+
+        display:
+            none;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-card {
+
+        width:
+            min(315px, calc(100vw - 50px));
+
+        min-height:
+            320px;
+
+        padding:
+            22px;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-card > p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .rsx-testimonials-modern
+    .rsx-user h4 {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .rsx-slider-edge {
+
+        width:
+            28px;
+
+    }
+
+
+    .rsx-testimonial-bottom-actions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/*=========================================================
+ SMALL MOBILE
+=========================================================*/
+
+@media (max-width: 470px) {
+
+    .rsx-testimonial-trust-row {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .rsx-testimonial-trust-row > span {
+
+        justify-content:
+            center;
+
+        text-align:
+            center;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .rsx-testimonial-bottom-actions {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .rsx-testimonial-action {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+/*=========================================================
+ REDUCED MOTION
+=========================================================*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    /*
+     * Do NOT use animation:none.
+     *
+     * The user still has the explicit Pause control.
+     * We simply make the marquee considerably slower.
+     */
+
+    .rsx-testimonials-modern
+    .rsx-track {
+
+        animation-duration:
+            90s;
+
+    }
+
+}
+
+/*=========================================================
+ OVERRIDE OLD BASE HOVER PAUSE
+=========================================================*/
+
+.rsx-testimonials-modern
+.rsx-track:hover {
+
+    animation-play-state:
+        running;
+
+}
+
+
+/*
+ But manual Pause always wins.
+*/
+
+.rsx-testimonials-modern
+.rsx-track.rsx-manually-paused:hover {
+
+    animation-play-state:
+        paused !important;
+
+}

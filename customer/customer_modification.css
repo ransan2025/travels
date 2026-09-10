@@ -1,0 +1,954 @@
+/*=========================================================
+BOOKING MODIFICATION ENGINE
+Version 1.0
+=========================================================*/
+
+/*=========================================================
+POPUP BODY
+=========================================================*/
+
+.modificationPopup{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+
+/*=========================================================
+BOOKING SUMMARY
+=========================================================*/
+
+.modBookingSummary{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+}
+
+.modBookingIcon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    background:linear-gradient(135deg,#1e88e5,#26c6da);
+
+    color:#fff;
+
+    flex-shrink:0;
+
+}
+
+.modBookingInfo{
+
+    flex:1;
+
+}
+
+.modBookingTitle{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.modBookingSubTitle{
+
+    margin-top:6px;
+
+    font-size:14px;
+
+    color:rgba(255,255,255,.70);
+
+}
+
+
+/*=========================================================
+BOOKING INFO GRID
+=========================================================*/
+
+.modBookingGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+.modInfoItem{
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:14px 16px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.10);
+
+}
+
+.modInfoItem label{
+
+    font-size:12px;
+
+    color:rgba(255,255,255,.55);
+
+    margin-bottom:6px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.5px;
+
+}
+
+.modInfoItem span{
+
+    font-size:15px;
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+
+/*=========================================================
+FORM
+=========================================================*/
+
+.modFormGroup{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.modFormGroup label{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#fff;
+
+}
+
+
+/*=========================================================
+INPUT
+=========================================================*/
+
+.modInput,
+
+.modSelect,
+
+.modTextarea{
+
+    width:100%;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:14px;
+
+    transition:.25s;
+
+    outline:none;
+
+}
+
+.modInput:focus,
+
+.modSelect:focus,
+
+.modTextarea:focus{
+
+    border-color:#26c6da;
+
+    box-shadow:0 0 0 3px rgba(38,198,218,.18);
+
+}
+
+.modTextarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+
+/*=========================================================
+SELECT
+=========================================================*/
+
+.modSelect option{
+
+    color:#222;
+
+}
+
+
+/*=========================================================
+READONLY
+=========================================================*/
+
+.modInput[readonly]{
+
+    opacity:.8;
+
+    cursor:not-allowed;
+
+}
+
+
+/*=========================================================
+TWO COLUMN
+=========================================================*/
+
+.modTwoColumn{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:16px;
+
+}
+
+
+/*=========================================================
+WARNING
+=========================================================*/
+
+.modWarning{
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    background:#fff5d8;
+
+    color:#8a5d00;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    border-left:5px solid #ffb300;
+
+}
+
+
+/*=========================================================
+DYNAMIC AREA
+=========================================================*/
+
+#modificationDynamicArea{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:8px;
+
+}
+
+
+/*=========================================================
+BUTTONS
+=========================================================*/
+
+.bookingPrimaryBtn{
+
+    background:linear-gradient(135deg,#1976d2,#26c6da);
+
+    color:#fff;
+
+    border:none;
+
+}
+
+.bookingPrimaryBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+
+}
+
+
+/*=========================================================
+SMOOTH ANIMATION
+=========================================================*/
+
+#modificationDynamicArea>*{
+
+    animation:fadeForm .28s ease;
+
+}
+
+@keyframes fadeForm{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+/*=========================================================
+RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px){
+
+.modBookingGrid{
+
+    grid-template-columns:1fr;
+
+}
+
+.modTwoColumn{
+
+    grid-template-columns:1fr;
+
+}
+
+.modBookingSummary{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.modBookingIcon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:30px;
+
+}
+
+}
+
+/* Validation */
+
+.modError{
+
+    border:2px solid #ff4d4f !important;
+
+    background:#fff5f5 !important;
+
+}
+
+/*=========================================================
+  CUSTOMER MODIFICATION STATUS
+=========================================================*/
+
+.customerModificationStatus {
+    margin: 12px 0 16px 0;
+}
+
+
+.customerModificationStatusBox {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    background: rgba(255,255,255,0.06);
+
+}
+
+
+.customerModificationStatusIcon {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+}
+
+
+.customerModificationStatusContent {
+
+    flex: 1;
+
+}
+
+
+.customerModificationStatusTitle {
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.customerModificationStatusType {
+
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    opacity: 0.8;
+
+}
+
+
+.customerModificationStatusRequestId {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    opacity: 0.7;
+
+}
+
+
+/*=========================================================
+  PENDING
+=========================================================*/
+
+.customerModificationStatus_pending {
+
+    border-color: rgba(245, 158, 11, 0.35);
+
+    background: rgba(245, 158, 11, 0.08);
+
+}
+
+
+/*=========================================================
+  APPROVED
+=========================================================*/
+
+.customerModificationStatus_approved {
+
+    border-color: rgba(34, 197, 94, 0.35);
+
+    background: rgba(34, 197, 94, 0.08);
+
+}
+
+
+/*=========================================================
+  REJECTED
+=========================================================*/
+
+.customerModificationStatus_rejected {
+
+    border-color: rgba(239, 68, 68, 0.35);
+
+    background: rgba(239, 68, 68, 0.08);
+
+}
+
+
+/*=========================================================
+  LOADING
+=========================================================*/
+
+.customerModificationStatusLoading {
+
+    font-size: 12px;
+
+    opacity: 0.65;
+
+}
+
+
+/* =========================================================
+   RANSAN TRAVELS — MODIFICATION UI 2026
+   Premium dark glass enhancement layer
+   ========================================================= */
+
+.modificationPopup {
+    gap: 14px !important;
+}
+
+.modBookingSummary {
+    position: relative;
+    overflow: hidden;
+
+    gap: 12px !important;
+
+    padding: 14px !important;
+
+    border: 1px solid rgba(139,92,246,.13) !important;
+    border-radius: 15px !important;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(139,92,246,.075),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.009)
+        ),
+        rgba(5,7,11,.62) !important;
+}
+
+.modBookingSummary::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 16px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8b5cf6,
+            #22d3ee,
+            transparent
+        );
+
+    opacity: .50;
+}
+
+.modBookingIcon {
+    width: 48px !important;
+    height: 48px !important;
+
+    border: 1px solid rgba(139,92,246,.17);
+    border-radius: 14px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139,92,246,.17),
+            rgba(34,211,238,.05)
+        ) !important;
+
+    color: #ddd6fe !important;
+
+    font-size: 19px !important;
+}
+
+.modBookingTitle {
+    color: #edf1f5 !important;
+
+    font-size: 13px !important;
+    font-weight: 850 !important;
+}
+
+.modBookingSubTitle {
+    margin-top: 4px !important;
+
+    color: #74808f !important;
+
+    font-size: 8px !important;
+}
+
+.modBookingGrid {
+    gap: 7px !important;
+}
+
+.modInfoItem {
+    padding: 9px 10px !important;
+
+    border: 1px solid rgba(255,255,255,.05) !important;
+    border-radius: 10px !important;
+
+    background: rgba(255,255,255,.018) !important;
+}
+
+.modInfoItem label {
+    margin-bottom: 4px !important;
+
+    color: #626e7d !important;
+
+    font-size: 6px !important;
+    font-weight: 850;
+    letter-spacing: .07em !important;
+}
+
+.modInfoItem span {
+    color: #d4dbe3 !important;
+
+    font-size: 9px !important;
+    font-weight: 750 !important;
+}
+
+.modFormGroup {
+    gap: 6px !important;
+}
+
+.modFormGroup label {
+    color: #aeb7c3 !important;
+
+    font-size: 8px !important;
+    font-weight: 800 !important;
+}
+
+.modInput,
+.modSelect,
+.modTextarea,
+.travelInput,
+.travelTextarea {
+    width: 100%;
+
+    padding: 10px 11px !important;
+
+    border: 1px solid rgba(255,255,255,.08) !important;
+    border-radius: 11px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.032),
+            rgba(255,255,255,.009)
+        ),
+        rgba(4,6,9,.76) !important;
+
+    color: #edf1f5 !important;
+
+    font-size: 9px !important;
+
+    outline: none !important;
+}
+
+.modInput:focus,
+.modSelect:focus,
+.modTextarea:focus,
+.travelInput:focus,
+.travelTextarea:focus {
+    border-color: rgba(34,211,238,.28) !important;
+
+    box-shadow:
+        0 0 0 3px rgba(34,211,238,.05) !important;
+}
+
+.modSelect option {
+    color: #edf1f5 !important;
+    background: #101318 !important;
+}
+
+.modTextarea,
+.travelTextarea {
+    min-height: 95px !important;
+
+    resize: vertical;
+}
+
+.modWarning {
+    padding: 10px 12px !important;
+
+    border: 1px solid rgba(251,191,36,.13) !important;
+    border-left: 3px solid #fbbf24 !important;
+    border-radius: 10px !important;
+
+    background: rgba(251,191,36,.05) !important;
+
+    color: #d9c285 !important;
+
+    font-size: 8px !important;
+    line-height: 1.55 !important;
+}
+
+#modificationDynamicArea {
+    gap: 10px !important;
+}
+
+.customerModificationStatusBox,
+.customerModificationStatusCard,
+.customerModificationRequest {
+    border-color: rgba(255,255,255,.065) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.028),
+            rgba(255,255,255,.008)
+        ),
+        rgba(5,7,10,.72) !important;
+}
+
+.customerModificationStatus_pending {
+    border-color: rgba(251,191,36,.14) !important;
+    background: rgba(251,191,36,.04) !important;
+}
+
+.customerModificationStatus_approved {
+    border-color: rgba(52,211,153,.14) !important;
+    background: rgba(52,211,153,.04) !important;
+}
+
+.customerModificationStatus_rejected {
+    border-color: rgba(251,113,133,.14) !important;
+    background: rgba(251,113,133,.04) !important;
+}
+
+.travelDatePopup {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.travelPopupHeader {
+    padding: 13px !important;
+
+    border: 1px solid rgba(34,211,238,.10);
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34,211,238,.055),
+            rgba(139,92,246,.025)
+        );
+}
+
+.travelPopupIcon {
+    width: 44px !important;
+    height: 44px !important;
+
+    border-radius: 13px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34,211,238,.13),
+            rgba(59,130,246,.045)
+        ) !important;
+
+    font-size: 18px !important;
+}
+
+.travelPopupHeading {
+    color: #ebf0f4 !important;
+
+    font-size: 12px !important;
+    font-weight: 850 !important;
+}
+
+.travelPopupSubHeading {
+    color: #737f8e !important;
+
+    font-size: 8px !important;
+}
+
+@media (max-width: 768px) {
+    .modBookingSummary {
+        align-items: flex-start !important;
+        flex-direction: row !important;
+        text-align: left !important;
+    }
+
+    .modBookingGrid,
+    .modTwoColumn {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* =========================================================
+   RANSAN CUSTOMER MODIFICATION — READABILITY V3
+   ========================================================= */
+
+.modificationPopup,
+#modificationDynamicArea {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+}
+
+.modBookingTitle {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+}
+
+.modBookingSubTitle {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+}
+
+.modInfoItem label {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+}
+
+.modInfoItem span {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+}
+
+.modFormGroup label {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+.modInput,
+.modSelect,
+.modTextarea,
+.travelInput,
+.travelTextarea {
+    min-height: 44px;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+}
+
+.modTextarea,
+.travelTextarea {
+    min-height: 110px !important;
+}
+
+.modWarning {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+}
+
+.customerModificationStatusTitle {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+}
+
+.customerModificationStatusType {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+}
+
+.customerModificationStatusRequestId {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+}
+
+.customerModificationNoRequests,
+.customerModificationStatusLoading,
+.customerModificationStatusMessage {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+}
+
+.customerModificationRefreshButton,
+.bookingPrimaryBtn,
+.bookingGlassBtn {
+    min-height: 42px !important;
+    font-size: 13px !important;
+}
+
+.travelPopupHeading {
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+}
+
+.travelPopupSubHeading {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+}
+
+@media (max-width: 560px) {
+    .modificationPopup,
+    #modificationDynamicArea {
+        font-size: 15px !important;
+    }
+
+    .modBookingTitle {
+        font-size: 18px !important;
+    }
+
+    .modBookingSubTitle {
+        font-size: 13px !important;
+    }
+
+    .modInfoItem label,
+    .modFormGroup label {
+        font-size: 13px !important;
+    }
+
+    .modInfoItem span,
+    .modInput,
+    .modSelect,
+    .modTextarea,
+    .travelInput,
+    .travelTextarea {
+        font-size: 15px !important;
+    }
+}

@@ -1,0 +1,1071 @@
+/* =========================================================
+   CUSTOMER PORTAL
+   BOOKING DOCUMENTS V1
+   ========================================================= */
+
+.portalDocumentsV1 {
+
+    padding:
+        20px !important;
+
+}
+
+
+.portalDocumentsHeaderV1 {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.portalDocumentsHeaderV1 > div > small {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        rgba(226,232,240,.68);
+
+    font-size:
+        12px;
+
+}
+
+
+.portalDocumentsRefreshV1 {
+
+    min-height:
+        34px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255,255,255,.03);
+
+    color:
+        #dbe5ef;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+}
+
+
+.portalDocumentsGridV1 {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        10px;
+
+}
+
+
+.portalDocumentItemV1 {
+
+    width:
+        100%;
+
+    min-height:
+        78px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        44px minmax(0,1fr) auto;
+
+    gap:
+        11px;
+
+    align-items:
+        center;
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        rgba(125,211,252,.11);
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,165,233,.045),
+            rgba(255,255,255,.018)
+        );
+
+    color:
+        #e8eef5;
+
+    text-align:
+        left;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s ease;
+
+}
+
+
+.portalDocumentItemV1:hover {
+
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(125,211,252,.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,165,233,.08),
+            rgba(255,255,255,.025)
+        );
+
+}
+
+
+.portalDocumentIconV1 {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(125,211,252,.14);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(14,165,233,.045);
+
+    font-size:
+        18px;
+
+}
+
+
+.portalDocumentCopyV1 {
+
+    min-width:
+        0;
+
+}
+
+
+.portalDocumentCopyV1 strong {
+
+    display:
+        block;
+
+    overflow:
+        hidden;
+
+    color:
+        #f1f5f9;
+
+    font-size:
+        13px;
+
+    font-weight:
+        750;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.portalDocumentCopyV1 small {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        rgba(203,213,225,.72);
+
+    font-size:
+        10px;
+
+}
+
+
+.portalDocumentOpenV1 {
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        10px;
+
+    font-weight:
+        750;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.portalDocumentsLoadingV1,
+.portalDocumentsErrorV1,
+.portalDocumentsEmptyV1 {
+
+    padding:
+        26px 15px;
+
+    border:
+        1px dashed
+        rgba(255,255,255,.08);
+
+    border-radius:
+        11px;
+
+    color:
+        rgba(203,213,225,.72);
+
+    font-size:
+        12px;
+
+    text-align:
+        center;
+
+}
+
+
+.portalDocumentsErrorV1 {
+
+    color:
+        #fca5a5;
+
+}
+
+
+.portalDocumentsEmptyV1 span,
+.portalDocumentsEmptyV1 strong,
+.portalDocumentsEmptyV1 small {
+
+    display:
+        block;
+
+}
+
+
+.portalDocumentsEmptyV1 span {
+
+    font-size:
+        24px;
+
+}
+
+
+.portalDocumentsEmptyV1 strong {
+
+    margin-top:
+        7px;
+
+    color:
+        #e8eef5;
+
+    font-size:
+        13px;
+
+}
+
+
+.portalDocumentsEmptyV1 small {
+
+    max-width:
+        390px;
+
+    margin:
+        5px auto 0;
+
+    line-height:
+        1.5;
+
+}
+
+
+@media (max-width: 700px) {
+
+    .portalDocumentsGridV1 {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .portalDocumentItemV1 {
+
+        grid-template-columns:
+            42px minmax(0,1fr);
+
+    }
+
+
+    .portalDocumentOpenV1 {
+
+        grid-column:
+            1 / -1;
+
+        padding-left:
+            53px;
+
+    }
+
+}
+
+/* =========================================================
+   CUSTOMER DOCUMENT UPLOAD V1
+   ========================================================= */
+
+.customerDocumentSubmitArea {
+
+    margin-top:
+        18px;
+
+    padding-top:
+        17px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.07);
+
+}
+
+
+.customerDocumentSubmitHeader {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        14px;
+
+}
+
+
+.customerDocumentSubmitHeader strong {
+
+    display:
+        block;
+
+    color:
+        #eef5fb;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+}
+
+
+.customerDocumentSubmitHeader small {
+
+    display:
+        block;
+
+    max-width:
+        520px;
+
+    margin-top:
+        4px;
+
+    color:
+        rgba(203,213,225,.68);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.customerDocumentSubmitOpen {
+
+    min-height:
+        40px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        rgba(56,189,248,.24);
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3,105,161,.85),
+            rgba(7,89,133,.82)
+        );
+
+    color:
+        #f8fafc;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.customerDocumentUploadPanel {
+
+    margin-top:
+        14px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(56,189,248,.12);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(2,8,15,.48);
+
+}
+
+
+.customerDocumentUploadPanel[hidden] {
+
+    display:
+        none !important;
+
+}
+
+
+.customerDocumentUploadNotice {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    padding:
+        11px;
+
+    border:
+        1px solid
+        rgba(52,211,153,.12);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(52,211,153,.035);
+
+}
+
+
+.customerDocumentUploadNotice > span {
+
+    font-size:
+        18px;
+
+}
+
+
+.customerDocumentUploadNotice strong,
+.customerDocumentUploadNotice small {
+
+    display:
+        block;
+
+}
+
+
+.customerDocumentUploadNotice strong {
+
+    color:
+        #d1fae5;
+
+    font-size:
+        12px;
+
+}
+
+
+.customerDocumentUploadNotice small {
+
+    margin-top:
+        3px;
+
+    color:
+        rgba(209,250,229,.68);
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.customerDocumentUploadField {
+
+    display:
+        block;
+
+    margin-top:
+        13px;
+
+}
+
+
+.customerDocumentUploadField > span {
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        #c2ced9;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+}
+
+
+.customerDocumentUploadField select,
+.customerDocumentUploadField input {
+
+    width:
+        100%;
+
+    min-height:
+        44px;
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:
+        10px;
+
+    background:
+        #0c131c;
+
+    color:
+        #edf4fb;
+
+    font-size:
+        13px;
+
+    outline:
+        none;
+
+    color-scheme:
+        dark;
+
+}
+
+
+.customerDocumentUploadField select {
+
+    padding:
+        0 12px;
+
+}
+
+
+.customerDocumentUploadField select option {
+
+    background:
+        #0c131c;
+
+    color:
+        #edf4fb;
+
+}
+
+
+.customerDocumentUploadField input[type="file"] {
+
+    padding:
+        9px 10px;
+
+}
+
+
+.customerDocumentUploadField small {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #82909d;
+
+    font-size:
+        10px;
+
+}
+
+
+.customerDocumentConsent {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        9px;
+
+    margin-top:
+        14px;
+
+    padding:
+        11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255,255,255,.018);
+
+    color:
+        #aebac6;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.customerDocumentConsent input {
+
+    margin-top:
+        2px;
+
+    flex:
+        0 0 auto;
+
+}
+
+
+.customerDocumentUploadStatus {
+
+    min-height:
+        0;
+
+    margin-top:
+        10px;
+
+    padding:
+        0;
+
+    border-radius:
+        8px;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.customerDocumentUploadStatus.loading {
+
+    padding:
+        9px 10px;
+
+    background:
+        rgba(56,189,248,.045);
+
+    color:
+        #bae6fd;
+
+}
+
+
+.customerDocumentUploadStatus.success {
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(52,211,153,.11);
+
+    background:
+        rgba(52,211,153,.04);
+
+    color:
+        #a7f3d0;
+
+}
+
+
+.customerDocumentUploadStatus.error {
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(251,113,133,.12);
+
+    background:
+        rgba(251,113,133,.04);
+
+    color:
+        #fecdd3;
+
+}
+
+
+.customerDocumentUploadActions {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        8px;
+
+    margin-top:
+        14px;
+
+}
+
+
+.customerDocumentUploadActions button {
+
+    min-height:
+        39px;
+
+    padding:
+        0 14px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        750;
+
+    cursor:
+        pointer;
+
+}
+
+
+.customerDocumentUploadCancel {
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:
+        #cbd5df;
+
+}
+
+
+.customerDocumentUploadConfirm {
+
+    border:
+        1px solid
+        rgba(52,211,153,.20);
+
+    background:
+        linear-gradient(
+            135deg,
+            #047857,
+            #065f46
+        );
+
+    color:
+        #fff;
+
+}
+
+
+.customerDocumentUploadConfirm:disabled {
+
+    opacity:
+        .55;
+
+    cursor:
+        wait;
+
+}
+
+
+@media (max-width: 640px) {
+
+    .customerDocumentSubmitHeader {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .customerDocumentSubmitOpen {
+
+        width:
+            100%;
+
+    }
+
+
+    .customerDocumentUploadActions {
+
+        flex-direction:
+            column-reverse;
+
+    }
+
+
+    .customerDocumentUploadActions button {
+
+        width:
+            100%;
+
+    }
+
+}
+
+/* =========================================================
+   RANSAN CUSTOMER DOCUMENT VIEW
+   PREMIUM OPENING LOADER
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   Entire document card while loading
+   --------------------------------------------------------- */
+
+.portalDocumentItemV1.portalDocumentOpening {
+
+    cursor:
+        wait;
+
+    opacity:
+        .84;
+
+}
+
+
+/*
+ * The card is disabled only while the private file
+ * is being retrieved.
+ */
+
+.portalDocumentItemV1:disabled {
+
+    cursor:
+        wait;
+
+}
+
+
+/* ---------------------------------------------------------
+   View label
+   --------------------------------------------------------- */
+
+.portalDocumentOpenV1 {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    min-width:
+        72px;
+
+}
+
+
+/* ---------------------------------------------------------
+   Small inline spinner
+   --------------------------------------------------------- */
+
+.portalDocumentViewSpinner {
+
+    width:
+        12px;
+
+    height:
+        12px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        2px solid
+        rgba(125,211,252,.20);
+
+    border-top-color:
+        #7dd3fc;
+
+    border-radius:
+        50%;
+
+    animation:
+        ranSanCustomerDocumentSpin
+        .7s
+        linear
+        infinite;
+
+}
+
+
+/* ---------------------------------------------------------
+   Loading label
+   --------------------------------------------------------- */
+
+.portalDocumentOpening
+.portalDocumentOpenV1 {
+
+    color:
+        #7dd3fc;
+
+}
+
+
+/* ---------------------------------------------------------
+   Animation
+   --------------------------------------------------------- */
+
+@keyframes ranSanCustomerDocumentSpin {
+
+    to {
+
+        transform:
+            rotate(
+                360deg
+            );
+
+    }
+
+}
