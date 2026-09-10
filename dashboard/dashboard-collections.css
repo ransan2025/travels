@@ -1,0 +1,3044 @@
+/* =========================================================
+   RANSAN COLLECTIONS DASHBOARD V1
+   ========================================================= */
+
+body.collectionsOpen {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+   ========================================================= */
+
+.dashNavCollections {
+    border:
+        1px solid
+        rgba(245, 158, 11, .18) !important;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(245, 158, 11, .12),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(245, 158, 11, .09),
+            rgba(234, 179, 8, .035)
+        ),
+        rgba(22, 16, 7, .84) !important;
+
+    color:
+        #fff7df !important;
+}
+
+
+.dashNavCollections .dashNavIcon {
+    border:
+        1px solid
+        rgba(245, 158, 11, .18);
+
+    background:
+        rgba(245, 158, 11, .08);
+
+    color:
+        #fcd34d;
+}
+
+
+/* =========================================================
+   MAIN MODAL
+   ========================================================= */
+
+#collectionsModal.collectionsModal {
+    position:
+        fixed !important;
+
+    inset:
+        0 !important;
+
+    z-index:
+        2147482800 !important;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        18px;
+
+    background:
+        rgba(1, 4, 8, .84);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+#collectionsModal.collectionsModal.active {
+    display:
+        flex !important;
+}
+
+
+.collectionsPanel {
+    position:
+        relative;
+
+    width:
+        min(
+            1480px,
+            calc(
+                100vw - 30px
+            )
+        );
+
+    height:
+        min(
+            900px,
+            calc(
+                100vh - 30px
+            )
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .09);
+
+    border-radius:
+        22px;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(245, 158, 11, .055),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 100% 0,
+            rgba(59, 130, 246, .04),
+            transparent 30%
+        ),
+        rgba(6, 9, 14, .99);
+
+    box-shadow:
+        0 45px 150px
+        rgba(0, 0, 0, .80);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.collectionsHeader {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        16px;
+
+    padding:
+        18px
+        20px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .055);
+}
+
+
+.collectionsHeaderLeft {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+}
+
+
+.collectionsHeaderIcon {
+    width:
+        43px;
+
+    height:
+        43px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(245, 158, 11, .14);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(245, 158, 11, .055);
+
+    font-size:
+        17px;
+}
+
+
+.collectionsEyebrow {
+    color:
+        #fbbf24;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+}
+
+
+.collectionsHeader h2 {
+    margin:
+        3px 0 0;
+
+    color:
+        #f2f5f8;
+
+    font-size:
+        19px;
+}
+
+
+.collectionsHeader p {
+    margin:
+        4px 0 0;
+
+    color:
+        #6f7c8a;
+
+    font-size:
+        9px;
+}
+
+
+.collectionsHeaderActions {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+}
+
+
+.collectionsEnvironment {
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .14);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(52, 211, 153, .05);
+
+    color:
+        #86efac;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+}
+
+
+.collectionsEnvironment.test {
+    border-color:
+        rgba(251, 191, 36, .20);
+
+    color:
+        #fcd34d;
+}
+
+
+.collectionsRefreshBtn,
+.collectionsCloseBtn {
+    width:
+        35px;
+
+    height:
+        35px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #8995a3;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   KPI
+   ========================================================= */
+
+.collectionsKpiGrid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        8px;
+
+    padding:
+        14px
+        18px
+        8px;
+}
+
+
+.collectionsKpi {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    min-width:
+        0;
+
+    padding:
+        11px 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .055);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.collectionsKpiIcon {
+    width:
+        31px;
+
+    height:
+        31px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, .025);
+}
+
+
+.collectionsKpi small,
+.collectionsKpi strong,
+.collectionsKpi em {
+    display:
+        block;
+}
+
+
+.collectionsKpi small {
+    color:
+        #687584;
+
+    font-size:
+        8px;
+
+    font-style:
+        normal;
+}
+
+
+.collectionsKpi strong {
+    margin-top:
+        2px;
+
+    color:
+        #e7edf4;
+
+    font-size:
+        14px;
+}
+
+
+.collectionsKpi em {
+    margin-top:
+        2px;
+
+    color:
+        #596675;
+
+    font-size:
+        7px;
+
+    font-style:
+        normal;
+}
+
+
+.collectionsKpi.outstanding strong {
+    color:
+        #fcd34d;
+}
+
+
+.collectionsKpi.today strong {
+    color:
+        #60a5fa;
+}
+
+
+.collectionsKpi.overdue strong {
+    color:
+        #fb7185;
+}
+
+
+.collectionsKpi.nodue strong {
+    color:
+        #c4b5fd;
+}
+
+
+/* =========================================================
+   AGEING
+   ========================================================= */
+
+.collectionsAgeingGrid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            7,
+            minmax(0, 1fr)
+        );
+
+    gap:
+        6px;
+
+    padding:
+        5px
+        18px
+        12px;
+}
+
+
+.collectionsAgeingCard {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        5px;
+
+    min-width:
+        0;
+
+    padding:
+        8px 9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, .015);
+
+    color:
+        #788493;
+
+    cursor:
+        pointer;
+}
+
+
+.collectionsAgeingCard span {
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+    font-size:
+        8px;
+
+    font-weight:
+        750;
+}
+
+
+.collectionsAgeingCard strong {
+    color:
+        #d4dbe4;
+
+    font-size:
+        10px;
+}
+
+
+.collectionsAgeingCard.active {
+    border-color:
+        rgba(245, 158, 11, .22);
+
+    background:
+        rgba(245, 158, 11, .055);
+
+    color:
+        #fcd34d;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.collectionsToolbar {
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(
+            240px,
+            1fr
+        )
+        155px
+        160px;
+
+    gap:
+        7px;
+
+    padding:
+        10px
+        18px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .04);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .04);
+}
+
+
+.collectionsSearchWrap {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(0, 0, 0, .18);
+}
+
+
+.collectionsSearchWrap input,
+.collectionsToolbar select {
+    min-height:
+        35px;
+
+    outline:
+        none;
+
+    color:
+        #cfd7e0;
+
+    font-family:
+        inherit;
+
+    font-size:
+        9px;
+}
+
+
+.collectionsSearchWrap input {
+    width:
+        100%;
+
+    border:
+        0;
+
+    background:
+        transparent;
+}
+
+
+.collectionsToolbar select {
+    border:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    border-radius:
+        9px;
+
+    padding:
+        0 9px;
+
+    background:
+        #0b0f15;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.collectionsTableWrap {
+    position:
+        relative;
+
+    flex:
+        1;
+
+    min-height:
+        0;
+
+    overflow:
+        auto;
+}
+
+
+.collectionsTable {
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    table-layout:
+        auto;
+
+    color:
+        #aab4c0;
+
+    font-size:
+        8px;
+}
+
+
+.collectionsTable thead th {
+    position:
+        sticky;
+
+    top:
+        0;
+
+    z-index:
+        3;
+
+    padding:
+        9px 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    background:
+        rgba(8, 12, 18, .98);
+
+    color:
+        #657282;
+
+    text-align:
+        left;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .04em;
+
+    white-space:
+        nowrap;
+}
+
+
+.collectionsTable tbody td {
+    padding:
+        9px 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .035);
+
+    vertical-align:
+        middle;
+}
+
+
+.collectionsTable tbody tr:hover {
+    background:
+        rgba(255, 255, 255, .016);
+}
+
+
+.collectionsCustomer strong,
+.collectionsBooking strong {
+    display:
+        block;
+
+    color:
+        #d6dee7;
+
+    font-size:
+        9px;
+}
+
+
+.collectionsCustomer small,
+.collectionsBooking small,
+.collectionsLastDate small {
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        #5f6b78;
+
+    font-size:
+        7px;
+}
+
+
+.collectionsMoney {
+    white-space:
+        nowrap;
+
+    color:
+        #aab4c0;
+}
+
+
+.collectionsMoney.paid {
+    color:
+        #86efac;
+}
+
+
+.collectionsMoney.balance {
+    color:
+        #fcd34d;
+
+    font-weight:
+        850;
+}
+
+
+/* =========================================================
+   DUE DATE
+   ========================================================= */
+
+.collectionsDueDateBtn {
+    padding:
+        5px 7px;
+
+    border:
+        1px solid
+        rgba(96, 165, 250, .10);
+
+    border-radius:
+        7px;
+
+    background:
+        rgba(96, 165, 250, .035);
+
+    color:
+        #93c5fd;
+
+    font-size:
+        7px;
+
+    cursor:
+        pointer;
+
+    white-space:
+        nowrap;
+}
+
+
+.collectionsDueDateBtn.missing {
+    border-color:
+        rgba(251, 191, 36, .12);
+
+    background:
+        rgba(251, 191, 36, .035);
+
+    color:
+        #fcd34d;
+}
+
+
+/* =========================================================
+   AGE BADGE
+   ========================================================= */
+
+.collectionsAgeBadge {
+    display:
+        inline-flex;
+
+    padding:
+        4px 6px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    color:
+        #9ba6b3;
+
+    white-space:
+        nowrap;
+}
+
+
+.collectionsAgeBadge.soon {
+    color:
+        #93c5fd;
+}
+
+
+.collectionsAgeBadge.today {
+    color:
+        #60a5fa;
+}
+
+
+.collectionsAgeBadge.overdue {
+    color:
+        #fbbf24;
+}
+
+
+.collectionsAgeBadge.late {
+    color:
+        #fb923c;
+}
+
+
+.collectionsAgeBadge.critical {
+    background:
+        rgba(239, 68, 68, .06);
+
+    color:
+        #fb7185;
+}
+
+
+.collectionsAgeBadge.nodue {
+    color:
+        #c4b5fd;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.collectionsRowActions {
+    display:
+        flex;
+
+    gap:
+        4px;
+
+    white-space:
+        nowrap;
+}
+
+
+.collectionsAction {
+    min-width:
+        28px;
+
+    height:
+        27px;
+
+    padding:
+        0 6px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    border-radius:
+        7px;
+
+    background:
+        rgba(255, 255, 255, .02);
+
+    color:
+        #a8b2bf;
+
+    cursor:
+        pointer;
+
+    font-size:
+        8px;
+}
+
+
+.collectionsAction.payment {
+    color:
+        #86efac;
+}
+
+
+.collectionsAction.reminder {
+    color:
+        #4ade80;
+}
+
+
+.collectionsAction.invoice {
+    color:
+        #c4b5fd;
+}
+
+
+/* =========================================================
+   EMPTY / LOADER
+   ========================================================= */
+
+.collectionsEmpty,
+.collectionsLoading {
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    background:
+        rgba(6, 9, 14, .90);
+
+    color:
+        #657281;
+
+    font-size:
+        9px;
+}
+
+
+.collectionsEmpty[hidden],
+.collectionsLoading[hidden] {
+    display:
+        none !important;
+}
+
+
+.collectionsEmpty div {
+    color:
+        #34d399;
+
+    font-size:
+        22px;
+}
+
+
+.collectionsEmpty strong {
+    color:
+        #b6c0cb;
+
+    font-size:
+        11px;
+}
+
+
+.collectionsSpinner {
+    width:
+        22px;
+
+    height:
+        22px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, .10);
+
+    border-top-color:
+        #f59e0b;
+
+    border-radius:
+        50%;
+
+    animation:
+        collectionsSpin
+        .7s linear infinite;
+}
+
+
+@keyframes collectionsSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.collectionsFooter {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    padding:
+        10px 18px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    color:
+        #657180;
+
+    font-size:
+        8px;
+}
+
+
+.collectionsFooter strong {
+    color:
+        #c9d2dc;
+}
+
+
+.collectionsFooterAmount {
+    color:
+        #fcd34d;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+}
+
+
+/* =========================================================
+   DUE DATE MODAL
+   ========================================================= */
+
+#paymentDueDateModal.paymentDueDateModal {
+    position:
+        fixed !important;
+
+    inset:
+        0 !important;
+
+    z-index:
+        2147483300 !important;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        15px;
+
+    background:
+        rgba(0, 0, 0, .74);
+
+    backdrop-filter:
+        blur(14px);
+}
+
+
+#paymentDueDateModal.paymentDueDateModal.active {
+    display:
+        flex !important;
+}
+
+
+.paymentDueDateCard {
+    width:
+        min(
+            430px,
+            calc(
+                100vw - 24px
+            )
+        );
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .09);
+
+    border-radius:
+        17px;
+
+    background:
+        #090d13;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, .72);
+}
+
+
+.paymentDueDateHeader {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+}
+
+
+.paymentDueDateHeader span {
+    color:
+        #fbbf24;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .12em;
+}
+
+
+.paymentDueDateHeader h3 {
+    margin:
+        3px 0 0;
+
+    color:
+        #e7edf4;
+
+    font-size:
+        16px;
+}
+
+
+.paymentDueDateHeader button {
+    width:
+        32px;
+
+    height:
+        32px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #8995a2;
+
+    cursor:
+        pointer;
+}
+
+
+.paymentDueDateBooking {
+    margin-top:
+        15px;
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, .015);
+}
+
+
+.paymentDueDateBooking small,
+.paymentDueDateBooking strong,
+.paymentDueDateBooking span {
+    display:
+        block;
+}
+
+
+.paymentDueDateBooking small {
+    color:
+        #667382;
+
+    font-size:
+        7px;
+}
+
+
+.paymentDueDateBooking strong {
+    margin-top:
+        2px;
+
+    color:
+        #d4dce5;
+
+    font-size:
+        10px;
+}
+
+
+.paymentDueDateBooking span {
+    margin-top:
+        2px;
+
+    color:
+        #778493;
+
+    font-size:
+        8px;
+}
+
+
+.paymentDueDateField {
+    display:
+        block;
+
+    margin-top:
+        14px;
+}
+
+
+.paymentDueDateField span {
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        #8d99a7;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+}
+
+
+.paymentDueDateField input {
+    width:
+        100%;
+
+    min-height:
+        40px;
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius:
+        9px;
+
+    padding:
+        0 10px;
+
+    outline:
+        none;
+
+    background:
+        rgba(0, 0, 0, .22);
+
+    color:
+        #e1e7ed;
+
+    font-family:
+        inherit;
+}
+
+
+.paymentDueDateHint {
+    margin-top:
+        9px;
+
+    color:
+        #606c79;
+
+    font-size:
+        7px;
+
+    line-height:
+        1.5;
+}
+
+
+.paymentDueDateActions {
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        7px;
+
+    margin-top:
+        17px;
+}
+
+
+.paymentDueDateActions button {
+    min-height:
+        36px;
+
+    padding:
+        0 11px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+}
+
+
+.paymentDueDateClear {
+    margin-right:
+        auto;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, .11);
+
+    background:
+        rgba(239, 68, 68, .035);
+
+    color:
+        #fca5a5;
+}
+
+
+.paymentDueDateCancel {
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #9ba6b2;
+}
+
+
+.paymentDueDateSave {
+    border:
+        1px solid
+        rgba(245, 158, 11, .18);
+
+    background:
+        linear-gradient(
+            135deg,
+            #d97706,
+            #b45309
+        );
+
+    color:
+        white;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (
+    max-width:
+        900px
+) {
+
+    .collectionsKpiGrid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .collectionsAgeingGrid {
+        grid-template-columns:
+            repeat(
+                4,
+                1fr
+            );
+    }
+
+
+    .collectionsToolbar {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+@media (
+    max-width:
+        600px
+) {
+
+    #collectionsModal.collectionsModal {
+        padding:
+            7px;
+    }
+
+
+    .collectionsPanel {
+        width:
+            calc(
+                100vw - 14px
+            );
+
+        height:
+            calc(
+                100vh - 14px
+            );
+    }
+
+
+    .collectionsKpiGrid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .collectionsAgeingGrid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .collectionsHeader p {
+        display:
+            none;
+    }
+
+}
+
+/* =========================================================
+   RANSAN TRAVELS
+   COLLECTIONS DASHBOARD — COMPLETE READABILITY V2
+
+   IMPORTANT:
+   Keep this block at the ABSOLUTE BOTTOM of
+   dashboard/dashboard-collections.css
+
+   UI ONLY.
+   No payment / collection / ageing logic is changed.
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL COLLECTIONS TYPOGRAPHY
+   ========================================================= */
+
+#collectionsModal,
+#collectionsModal button,
+#collectionsModal input,
+#collectionsModal select,
+#paymentDueDateModal,
+#paymentDueDateModal button,
+#paymentDueDateModal input {
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif !important;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        optimizeLegibility;
+}
+
+
+/* =========================================================
+   2. MAIN MODAL / PANEL
+   ========================================================= */
+
+#collectionsModal.collectionsModal {
+
+    padding:
+        18px !important;
+}
+
+
+#collectionsModal .collectionsPanel {
+
+    width:
+        min(
+            1580px,
+            calc(100vw - 32px)
+        ) !important;
+
+    height:
+        min(
+            920px,
+            calc(100vh - 32px)
+        ) !important;
+
+    border-radius:
+        20px !important;
+}
+
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
+#collectionsModal .collectionsHeader {
+
+    padding:
+        20px 22px !important;
+
+    gap:
+        18px !important;
+}
+
+
+#collectionsModal .collectionsHeaderLeft {
+
+    gap:
+        14px !important;
+}
+
+
+#collectionsModal .collectionsHeaderIcon {
+
+    width:
+        48px !important;
+
+    height:
+        48px !important;
+
+    flex:
+        0 0 48px !important;
+
+    font-size:
+        20px !important;
+
+    border-radius:
+        13px !important;
+}
+
+
+#collectionsModal .collectionsEyebrow {
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .12em !important;
+}
+
+
+#collectionsModal .collectionsHeader h2 {
+
+    margin:
+        4px 0 0 !important;
+
+    font-size:
+        24px !important;
+
+    line-height:
+        1.25 !important;
+
+    font-weight:
+        800 !important;
+}
+
+
+#collectionsModal .collectionsHeader p {
+
+    display:
+        block !important;
+
+    margin:
+        5px 0 0 !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.5 !important;
+
+    color:
+        #8d99a7 !important;
+}
+
+
+#collectionsModal .collectionsHeaderActions {
+
+    gap:
+        9px !important;
+}
+
+
+#collectionsModal .collectionsEnvironment {
+
+    padding:
+        7px 11px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1 !important;
+
+    font-weight:
+        900 !important;
+}
+
+
+#collectionsModal .collectionsRefreshBtn,
+#collectionsModal .collectionsCloseBtn {
+
+    width:
+        40px !important;
+
+    height:
+        40px !important;
+
+    font-size:
+        16px !important;
+}
+
+
+/* =========================================================
+   4. KPI SUMMARY
+   ========================================================= */
+
+#collectionsModal .collectionsKpiGrid {
+
+    gap:
+        10px !important;
+
+    padding:
+        16px 20px 10px !important;
+}
+
+
+#collectionsModal .collectionsKpi {
+
+    min-height:
+        82px !important;
+
+    padding:
+        14px 15px !important;
+
+    gap:
+        13px !important;
+
+    border-radius:
+        12px !important;
+}
+
+
+#collectionsModal .collectionsKpiIcon {
+
+    width:
+        40px !important;
+
+    height:
+        40px !important;
+
+    flex:
+        0 0 40px !important;
+
+    font-size:
+        18px !important;
+}
+
+
+#collectionsModal .collectionsKpi small {
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        700 !important;
+
+    color:
+        #8a96a4 !important;
+}
+
+
+#collectionsModal .collectionsKpi strong {
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        19px !important;
+
+    line-height:
+        1.25 !important;
+
+    font-weight:
+        900 !important;
+}
+
+
+#collectionsModal .collectionsKpi em {
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        600 !important;
+
+    color:
+        #758291 !important;
+}
+
+
+/* =========================================================
+   5. AGEING FILTER CARDS
+   ========================================================= */
+
+#collectionsModal .collectionsAgeingGrid {
+
+    gap:
+        8px !important;
+
+    padding:
+        7px 20px 14px !important;
+}
+
+
+#collectionsModal .collectionsAgeingCard {
+
+    min-height:
+        48px !important;
+
+    padding:
+        10px 11px !important;
+
+    border-radius:
+        10px !important;
+
+    gap:
+        8px !important;
+}
+
+
+#collectionsModal .collectionsAgeingCard span {
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        750 !important;
+}
+
+
+#collectionsModal .collectionsAgeingCard strong {
+
+    min-width:
+        24px !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        900 !important;
+
+    text-align:
+        right !important;
+}
+
+
+/* =========================================================
+   6. SEARCH / FILTER TOOLBAR
+   ========================================================= */
+
+#collectionsModal .collectionsToolbar {
+
+    grid-template-columns:
+        minmax(320px, 1fr)
+        190px
+        190px !important;
+
+    gap:
+        10px !important;
+
+    padding:
+        12px 20px !important;
+}
+
+
+#collectionsModal .collectionsSearchWrap {
+
+    min-height:
+        46px !important;
+
+    gap:
+        9px !important;
+
+    padding:
+        0 13px !important;
+
+    border-radius:
+        10px !important;
+
+    font-size:
+        15px !important;
+}
+
+
+#collectionsModal .collectionsSearchWrap input {
+
+    min-height:
+        44px !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.4 !important;
+
+    color:
+        #d8e0e8 !important;
+}
+
+
+#collectionsModal .collectionsSearchWrap input::placeholder {
+
+    color:
+        #718090 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+#collectionsModal .collectionsToolbar select {
+
+    min-height:
+        46px !important;
+
+    padding:
+        0 12px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        650 !important;
+
+    color:
+        #d0d8e1 !important;
+}
+
+
+/* =========================================================
+   7. TABLE CONTAINER
+
+   IMPORTANT:
+   We allow horizontal scrolling rather than shrinking
+   financial information into unreadable text.
+   ========================================================= */
+
+#collectionsModal .collectionsTableWrap {
+
+    overflow-x:
+        auto !important;
+
+    overflow-y:
+        auto !important;
+}
+
+
+#collectionsModal .collectionsTable {
+
+    width:
+        100% !important;
+
+    min-width:
+        1420px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.45 !important;
+}
+
+
+/* =========================================================
+   8. TABLE HEADINGS
+   ========================================================= */
+
+#collectionsModal .collectionsTable thead th {
+
+    padding:
+        13px 12px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .035em !important;
+
+    color:
+        #8e9aa8 !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+/* =========================================================
+   9. TABLE CELLS
+   ========================================================= */
+
+#collectionsModal .collectionsTable tbody td {
+
+    padding:
+        13px 12px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.45 !important;
+
+    vertical-align:
+        middle !important;
+}
+
+
+/*
+ * Give rows enough physical height to breathe.
+ */
+
+#collectionsModal .collectionsTable tbody tr {
+
+    min-height:
+        58px !important;
+}
+
+
+/* =========================================================
+   10. CUSTOMER COLUMN
+   ========================================================= */
+
+#collectionsModal .collectionsCustomer {
+
+    min-width:
+        145px !important;
+}
+
+
+#collectionsModal .collectionsCustomer strong {
+
+    display:
+        block !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        850 !important;
+
+    color:
+        #e4eaf0 !important;
+}
+
+
+#collectionsModal .collectionsCustomer small {
+
+    display:
+        block !important;
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        550 !important;
+
+    color:
+        #85919e !important;
+}
+
+
+/* =========================================================
+   11. BOOKING COLUMN
+   ========================================================= */
+
+#collectionsModal .collectionsBooking {
+
+    min-width:
+        155px !important;
+}
+
+
+#collectionsModal .collectionsBooking strong {
+
+    display:
+        block !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        850 !important;
+
+    color:
+        #dce4ec !important;
+}
+
+
+#collectionsModal .collectionsBooking small {
+
+    display:
+        block !important;
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        600 !important;
+
+    color:
+        #7f8c9a !important;
+}
+
+
+/* =========================================================
+   12. MONEY COLUMNS
+   ========================================================= */
+
+#collectionsModal .collectionsMoney {
+
+    min-width:
+        90px !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        700 !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+#collectionsModal .collectionsMoney.paid {
+
+    color:
+        #86efac !important;
+
+    font-weight:
+        800 !important;
+}
+
+
+#collectionsModal .collectionsMoney.balance {
+
+    color:
+        #fcd34d !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        900 !important;
+}
+
+
+/* =========================================================
+   13. PAYMENT DUE DATE
+   ========================================================= */
+
+#collectionsModal .collectionsDueDateBtn {
+
+    min-height:
+        36px !important;
+
+    min-width:
+        92px !important;
+
+    padding:
+        7px 10px !important;
+
+    border-radius:
+        8px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        750 !important;
+}
+
+
+/* =========================================================
+   14. AGEING STATUS
+   ========================================================= */
+
+#collectionsModal .collectionsAgeBadge {
+
+    min-height:
+        32px !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    padding:
+        6px 9px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.25 !important;
+
+    font-weight:
+        850 !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+/* =========================================================
+   15. LAST PAYMENT / LAST REMINDER
+   ========================================================= */
+
+#collectionsModal .collectionsLastDate {
+
+    min-width:
+        95px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        650 !important;
+
+    color:
+        #b4bec9 !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+#collectionsModal .collectionsLastDate small {
+
+    display:
+        block !important;
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        650 !important;
+
+    color:
+        #748190 !important;
+}
+
+
+/* =========================================================
+   16. ACTION COLUMN
+   ========================================================= */
+
+#collectionsModal .collectionsActionsColumn {
+
+    min-width:
+        155px !important;
+}
+
+
+#collectionsModal .collectionsRowActions {
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    gap:
+        6px !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+#collectionsModal .collectionsAction {
+
+    min-width:
+        35px !important;
+
+    height:
+        35px !important;
+
+    padding:
+        0 8px !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    border-radius:
+        8px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+/* =========================================================
+   17. EMPTY STATE
+   ========================================================= */
+
+#collectionsModal .collectionsEmpty {
+
+    gap:
+        10px !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.5 !important;
+}
+
+
+#collectionsModal .collectionsEmpty div {
+
+    font-size:
+        28px !important;
+}
+
+
+#collectionsModal .collectionsEmpty strong {
+
+    font-size:
+        16px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+#collectionsModal .collectionsEmpty span {
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.5 !important;
+}
+
+
+/* =========================================================
+   18. LOADING STATE
+   ========================================================= */
+
+#collectionsModal .collectionsLoading {
+
+    gap:
+        10px !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.5 !important;
+
+    color:
+        #8996a4 !important;
+}
+
+
+#collectionsModal .collectionsSpinner {
+
+    width:
+        28px !important;
+
+    height:
+        28px !important;
+}
+
+
+/* =========================================================
+   19. FOOTER
+   ========================================================= */
+
+#collectionsModal .collectionsFooter {
+
+    padding:
+        13px 20px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    color:
+        #8793a1 !important;
+}
+
+
+#collectionsModal .collectionsFooter strong {
+
+    font-size:
+        13px !important;
+
+    color:
+        #d7dfe7 !important;
+}
+
+
+#collectionsModal .collectionsFooterAmount {
+
+    font-size:
+        15px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        900 !important;
+}
+
+
+/* =========================================================
+   20. PAYMENT DUE DATE MODAL
+   ========================================================= */
+
+#paymentDueDateModal .paymentDueDateCard {
+
+    width:
+        min(
+            480px,
+            calc(100vw - 28px)
+        ) !important;
+
+    padding:
+        22px !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateHeader span {
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        900 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateHeader h3 {
+
+    margin-top:
+        5px !important;
+
+    font-size:
+        21px !important;
+
+    line-height:
+        1.3 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateHeader button {
+
+    width:
+        38px !important;
+
+    height:
+        38px !important;
+
+    font-size:
+        15px !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateBooking {
+
+    margin-top:
+        18px !important;
+
+    padding:
+        13px !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateBooking small {
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateBooking strong {
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateBooking span {
+
+    margin-top:
+        4px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateField {
+
+    margin-top:
+        18px !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateField span {
+
+    margin-bottom:
+        8px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        800 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateField input {
+
+    min-height:
+        46px !important;
+
+    padding:
+        0 13px !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateHint {
+
+    margin-top:
+        11px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.6 !important;
+
+    color:
+        #7c8997 !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateActions {
+
+    gap:
+        9px !important;
+
+    margin-top:
+        21px !important;
+}
+
+
+#paymentDueDateModal .paymentDueDateActions button {
+
+    min-height:
+        42px !important;
+
+    padding:
+        0 15px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        800 !important;
+}
+
+
+/* =========================================================
+   21. TABLE SCROLLBAR
+   Makes wide readable table easier to use.
+   ========================================================= */
+
+#collectionsModal .collectionsTableWrap::-webkit-scrollbar {
+
+    width:
+        10px;
+
+    height:
+        10px;
+}
+
+
+#collectionsModal .collectionsTableWrap::-webkit-scrollbar-track {
+
+    background:
+        rgba(255, 255, 255, .025);
+}
+
+
+#collectionsModal .collectionsTableWrap::-webkit-scrollbar-thumb {
+
+    border:
+        2px solid
+        rgba(6, 9, 14, .95);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(148, 163, 184, .25);
+}
+
+
+#collectionsModal .collectionsTableWrap::-webkit-scrollbar-thumb:hover {
+
+    background:
+        rgba(148, 163, 184, .40);
+}
+
+
+/* =========================================================
+   22. TABLE COLUMN BREATHING ROOM
+   ========================================================= */
+
+#collectionsModal .collectionsTable th:nth-child(1),
+#collectionsModal .collectionsTable td:nth-child(1) {
+
+    min-width:
+        160px !important;
+}
+
+
+#collectionsModal .collectionsTable th:nth-child(2),
+#collectionsModal .collectionsTable td:nth-child(2) {
+
+    min-width:
+        170px !important;
+}
+
+
+#collectionsModal .collectionsTable th:nth-child(3),
+#collectionsModal .collectionsTable td:nth-child(3),
+#collectionsModal .collectionsTable th:nth-child(4),
+#collectionsModal .collectionsTable td:nth-child(4),
+#collectionsModal .collectionsTable th:nth-child(5),
+#collectionsModal .collectionsTable td:nth-child(5) {
+
+    min-width:
+        100px !important;
+}
+
+
+#collectionsModal .collectionsTable th:nth-child(6),
+#collectionsModal .collectionsTable td:nth-child(6) {
+
+    min-width:
+        115px !important;
+}
+
+
+#collectionsModal .collectionsTable th:nth-child(7),
+#collectionsModal .collectionsTable td:nth-child(7) {
+
+    min-width:
+        110px !important;
+}
+
+
+#collectionsModal .collectionsTable th:nth-child(8),
+#collectionsModal .collectionsTable td:nth-child(8),
+#collectionsModal .collectionsTable th:nth-child(9),
+#collectionsModal .collectionsTable td:nth-child(9) {
+
+    min-width:
+        115px !important;
+}
+
+
+#collectionsModal .collectionsTable th:nth-child(10),
+#collectionsModal .collectionsTable td:nth-child(10) {
+
+    min-width:
+        165px !important;
+}
+
+
+/* =========================================================
+   23. TABLE ROW HOVER — clearer row tracking
+   ========================================================= */
+
+#collectionsModal .collectionsTable tbody tr:hover {
+
+    background:
+        rgba(255, 255, 255, .032) !important;
+}
+
+
+/* =========================================================
+   24. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    #collectionsModal .collectionsKpiGrid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+    }
+
+
+    #collectionsModal .collectionsAgeingGrid {
+
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr)) !important;
+    }
+
+
+    #collectionsModal .collectionsToolbar {
+
+        grid-template-columns:
+            1fr 180px 180px !important;
+    }
+
+}
+
+
+/* =========================================================
+   25. RESPONSIVE — SMALL TABLET / MOBILE
+
+   Do NOT make fonts smaller.
+   Stack controls and retain readable table with scrolling.
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    #collectionsModal.collectionsModal {
+
+        padding:
+            7px !important;
+    }
+
+
+    #collectionsModal .collectionsPanel {
+
+        width:
+            calc(100vw - 14px) !important;
+
+        height:
+            calc(100vh - 14px) !important;
+    }
+
+
+    #collectionsModal .collectionsHeader {
+
+        padding:
+            16px !important;
+    }
+
+
+    #collectionsModal .collectionsHeader h2 {
+
+        font-size:
+            21px !important;
+    }
+
+
+    #collectionsModal .collectionsHeader p {
+
+        display:
+            block !important;
+
+        font-size:
+            12px !important;
+    }
+
+
+    #collectionsModal .collectionsKpiGrid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        padding:
+            13px 14px 8px !important;
+    }
+
+
+    #collectionsModal .collectionsAgeingGrid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        padding:
+            7px 14px 12px !important;
+    }
+
+
+    #collectionsModal .collectionsToolbar {
+
+        grid-template-columns:
+            1fr !important;
+
+        padding:
+            11px 14px !important;
+    }
+
+
+    #collectionsModal .collectionsTable {
+
+        min-width:
+            1420px !important;
+    }
+
+
+    /*
+     * Intentionally retain readable table sizes.
+     */
+
+    #collectionsModal .collectionsTable thead th {
+
+        font-size:
+            11px !important;
+    }
+
+
+    #collectionsModal .collectionsTable tbody td {
+
+        font-size:
+            12px !important;
+    }
+
+
+    #collectionsModal .collectionsCustomer strong {
+
+        font-size:
+            13px !important;
+    }
+
+
+    #collectionsModal .collectionsMoney.balance {
+
+        font-size:
+            14px !important;
+    }
+
+}
+
+
+/* =========================================================
+   26. VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #collectionsModal .collectionsHeaderIcon {
+
+        width:
+            42px !important;
+
+        height:
+            42px !important;
+
+        flex-basis:
+            42px !important;
+    }
+
+
+    #collectionsModal .collectionsHeader h2 {
+
+        font-size:
+            19px !important;
+    }
+
+
+    #collectionsModal .collectionsKpi {
+
+        min-height:
+            88px !important;
+    }
+
+
+    #collectionsModal .collectionsKpi strong {
+
+        font-size:
+            17px !important;
+    }
+
+
+    #collectionsModal .collectionsAgeingCard {
+
+        min-height:
+            48px !important;
+    }
+
+}

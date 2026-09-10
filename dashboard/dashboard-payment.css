@@ -1,0 +1,2550 @@
+/* =========================================================
+   RANSAN TRAVELS
+   PAYMENT RECORDING V1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   PAYMENT BUTTON
+   --------------------------------------------------------- */
+
+.dashPaymentHeaderActions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.dashPaymentAddBtn {
+    min-height: 29px;
+
+    padding: 5px 9px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .18);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(52, 211, 153, .12),
+            rgba(20, 184, 166, .04)
+        );
+
+    color: #a7f3d0;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 850;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease;
+}
+
+
+.dashPaymentAddBtn:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(52, 211, 153, .35);
+
+    background:
+        rgba(52, 211, 153, .13);
+}
+
+
+/* ---------------------------------------------------------
+   BODY LOCK
+   --------------------------------------------------------- */
+
+body.paymentModalOpen {
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   OVERLAY
+   --------------------------------------------------------- */
+
+.paymentRecordModal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20050;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background:
+        rgba(0, 0, 0, .72);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    transition:
+        opacity .22s ease,
+        visibility .22s ease;
+}
+
+
+.paymentRecordModal.active {
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* ---------------------------------------------------------
+   CARD
+   --------------------------------------------------------- */
+
+.paymentRecordCard {
+    position: relative;
+
+    width:
+        min(
+            680px,
+            96vw
+        );
+
+    max-height:
+        92vh;
+
+    overflow-y: auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .10);
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(52, 211, 153, .08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 100% 0,
+            rgba(59, 130, 246, .07),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .045),
+            rgba(255, 255, 255, .012)
+        ),
+        rgba(7, 9, 13, .97);
+
+    box-shadow:
+        0 38px 110px
+            rgba(0, 0, 0, .68),
+        inset 0 1px 0
+            rgba(255, 255, 255, .045);
+
+    transform:
+        translateY(10px)
+        scale(.985);
+
+    transition:
+        transform .22s ease;
+}
+
+
+.paymentRecordModal.active
+.paymentRecordCard {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.paymentRecordCard::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 28px;
+    right: 28px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #34d399,
+            #22d3ee,
+            #6366f1,
+            transparent
+        );
+
+    opacity: .65;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.paymentRecordHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 22px 24px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .065);
+}
+
+
+.paymentRecordHeaderLeft {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.paymentRecordIcon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 46px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .18);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(52, 211, 153, .16),
+            rgba(34, 211, 238, .045)
+        );
+
+    color: #a7f3d0;
+
+    font-size: 19px;
+    font-weight: 900;
+}
+
+
+.paymentRecordEyebrow {
+    margin-bottom: 3px;
+
+    color: #6ee7b7;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .13em;
+}
+
+
+.paymentRecordHeader h2 {
+    margin: 0;
+
+    color: #f2f5f8;
+
+    font-size: 20px;
+    font-weight: 850;
+}
+
+
+.paymentRecordHeader p {
+    margin: 4px 0 0;
+
+    color: #778291;
+
+    font-size: 12px;
+}
+
+
+.paymentRecordClose {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, .03);
+
+    color: #9ca7b5;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.paymentRecordClose:hover {
+    color: #fff;
+
+    border-color:
+        rgba(251, 113, 133, .22);
+
+    background:
+        rgba(251, 113, 133, .08);
+}
+
+
+/* ---------------------------------------------------------
+   BOOKING
+   --------------------------------------------------------- */
+
+.paymentRecordBooking {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+
+    padding:
+        18px
+        24px
+        0;
+}
+
+
+.paymentRecordBooking > div {
+    padding: 11px 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .055);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.paymentRecordBooking span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #707b89;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.paymentRecordBooking strong {
+    color: #e2e8f0;
+
+    font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   SUMMARY
+   --------------------------------------------------------- */
+
+.paymentRecordSummary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+
+    padding:
+        12px
+        24px;
+}
+
+
+.paymentRecordSummaryBox {
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .055);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.paymentRecordSummaryBox span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #778291;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.paymentRecordSummaryBox strong {
+    display: block;
+
+    color: #eef2f7;
+
+    font-size: 17px;
+    font-weight: 850;
+}
+
+
+.paymentRecordSummaryBox.total strong {
+    color: #bfdbfe;
+}
+
+
+.paymentRecordSummaryBox.paid strong {
+    color: #86efac;
+}
+
+
+.paymentRecordSummaryBox.balance strong {
+    color: #fcd34d;
+}
+
+
+/* ---------------------------------------------------------
+   WARNING
+   --------------------------------------------------------- */
+
+.paymentRecordWarning {
+    margin:
+        0
+        24px
+        12px;
+
+    padding: 10px 12px;
+
+    border:
+        1px solid
+        rgba(251, 191, 36, .15);
+
+    border-radius: 10px;
+
+    background:
+        rgba(251, 191, 36, .055);
+
+    color: #fcd98b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   FORM
+   --------------------------------------------------------- */
+
+.paymentRecordForm {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 12px;
+
+    padding:
+        10px
+        24px
+        22px;
+}
+
+
+.paymentRecordField {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.paymentRecordFieldFull {
+    grid-column:
+        1 / -1;
+}
+
+
+.paymentRecordField label {
+    color: #aab4c0;
+
+    font-size: 12px;
+    font-weight: 750;
+}
+
+
+.paymentRecordField input,
+.paymentRecordField select,
+.paymentRecordField textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .085);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background:
+        rgba(3, 5, 8, .72);
+
+    color: #eef2f7;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color .18s ease,
+        box-shadow .18s ease;
+}
+
+
+.paymentRecordField input,
+.paymentRecordField select {
+    min-height: 44px;
+
+    padding:
+        0
+        12px;
+}
+
+
+.paymentRecordField textarea {
+    min-height: 88px;
+
+    padding: 11px 12px;
+
+    resize: vertical;
+}
+
+
+.paymentRecordField input:focus,
+.paymentRecordField select:focus,
+.paymentRecordField textarea:focus {
+    border-color:
+        rgba(52, 211, 153, .30);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(52, 211, 153, .055);
+}
+
+
+.paymentRecordField select option {
+    background: #101318;
+
+    color: #fff;
+}
+
+
+.paymentAmountInput {
+    position: relative;
+}
+
+
+.paymentAmountInput > span {
+    position: absolute;
+
+    top: 50%;
+    left: 12px;
+
+    z-index: 2;
+
+    transform:
+        translateY(-50%);
+
+    color: #86efac;
+
+    font-size: 15px;
+    font-weight: 850;
+}
+
+
+.paymentAmountInput input {
+    padding-left:
+        31px;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+.paymentRecordFooter {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    padding: 17px 24px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .065);
+
+    background:
+        rgba(0, 0, 0, .12);
+}
+
+
+.paymentRecordCancel,
+.paymentRecordSave {
+    min-height: 41px;
+
+    padding: 0 15px;
+
+    border-radius: 11px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 850;
+
+    cursor: pointer;
+}
+
+
+.paymentRecordCancel {
+    border:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color: #aeb8c5;
+}
+
+
+.paymentRecordSave {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .20);
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #0f9f82
+        );
+
+    color: #fff;
+
+    box-shadow:
+        0 10px 25px
+        rgba(5, 150, 105, .18);
+}
+
+
+.paymentRecordSave:hover {
+    filter:
+        brightness(1.08);
+}
+
+
+.paymentRecordSave:disabled {
+    cursor: wait;
+
+    opacity: .72;
+}
+
+
+.paymentSaveSpinner {
+    width: 13px;
+    height: 13px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, .35);
+
+    border-top-color: #fff;
+
+    border-radius: 50%;
+
+    animation:
+        paymentSaveSpin
+        .7s linear infinite;
+}
+
+
+@keyframes paymentSaveSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 620px) {
+
+    .paymentRecordModal {
+        padding: 10px;
+    }
+
+
+    .paymentRecordHeader {
+        padding: 18px 16px;
+    }
+
+
+    .paymentRecordBooking,
+    .paymentRecordSummary,
+    .paymentRecordForm {
+        grid-template-columns: 1fr;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .paymentRecordFieldFull {
+        grid-column: auto;
+    }
+
+
+    .paymentRecordSummaryBox strong {
+        font-size: 16px;
+    }
+
+
+    .paymentRecordWarning {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+
+    .paymentRecordFooter {
+        padding: 15px 16px;
+    }
+
+}
+
+/* =========================================================
+   PAYMENT BUTTON — FARE NOT YET SET
+   ========================================================= */
+
+.dashPaymentAddBtn.needsFare {
+    border-color:
+        rgba(251, 191, 36, .18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(251, 191, 36, .10),
+            rgba(245, 158, 11, .035)
+        );
+
+    color: #fcd34d;
+}
+
+
+.dashPaymentAddBtn.needsFare:hover {
+    border-color:
+        rgba(251, 191, 36, .32);
+
+    background:
+        rgba(251, 191, 36, .12);
+}
+
+
+/* =========================================================
+   PAYMENT COMPLETED BADGE
+   ========================================================= */
+
+.dashPaymentCompletedBadge {
+    min-height: 29px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 5px 10px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .18);
+
+    border-radius: 9px;
+
+    background:
+        rgba(52, 211, 153, .075);
+
+    color: #86efac;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    white-space: nowrap;
+}
+
+/* =========================================================
+   RANSAN PAYMENT HISTORY V2
+   ========================================================= */
+
+
+/* =========================================================
+   HISTORY SECTION
+   ========================================================= */
+
+.paymentHistorySection {
+    margin:
+        6px
+        24px
+        18px;
+
+    padding: 15px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .065);
+
+    border-radius: 15px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(59, 130, 246, .055),
+            transparent 36%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .025),
+            rgba(255, 255, 255, .007)
+        ),
+        rgba(3, 6, 10, .50);
+}
+
+
+/* =========================================================
+   HISTORY HEADER
+   ========================================================= */
+
+.paymentHistoryHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+.paymentHistoryEyebrow {
+    margin-bottom: 3px;
+
+    color: #60a5fa;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .12em;
+}
+
+
+.paymentHistoryTitleRow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.paymentHistoryTitleRow h3 {
+    margin: 0;
+
+    color: #e9eef5;
+
+    font-size: 15px;
+    font-weight: 850;
+}
+
+
+.paymentHistoryCount {
+    min-width: 23px;
+    height: 23px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0
+        6px;
+
+    border:
+        1px solid
+        rgba(96, 165, 250, .15);
+
+    border-radius: 999px;
+
+    background:
+        rgba(59, 130, 246, .07);
+
+    color: #93c5fd;
+
+    font-size: 10px;
+    font-weight: 850;
+}
+
+
+/* =========================================================
+   REFRESH
+   ========================================================= */
+
+.paymentHistoryRefreshBtn {
+    min-height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0
+        10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color: #9ba8b7;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        border-color .18s ease,
+        background .18s ease,
+        color .18s ease;
+}
+
+
+.paymentHistoryRefreshBtn:hover {
+    border-color:
+        rgba(96, 165, 250, .20);
+
+    background:
+        rgba(59, 130, 246, .065);
+
+    color: #dbeafe;
+}
+
+
+.paymentHistoryRefreshBtn:disabled {
+    cursor: wait;
+
+    opacity: .55;
+}
+
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+.paymentHistoryLoading {
+    min-height: 74px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    color: #8793a2;
+
+    font-size: 11px;
+}
+
+
+.paymentHistoryLoading[hidden] {
+    display: none !important;
+}
+
+
+.paymentHistorySpinner {
+    width: 16px;
+    height: 16px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, .10);
+
+    border-top-color:
+        #60a5fa;
+
+    border-radius: 50%;
+
+    animation:
+        paymentHistorySpin
+        .7s linear infinite;
+}
+
+
+@keyframes paymentHistorySpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.paymentHistoryError {
+    margin-top: 8px;
+
+    padding: 10px 12px;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .16);
+
+    border-radius: 10px;
+
+    background:
+        rgba(251, 113, 133, .055);
+
+    color: #fecdd3;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+.paymentHistoryError[hidden] {
+    display: none !important;
+}
+
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.paymentHistoryEmpty {
+    min-height: 115px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+
+.paymentHistoryEmpty[hidden] {
+    display: none !important;
+}
+
+
+.paymentHistoryEmptyIcon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 8px;
+
+    border:
+        1px solid
+        rgba(96, 165, 250, .13);
+
+    border-radius: 11px;
+
+    background:
+        rgba(59, 130, 246, .055);
+
+    color: #93c5fd;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+.paymentHistoryEmpty strong {
+    color: #ccd4df;
+
+    font-size: 12px;
+}
+
+
+.paymentHistoryEmpty span {
+    max-width: 320px;
+
+    margin-top: 4px;
+
+    color: #6f7a89;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.paymentHistoryList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    max-height: 300px;
+
+    overflow-y: auto;
+
+    padding-right: 3px;
+}
+
+
+.paymentHistoryList::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.paymentHistoryList::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(148, 163, 184, .22);
+}
+
+
+/* =========================================================
+   TRANSACTION ITEM
+   ========================================================= */
+
+.paymentHistoryItem {
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .055);
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .025),
+            rgba(255, 255, 255, .007)
+        ),
+        rgba(5, 8, 12, .74);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, .02);
+}
+
+
+.paymentHistoryItemAccent {
+    width: 3px;
+
+    flex: 0 0 3px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #34d399,
+            #22d3ee,
+            #3b82f6
+        );
+}
+
+
+.paymentHistoryItemMain {
+    min-width: 0;
+
+    flex: 1;
+
+    padding: 11px 12px;
+}
+
+
+/* =========================================================
+   TOP
+   ========================================================= */
+
+.paymentHistoryItemTop {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.paymentHistoryAmountWrap {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.paymentHistoryModeIcon {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 32px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .13);
+
+    border-radius: 9px;
+
+    background:
+        rgba(52, 211, 153, .055);
+
+    color: #86efac;
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+.paymentHistoryAmount {
+    display: block;
+
+    color: #86efac;
+
+    font-size: 15px;
+    font-weight: 900;
+
+    line-height: 1.25;
+}
+
+
+.paymentHistoryDate {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #788493;
+
+    font-size: 10px;
+}
+
+
+.paymentHistoryModeBadge {
+    flex: 0 0 auto;
+
+    padding:
+        5px
+        8px;
+
+    border:
+        1px solid
+        rgba(96, 165, 250, .13);
+
+    border-radius: 999px;
+
+    background:
+        rgba(59, 130, 246, .055);
+
+    color: #93c5fd;
+
+    font-size: 9px;
+    font-weight: 850;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   REFERENCE
+   ========================================================= */
+
+.paymentHistoryReference {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 9px;
+
+    padding:
+        7px
+        9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .04);
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, .015);
+}
+
+
+.paymentHistoryReference span {
+    color: #667281;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.paymentHistoryReference strong {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #c5ced9;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.paymentHistoryNotes {
+    margin-top: 8px;
+
+    color: #9ca8b6;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.paymentHistoryMeta {
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap:
+        5px
+        12px;
+
+    margin-top: 9px;
+
+    padding-top: 8px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .035);
+
+    color: #667180;
+
+    font-size: 9px;
+}
+
+
+.paymentHistoryMeta span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.paymentHistoryMeta b {
+    color: #8995a4;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   NEW PAYMENT SECTION HEADING
+   ========================================================= */
+
+.paymentFormSectionHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin:
+        0
+        24px
+        3px;
+
+    padding-top: 3px;
+}
+
+
+.paymentFormSectionHeader span {
+    color: #34d399;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .12em;
+}
+
+
+.paymentFormSectionHeader h3 {
+    margin: 3px 0 0;
+
+    color: #e7edf4;
+
+    font-size: 15px;
+    font-weight: 850;
+}
+
+
+.paymentFormSectionIcon {
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .14);
+
+    border-radius: 9px;
+
+    background:
+        rgba(52, 211, 153, .055);
+
+    color: #86efac;
+
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+    .paymentHistorySection {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+
+    .paymentFormSectionHeader {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+
+    .paymentHistoryItemTop {
+        align-items: flex-start;
+    }
+
+
+    .paymentHistoryAmount {
+        font-size: 14px;
+    }
+
+
+    .paymentHistoryModeBadge {
+        font-size: 9px;
+    }
+
+
+    .paymentHistoryMeta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+/* =========================================================
+   RANSAN PAYMENT RECEIPT V1
+   ========================================================= */
+
+
+/* =========================================================
+   HISTORY RECEIPT ACTION
+   ========================================================= */
+
+.paymentHistoryActions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 10px;
+
+    padding-top: 9px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .035);
+}
+
+
+.paymentHistoryReceiptBtn {
+    min-height: 32px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding:
+        0
+        10px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, .16);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139, 92, 246, .09),
+            rgba(59, 130, 246, .035)
+        );
+
+    color: #c4b5fd;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    cursor: pointer;
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease,
+        color .18s ease;
+}
+
+
+.paymentHistoryReceiptBtn:hover {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        rgba(139, 92, 246, .32);
+
+    background:
+        rgba(139, 92, 246, .12);
+
+    color: #ede9fe;
+}
+
+
+/* =========================================================
+   RECEIPT OVERLAY
+   ========================================================= */
+
+.paymentReceiptModal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20150;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background:
+        rgba(0, 0, 0, .76);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    transition:
+        opacity .20s ease,
+        visibility .20s ease;
+}
+
+
+.paymentReceiptModal.active {
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   RECEIPT CARD
+   ========================================================= */
+
+.paymentReceiptCard {
+    position: relative;
+
+    width:
+        min(
+            650px,
+            96vw
+        );
+
+    max-height:
+        92vh;
+
+    overflow-y: auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .10);
+
+    border-radius: 23px;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(139, 92, 246, .08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 100% 0,
+            rgba(34, 211, 238, .065),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .045),
+            rgba(255, 255, 255, .012)
+        ),
+        rgba(7, 9, 13, .98);
+
+    box-shadow:
+        0 40px 120px
+            rgba(0, 0, 0, .72),
+        inset 0 1px 0
+            rgba(255, 255, 255, .045);
+
+    transform:
+        translateY(10px)
+        scale(.985);
+
+    transition:
+        transform .20s ease;
+}
+
+
+.paymentReceiptModal.active
+.paymentReceiptCard {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.paymentReceiptCard::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 30px;
+    right: 30px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8b5cf6,
+            #3b82f6,
+            #22d3ee,
+            #34d399,
+            transparent
+        );
+
+    opacity: .70;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.paymentReceiptHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        20px
+        22px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .06);
+}
+
+
+.paymentReceiptBrand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.paymentReceiptBrandIcon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 42px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, .17);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(139, 92, 246, .15),
+            rgba(34, 211, 238, .04)
+        );
+
+    color: #ddd6fe;
+
+    font-size: 17px;
+}
+
+
+.paymentReceiptBrandName {
+    color: #eef2f6;
+
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.paymentReceiptBrandSub {
+    margin-top: 2px;
+
+    color: #687483;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+.paymentReceiptClose {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .075);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color: #919daa;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        border-color .18s ease,
+        background .18s ease,
+        color .18s ease;
+}
+
+
+.paymentReceiptClose:hover {
+    border-color:
+        rgba(251, 113, 133, .20);
+
+    background:
+        rgba(251, 113, 133, .07);
+
+    color: #fecdd3;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.paymentReceiptIntro {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding:
+        20px
+        22px
+        12px;
+}
+
+
+.paymentReceiptEyebrow {
+    margin-bottom: 4px;
+
+    color: #a78bfa;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .13em;
+}
+
+
+.paymentReceiptIntro h2 {
+    margin: 0;
+
+    color: #f4f7fa;
+
+    font-size: 22px;
+    font-weight: 880;
+
+    letter-spacing: -.025em;
+}
+
+
+.paymentReceiptIntro p {
+    margin:
+        5px
+        0
+        0;
+
+    color: #798493;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   ENVIRONMENT
+   ========================================================= */
+
+.paymentReceiptEnvironment {
+    flex: 0 0 auto;
+
+    padding:
+        6px
+        9px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .15);
+
+    border-radius: 999px;
+
+    background:
+        rgba(52, 211, 153, .05);
+
+    color: #86efac;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .07em;
+}
+
+
+.paymentReceiptEnvironment.test {
+    border-color:
+        rgba(251, 191, 36, .18);
+
+    background:
+        rgba(251, 191, 36, .06);
+
+    color: #fcd34d;
+}
+
+
+/* =========================================================
+   AMOUNT HERO
+   ========================================================= */
+
+.paymentReceiptAmountHero {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin:
+        7px
+        22px
+        17px;
+
+    padding: 17px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .11);
+
+    border-radius: 15px;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(52, 211, 153, .09),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(52, 211, 153, .035),
+            rgba(255, 255, 255, .008)
+        );
+}
+
+
+.paymentReceiptAmountHero span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #738090;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: .07em;
+}
+
+
+.paymentReceiptAmountHero strong {
+    display: block;
+
+    color: #86efac;
+
+    font-size: 26px;
+    font-weight: 900;
+}
+
+
+.paymentReceiptSuccessBadge {
+    flex: 0 0 auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding:
+        7px
+        10px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .15);
+
+    border-radius: 999px;
+
+    background:
+        rgba(52, 211, 153, .06);
+
+    color: #a7f3d0;
+
+    font-size: 10px;
+    font-weight: 850;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.paymentReceiptSection {
+    margin:
+        0
+        22px
+        16px;
+}
+
+
+.paymentReceiptSection[hidden] {
+    display: none !important;
+}
+
+
+.paymentReceiptSectionTitle {
+    margin-bottom: 9px;
+
+    color: #7e8997;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .11em;
+
+    text-transform: uppercase;
+}
+
+
+.paymentReceiptDetailsGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+}
+
+
+.paymentReceiptDetail {
+    min-width: 0;
+
+    padding:
+        10px
+        11px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .055);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.paymentReceiptDetail[hidden] {
+    display: none !important;
+}
+
+
+.paymentReceiptDetail span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #677382;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+.paymentReceiptDetail strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #d9e0e8;
+
+    font-size: 12px;
+    font-weight: 780;
+
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+}
+
+
+.paymentReceiptReferenceDetail {
+    grid-column:
+        1 / -1;
+}
+
+
+/* =========================================================
+   NOTES
+   ========================================================= */
+
+.paymentReceiptNotes {
+    padding:
+        11px
+        12px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, .09);
+
+    border-left:
+        3px solid
+        rgba(139, 92, 246, .62);
+
+    border-radius:
+        0
+        10px
+        10px
+        0;
+
+    background:
+        rgba(139, 92, 246, .035);
+
+    color: #a8b2bf;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   RECORD META
+   ========================================================= */
+
+.paymentReceiptRecordMeta {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 8px;
+
+    margin:
+        0
+        22px
+        16px;
+}
+
+
+.paymentReceiptRecordMeta > div {
+    padding:
+        10px
+        11px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, .014);
+}
+
+
+.paymentReceiptRecordMeta span {
+    display: block;
+
+    color: #667180;
+
+    font-size: 9px;
+    font-weight: 800;
+}
+
+
+.paymentReceiptRecordMeta strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #b8c1cc;
+
+    font-size: 10px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.paymentReceiptNotice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin:
+        0
+        22px
+        18px;
+
+    padding:
+        9px
+        11px;
+
+    border:
+        1px solid
+        rgba(96, 165, 250, .08);
+
+    border-radius: 9px;
+
+    background:
+        rgba(59, 130, 246, .025);
+
+    color: #748090;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+.paymentReceiptNoticeIcon {
+    color: #60a5fa;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.paymentReceiptFooter {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    padding:
+        16px
+        22px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    background:
+        rgba(0, 0, 0, .12);
+}
+
+
+.paymentReceiptSecondaryBtn,
+.paymentReceiptPrintBtn {
+    min-height: 41px;
+
+    padding:
+        0
+        14px;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 850;
+
+    cursor: pointer;
+}
+
+
+.paymentReceiptSecondaryBtn {
+    border:
+        1px solid
+        rgba(255, 255, 255, .075);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color: #aab4c1;
+}
+
+
+.paymentReceiptPrintBtn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, .20);
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d4eea,
+            #4d73e6
+        );
+
+    color: #fff;
+
+    box-shadow:
+        0 10px 26px
+        rgba(89, 69, 220, .19);
+}
+
+
+.paymentReceiptPrintBtn:hover {
+    filter:
+        brightness(1.08);
+}
+
+
+/* =========================================================
+   RECEIPT SCROLLBAR
+   ========================================================= */
+
+.paymentReceiptCard::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+.paymentReceiptCard::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(148, 163, 184, .20);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+    .paymentReceiptModal {
+        padding: 9px;
+    }
+
+
+    .paymentReceiptHeader {
+        padding:
+            17px
+            15px;
+    }
+
+
+    .paymentReceiptIntro {
+        padding:
+            17px
+            15px
+            11px;
+    }
+
+
+    .paymentReceiptIntro h2 {
+        font-size: 20px;
+    }
+
+
+    .paymentReceiptAmountHero {
+        margin-left: 15px;
+        margin-right: 15px;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .paymentReceiptAmountHero strong {
+        font-size: 24px;
+    }
+
+
+    .paymentReceiptSection,
+    .paymentReceiptRecordMeta,
+    .paymentReceiptNotice {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+
+    .paymentReceiptDetailsGrid,
+    .paymentReceiptRecordMeta {
+        grid-template-columns: 1fr;
+    }
+
+
+    .paymentReceiptReferenceDetail {
+        grid-column: auto;
+    }
+
+
+    .paymentReceiptFooter {
+        padding:
+            14px
+            15px;
+    }
+
+
+    .paymentReceiptSecondaryBtn,
+    .paymentReceiptPrintBtn {
+        flex: 1;
+    }
+
+}
