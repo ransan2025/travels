@@ -1,0 +1,3964 @@
+:root {
+
+    --crm-bg: #0d0d0d;
+    --crm-panel: #161616;
+    --crm-panel2: #1d1d1d;
+
+    --crm-glass: rgba(255, 255, 255, .04);
+    --crm-glass-hover: rgba(255, 255, 255, .08);
+
+    --crm-border: rgba(255, 255, 255, .08);
+
+    --crm-white: #ffffff;
+    --crm-text: #d5d5d5;
+    --crm-muted: #8f8f8f;
+
+    --crm-shadow:
+        0 12px 35px rgba(0, 0, 0, .55);
+
+}
+
+/*===========================================================
+  CLOSE BUTTON
+===========================================================*/
+
+.crmGlassV2TopBar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 18px 22px;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 20;
+
+    background: rgba(18, 18, 18, .88);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmGlassV2Title {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    letter-spacing: .3px;
+
+}
+
+.crmGlassV2CloseBtn {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    color: #cfcfcf;
+
+    transition: .25s;
+
+}
+
+.crmGlassV2CloseBtn:hover {
+
+    cursor: pointer;
+
+    color: #fff;
+
+    background: rgba(239, 68, 68, .18);
+
+    border-color: #ef4444;
+
+    box-shadow: 0 0 18px rgba(239, 68, 68, .35);
+
+    transform: rotate(90deg);
+
+}
+
+
+.crmGlassV2Drawer {
+
+    position: fixed;
+
+    top: 0;
+
+    right: -100%;
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    z-index: 99999;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition: .35s;
+
+    background: rgba(0, 0, 0, .65);
+    backdrop-filter: blur(8px);
+
+}
+
+
+
+.crmGlassV2Drawer.active {
+
+    right: 0;
+
+    visibility: visible;
+
+    opacity: 1;
+
+}
+
+.crmGlassV2Container {
+
+    width: min(960px, 72vw);
+
+    max-width: 960px;
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: #111111;
+
+    border-left: 1px solid rgba(255, 255, 255, .06);
+
+    box-shadow: -20px 0 45px rgba(0, 0, 0, .65);
+
+    overflow: hidden;
+
+}
+
+/*===========================================================
+  DRAWER CONTENT
+===========================================================*/
+
+.crmGlassV2Content {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    padding: 20px;
+
+}
+
+/* Chrome */
+
+.crmGlassV2Content::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.crmGlassV2Content::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+.crmGlassV2Content::-webkit-scrollbar-thumb {
+
+    background: rgba(255, 255, 255, .12);
+
+    border-radius: 30px;
+
+}
+
+.crmGlassV2Content::-webkit-scrollbar-thumb:hover {
+
+    background: rgba(255, 255, 255, .22);
+
+}
+
+
+
+/* ===========================================================
+   WORKSPACE
+=========================================================== */
+
+.crmGlassV2Workspace {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 20px;
+
+    min-height: 100%;
+
+    animation: crmGlassFade .35s ease;
+
+}
+
+/* ===========================================================
+   HEADER
+=========================================================== */
+
+.crmGlassV2Header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 28px;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .05),
+            rgba(255, 255, 255, .02));
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.crmGlassV2HeaderLeft {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.crmGlassV2HeaderInfo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+.crmGlassV2HeaderTop {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+}
+
+.crmGlassV2HeaderContact {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    font-size: 13px;
+
+    opacity: .85;
+
+}
+
+.crmGlassV2HeaderChips {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 2px;
+
+}
+
+
+.crmGlassMiniChip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    backdrop-filter: blur(8px);
+
+    transition: .25s;
+
+}
+
+.crmGlassMiniChip:hover {
+
+    background: rgba(255, 255, 255, .08);
+
+    transform: translateY(-1px);
+
+}
+
+
+
+
+.crmGlassV2Profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+.crmGlassV2Avatar {
+
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #fff;
+
+    position: relative;
+
+    overflow: hidden;
+
+    animation: avatarFloat 5s ease-in-out infinite;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .35),
+        inset 0 1px 1px rgba(255, 255, 255, .25);
+
+}
+
+.crmGlassV2Avatar::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -30%;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(255, 255, 255, .35),
+            transparent,
+            rgba(255, 255, 255, .15));
+
+    transform: rotate(35deg);
+
+    animation: avatarShine 4s linear infinite;
+
+}
+
+.crmGlassV2Avatar::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 5px;
+    bottom: 5px;
+
+    width: 14px;
+    height: 14px;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    border: 3px solid #111;
+
+    box-shadow:
+        0 0 15px #22c55e;
+
+}
+
+@keyframes avatarFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-4px);
+
+    }
+
+}
+
+@keyframes avatarShine {
+
+    0% {
+
+        transform: translateX(-120%) rotate(35deg);
+
+    }
+
+    100% {
+
+        transform: translateX(180%) rotate(35deg);
+
+    }
+
+}
+
+.crmGlassV2ProfileInfo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+.crmGlassV2CustomerName {
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    color: #fff;
+
+    letter-spacing: .2px;
+
+}
+
+.crmGlassV2Phone {
+
+    color: #d5d5d5;
+
+    font-size: 15px;
+
+}
+
+.crmGlassV2Email {
+
+    color: #a8a8a8;
+
+    font-size: 14px;
+
+}
+
+.crmGlassV2HeaderRight {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    justify-content: flex-start;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+}
+
+.crmGlassV2Badge {
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    color: #fff;
+
+    font-weight: 600;
+
+    font-size: 13px;
+
+}
+
+.crmGlassV2BookingChip {
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .06);
+
+    color: #ddd;
+
+    font-size: 13px;
+
+}
+
+.crmGlassV2ServiceChip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(16px);
+
+    border: 1px solid transparent;
+
+}
+
+.serviceFlight {
+
+    background: rgba(59, 130, 246, .12);
+
+    color: #60a5fa;
+
+    border-color: #2563eb;
+
+}
+
+.serviceTrain {
+
+    background: rgba(34, 197, 94, .12);
+
+    color: #4ade80;
+
+    border-color: #16a34a;
+
+}
+
+.serviceBus {
+
+    background: rgba(249, 115, 22, .12);
+
+    color: #fb923c;
+
+    border-color: #ea580c;
+
+}
+
+.serviceCar {
+
+    background: rgba(168, 85, 247, .12);
+
+    color: #c084fc;
+
+    border-color: #9333ea;
+
+}
+
+.servicePackage {
+
+    background: rgba(20, 184, 166, .12);
+
+    color: #2dd4bf;
+
+    border-color: #0d9488;
+
+}
+
+.serviceQuote {
+
+    background: rgba(234, 179, 8, .12);
+
+    color: #facc15;
+
+    border-color: #ca8a04;
+
+}
+
+
+
+.crmGlassV2Status-new {
+    background: #2f2f2f;
+}
+
+.crmGlassV2Status-pending {
+    background: #4b3d19;
+}
+
+.crmGlassV2Status-called {
+    background: #0ea5e9;
+}
+
+.crmGlassV2Status-whatsapp-sent {
+    background: #10b981;
+}
+
+.crmGlassV2Status-follow-up {
+    background: #8b5cf6;
+}
+
+.crmGlassV2Status-processing {
+    background: #2d3136;
+}
+
+.crmGlassV2Status-confirmed {
+    background: #16a34a;
+}
+
+.crmGlassV2Status-completed {
+    background: #203726;
+}
+
+.crmGlassV2Status-cancelled {
+    background: #4a2020;
+}
+
+/* ===========================================================
+   SUMMARY SECTION
+=========================================================== */
+
+.crmGlassV2Section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+.crmGlassV2SectionTitle {
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+}
+
+.crmGlassV2SummaryGrid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+
+}
+
+.crmGlassV2SummaryCard {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(16px);
+
+    transition: all .35s ease;
+
+}
+
+.crmGlassV2SummaryCard::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(135deg,
+
+            transparent,
+
+            rgba(255, 255, 255, .05),
+
+            transparent);
+
+    opacity: 0;
+
+    transition: .3s;
+
+}
+
+
+
+.crmGlassV2SummaryCard:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(59, 130, 246, .35);
+
+    box-shadow:
+
+        0 12px 35px rgba(59, 130, 246, .18);
+
+}
+
+.crmGlassV2SummaryCard:hover::before {
+
+    opacity: 1;
+
+}
+
+.crmGlassV2SummaryIcon.crmSummaryBooking {
+
+    background: linear-gradient(135deg,
+            #3b82f6,
+            #2563eb);
+
+}
+
+.crmGlassV2SummaryIcon.crmSummaryService {
+
+    background: linear-gradient(135deg,
+            #8b5cf6,
+            #6d28d9);
+
+}
+
+.crmGlassV2SummaryIcon.crmSummaryPassenger {
+
+    background: linear-gradient(135deg,
+            #10b981,
+            #059669);
+
+}
+
+.crmGlassV2SummaryIcon.crmSummaryAmount {
+
+    background: linear-gradient(135deg,
+            #f59e0b,
+            #d97706);
+
+}
+
+.crmGlassV2SummaryIcon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    background:
+
+        linear-gradient(135deg,
+            #2d2d2d,
+            #171717);
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    color: #fff;
+
+    flex-shrink: 0;
+
+}
+
+.crmGlassV2SummaryBody {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.crmGlassV2SummaryLabel {
+
+    font-size: 11px;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+    color: #9ca3af;
+
+    font-weight: 600;
+
+}
+
+.crmGlassV2SummaryValue {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 14px;
+
+    margin-top: 6px;
+
+    border-radius: 999px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(255, 255, 255, .08),
+            rgba(255, 255, 255, .04));
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+    backdrop-filter: blur(12px);
+
+    white-space: nowrap;
+
+}
+
+@media (max-width:768px) {
+
+    .crmGlassV2SummaryGrid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ===========================================================
+   JOURNEY CARD
+=========================================================== */
+
+.crmGlassV2JourneyCard {
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+/* Route */
+
+.crmGlassV2Route {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+}
+
+.crmGlassV2Location {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    min-width: 90px;
+
+}
+
+.crmGlassV2LocationIcon {
+
+    font-size: 20px;
+
+}
+
+.crmGlassV2LocationName {
+
+    color: #fff;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    word-break: break-word;
+
+}
+
+/* Center */
+
+.crmGlassV2RouteCenter {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+}
+
+.crmGlassV2RouteLine {
+
+    width: 100%;
+
+    height: 2px;
+
+    background:
+
+        linear-gradient(90deg,
+
+            rgba(255, 255, 255, .15),
+
+            rgba(255, 255, 255, .04));
+
+}
+
+.crmGlassV2Plane {
+
+    position: absolute;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    color: #fff;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    box-shadow:
+
+        0 0 18px rgba(255, 255, 255, .12);
+
+}
+
+/* Meta */
+
+.crmGlassV2JourneyMeta {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+}
+
+.crmGlassV2MetaItem {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, .04);
+
+    color: #ddd;
+
+}
+
+.crmGlassV2MetaIcon {
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+
+}
+
+@media (max-width:768px) {
+
+    .crmGlassV2Route {
+
+        flex-direction: column;
+
+    }
+
+    .crmGlassV2RouteCenter {
+
+        width: 100%;
+
+        min-height: 50px;
+
+    }
+
+    .crmGlassV2JourneyMeta {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ===========================================================
+   CRM CONTROLS
+=========================================================== */
+
+.crmGlassV2CRMCard {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+}
+
+.crmGlassV2Field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+.crmGlassV2Label {
+
+    color: #cfcfcf;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .4px;
+
+}
+
+.crmGlassV2Input,
+.crmGlassV2Select {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, .06);
+
+    color: #fff;
+
+    font-size: 14px;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    transition: .25s;
+
+    box-sizing: border-box;
+
+}
+
+.crmGlassV2Input:focus,
+.crmGlassV2Select:focus {
+
+    border-color:
+
+        rgba(255, 255, 255, .20);
+
+    box-shadow:
+
+        0 0 0 3px rgba(255, 255, 255, .05);
+
+}
+
+.crmGlassV2Input::placeholder {
+
+    color: #888;
+
+}
+
+.crmGlassV2Select option {
+
+    background: #1d1d1d;
+
+    color: #fff;
+
+}
+
+@media (max-width:768px) {
+
+    .crmGlassV2CRMCard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/* ===========================================================
+   NOTES
+=========================================================== */
+
+.crmGlassV2NotesCard {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+}
+
+.crmGlassV2Notes {
+
+    width: 100%;
+
+    min-height: 170px;
+
+    resize: vertical;
+
+    border: none;
+
+    outline: none;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, .06);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    box-sizing: border-box;
+
+    transition: .25s;
+
+    font-family: inherit;
+
+}
+
+.crmGlassV2Notes:focus {
+
+    border-color: #5b8cff;
+
+    box-shadow: 0 0 0 3px rgba(91, 140, 255, .18);
+
+}
+
+.crmGlassV2Notes::placeholder {
+
+    color: #888;
+
+}
+
+.crmGlassV2NotesFooter {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+.crmGlassV2NotesHint {
+
+    color: #9ca3af;
+
+    font-size: 12px;
+
+}
+
+.crmGlassV2NotesCounter {
+
+    color: #d0d0d0;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+@media (max-width:768px) {
+
+    .crmGlassV2NotesFooter {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+/* ===========================================================
+   TIMELINE
+=========================================================== */
+
+.crmGlassV2TimelineCard {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 22px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+}
+
+.crmGlassV2TimelineHeader {
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.crmGlassV2TimelineBody {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-height: 320px;
+
+    overflow-y: auto;
+
+    padding-right: 6px;
+
+}
+
+/* Custom Scroll */
+
+.crmGlassV2TimelineBody::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.crmGlassV2TimelineBody::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+.crmGlassV2TimelineBody::-webkit-scrollbar-thumb {
+
+    background: rgba(255, 255, 255, .15);
+
+    border-radius: 20px;
+
+}
+
+.crmGlassV2TimelineBody::-webkit-scrollbar-thumb:hover {
+
+    background: rgba(255, 255, 255, .30);
+
+}
+
+.crmGlassV2TimelineEmpty {
+
+    text-align: center;
+
+    color: #999;
+
+    padding: 35px;
+
+    font-style: italic;
+
+}
+
+/* ===========================================================
+   EXISTING TIMELINE COMPATIBILITY
+=========================================================== */
+
+.crmTimelineItem {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmTimelineItem {
+
+    position: relative;
+
+}
+
+.crmTimelineItem:last-child {
+
+    border-bottom: none;
+
+}
+
+.crmTimelineDot {
+
+    width: 12px;
+
+    height: 12px;
+
+    margin-top: 6px;
+
+    border-radius: 50%;
+
+    background: #8d8d8d;
+
+    flex-shrink: 0;
+
+    box-shadow:
+
+        0 0 8px rgba(255, 255, 255, .20);
+
+}
+
+.crmTimelineContent {
+
+    flex: 1;
+
+    color: #e5e5e5;
+
+    line-height: 1.6;
+
+}
+
+/* ===========================================================
+   ACTION BAR
+=========================================================== */
+
+.crmGlassV2ActionBar {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+}
+
+.crmGlassV2ActionBtn {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 18px 10px;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 18px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .25s;
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    background: rgba(255, 255, 255, .05);
+
+}
+
+.crmGlassV2ActionBtn:hover {
+
+    transform: translateY(-4px);
+
+}
+
+.crmGlassV2ActionIcon {
+
+    width: 54px;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    color: #ffffff;
+
+}
+
+/* ===========================================================
+   Individual Button Colors
+=========================================================== */
+
+.crmGlassV2CallBtn .crmGlassV2ActionIcon {
+
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+
+}
+
+.crmGlassV2WhatsappBtn .crmGlassV2ActionIcon {
+
+    background: linear-gradient(135deg, #25D366, #128C7E);
+
+}
+
+.crmGlassV2ViewBtn .crmGlassV2ActionIcon {
+
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+
+}
+
+.crmGlassV2CopyBtn .crmGlassV2ActionIcon {
+
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+
+}
+
+.crmGlassV2CallBtn:hover {
+
+    background: rgba(34, 197, 94, .18);
+
+}
+
+.crmGlassV2WhatsappBtn:hover {
+
+    background: rgba(37, 211, 102, .18);
+
+}
+
+.crmGlassV2ViewBtn:hover {
+
+    background: rgba(59, 130, 246, .18);
+
+}
+
+.crmGlassV2CopyBtn:hover {
+
+    background: rgba(245, 158, 11, .18);
+
+}
+
+@media(max-width:768px) {
+
+    .crmGlassV2ActionBar {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+/* ===========================================================
+   SAVE BAR
+=========================================================== */
+
+.crmGlassV2SaveCard {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(20px);
+
+}
+
+/* Save Button */
+
+.crmGlassV2SaveBtn {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    cursor: pointer;
+
+    border-radius: 16px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    transition: .25s;
+
+    background:
+
+        linear-gradient(180deg,
+
+            #2a2a2a,
+
+            #181818);
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+
+        0 10px 25px rgba(0, 0, 0, .55);
+
+}
+
+.crmGlassV2SaveBtn:hover {
+
+    background:
+
+        linear-gradient(180deg,
+
+            #343434,
+
+            #1d1d1d);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(79, 140, 255, .45);
+
+}
+
+.crmGlassV2SaveBtn:disabled {
+
+    opacity: .65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+/* Save Message */
+
+.crmGlassV2SaveMessage {
+
+    min-height: 22px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+/* Existing saveCustomerUpdate() classes */
+
+.crmGlassV2SaveMessage.saveLoading {
+
+    color: #fbbf24;
+
+}
+
+.crmGlassV2SaveMessage.saveSuccess {
+
+    color: #22c55e;
+
+}
+
+.crmGlassV2SaveMessage.saveError {
+
+    color: #ef4444;
+
+}
+
+/* Last Updated */
+
+.crmGlassV2LastUpdated {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+
+}
+
+.crmGlassV2LastUpdatedIcon {
+
+    font-size: 15px;
+
+}
+
+/* ===========================================================
+   STATUS BADGES
+=========================================================== */
+
+.crmGlassV2StatusBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .3px;
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, .10);
+
+    box-shadow:
+
+        0 8px 20px rgba(0, 0, 0, .25);
+
+}
+
+.crmGlassV2BadgeNew {
+
+    color: #60a5fa;
+
+    background: rgba(59, 130, 246, .12);
+
+    border-color: rgba(59, 130, 246, .35);
+
+}
+
+.crmGlassV2BadgePending {
+
+    color: #fbbf24;
+
+    background: rgba(245, 158, 11, .12);
+
+    border-color: rgba(245, 158, 11, .35);
+
+}
+
+.crmGlassV2BadgeCalled {
+
+    color: #38bdf8;
+
+    background: rgba(14, 165, 233, .12);
+
+    border-color: rgba(14, 165, 233, .35);
+
+}
+
+.crmGlassV2BadgeWhatsapp {
+
+    color: #4ade80;
+
+    background: rgba(34, 197, 94, .12);
+
+    border-color: rgba(34, 197, 94, .35);
+
+}
+
+.crmGlassV2BadgeFollow {
+
+    color: #c084fc;
+
+    background: rgba(139, 92, 246, .12);
+
+    border-color: rgba(139, 92, 246, .35);
+
+}
+
+.crmGlassV2BadgeProcessing {
+
+    color: #67e8f9;
+
+    background: rgba(6, 182, 212, .12);
+
+    border-color: rgba(6, 182, 212, .35);
+
+}
+
+.crmGlassV2BadgeConfirmed {
+
+    color: #4ade80;
+
+    background: rgba(22, 163, 74, .12);
+
+    border-color: rgba(22, 163, 74, .35);
+
+}
+
+.crmGlassV2BadgeCompleted {
+
+    color: #86efac;
+
+    background: rgba(21, 128, 61, .12);
+
+    border-color: rgba(21, 128, 61, .35);
+
+}
+
+.crmGlassV2BadgeCancelled {
+
+    color: #fca5a5;
+
+    background: rgba(220, 38, 38, .12);
+
+    border-color: rgba(220, 38, 38, .35);
+
+}
+
+/* ===========================================================
+   DRAWER ANIMATION
+=========================================================== */
+
+.crmGlassV2Drawer {
+
+    transition:
+        opacity .30s,
+        visibility .30s;
+
+}
+
+.crmGlassV2Container {
+
+    transition:
+        transform .30s,
+        opacity .30s;
+
+}
+
+/* Opening */
+
+.crmGlassV2Opening .crmGlassV2Container {
+
+    animation:
+        crmGlassDrawerOpen .35s ease;
+
+}
+
+/* Closing */
+
+.crmGlassV2Closing .crmGlassV2Container {
+
+    animation:
+        crmGlassDrawerClose .25s ease forwards;
+
+}
+
+@keyframes crmGlassDrawerOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+            translateX(45px) scale(.98);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+            translateX(0) scale(1);
+
+    }
+
+}
+
+@keyframes crmGlassDrawerClose {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+
+            translateX(0) scale(1);
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+
+            translateX(45px) scale(.98);
+
+    }
+
+}
+
+/* ===========================================================
+   MOBILE
+=========================================================== */
+
+.crmGlassV2Drawer.crmGlassV2Mobile .crmGlassV2Container {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    border-radius: 0;
+
+}
+
+.crmGlassV2InvoiceBtn .crmGlassV2ActionIcon {
+
+    background: linear-gradient(135deg,
+            #f59e0b,
+            #d97706);
+
+}
+
+.crmGlassV2InvoiceBtn:hover {
+
+    background: rgba(245, 158, 11, .15);
+
+}
+
+.crmGlassV2Snapshot {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+
+}
+
+.crmGlassV2SnapshotItem {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+}
+
+.crmGlassV2SnapshotTitle {
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    color: #8f8f8f;
+
+}
+
+.crmGlassV2SnapshotValue {
+
+    margin-top: 4px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+.avatar-blue {
+
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+
+}
+
+.avatar-green {
+
+    background: linear-gradient(135deg, #10b981, #059669);
+
+}
+
+.avatar-orange {
+
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+
+}
+
+.avatar-purple {
+
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+
+}
+
+.avatar-red {
+
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+
+}
+
+.avatar-gold {
+
+    background: linear-gradient(135deg, #facc15, #ca8a04);
+
+}
+
+.crmPriority {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.crmPriorityHigh {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.crmPriorityMedium {
+    background: #fef3c7;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+
+.crmPriorityNormal {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.crmPriorityLow {
+    background: #f3f4f6;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.crmGlassV2ModernTimeline {
+
+    position: relative;
+
+    padding-left: 20px;
+
+}
+
+.crmGlassV2ModernTimeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 8px;
+
+    bottom: 8px;
+
+    width: 2px;
+
+    background: linear-gradient(to bottom,
+            rgba(59, 130, 246, .7),
+            rgba(139, 92, 246, .35));
+
+}
+
+.crmGlassV2ModernTimeline .crmTimelineItem {
+
+    position: relative;
+
+    margin-bottom: 18px;
+
+    padding-left: 30px;
+
+}
+
+.crmGlassV2TimelineDot {
+
+    position: absolute;
+
+    left: -1px;
+
+    top: 2px;
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    background: linear-gradient(135deg,
+            #3b82f6,
+            #8b5cf6);
+
+    color: #fff;
+
+    box-shadow:
+        0 0 12px rgba(59, 130, 246, .4);
+
+}
+
+.crmGlassV2ModernTimeline .crmTimelineContent {
+
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    backdrop-filter: blur(12px);
+
+    transition: .25s;
+
+}
+
+.crmGlassV2ModernTimeline .crmTimelineContent:hover {
+
+    transform: translateX(4px);
+
+    border-color: #3b82f6;
+
+}
+
+.crmGlassV2ModernTimeline .crmTimelineTitle {
+
+    font-weight: 600;
+
+    color: #fff;
+
+}
+
+.crmGlassV2ModernTimeline .crmTimelineTime {
+
+    font-size: 11px;
+
+    color: #9ca3af;
+
+}
+
+/*==========================================
+CUSTOMER HEALTH
+==========================================*/
+
+.crmHealthHot {
+
+    background:
+
+        rgba(16, 185, 129, .18);
+
+    color: #10b981;
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    border:
+
+        1px solid rgba(16, 185, 129, .35);
+
+    box-shadow:
+
+        0 0 18px rgba(16, 185, 129, .22);
+
+}
+
+.crmHealthWarm {
+
+    background:
+
+        rgba(245, 158, 11, .18);
+
+    color: #f59e0b;
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    border:
+
+        1px solid rgba(245, 158, 11, .35);
+
+    box-shadow:
+
+        0 0 18px rgba(245, 158, 11, .22);
+
+}
+
+.crmHealthCold {
+
+    background:
+
+        rgba(239, 68, 68, .18);
+
+    color: #ef4444;
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    border:
+
+        1px solid rgba(239, 68, 68, .35);
+
+    box-shadow:
+
+        0 0 18px rgba(239, 68, 68, .22);
+
+}
+
+.crmHealthNew {
+
+    background:
+
+        rgba(148, 163, 184, .18);
+
+    color: #cbd5e1;
+
+    padding: 6px 14px;
+
+    border-radius: 30px;
+
+    font-weight: 700;
+
+    border:
+
+        1px solid rgba(148, 163, 184, .30);
+
+    box-shadow:
+
+        0 0 18px rgba(148, 163, 184, .18);
+
+}
+
+/*====================================
+ SMART NEXT ACTION
+====================================*/
+
+.crmActionChip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    border: 1px solid;
+
+    backdrop-filter: blur(12px);
+
+    transition: .30s;
+
+}
+
+.crmActionChip:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.crmActionCall {
+
+    background: rgba(59, 130, 246, .12);
+
+    border-color: #3b82f6;
+
+    color: #60a5fa;
+
+}
+
+.crmActionWhatsapp {
+
+    background: rgba(34, 197, 94, .12);
+
+    border-color: #22c55e;
+
+    color: #4ade80;
+
+}
+
+.crmActionFollow {
+
+    background: rgba(245, 158, 11, .12);
+
+    border-color: #f59e0b;
+
+    color: #fbbf24;
+
+}
+
+.crmActionPayment {
+
+    background: rgba(236, 72, 153, .12);
+
+    border-color: #ec4899;
+
+    color: #f472b6;
+
+}
+
+.crmActionDone {
+
+    background: rgba(16, 185, 129, .12);
+
+    border-color: #10b981;
+
+    color: #34d399;
+
+}
+
+.crmActionDefault {
+
+    background: rgba(148, 163, 184, .12);
+
+    border-color: #94a3b8;
+
+    color: #cbd5e1;
+
+}
+
+.crmActionWrap {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 4px;
+
+}
+
+.crmGlassV2ActionBtn.crmGlassV2Editing {
+
+    background:
+
+        linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: #fff;
+
+    box-shadow:
+
+        0 0 18px rgba(37, 99, 235, .45);
+
+}
+
+.crmGlassV2EditMode {
+
+    box-shadow:
+
+        0 0 30px rgba(37, 99, 235, .35);
+
+    border-bottom:
+
+        1px solid rgba(59, 130, 246, .45);
+
+    transition: .3s;
+
+}
+
+.crmGlassV2FooterActions {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-bottom: 14px;
+
+}
+
+.crmGlassV2FooterActions button {
+
+    flex: 1;
+
+}
+
+.crmGlassV2DeleteBtn {
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+    background: linear-gradient(135deg,
+            #dc2626,
+            #991b1b);
+
+    transition: .3s;
+
+    box-shadow:
+        0 10px 24px rgba(220, 38, 38, .28);
+
+}
+
+.crmGlassV2DeleteBtn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 34px rgba(220, 38, 38, .42);
+
+}
+
+.crmGlassV2Editing {
+
+    border-color: #3b82f6 !important;
+
+    box-shadow:
+        0 0 0 1px rgba(59, 130, 246, .45),
+        0 0 35px rgba(59, 130, 246, .25);
+
+    transition: .35s;
+
+}
+
+.crmGlassV2EditBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .8px;
+
+    text-transform: uppercase;
+
+    background: rgba(255, 255, 255, .08);
+
+    color: #9ca3af;
+
+    transition: .35s;
+
+}
+
+.crmGlassV2EditBadge.editing {
+
+    background:
+        linear-gradient(135deg,
+            #2563eb,
+            #3b82f6);
+
+    color: #fff;
+
+    box-shadow:
+        0 0 18px rgba(59, 130, 246, .35);
+
+}
+
+.crmGlassV2SaveBtn {
+
+    transition: .35s;
+
+}
+
+.crmGlassV2SaveBtn:disabled {
+
+    opacity: .45;
+
+    transform: scale(.96);
+
+}
+
+.crmGlassV2SaveBtn:not(:disabled) {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+.crmDeleteOverlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .65);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 999999;
+
+    animation: fadeIn .25s;
+
+}
+
+.crmDeleteCard {
+
+    width: 420px;
+
+    background: rgba(18, 18, 22, .95);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+
+}
+
+.crmDeleteHeader {
+
+    padding: 22px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmDeleteBody {
+
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+.crmDeleteInfo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #ddd;
+
+}
+
+.crmDeleteWarning {
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(245, 158, 11, .15);
+
+    color: #fbbf24;
+
+    font-size: 13px;
+
+}
+
+.crmDeleteInput {
+
+    padding: 14px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 12px;
+
+    background: #20242d;
+
+    color: #fff;
+
+    font-size: 15px;
+
+}
+
+.crmDeleteFooter {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmDeleteCancel,
+
+.crmDeleteConfirm {
+
+    padding: 11px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+.crmDeleteCancel {
+
+    background: #2c3440;
+
+    color: #fff;
+
+}
+
+.crmDeleteConfirm {
+
+    background: #dc2626;
+
+    color: #fff;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+/*=========================================================
+DELETE LOADER
+=========================================================*/
+
+.crmDeleteLoader {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .55);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 9999999;
+
+}
+
+.crmDeleteLoaderCard {
+
+    width: 320px;
+
+    padding: 32px;
+
+    border-radius: 24px;
+
+    background: #161a22;
+
+    text-align: center;
+
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .45);
+
+}
+
+.crmDeleteSpinner {
+
+    width: 64px;
+
+    height: 64px;
+
+    margin: auto;
+
+    border: 5px solid rgba(255, 255, 255, .08);
+
+    border-top-color: #3b82f6;
+
+    border-radius: 50%;
+
+    animation: crmSpin 1s linear infinite;
+
+}
+
+.crmDeleteLoaderTitle {
+
+    margin-top: 18px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+}
+
+.crmDeleteLoaderText {
+
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+    font-size: 14px;
+
+}
+
+@keyframes crmSpin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+    /*=========================================================
+DRAWER CLOSE
+=========================================================*/
+
+}
+
+.crmDrawerClosing {
+
+    animation: crmDrawerClose .45s ease;
+
+}
+
+@keyframes crmDrawerClose {
+
+    to {
+
+        transform: translateX(100%);
+
+        opacity: 0;
+
+    }
+
+    /*=========================================================
+DELETE TOAST
+=========================================================*/
+
+}
+
+.crmDeleteToast {
+
+    position: fixed;
+
+    right: 24px;
+
+    bottom: 24px;
+
+    padding: 18px 22px;
+
+    border-radius: 16px;
+
+    background: #181c23;
+
+    color: #fff;
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .35);
+
+    transform: translateY(100px);
+
+    opacity: 0;
+
+    transition: .35s;
+
+    z-index: 999999;
+
+    min-width: 260px;
+
+}
+
+.crmDeleteToast.show {
+
+    transform: translateY(0);
+
+    opacity: 1;
+
+}
+
+.crmDeleteToast.success {
+
+    border-left: 5px solid #10b981;
+
+}
+
+.crmDeleteToast.error {
+
+    border-left: 5px solid #ef4444;
+
+}
+
+.crmDeleteError {
+
+    margin-top: 12px;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    background: #fff3f3;
+
+    color: #c62828;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    display: none;
+
+    animation: fadeIn .25s ease;
+
+}
+
+.crmDeleteInput.crmDeleteInputError {
+
+    border: 2px solid #ef5350;
+
+    box-shadow: 0 0 0 4px rgba(239, 83, 80, .15);
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-6px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}
+
+.crmDeleteShake {
+
+    animation: crmDeleteShake .35s;
+
+}
+
+@keyframes crmDeleteShake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-6px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: none;
+    }
+
+}
+
+.crmGlassV2HeaderActions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin: 0;
+
+    flex-wrap: wrap;
+
+}
+
+.crmQuickEditBtn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    background: rgba(255, 255, 255, .05);
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    backdrop-filter: blur(20px);
+
+}
+
+.crmQuickEditBtn:hover {
+
+    background: rgba(59, 130, 246, .15);
+
+    border-color: #3B82F6;
+
+    transform: translateY(-1px);
+
+}
+
+.crmQuickEditBtn.editing {
+
+    background: rgba(34, 197, 94, .15);
+
+    border-color: #22C55E;
+
+    color: #22C55E;
+
+    box-shadow: 0 0 20px rgba(34, 197, 94, .25);
+
+}
+
+/*=========================================================
+EDIT MODE BADGE
+=========================================================*/
+
+.crmEditBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+
+    background: rgba(255, 255, 255, .05);
+
+    color: #9CA3AF;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter: blur(18px);
+
+    transition: .25s;
+
+    user-select: none;
+
+    cursor: pointer;
+
+}
+
+/* Hover */
+
+.crmEditBadge:hover {
+
+    transform: translateY(-1px);
+
+    background: rgba(255, 255, 255, .08);
+
+}
+
+/*=========================================================
+VIEW MODE
+=========================================================*/
+
+.crmEditBadge:not(.editing) {
+
+    background: rgba(107, 114, 128, .15);
+
+    border-color: rgba(107, 114, 128, .35);
+
+    color: #D1D5DB;
+
+}
+
+/*=========================================================
+EDIT MODE
+=========================================================*/
+
+.crmEditBadge.editing {
+
+    background: rgba(34, 197, 94, .18);
+
+    border-color: rgba(34, 197, 94, .45);
+
+    color: #22C55E;
+
+    box-shadow: 0 0 18px rgba(34, 197, 94, .25);
+
+}
+
+.crmLatestNoteTitle {
+    font-size: 13px;
+    font-weight: 700;
+    opacity: .7;
+    margin-bottom: 10px;
+}
+
+.crmDivider {
+    height: 1px;
+    background: rgba(255, 255, 255, .08);
+    margin: 18px 0;
+}
+
+.crmNotesHistoryBtn {
+
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .05);
+    color: #fff;
+    cursor: pointer;
+    transition: .25s;
+
+}
+
+.crmNotesHistoryBtn:hover {
+
+    background: rgba(255, 255, 255, .08);
+
+}
+
+.crmNotesHistory {
+
+    display: none;
+    margin-top: 14px;
+
+}
+
+.crmNotesHistory.show {
+
+    display: block;
+
+}
+
+.crmNotesSummary {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 18px;
+
+}
+
+.crmSummaryCard {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+.crmSummaryBadge {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.crmSummaryBadge:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.crmSummaryIcon {
+
+    font-size: 18px;
+
+}
+
+.crmSummaryText {
+
+    flex: 1;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+.crmSummaryCount {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+.crmSummaryBadge.active {
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, .25);
+
+    border: 1px solid currentColor;
+
+}
+
+
+
+.crmNotesSummaryItem {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(180deg,
+
+            rgba(255, 255, 255, .05),
+
+            rgba(255, 255, 255, .02));
+
+    border: 1px solid rgba(255, 255, 255, .06);
+
+    transition: .25s;
+
+}
+
+.crmNotesSummaryItem:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, .07);
+
+}
+
+.crmNotesSummaryItem strong {
+
+    margin-top: 6px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+}
+
+
+
+.crmNoteTimeline {
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+.crmNoteTimeline .crmGlassV2TimelineIcon {
+
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 16px;
+
+}
+
+.crmNoteTimeline .crmGlassV2TimelineBadge {
+
+    font-size: 11px;
+
+    padding: 3px 8px;
+
+}
+
+.crmNoteTimeline .crmGlassV2TimelineTitle {
+
+    font-size: 13px;
+
+    white-space: pre-line;
+
+    line-height: 1.6;
+
+}
+
+.crmNoteTimeline .crmGlassV2TimelineClock {
+
+    padding: 3px 8px;
+
+    font-size: 11px;
+
+}
+
+.crmNoteLine {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 6px;
+
+}
+
+.crmNoteBullet {
+
+    color: #3b82f6;
+
+    font-size: 18px;
+
+    line-height: 18px;
+
+    flex: none;
+
+    margin-top: 2px;
+
+}
+
+.crmMiniIcon {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+
+
+.crmNoteCheck {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 8px 0;
+
+}
+
+.crmCheckIcon {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #2ecc71;
+
+    color: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    flex: none;
+
+    margin-top: 2px;
+
+}
+
+.crmShortcutHint {
+
+    margin-top: 16px;
+
+    padding: 10px 14px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, .04);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, .75);
+
+}
+
+.crmShortcutHint span {
+
+    padding: 4px 8px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, .05);
+
+}
+
+.crmGlassV2InfoGrid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+
+}
+
+@media(max-width:900px) {
+
+    .crmGlassV2InfoGrid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+/*=====================================================
+ CUSTOMER WORKSPACE GRID
+=====================================================*/
+
+.crmCustomerWorkspaceGrid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    align-items: start;
+
+    margin-top: 18px;
+
+}
+
+.crmCustomerWorkspaceLeft {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.crmCustomerWorkspaceRight {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+/* Tablet */
+
+@media(max-width:900px) {
+
+    .crmCustomerWorkspaceGrid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+.crmCustomerNotesCard {
+
+    margin-top: 14px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, .03);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.crmCustomerNotesHeading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+}
+
+.crmCustomerNotesDivider {
+
+    margin: 22px 0;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, .08);
+
+}
+
+.crmCompactHistoryCard {
+
+    padding: 12px 16px;
+
+    margin-bottom: 10px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, .035);
+
+    border: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmCompactHistoryRow {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.crmCompactHistoryLeft {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.crmCompactHistoryIcon {
+
+    font-size: 15px;
+
+    line-height: 1;
+
+}
+
+.crmCompactHistoryBadge {
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    border: 1px solid;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+.crmCompactHistoryTime {
+
+    font-size: 12px;
+
+    color: #9ca3af;
+
+    white-space: nowrap;
+
+}
+
+.crmCompactHistoryMessage {
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    color: #f3f4f6;
+
+}
+
+/*======================================================
+SNAPSHOT V3
+======================================================*/
+
+.crmSnapshotV3 {
+
+    margin-bottom: 18px;
+
+}
+
+.crmSnapshotGridV3 {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 14px;
+
+}
+
+.crmSnapshotCardV3 {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border-radius: 16px;
+
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .05),
+            rgba(255, 255, 255, .02));
+
+    border: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmSnapshotIconV3 {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    background: rgba(255, 255, 255, .05);
+
+}
+
+.crmSnapshotLabelV3 {
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    color: #9ca3af;
+
+    letter-spacing: .4px;
+
+}
+
+.crmSnapshotValueV3 {
+
+    margin-top: 3px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #fff;
+
+}
+
+.crmSnapshotActionsV3 {
+
+    margin-top: 14px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, .03);
+
+    border: 1px solid rgba(255, 255, 255, .06);
+
+}
+
+.crmSnapshotActionsTitleV3 {
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #d1d5db;
+
+}
+
+.crmSnapshotActionWrapV3 {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.crmSnapshotActionChipV3 {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    background: #222;
+
+}
+
+/*=========================================
+NOTE TYPE TOOLBAR V2
+=========================================*/
+
+.crmNoteTypeToolbar{
+
+display:grid;
+
+grid-template-columns:repeat(4,minmax(0,1fr));
+
+gap:10px;
+
+margin-bottom:16px;
+
+}
+
+.crmNoteTypeChipV2{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+height:72px;
+
+padding:10px;
+
+border-radius:16px;
+
+background:#252525;
+
+border:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+transition:.25s;
+
+color:#fff;
+
+}
+
+.crmNoteTypeChipV2:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(59, 130, 246, .15);
+
+    border-color: #3b82f6;
+
+}
+
+.crmNoteTypeChipV2 span {
+
+    font-weight: 600;
+
+}
+
+.crmNoteChipActive{
+
+background:#2563eb !important;
+
+border-color:#3b82f6 !important;
+
+box-shadow:
+
+0 0 18px rgba(59,130,246,.45);
+
+transform:translateY(-2px);
+
+}
+
+.crmNoteChipIcon{
+
+font-size:22px;
+
+margin-bottom:6px;
+
+}
+
+.crmNoteChipText{
+
+font-size:12px;
+
+font-weight:600;
+
+text-align:center;
+
+line-height:1.2;
+
+}
+
+.crmNoteTypeChipV2:last-child{
+
+grid-column:3;
+
+}

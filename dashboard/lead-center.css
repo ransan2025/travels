@@ -1,0 +1,2050 @@
+/*=====================================================
+LEAD CENTER V2
+=====================================================*/
+
+.leadCenterV2 {
+
+    margin-top: 22px;
+
+    padding: 22px;
+
+    border-radius: 28px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(255, 255, 255, .08),
+            rgba(255, 255, 255, .03));
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    backdrop-filter:
+
+        blur(35px);
+
+    box-shadow:
+
+        0 20px 45px rgba(0, 0, 0, .28);
+
+}
+
+.leadCenterHeader {
+
+    margin-bottom: 22px;
+
+}
+
+.leadCenterSub {
+
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    opacity: .6;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+}
+
+.leadCenterGridV2 {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 18px;
+
+}
+
+.leadStageCard {
+
+    position: relative;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+    border:
+
+        1px solid rgba(255, 255, 255, .06);
+
+    transition: .35s;
+
+}
+
+.leadStageCard:hover {
+
+    transform:
+
+        translateY(-5px);
+
+    background:
+
+        rgba(255, 255, 255, .08);
+
+    box-shadow:
+
+        0 18px 35px rgba(0, 0, 0, .35);
+
+}
+
+.leadStageCard::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 4px;
+
+    border-radius: 30px;
+
+}
+
+/*=========================================
+Stage Accent Colors
+=========================================*/
+
+.stageNew::before {
+
+    background: #3b82f6;
+
+}
+
+.stagePending::before {
+
+    background: #f97316;
+
+}
+
+.stageFollowup::before {
+
+    background: #8b5cf6;
+
+}
+
+.stageQuote::before {
+
+    background: #facc15;
+
+}
+
+.stageConverted::before {
+
+    background: #22c55e;
+
+}
+
+.stageLost::before {
+
+    background: #ef4444;
+
+}
+
+/*=========================================
+Card Glow
+=========================================*/
+
+.stageNew {
+
+    border-color: #3b82f6;
+
+}
+
+.stagePending {
+
+    border-color: #f97316;
+
+}
+
+.stageFollowup {
+
+    border-color: #8b5cf6;
+
+}
+
+.stageQuote {
+
+    border-color: #facc15;
+
+}
+
+.stageConverted {
+
+    border-color: #22c55e;
+
+}
+
+.stageLost {
+
+    border-color: #ef4444;
+
+}
+
+.stageNew:hover {
+
+    box-shadow: 0 0 22px rgba(59, 130, 246, .35);
+
+}
+
+.stagePending:hover {
+
+    box-shadow: 0 0 22px rgba(249, 115, 22, .35);
+
+}
+
+.stageFollowup:hover {
+
+    box-shadow: 0 0 22px rgba(139, 92, 246, .35);
+
+}
+
+.stageQuote:hover {
+
+    box-shadow: 0 0 22px rgba(250, 204, 21, .35);
+
+}
+
+.stageConverted:hover {
+
+    box-shadow: 0 0 22px rgba(34, 197, 94, .35);
+
+}
+
+.stageLost:hover {
+
+    box-shadow: 0 0 22px rgba(239, 68, 68, .35);
+
+}
+
+
+
+.leadStageHeader {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 16px;
+
+}
+
+.leadStageIcon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 28px;
+
+    background:
+
+        rgba(255, 255, 255, .06);
+
+}
+
+/*=========================================
+Count Badge
+=========================================*/
+
+.leadStageCount {
+
+    width: 56px;
+
+    height: 56px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #fff;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+
+    transition: .25s;
+
+}
+
+/*=========================================
+Badge Colors
+=========================================*/
+
+.stageNew .leadStageCount {
+
+    background: #3b82f6;
+
+}
+
+.stagePending .leadStageCount {
+
+    background: #f97316;
+
+}
+
+.stageFollowup .leadStageCount {
+
+    background: #8b5cf6;
+
+}
+
+.stageQuote .leadStageCount {
+
+    background: #facc15;
+
+    color: #222;
+
+}
+
+.stageConverted .leadStageCount {
+
+    background: #22c55e;
+
+}
+
+.stageLost .leadStageCount {
+
+    background: #ef4444;
+
+}
+
+.leadStageCard:hover .leadStageCount {
+
+    transform: scale(1.08);
+
+}
+
+.leadStageTitle {
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+}
+
+.leadStageSub {
+
+    font-size: 13px;
+
+    opacity: .65;
+
+}
+
+/*==================================================
+LEAD CENTER V2
+==================================================*/
+
+.leadCenterModalV2 {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .55);
+
+    backdrop-filter: blur(12px);
+
+    z-index: 9999;
+
+    animation: fadeIn .25s ease;
+
+}
+
+
+/*==================================================*/
+
+.leadCenterWindowV2 {
+
+    width: min(1500px, 95vw);
+
+    height: min(90vh, 920px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+
+        linear-gradient(135deg,
+
+            rgba(25, 25, 25, .95),
+
+            rgba(8, 8, 8, .90));
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+
+        0 40px 100px rgba(0, 0, 0, .55);
+
+    backdrop-filter: blur(30px);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterHeaderV2 {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 28px 34px;
+
+    border-bottom:
+
+        1px solid rgba(255, 255, 255, .06);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterTitleV2 {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: white;
+
+}
+
+
+.leadCenterSubtitleV2 {
+
+    margin-top: 6px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, .55);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterCloseV2 {
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    color: white;
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+    transition: .25s;
+
+}
+
+.leadCenterCloseV2:hover {
+
+    background:
+
+        rgba(255, 80, 80, .18);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterToolbarV2 {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 24px 34px;
+
+    gap: 20px;
+
+}
+
+
+/*==================================================*/
+
+.leadSearchInputV2 {
+
+    flex: 1;
+
+    height: 54px;
+
+    padding: 0 22px;
+
+    border-radius: 18px;
+
+    outline: none;
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+    color: white;
+
+    font-size: 15px;
+
+    backdrop-filter: blur(20px);
+
+}
+
+.leadSearchInputV2::placeholder {
+
+    color: rgba(255, 255, 255, .45);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterCountV2 {
+
+    padding: 12px 18px;
+
+    border-radius: 16px;
+
+    background:
+
+        rgba(91, 168, 255, .12);
+
+    border:
+
+        1px solid rgba(91, 168, 255, .18);
+
+    color: #5ba8ff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+/*==================================================*/
+
+/*==================================================
+LEAD CENTER CHIPS
+==================================================*/
+
+.leadCenterChipsV2 {
+
+    display: flex;
+
+    gap: 10px;
+
+padding: 28px 34px;
+
+    flex-wrap: wrap;
+
+    margin: 18px 0;
+
+}
+
+.leadChipV2 {
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    border: 1px solid rgba(255, 255, 255, .18);
+
+    background: rgba(255, 255, 255, .08);
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    backdrop-filter: blur(10px);
+
+}
+
+.leadChipV2:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, .14);
+
+}
+
+.leadChipV2.active {
+
+    background: #4f8cff;
+
+    color: #fff;
+
+    border-color: #4f8cff;
+
+    box-shadow: 0 0 15px rgba(79, 140, 255, .35);
+
+}
+
+
+/*==================================================*/
+
+.leadChip {
+
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+    color: #d5d5d5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .25s;
+
+}
+
+.leadChip:hover {
+
+    transform: translateY(-2px);
+
+    background:
+
+        rgba(91, 168, 255, .18);
+
+}
+
+.leadChip.active {
+
+    background:
+
+        linear-gradient(135deg,
+
+            #5ba8ff,
+
+            #3b82f6);
+
+    color: white;
+
+    box-shadow:
+
+        0 0 18px rgba(91, 168, 255, .35);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterTableWrapV2 {
+
+    flex: 1;
+
+    overflow: auto;
+
+    padding: 0 34px 34px;
+
+}
+
+
+/*==================================================*/
+
+.leadCenterTable {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0 12px;
+
+}
+
+
+/*==================================================*/
+
+.leadCenterTable thead th {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+
+    padding: 18px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+
+    color: #9ca3af;
+
+    background:
+
+        rgba(15, 15, 15, .95);
+
+    backdrop-filter: blur(25px);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterTable tbody tr {
+
+    transition: .25s;
+
+}
+
+.leadCenterTable tbody tr:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/*==================================================*/
+
+.leadCenterTable td {
+
+    padding: 18px;
+
+    background:
+
+        rgba(255, 255, 255, .04);
+
+    border-top:
+
+        1px solid rgba(255, 255, 255, .05);
+
+    border-bottom:
+
+        1px solid rgba(255, 255, 255, .05);
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+.leadCenterTable td:first-child {
+
+    border-radius: 18px 0 0 18px;
+
+}
+
+.leadCenterTable td:last-child {
+
+    border-radius: 0 18px 18px 0;
+
+}
+
+
+/*==================================================*/
+
+.customerCell {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+.customerName {
+
+    font-weight: 700;
+
+    font-size: 13px;
+
+    color: white;
+
+}
+
+.customerPhone {
+
+    font-size: 13px;
+
+    color: #94a3b8;
+
+}
+
+
+/*==================================================*/
+
+.serviceCell {
+
+    font-weight: 600;
+
+    color: #d5d5d5;
+
+}
+
+
+/*==================================================*/
+
+.actionWrap {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+/*==================================================*/
+
+.actionBtn {
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+    color: white;
+
+    transition: .25s;
+
+}
+
+.actionBtn:hover {
+
+    transform: translateY(-2px);
+
+    background:
+
+        rgba(91, 168, 255, .18);
+
+}
+
+
+/*==================================================*/
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/*==================================================*/
+
+@media(max-width:900px) {
+
+    .leadCenterWindowV2 {
+
+        width: 100%;
+
+        height: 100%;
+
+        border-radius: 0;
+
+    }
+
+    .leadCenterToolbarV2 {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .leadCenterCountV2 {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+}
+
+.serviceCell {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: 600;
+
+    font-size: 12px;
+
+    color: #fff;
+
+}
+
+.serviceIcon {
+
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+
+        rgba(91, 168, 255, .10);
+
+    font-size: 18px;
+
+}
+
+.customerCell {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+.customerName {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: white;
+
+}
+
+.customerPhone {
+
+    font-size: 13px;
+
+    color: #94a3b8;
+
+}
+
+.leadRowV2 {
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.leadRowV2:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.leadTableV2 {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.leadTableV2 th {
+
+    padding: 16px;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .6px;
+
+    color: #94a3b8;
+
+    border-bottom:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    text-align: left;
+
+}
+
+.leadTableV2 td {
+
+    padding: 16px;
+
+    border-bottom:
+
+        1px solid rgba(255, 255, 255, .05);
+
+    vertical-align: middle;
+
+}
+
+.leadTableV2 tbody tr {
+
+    transition: .25s;
+
+    font-size: 13px;
+
+}
+
+.leadTableV2 tbody tr:hover {
+
+    background:
+
+        rgba(255, 255, 255, .03);
+
+}
+
+.leadEmptyStateV2 {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+}
+
+.leadEmptyIcon {
+
+    font-size: 58px;
+
+    margin-bottom: 20px;
+
+    opacity: .45;
+
+}
+
+.leadEmptyTitle {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    color: white;
+
+    margin-bottom: 8px;
+
+}
+
+.leadEmptySub {
+
+    color: #94a3b8;
+
+}
+
+.leadCenterRow {
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.leadCenterRow:hover {
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+    transform: scale(1.003);
+
+}
+
+.leadCenterTable thead {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+
+    backdrop-filter: blur(18px);
+
+    background:
+
+        rgba(0, 0, 0, .45);
+
+}
+
+.leadCenterTable th {
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: .25s;
+
+}
+
+.leadCenterTable th:hover {
+
+    color: #5ba8ff;
+
+}
+
+.leadCenterEmpty {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+}
+
+.leadEmptyIcon {
+
+    font-size: 60px;
+
+    margin-bottom: 15px;
+
+    opacity: .6;
+
+}
+
+.leadEmptyTitle {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: white;
+
+}
+
+.leadEmptySub {
+
+    margin-top: 6px;
+
+    color: #9ca3af;
+
+}
+
+/*=========================
+CUSTOMER CELL
+=========================*/
+
+.leadCustomerCell {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 12px;
+
+}
+
+.leadCustomerName {
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    color: #fff;
+
+}
+
+.leadCustomerPhone {
+
+    font-size: 12px;
+
+    color: #94a3b8;
+
+}
+
+/*=========================
+ROW
+=========================*/
+
+.leadCenterRow {
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+.leadCenterRow:hover {
+
+    background:
+
+        rgba(255, 255, 255, .05);
+
+}
+
+/*=========================
+ACTIONS
+=========================*/
+
+.leadRowActions {
+
+    display: flex;
+
+    gap: 8px;
+
+    justify-content: center;
+
+}
+
+.leadActionBtn {
+
+    width: 34px;
+
+    height: 34px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background:
+
+        rgba(255, 255, 255, .06);
+
+    color: white;
+
+    transition: .25s;
+
+}
+
+.leadActionBtn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.leadActionBtn.call {
+
+    background:
+
+        rgba(34, 197, 94, .15);
+
+}
+
+.leadActionBtn.whatsapp {
+
+    background:
+
+        rgba(37, 211, 102, .18);
+
+}
+
+.leadActionBtn.edit {
+
+    background:
+
+        rgba(59, 130, 246, .18);
+
+}
+
+/*==================================
+PAGINATION
+==================================*/
+
+.leadPagination {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    padding-top: 15px;
+
+    border-top:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+.leadPaginationInfo {
+
+    font-size: 13px;
+
+    color: #b8c2d6;
+
+}
+
+.leadPaginationCenter {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+.leadPageBtn {
+
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 10px;
+
+    border: none;
+
+    cursor: pointer;
+
+    background:
+
+        rgba(255, 255, 255, .06);
+
+    color: white;
+
+    transition: .25s;
+
+}
+
+.leadPageBtn:hover {
+
+    background:
+
+        rgba(91, 168, 255, .20);
+
+}
+
+.leadPageBtn.active {
+
+    background:
+
+        linear-gradient(135deg,
+
+            #5ba8ff,
+
+            #3478f6);
+
+}
+
+.leadRowsSelect select {
+
+    background:
+
+        rgba(255, 255, 255, .06);
+
+    border:
+
+        1px solid rgba(255, 255, 255, .08);
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    outline: none;
+
+}
+
+.leadSkeleton {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 20px;
+
+}
+
+.leadSkeletonRow {
+
+    height: 52px;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(90deg,
+
+            rgba(255, 255, 255, .04),
+
+            rgba(255, 255, 255, .09),
+
+            rgba(255, 255, 255, .04));
+
+    background-size: 300%;
+
+    animation:
+
+        leadSkeletonMove 1.2s infinite;
+
+}
+
+@keyframes leadSkeletonMove {
+
+    0% {
+
+        background-position: 300% 0;
+
+    }
+
+    100% {
+
+        background-position: -300% 0;
+
+    }
+
+}
+
+.leadEmptyState {
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+}
+
+.leadEmptyIcon {
+
+    font-size: 52px;
+
+    margin-bottom: 18px;
+
+    opacity: .8;
+
+}
+
+.leadEmptyTitle {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+}
+
+.leadEmptySub {
+
+    color: #94a3b8;
+
+}
+
+.leadCenterRow {
+
+    transition:
+
+        all .22s ease;
+
+}
+
+.leadCenterRow:hover {
+
+    transform:
+
+        translateY(-1px);
+
+    background:
+
+        rgba(91, 168, 255, .08);
+
+    box-shadow:
+
+        0 8px 18px rgba(0, 0, 0, .22);
+
+}
+
+.leadCenterTableV2::-webkit-scrollbar {
+
+    width: 10px;
+
+    height: 10px;
+
+}
+
+.leadCenterTableV2::-webkit-scrollbar-thumb {
+
+    background:
+
+        rgba(255, 255, 255, .18);
+
+    border-radius: 20px;
+
+}
+
+.leadCenterTableV2::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+.leadCenterTable thead th {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 5;
+
+    backdrop-filter:
+
+        blur(25px);
+
+    background:
+
+        rgba(16, 18, 22, .92);
+
+}
+
+@media(max-width:900px) {
+
+    .leadCenterTable {
+
+        display: block;
+
+        overflow-x: auto;
+
+    }
+
+}
+
+.leadCenterModalContentV2 {
+
+    transform:
+
+        translateY(20px) scale(.97);
+
+    opacity: 0;
+
+    transition: .25s;
+
+}
+
+.leadCenterModalV2.show .leadCenterModalContentV2 {
+
+    transform:
+
+        translateY(0) scale(1);
+
+    opacity: 1;
+
+}
+
+
+/*=========================================
+Lead Indicator
+=========================================*/
+
+/*=========================================
+Indicator Chip
+=========================================*/
+
+.leadStageIndicator {
+
+    margin-top: 12px;
+
+}
+
+.leadIndicatorChip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .3px;
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    backdrop-filter: blur(12px);
+
+    transition: .25s;
+
+}
+
+.stageNew .leadIndicatorChip {
+
+    background: rgba(59, 130, 246, .18);
+
+    color: #60a5fa;
+
+}
+
+.stagePending .leadIndicatorChip {
+
+    background: rgba(249, 115, 22, .18);
+
+    color: #fb923c;
+
+}
+
+.stageFollowup .leadIndicatorChip {
+
+    background: rgba(139, 92, 246, .18);
+
+    color: #c084fc;
+
+}
+
+.stageQuote .leadIndicatorChip {
+
+    background: rgba(250, 204, 21, .18);
+
+    color: #fde047;
+
+}
+
+.stageConverted .leadIndicatorChip {
+
+    background: rgba(34, 197, 94, .18);
+
+    color: #4ade80;
+
+}
+
+.stageLost .leadIndicatorChip {
+
+    background: rgba(239, 68, 68, .18);
+
+    color: #f87171;
+
+}
+
+.stageNew .leadStageIndicator {
+
+    color: #60a5fa;
+
+}
+
+.stagePending .leadStageIndicator {
+
+    color: #fb923c;
+
+}
+
+.stageFollowup .leadStageIndicator {
+
+    color: #c084fc;
+
+}
+
+.stageQuote .leadStageIndicator {
+
+    color: #facc15;
+
+}
+
+.stageConverted .leadStageIndicator {
+
+    color: #4ade80;
+
+}
+
+.stageLost .leadStageIndicator {
+
+    color: #f87171;
+
+}
+
+/*====================================================
+LEAD CARD PROGRESS BAR
+====================================================*/
+
+.leadProgress {
+
+    flex: 1;
+
+    height: 6px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border-radius: 999px;
+
+    overflow: hidden;
+
+}
+
+.leadProgressFill {
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    transition: width .8s ease;
+
+    animation: progressGlow 2s infinite;
+
+}
+
+.stageNew .leadProgressFill {
+
+    background: #3b82f6;
+
+}
+
+.stagePending .leadProgressFill {
+
+    background: #fb923c;
+
+}
+
+.stageFollowup .leadProgressFill {
+
+    background: #a855f7;
+
+}
+
+.stageQuote .leadProgressFill {
+
+    background: #facc15;
+
+}
+
+.stageConverted .leadProgressFill {
+
+    background: #22c55e;
+
+}
+
+.stageLost .leadProgressFill {
+
+    background: #ef4444;
+
+}
+
+@keyframes progressGlow {
+
+    0% {
+
+        opacity: .7;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: .7;
+
+    }
+
+}
+
+/*======================================
+Progress Wrapper
+======================================*/
+
+.leadStageProgressWrap {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 14px;
+
+}
+
+
+
+/*=========================================
+Progress Wrapper
+=========================================*/
+
+.leadProgressWrap {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 14px;
+
+}
+
+
+/*======================================
+Progress Badge
+======================================*/
+
+.leadProgressBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, .18);
+
+    box-shadow:
+
+        0 4px 14px rgba(0, 0, 0, .25),
+
+        inset 0 1px rgba(255, 255, 255, .08);
+
+    white-space: nowrap;
+
+    transition: .25s;
+
+}
+
+.progressExcellent {
+
+    background: rgba(34, 197, 94, .18);
+
+    color: #4ade80;
+
+    border-color: rgba(34, 197, 94, .35);
+
+}
+
+.progressGood {
+
+    background: rgba(59, 130, 246, .18);
+
+    color: #60a5fa;
+
+    border-color: rgba(59, 130, 246, .35);
+
+}
+
+.progressAverage {
+
+    background: rgba(251, 191, 36, .18);
+
+    color: #fbbf24;
+
+    border-color: rgba(251, 191, 36, .35);
+
+}
+
+.progressLow {
+
+    background: rgba(249, 115, 22, .18);
+
+    color: #fb923c;
+
+    border-color: rgba(249, 115, 22, .35);
+
+}
+
+.progressCritical {
+
+    background: rgba(239, 68, 68, .18);
+
+    color: #f87171;
+
+    border-color: rgba(239, 68, 68, .35);
+
+}
+
+
+/*=========================================
+BOOKING ID CHIP
+=========================================*/
+
+.bookingIdChip {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    color: #8be9fd;
+
+    white-space: nowrap;
+
+}
+
+
+/*======================================
+Source
+======================================*/
+
+.leadSourceWrap {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+.leadSourceText {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #fff;
+
+}
+
+.leadRevenueText {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #18d26e;
+
+    background: rgba(24, 210, 110, .15);
+
+    border: 1px solid rgba(24, 210, 110, .35);
+
+}

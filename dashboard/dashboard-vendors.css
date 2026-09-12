@@ -1,0 +1,2700 @@
+/* =========================================================
+   RANSAN VENDOR CENTER V1
+   ========================================================= */
+
+body.vendorCenterOpen {
+    overflow: hidden;
+}
+
+
+/* ROOT */
+
+.vendorCenterModal {
+    position: fixed;
+    inset: 0;
+    z-index: 2147482000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+}
+
+
+.vendorCenterModal.active {
+    display: flex;
+}
+
+
+.vendorCenterBackdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(1,5,9,.86);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* WINDOW */
+
+.vendorCenterWindow {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(1180px, calc(100vw - 34px));
+    height: min(820px, calc(100dvh - 34px));
+
+    overflow: hidden;
+
+    border: 1px solid rgba(56,189,248,.13);
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(14,165,233,.06),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 0 100%,
+            rgba(124,58,237,.04),
+            transparent 30%
+        ),
+        #070b10;
+
+    color: #e9eff5;
+
+    box-shadow:
+        0 45px 150px rgba(0,0,0,.88);
+}
+
+
+/* HEADER */
+
+.vendorCenterHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 24px 19px;
+
+    border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+
+.vendorCenterEyebrow {
+    color: #38bdf8;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .13em;
+}
+
+
+.vendorCenterHeader h2,
+.vendorFormHeader h3 {
+    margin: 5px 0 0;
+
+    color: #f8fafc;
+
+    font-size: 22px;
+    font-weight: 850;
+}
+
+
+.vendorCenterHeader p {
+    margin: 5px 0 0;
+
+    color: #82909d;
+
+    font-size: 11px;
+}
+
+
+.vendorCenterHeaderActions {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+
+.vendorCloseBtn {
+    width: 39px;
+    height: 39px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.025);
+
+    color: #aeb9c5;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* PRIMARY */
+
+.vendorPrimaryBtn {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(56,189,248,.25);
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #0369a1
+        );
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    cursor: pointer;
+}
+
+
+.vendorPrimaryBtn:disabled {
+    opacity: .5;
+    cursor: wait;
+}
+
+
+/* STATS */
+
+.vendorStats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 15px 24px 0;
+}
+
+
+.vendorStat {
+    padding: 12px 14px;
+
+    border: 1px solid rgba(255,255,255,.055);
+    border-radius: 11px;
+
+    background: rgba(255,255,255,.018);
+}
+
+
+.vendorStat span {
+    display: block;
+
+    color: #72808e;
+
+    font-size: 9px;
+}
+
+
+.vendorStat strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #e8f4fb;
+
+    font-size: 19px;
+}
+
+
+/* TOOLBAR */
+
+.vendorToolbar {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 14px 24px;
+}
+
+
+.vendorSearchWrap {
+    display: flex;
+    align-items: center;
+
+    flex: 1;
+
+    min-width: 0;
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+
+    background: #0b1118;
+}
+
+
+.vendorSearchWrap span {
+    padding-left: 12px;
+
+    color: #70808d;
+}
+
+
+.vendorSearchWrap input {
+    width: 100%;
+    min-height: 40px;
+
+    padding: 0 12px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #edf4f8;
+
+    outline: 0;
+}
+
+
+.vendorToolbar select {
+    min-height: 40px;
+
+    padding: 0 11px;
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+
+    background: #0b1118;
+
+    color: #cbd5df;
+
+    outline: none;
+}
+
+
+.vendorArchivedToggle {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    min-height: 40px;
+
+    padding: 0 11px;
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.018);
+
+    color: #94a3b8;
+
+    font-size: 9px;
+}
+
+
+.vendorRefreshBtn {
+    min-height: 40px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.02);
+
+    color: #cbd5e1;
+
+    cursor: pointer;
+}
+
+
+/* BODY */
+
+.vendorCenterBody {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 0 24px 24px;
+}
+
+
+.vendorGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(310px, 1fr)
+        );
+
+    gap: 12px;
+}
+
+
+/* CARD */
+
+.vendorCard {
+    padding: 15px;
+
+    border: 1px solid rgba(255,255,255,.065);
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.024),
+            rgba(3,8,13,.23)
+        );
+}
+
+
+.vendorCard.archived {
+    opacity: .66;
+}
+
+
+.vendorCardHeader {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+}
+
+
+.vendorAvatar {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    border: 1px solid rgba(56,189,248,.12);
+    border-radius: 11px;
+
+    background: rgba(14,165,233,.045);
+
+    font-size: 18px;
+}
+
+
+.vendorCardTitle {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.vendorCardTitle > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+
+.vendorCardTitle strong {
+    overflow: hidden;
+
+    color: #edf5fa;
+
+    font-size: 12px;
+    font-weight: 850;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.vendorCardTitle > span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #788794;
+
+    font-size: 9px;
+}
+
+
+.vendorPreferredBadge {
+    padding: 3px 6px;
+
+    border: 1px solid rgba(250,204,21,.14);
+    border-radius: 999px;
+
+    background: rgba(250,204,21,.045);
+
+    color: #fde68a;
+
+    font-size: 7px;
+    font-weight: 900;
+}
+
+
+.vendorStatus {
+    padding: 4px 7px;
+
+    border-radius: 999px;
+
+    font-size: 7px;
+    font-weight: 900;
+}
+
+
+.vendorStatus.active {
+    border: 1px solid rgba(52,211,153,.15);
+    background: rgba(16,185,129,.045);
+    color: #a7f3d0;
+}
+
+
+.vendorStatus.archived {
+    border: 1px solid rgba(148,163,184,.12);
+    background: rgba(148,163,184,.04);
+    color: #cbd5e1;
+}
+
+
+/* DETAILS */
+
+.vendorCardDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+
+    margin-top: 13px;
+}
+
+
+.vendorCardDetails div {
+    min-width: 0;
+}
+
+
+.vendorCardDetails .wide {
+    grid-column: 1 / -1;
+}
+
+
+.vendorCardDetails span {
+    display: block;
+
+    color: #657481;
+
+    font-size: 8px;
+}
+
+
+.vendorCardDetails strong {
+    display: block;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: #b9c5ce;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.vendorServices {
+    margin-top: 11px;
+
+    padding: 9px;
+
+    border: 1px solid rgba(255,255,255,.045);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.014);
+
+    color: #82919e;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* CONTACT */
+
+.vendorContactRow {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 12px;
+}
+
+
+.vendorContactRow a,
+.vendorContactRow button {
+    min-height: 31px;
+
+    padding: 0 9px;
+
+    display: inline-flex;
+    align-items: center;
+
+    border: 1px solid rgba(56,189,248,.10);
+    border-radius: 8px;
+
+    background: rgba(14,165,233,.025);
+
+    color: #bae6fd;
+
+    font-size: 8px;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* ACTIONS */
+
+.vendorCardActions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 6px;
+
+    margin-top: 12px;
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(255,255,255,.045);
+}
+
+
+.vendorCardActions button {
+    min-height: 32px;
+
+    padding: 0 10px;
+
+    border: 1px solid rgba(255,255,255,.075);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.02);
+
+    color: #cbd5e1;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+.vendorCardActions .vendorArchiveBtn {
+    border-color: rgba(251,113,133,.13);
+
+    color: #fecdd3;
+}
+
+
+.vendorCardActions .vendorRestoreBtn {
+    border-color: rgba(52,211,153,.15);
+
+    color: #a7f3d0;
+}
+
+
+/* EMPTY / ERROR */
+
+.vendorLoading,
+.vendorEmpty,
+.vendorLoadError {
+    padding: 35px;
+
+    text-align: center;
+
+    color: #73828e;
+
+    font-size: 10px;
+}
+
+
+.vendorEmpty div {
+    font-size: 28px;
+}
+
+
+.vendorEmpty strong {
+    display: block;
+
+    margin-top: 9px;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+}
+
+
+.vendorEmpty span,
+.vendorLoadError small {
+    display: block;
+
+    margin-top: 5px;
+}
+
+
+/* FORM OVERLAY */
+
+.vendorFormOverlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 20;
+
+    display: none;
+
+    justify-content: flex-end;
+
+    background: rgba(1,5,9,.72);
+
+    backdrop-filter: blur(6px);
+}
+
+
+.vendorFormOverlay.active {
+    display: flex;
+}
+
+
+.vendorFormPanel {
+    display: flex;
+    flex-direction: column;
+
+    width: min(620px, 100%);
+
+    height: 100%;
+
+    border-left: 1px solid rgba(56,189,248,.12);
+
+    background: #080d13;
+
+    box-shadow:
+        -25px 0 80px rgba(0,0,0,.6);
+}
+
+
+.vendorFormHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 19px 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+
+.vendorFormBody {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 18px 20px;
+}
+
+
+.vendorFormSectionTitle {
+    margin: 18px 0 10px;
+
+    color: #7dd3fc;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .08em;
+}
+
+
+.vendorFormSectionTitle:first-child {
+    margin-top: 0;
+}
+
+
+.vendorFormGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 11px;
+}
+
+
+.vendorFormGrid3 {
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+
+.vendorField {
+    display: block;
+
+    margin-bottom: 11px;
+}
+
+
+.vendorFieldWide {
+    grid-column: 1 / -1;
+}
+
+
+.vendorField > span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #a6b2bd;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+.vendorField input,
+.vendorField select,
+.vendorField textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255,255,255,.075);
+    border-radius: 9px;
+
+    background: #0d141c;
+
+    color: #edf4f8;
+
+    outline: none;
+}
+
+
+.vendorField input,
+.vendorField select {
+    min-height: 41px;
+
+    padding: 0 11px;
+}
+
+
+.vendorField textarea {
+    padding: 10px 11px;
+
+    resize: vertical;
+
+    font-family: inherit;
+}
+
+
+.vendorField input:focus,
+.vendorField select:focus,
+.vendorField textarea:focus {
+    border-color: rgba(56,189,248,.32);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(14,165,233,.055);
+}
+
+
+.vendorPreferredField {
+    display: flex;
+
+    gap: 10px;
+
+    margin: 14px 0;
+
+    padding: 12px;
+
+    border: 1px solid rgba(250,204,21,.10);
+    border-radius: 10px;
+
+    background: rgba(250,204,21,.025);
+}
+
+
+.vendorPreferredField strong,
+.vendorPreferredField small {
+    display: block;
+}
+
+
+.vendorPreferredField strong {
+    color: #fde68a;
+
+    font-size: 10px;
+}
+
+
+.vendorPreferredField small {
+    margin-top: 3px;
+
+    color: #817c62;
+
+    font-size: 8px;
+}
+
+
+.vendorFormError {
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border: 1px solid rgba(251,113,133,.14);
+    border-radius: 9px;
+
+    background: rgba(225,29,72,.035);
+
+    color: #fecdd3;
+
+    font-size: 9px;
+}
+
+
+.vendorFormError[hidden] {
+    display: none !important;
+}
+
+
+/* FORM FOOTER */
+
+.vendorFormFooter {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding: 14px 20px;
+
+    border-top: 1px solid rgba(255,255,255,.055);
+}
+
+
+.vendorSecondaryBtn {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(255,255,255,.075);
+    border-radius: 9px;
+
+    background: rgba(255,255,255,.02);
+
+    color: #cbd5e1;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DASHBOARD NAV — VENDORS
+   MATCH EXISTING RANSAN TOPBAR BUTTON SYSTEM
+   CYAN / TEAL
+   ========================================================= */
+
+.dashNavVendors {
+    min-width:
+        104px !important;
+
+    border:
+        1px solid
+        rgba(34, 211, 238, .17)
+        !important;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(34, 211, 238, .12),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(14, 165, 233, .085),
+            rgba(6, 182, 212, .03)
+        ),
+        rgba(7, 18, 24, .84)
+        !important;
+
+    color:
+        #e6fbff !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, .045),
+
+        0 10px 28px
+        rgba(0, 0, 0, .22)
+        !important;
+}
+
+
+/* =========================================================
+   VENDOR ICON
+   ========================================================= */
+
+.dashNavVendors .dashNavIcon {
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    flex:
+        0 0 32px;
+
+    border:
+        1px solid
+        rgba(34, 211, 238, .17);
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(34, 211, 238, .15),
+            rgba(14, 165, 233, .055)
+        );
+
+    color:
+        #a5f3fc;
+}
+
+
+/* =========================================================
+   VENDOR TEXT
+   ========================================================= */
+
+.dashNavVendors
+.dashNavCopy strong {
+
+    color:
+        #dffcff;
+}
+
+
+.dashNavVendors
+.dashNavCopy small {
+
+    color:
+        #6894a0;
+}
+
+
+/* =========================================================
+   VENDOR HOVER
+   ========================================================= */
+
+.dashNavVendors:hover {
+
+    border-color:
+        rgba(34, 211, 238, .31)
+        !important;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(34, 211, 238, .16),
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(14, 165, 233, .11),
+            rgba(6, 182, 212, .045)
+        ),
+        rgba(7, 18, 24, .88)
+        !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, .06),
+
+        0 13px 32px
+        rgba(0, 0, 0, .28),
+
+        0 0 20px
+        rgba(34, 211, 238, .045)
+        !important;
+}
+
+
+/* =========================================================
+   VENDOR BUTTON ACTIVE / CLICK
+   ========================================================= */
+
+.dashNavVendors:active {
+
+    transform:
+        translateY(0)
+        !important;
+}
+
+
+/* =========================================================
+   SMALLER LAPTOP
+   MATCH EXISTING NAV BEHAVIOUR
+   ========================================================= */
+
+@media (
+    max-width: 1250px
+) {
+
+    .dashNavVendors {
+
+        min-width:
+            auto !important;
+
+        padding-right:
+            9px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 760px
+) {
+
+    .dashNavVendors {
+
+        width:
+            100% !important;
+
+        min-width:
+            0 !important;
+
+        justify-content:
+            center !important;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .vendorCenterModal {
+        padding: 8px;
+    }
+
+
+    .vendorCenterWindow {
+        width: calc(100vw - 16px);
+        height: calc(100dvh - 16px);
+
+        border-radius: 16px;
+    }
+
+
+    .vendorCenterHeader {
+        align-items: flex-start;
+        flex-direction: column;
+
+        padding: 16px;
+    }
+
+
+    .vendorCenterHeaderActions {
+        width: 100%;
+    }
+
+
+    .vendorCenterHeaderActions
+    .vendorPrimaryBtn {
+        flex: 1;
+    }
+
+
+    .vendorStats {
+        grid-template-columns: 1fr 1fr;
+
+        padding:
+            12px 16px 0;
+    }
+
+
+    .vendorToolbar {
+        align-items: stretch;
+        flex-direction: column;
+
+        padding:
+            12px 16px;
+    }
+
+
+    .vendorCenterBody {
+        padding:
+            0 16px 18px;
+    }
+
+
+    .vendorGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .vendorFormGrid,
+    .vendorFormGrid3 {
+        grid-template-columns: 1fr;
+    }
+
+
+    .vendorFieldWide {
+        grid-column: auto;
+    }
+
+}
+
+/* =========================================================
+   VENDOR PERMANENT DELETE
+   ========================================================= */
+
+.vendorCardActions
+.vendorPermanentDeleteBtn {
+    border-color:
+        rgba(251,113,133,.16);
+
+    background:
+        rgba(225,29,72,.04);
+
+    color:
+        #fecdd3;
+}
+
+
+.vendorCardActions
+.vendorPermanentDeleteBtn:hover {
+    border-color:
+        rgba(251,113,133,.30);
+
+    background:
+        rgba(225,29,72,.085);
+}
+
+
+/* =========================================================
+   PERMANENT DELETE MODAL
+   ========================================================= */
+
+.permanentVendorDeleteModal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index:
+        2147483640;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+}
+
+
+.permanentVendorDeleteModal.active {
+    display: flex;
+}
+
+
+.permanentVendorDeleteBackdrop {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(1,4,8,.88);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+
+.permanentVendorDeleteDialog {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            500px,
+            calc(100vw - 28px)
+        );
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(251,113,133,.17);
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(190,18,60,.07),
+            transparent 34%
+        ),
+        #080c12;
+
+    color: #e8edf3;
+
+    box-shadow:
+        0 42px 140px
+        rgba(0,0,0,.88);
+}
+
+
+/* HEADER */
+
+.permanentVendorDeleteHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding:
+        19px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+}
+
+
+.permanentVendorDeleteHeaderLeft {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.permanentVendorDeleteWarning {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid
+        rgba(251,113,133,.22);
+
+    border-radius: 12px;
+
+    background:
+        rgba(225,29,72,.08);
+
+    color: #fda4af;
+
+    font-size: 19px;
+    font-weight: 900;
+}
+
+
+.permanentVendorDeleteEyebrow {
+    color: #fb7185;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: .11em;
+}
+
+
+.permanentVendorDeleteHeader h3 {
+    margin:
+        4px 0 0;
+
+    color: #f8fafc;
+
+    font-size: 18px;
+}
+
+
+.permanentVendorDeleteClose {
+    width: 36px;
+    height: 36px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    color: #aeb9c5;
+
+    font-size: 21px;
+
+    cursor: pointer;
+}
+
+
+/* BODY */
+
+.permanentVendorDeleteBody {
+    padding:
+        18px 20px 20px;
+}
+
+
+.permanentVendorDeleteVendor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.065);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.018);
+}
+
+
+.permanentVendorDeleteVendorIcon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(251,113,133,.04);
+
+    font-size: 18px;
+}
+
+
+.permanentVendorDeleteVendor strong,
+.permanentVendorDeleteVendor span,
+.permanentVendorDeleteVendor small {
+    display: block;
+}
+
+
+.permanentVendorDeleteVendor strong {
+    color: #f1f5f9;
+
+    font-size: 13px;
+}
+
+
+.permanentVendorDeleteVendor span {
+    margin-top: 3px;
+
+    color: #9ca9b6;
+
+    font-size: 10px;
+}
+
+
+.permanentVendorDeleteVendor small {
+    margin-top: 4px;
+
+    color: #687582;
+
+    font-size: 9px;
+}
+
+
+/* DANGER */
+
+.permanentVendorDeleteDanger {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 13px;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(251,113,133,.12);
+
+    border-radius: 11px;
+
+    background:
+        rgba(190,18,60,.035);
+}
+
+
+.permanentVendorDeleteDanger strong {
+    color: #fecdd3;
+
+    font-size: 11px;
+}
+
+
+.permanentVendorDeleteDanger p {
+    margin:
+        4px 0 0;
+
+    color: #9e8489;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* FIELDS */
+
+.permanentVendorDeleteField {
+    display: block;
+
+    margin-top: 15px;
+}
+
+
+.permanentVendorDeleteField > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #bac4cf;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.permanentVendorDeleteField
+span strong {
+    color: #fb7185;
+}
+
+
+.permanentVendorDeleteField input {
+    width: 100%;
+
+    min-height: 44px;
+
+    box-sizing: border-box;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius: 10px;
+
+    background: #0e141c;
+
+    color: #eff4f8;
+
+    outline: none;
+}
+
+
+.permanentVendorDeleteField
+input:focus {
+    border-color:
+        rgba(251,113,133,.35);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(225,29,72,.06);
+}
+
+
+/* PIN */
+
+.permanentVendorDeletePinWrap {
+    position: relative;
+}
+
+
+.permanentVendorDeletePinWrap input {
+    padding-right: 47px;
+}
+
+
+.permanentVendorDeletePinToggle {
+    position: absolute;
+
+    top: 50%;
+    right: 6px;
+
+    transform:
+        translateY(-50%);
+
+    width: 34px;
+    height: 32px;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* ERROR */
+
+.permanentVendorDeleteError {
+    margin-top: 13px;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(251,113,133,.15);
+
+    border-radius: 9px;
+
+    background:
+        rgba(225,29,72,.045);
+
+    color: #fecdd3;
+
+    font-size: 10px;
+}
+
+
+.permanentVendorDeleteError[hidden] {
+    display: none !important;
+}
+
+
+/* LOADER */
+
+.permanentVendorDeleteLoading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 13px;
+
+    color: #fda4af;
+
+    font-size: 10px;
+}
+
+
+.permanentVendorDeleteLoading[hidden] {
+    display: none !important;
+}
+
+
+.permanentVendorDeleteSpinner {
+    width: 13px;
+    height: 13px;
+
+    border:
+        2px solid
+        rgba(251,113,133,.18);
+
+    border-top-color:
+        #fb7185;
+
+    border-radius: 50%;
+
+    animation:
+        vendorDeleteSpin
+        .7s linear infinite;
+}
+
+
+@keyframes vendorDeleteSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* FOOTER */
+
+.permanentVendorDeleteFooter {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding:
+        14px 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.055);
+}
+
+
+.permanentVendorDeleteConfirm {
+    min-height: 40px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid
+        rgba(251,113,133,.26);
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9f1239,
+            #881337
+        );
+
+    color: white;
+
+    font-size: 10px;
+    font-weight: 850;
+
+    cursor: pointer;
+}
+
+
+.permanentVendorDeleteConfirm:disabled {
+    opacity: .35;
+
+    cursor: not-allowed;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .permanentVendorDeleteModal {
+        padding: 10px;
+    }
+
+
+    .permanentVendorDeleteDialog {
+        width:
+            calc(100vw - 20px);
+    }
+
+
+    .permanentVendorDeleteFooter {
+        flex-direction:
+            column-reverse;
+    }
+
+
+    .permanentVendorDeleteFooter button {
+        width: 100%;
+    }
+
+}
+
+/* =========================================================
+   RANSAN VENDOR CENTER
+   ARCHIVE / RESTORE MODAL
+   ========================================================= */
+
+
+body.vendorStatusActionOpen {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+.vendorStatusActionModal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index:
+        2147483630;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+}
+
+
+.vendorStatusActionModal.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   BACKDROP
+   ========================================================= */
+
+.vendorStatusActionBackdrop {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(1, 5, 9, .86);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+
+/* =========================================================
+   DIALOG
+   ========================================================= */
+
+.vendorStatusActionDialog {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(
+            500px,
+            calc(100vw - 28px)
+        );
+
+    max-height:
+        calc(100dvh - 30px);
+
+    overflow-y: auto;
+
+    border-radius:
+        20px;
+
+    color:
+        #e8edf3;
+
+    box-shadow:
+        0 42px 140px
+        rgba(0, 0, 0, .86);
+
+    animation:
+        vendorStatusActionEnter
+        .18s
+        ease-out;
+}
+
+
+/* ARCHIVE THEME */
+
+.vendorStatusActionDialog.archiveMode {
+
+    border:
+        1px solid
+        rgba(167, 139, 250, .16);
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(124, 58, 237, .075),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0 100%,
+            rgba(56, 189, 248, .025),
+            transparent 38%
+        ),
+        #080c12;
+}
+
+
+/* RESTORE THEME */
+
+.vendorStatusActionDialog.restoreMode {
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .15);
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(16, 185, 129, .065),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0 100%,
+            rgba(6, 182, 212, .025),
+            transparent 38%
+        ),
+        #080c12;
+}
+
+
+@keyframes vendorStatusActionEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px)
+            scale(.985);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.vendorStatusActionHeader {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding:
+        19px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .055);
+}
+
+
+.vendorStatusActionHeaderLeft {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.vendorStatusActionIcon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex:
+        0 0 42px;
+
+    border-radius:
+        12px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        900;
+}
+
+
+/* ARCHIVE ICON */
+
+.archiveMode
+.vendorStatusActionIcon {
+
+    border:
+        1px solid
+        rgba(167, 139, 250, .20);
+
+    background:
+        rgba(124, 58, 237, .07);
+
+    color:
+        #c4b5fd;
+}
+
+
+/* RESTORE ICON */
+
+.restoreMode
+.vendorStatusActionIcon {
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .19);
+
+    background:
+        rgba(16, 185, 129, .06);
+
+    color:
+        #a7f3d0;
+}
+
+
+.vendorStatusActionEyebrow {
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .11em;
+}
+
+
+.archiveMode
+.vendorStatusActionEyebrow {
+    color:
+        #a78bfa;
+}
+
+
+.restoreMode
+.vendorStatusActionEyebrow {
+    color:
+        #34d399;
+}
+
+
+.vendorStatusActionHeader h3 {
+    margin:
+        4px 0 0;
+
+    color:
+        #f8fafc;
+
+    font-size:
+        18px;
+
+    font-weight:
+        850;
+}
+
+
+.vendorStatusActionClose {
+    width: 36px;
+    height: 36px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #aeb9c5;
+
+    font-size:
+        21px;
+
+    cursor:
+        pointer;
+}
+
+
+.vendorStatusActionClose:hover {
+    border-color:
+        rgba(255, 255, 255, .15);
+
+    color:
+        #f1f5f9;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.vendorStatusActionBody {
+    padding:
+        18px 20px 20px;
+}
+
+
+/* =========================================================
+   VENDOR CARD
+   ========================================================= */
+
+.vendorStatusActionVendor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .065);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255, 255, 255, .018);
+}
+
+
+.vendorStatusActionVendorIcon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex:
+        0 0 42px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, .11);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(148, 163, 184, .035);
+
+    font-size:
+        18px;
+}
+
+
+.vendorStatusActionVendorCopy {
+    min-width: 0;
+}
+
+
+.vendorStatusActionVendorCopy strong,
+.vendorStatusActionVendorCopy span,
+.vendorStatusActionVendorCopy small {
+    display: block;
+}
+
+
+.vendorStatusActionVendorCopy strong {
+    overflow: hidden;
+
+    color:
+        #f1f5f9;
+
+    font-size:
+        13px;
+
+    font-weight:
+        850;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.vendorStatusActionVendorCopy span {
+    margin-top:
+        3px;
+
+    color:
+        #9ca9b6;
+
+    font-size:
+        10px;
+}
+
+
+.vendorStatusActionVendorCopy small {
+    margin-top:
+        4px;
+
+    color:
+        #677582;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+   ========================================================= */
+
+.vendorStatusActionInfo {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top:
+        14px;
+
+    padding:
+        12px;
+
+    border-radius:
+        11px;
+}
+
+
+.archiveMode
+.vendorStatusActionInfo {
+
+    border:
+        1px solid
+        rgba(167, 139, 250, .11);
+
+    background:
+        rgba(124, 58, 237, .03);
+}
+
+
+.restoreMode
+.vendorStatusActionInfo {
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .11);
+
+    background:
+        rgba(16, 185, 129, .027);
+}
+
+
+.vendorStatusActionInfoIcon {
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex:
+        0 0 22px;
+
+    border-radius:
+        50%;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+}
+
+
+.archiveMode
+.vendorStatusActionInfoIcon {
+
+    border:
+        1px solid
+        rgba(167, 139, 250, .18);
+
+    color:
+        #c4b5fd;
+}
+
+
+.restoreMode
+.vendorStatusActionInfoIcon {
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .17);
+
+    color:
+        #6ee7b7;
+}
+
+
+.vendorStatusActionInfo strong {
+    display: block;
+
+    font-size:
+        11px;
+
+    font-weight:
+        850;
+}
+
+
+.archiveMode
+.vendorStatusActionInfo strong {
+    color:
+        #ddd6fe;
+}
+
+
+.restoreMode
+.vendorStatusActionInfo strong {
+    color:
+        #d1fae5;
+}
+
+
+.vendorStatusActionInfo p {
+    margin:
+        4px 0 0;
+
+    color:
+        #84929e;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.55;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.vendorStatusActionError {
+    margin-top:
+        13px;
+
+    padding:
+        10px 11px;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .14);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(225, 29, 72, .04);
+
+    color:
+        #fecdd3;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+}
+
+
+.vendorStatusActionError[hidden] {
+    display:
+        none !important;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.vendorStatusActionLoading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top:
+        13px;
+
+    padding:
+        10px 11px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        10px;
+}
+
+
+.archiveMode
+.vendorStatusActionLoading {
+
+    border:
+        1px solid
+        rgba(167, 139, 250, .10);
+
+    background:
+        rgba(124, 58, 237, .025);
+
+    color:
+        #c4b5fd;
+}
+
+
+.restoreMode
+.vendorStatusActionLoading {
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .10);
+
+    background:
+        rgba(16, 185, 129, .025);
+
+    color:
+        #a7f3d0;
+}
+
+
+.vendorStatusActionLoading[hidden] {
+    display:
+        none !important;
+}
+
+
+.vendorStatusActionSpinner {
+    width:
+        13px;
+
+    height:
+        13px;
+
+    flex:
+        0 0 auto;
+
+    border:
+        2px solid
+        rgba(148, 163, 184, .18);
+
+    border-radius:
+        50%;
+
+    animation:
+        vendorStatusActionSpin
+        .7s
+        linear
+        infinite;
+}
+
+
+.archiveMode
+.vendorStatusActionSpinner {
+    border-top-color:
+        #a78bfa;
+}
+
+
+.restoreMode
+.vendorStatusActionSpinner {
+    border-top-color:
+        #34d399;
+}
+
+
+@keyframes vendorStatusActionSpin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.vendorStatusActionFooter {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding:
+        14px 20px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .055);
+}
+
+
+.vendorStatusActionFooter button {
+    min-height:
+        40px;
+
+    padding:
+        0 15px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+    cursor:
+        pointer;
+}
+
+
+.vendorStatusActionCancel {
+    border:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #cbd5df;
+}
+
+
+.vendorStatusActionConfirm {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    min-width:
+        138px;
+
+    color:
+        white;
+}
+
+
+/* ARCHIVE CONFIRM */
+
+.archiveMode
+.vendorStatusActionConfirm {
+
+    border:
+        1px solid
+        rgba(167, 139, 250, .25);
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b21b6,
+            #4c1d95
+        );
+
+    box-shadow:
+        0 8px 26px
+        rgba(91, 33, 182, .10);
+}
+
+
+.archiveMode
+.vendorStatusActionConfirm:hover:not(:disabled) {
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d28d9,
+            #5b21b6
+        );
+}
+
+
+/* RESTORE CONFIRM */
+
+.restoreMode
+.vendorStatusActionConfirm {
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .23);
+
+    background:
+        linear-gradient(
+            135deg,
+            #047857,
+            #065f46
+        );
+
+    box-shadow:
+        0 8px 26px
+        rgba(5, 150, 105, .09);
+}
+
+
+.restoreMode
+.vendorStatusActionConfirm:hover:not(:disabled) {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #047857
+        );
+}
+
+
+.vendorStatusActionFooter
+button:disabled {
+    opacity:
+        .48;
+
+    cursor:
+        wait;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 600px
+) {
+
+    .vendorStatusActionModal {
+
+        padding:
+            10px;
+
+    }
+
+
+    .vendorStatusActionDialog {
+
+        width:
+            calc(100vw - 20px);
+
+        max-height:
+            calc(100dvh - 20px);
+
+        border-radius:
+            16px;
+
+    }
+
+
+    .vendorStatusActionHeader {
+
+        padding:
+            16px;
+
+    }
+
+
+    .vendorStatusActionBody {
+
+        padding:
+            15px 16px 17px;
+
+    }
+
+
+    .vendorStatusActionFooter {
+
+        flex-direction:
+            column-reverse;
+
+        padding:
+            13px 16px;
+
+    }
+
+
+    .vendorStatusActionFooter
+    button {
+
+        width:
+            100%;
+
+    }
+
+}

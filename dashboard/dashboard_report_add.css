@@ -1,0 +1,5458 @@
+/*====================================================
+CANCELLATION ANALYSIS - MODERN TABLE
+====================================================*/
+
+.reportCancellationRow {
+
+    transition:
+        background .15s ease;
+
+}
+
+
+.reportCancellationRow:hover {
+
+    background:
+        rgba(239,68,68,.022)
+        !important;
+
+}
+
+
+/*====================================================
+SERVICE
+====================================================*/
+
+.reportCancellationService {
+
+    min-width:
+        125px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.reportCancellationServiceIcon {
+
+    flex:
+        0 0 auto;
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(148,163,184,.12);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(148,163,184,.055);
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        12px;
+
+}
+
+
+.reportCancellationServiceName {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.reportCancellationServiceName strong {
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+}
+
+
+.reportCancellationServiceName span {
+
+    color:
+        #58667a;
+
+    font-size:
+        7px;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        .4px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*====================================================
+SERVICE COLORS
+====================================================*/
+
+.reportCancellationServiceIcon.flight {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(14,165,233,.15);
+
+    background:
+        rgba(14,165,233,.075);
+
+}
+
+
+.reportCancellationServiceIcon.train {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34,197,94,.15);
+
+    background:
+        rgba(34,197,94,.075);
+
+}
+
+
+.reportCancellationServiceIcon.bus {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.15);
+
+    background:
+        rgba(245,158,11,.075);
+
+}
+
+
+.reportCancellationServiceIcon.car {
+
+    color:
+        #d8b4fe;
+
+    border-color:
+        rgba(139,92,246,.15);
+
+    background:
+        rgba(139,92,246,.075);
+
+}
+
+
+.reportCancellationServiceIcon.package {
+
+    color:
+        #5eead4;
+
+    border-color:
+        rgba(20,184,166,.15);
+
+    background:
+        rgba(20,184,166,.075);
+
+}
+
+
+.reportCancellationServiceIcon.quote {
+
+    color:
+        #f9a8d4;
+
+    border-color:
+        rgba(236,72,153,.15);
+
+    background:
+        rgba(236,72,153,.075);
+
+}
+
+
+.reportCancellationServiceIcon.other {
+
+    color:
+        #cbd5e1;
+
+    border-color:
+        rgba(148,163,184,.12);
+
+    background:
+        rgba(148,163,184,.055);
+
+}
+
+
+/*====================================================
+TOTAL BOOKINGS
+====================================================*/
+
+.reportCancellationTotal {
+
+    min-height:
+        29px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid
+        rgba(56,189,248,.11);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(56,189,248,.055);
+
+}
+
+
+.reportCancellationTotalIcon {
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        9px;
+
+}
+
+
+.reportCancellationTotal > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0;
+
+}
+
+
+.reportCancellationTotal strong {
+
+    color:
+        #bae6fd;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.1;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportCancellationTotal small {
+
+    color:
+        #5e8293;
+
+    font-size:
+        6px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+/*====================================================
+CANCELLED COUNT
+====================================================*/
+
+.reportCancellationCountWrap {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+}
+
+
+.reportCancellationCount {
+
+    min-width:
+        39px;
+
+    min-height:
+        27px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportCancellationCount.has-cancelled {
+
+    color:
+        #fca5a5;
+
+    border:
+        1px solid
+        rgba(239,68,68,.13);
+
+    background:
+        rgba(239,68,68,.065);
+
+}
+
+
+.reportCancellationCount.zero {
+
+    color:
+        #86efac;
+
+    border:
+        1px solid
+        rgba(34,197,94,.12);
+
+    background:
+        rgba(34,197,94,.055);
+
+}
+
+
+.reportCancellationCountWrap > small {
+
+    color:
+        #64748b;
+
+    font-size:
+        7px;
+
+    font-weight:
+        750;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/*====================================================
+CANCELLATION RISK
+====================================================*/
+
+.reportCancellationRisk {
+
+    width:
+        115px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        6px;
+
+}
+
+
+.reportCancellationRiskTop {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+}
+
+
+/*====================================================
+RATE PILL
+====================================================*/
+
+.reportCancellationRatePill {
+
+    min-width:
+        54px;
+
+    padding:
+        4px 7px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        999px;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportCancellationRatePill.low {
+
+    color:
+        #86efac;
+
+    background:
+        rgba(34,197,94,.08);
+
+}
+
+
+.reportCancellationRatePill.medium {
+
+    color:
+        #fcd34d;
+
+    background:
+        rgba(245,158,11,.08);
+
+}
+
+
+.reportCancellationRatePill.high {
+
+    color:
+        #fca5a5;
+
+    background:
+        rgba(239,68,68,.08);
+
+}
+
+
+/*====================================================
+RISK BADGE
+====================================================*/
+
+.reportCancellationRiskBadge {
+
+    padding:
+        3px 5px;
+
+    border-radius:
+        5px;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .45px;
+
+}
+
+
+.reportCancellationRiskBadge.low {
+
+    color:
+        #86efac;
+
+    background:
+        rgba(34,197,94,.055);
+
+}
+
+
+.reportCancellationRiskBadge.medium {
+
+    color:
+        #fcd34d;
+
+    background:
+        rgba(245,158,11,.055);
+
+}
+
+
+.reportCancellationRiskBadge.high {
+
+    color:
+        #fca5a5;
+
+    background:
+        rgba(239,68,68,.06);
+
+}
+
+
+/*====================================================
+RISK BAR
+====================================================*/
+
+.reportCancellationRiskTrack {
+
+    width:
+        100%;
+
+    height:
+        4px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.055);
+
+}
+
+
+.reportCancellationRiskFill {
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    transition:
+        width .35s ease;
+
+}
+
+
+.reportCancellationRiskFill.low {
+
+    background:
+        linear-gradient(
+            90deg,
+            #16a34a,
+            #86efac
+        );
+
+}
+
+
+.reportCancellationRiskFill.medium {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d97706,
+            #fcd34d
+        );
+
+}
+
+
+.reportCancellationRiskFill.high {
+
+    background:
+        linear-gradient(
+            90deg,
+            #dc2626,
+            #fca5a5
+        );
+
+}
+
+
+/*====================================================
+LOST REVENUE
+====================================================*/
+
+.reportCancellationLostRevenue {
+
+    min-width:
+        100px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border-radius:
+        9px;
+
+}
+
+
+.reportCancellationLostRevenue.has-loss {
+
+    border:
+        1px solid
+        rgba(239,68,68,.12);
+
+    background:
+        rgba(239,68,68,.055);
+
+}
+
+
+.reportCancellationLostRevenue.no-loss {
+
+    border:
+        1px solid
+        rgba(34,197,94,.10);
+
+    background:
+        rgba(34,197,94,.045);
+
+}
+
+
+.reportCancellationLostIcon {
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportCancellationLostRevenue.has-loss
+.reportCancellationLostIcon {
+
+    color:
+        #f87171;
+
+}
+
+
+.reportCancellationLostRevenue.no-loss
+.reportCancellationLostIcon {
+
+    color:
+        #4ade80;
+
+}
+
+
+.reportCancellationLostRevenue > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportCancellationLostRevenue small {
+
+    color:
+        #7c6067;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .4px;
+
+}
+
+
+.reportCancellationLostRevenue.has-loss strong {
+
+    color:
+        #fca5a5;
+
+}
+
+
+.reportCancellationLostRevenue.no-loss strong {
+
+    color:
+        #86efac;
+
+}
+
+
+.reportCancellationLostRevenue strong {
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+/*====================================================
+SERVICE ROW ACCENT
+====================================================*/
+
+.reportCancellationRow.flight td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(14,165,233,.50);
+
+}
+
+
+.reportCancellationRow.train td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(34,197,94,.50);
+
+}
+
+
+.reportCancellationRow.bus td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(245,158,11,.50);
+
+}
+
+
+.reportCancellationRow.car td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(139,92,246,.50);
+
+}
+
+
+.reportCancellationRow.package td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(20,184,166,.50);
+
+}
+
+
+.reportCancellationRow.quote td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(236,72,153,.50);
+
+}
+
+
+/*====================================================
+EMPTY
+====================================================*/
+
+.reportCancellationEmpty {
+
+    padding:
+        24px
+        !important;
+
+    color:
+        #64748b
+        !important;
+
+    text-align:
+        center;
+
+    font-size:
+        9px
+        !important;
+
+}
+
+/*====================================================
+CUSTOMER VALUE - MODERN TABLE
+====================================================*/
+
+.reportCustomerValueRow {
+
+    transition:
+        background .15s ease;
+
+}
+
+
+.reportCustomerValueRow:hover {
+
+    background:
+        rgba(139,92,246,.025)
+        !important;
+
+}
+
+
+/*====================================================
+CUSTOMER IDENTITY
+====================================================*/
+
+.reportCustomerIdentity {
+
+    min-width:
+        170px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+}
+
+
+.reportCustomerAvatar {
+
+    flex:
+        0 0 auto;
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(148,163,184,.13);
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(148,163,184,.06);
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .2px;
+
+}
+
+
+/* TOP CUSTOMER */
+
+.reportCustomerAvatar.top {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(245,158,11,.13),
+            rgba(245,158,11,.04)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(245,158,11,.05);
+
+}
+
+
+/* LOYAL */
+
+.reportCustomerAvatar.loyal {
+
+    color:
+        #c4b5fd;
+
+    border-color:
+        rgba(139,92,246,.16);
+
+    background:
+        rgba(139,92,246,.08);
+
+}
+
+
+/* REPEAT */
+
+.reportCustomerAvatar.repeat {
+
+    color:
+        #67e8f9;
+
+    border-color:
+        rgba(6,182,212,.15);
+
+    background:
+        rgba(6,182,212,.075);
+
+}
+
+
+/* NEW */
+
+.reportCustomerAvatar.new {
+
+    color:
+        #93c5fd;
+
+    border-color:
+        rgba(59,130,246,.14);
+
+    background:
+        rgba(59,130,246,.065);
+
+}
+
+
+/*====================================================
+CUSTOMER NAME + TIER
+====================================================*/
+
+.reportCustomerIdentityInfo {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        4px;
+
+}
+
+
+.reportCustomerName {
+
+    max-width:
+        145px;
+
+    overflow:
+        hidden;
+
+    color:
+        #e8eef7;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.reportCustomerTier {
+
+    padding:
+        3px 6px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .45px;
+
+}
+
+
+.reportCustomerTier.top {
+
+    color:
+        #fcd34d;
+
+    background:
+        rgba(245,158,11,.09);
+
+}
+
+
+.reportCustomerTier.loyal {
+
+    color:
+        #c4b5fd;
+
+    background:
+        rgba(139,92,246,.085);
+
+}
+
+
+.reportCustomerTier.repeat {
+
+    color:
+        #67e8f9;
+
+    background:
+        rgba(6,182,212,.08);
+
+}
+
+
+.reportCustomerTier.new {
+
+    color:
+        #93c5fd;
+
+    background:
+        rgba(59,130,246,.075);
+
+}
+
+
+/*====================================================
+BOOKINGS
+====================================================*/
+
+.reportCustomerBookings {
+
+    min-height:
+        29px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        rgba(59,130,246,.11);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(59,130,246,.055);
+
+    color:
+        #93c5fd;
+
+}
+
+
+.reportCustomerBookings.repeat {
+
+    color:
+        #c4b5fd;
+
+    border-color:
+        rgba(139,92,246,.13);
+
+    background:
+        rgba(139,92,246,.065);
+
+}
+
+
+.reportCustomerBookingsIcon {
+
+    font-size:
+        8px;
+
+}
+
+
+.reportCustomerBookings strong {
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportCustomerBookings small {
+
+    color:
+        currentColor;
+
+    opacity:
+        .62;
+
+    font-size:
+        6px;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+/*====================================================
+SERVICES
+====================================================*/
+
+.reportCustomerServices {
+
+    max-width:
+        220px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        4px;
+
+}
+
+
+.reportCustomerServicePill {
+
+    padding:
+        4px 7px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    border:
+        1px solid
+        rgba(148,163,184,.10);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(148,163,184,.045);
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+
+}
+
+
+/* FLIGHT */
+
+.reportCustomerServicePill.flight {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(14,165,233,.13);
+
+    background:
+        rgba(14,165,233,.065);
+
+}
+
+
+/* TRAIN */
+
+.reportCustomerServicePill.train {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34,197,94,.13);
+
+    background:
+        rgba(34,197,94,.065);
+
+}
+
+
+/* BUS */
+
+.reportCustomerServicePill.bus {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.13);
+
+    background:
+        rgba(245,158,11,.065);
+
+}
+
+
+/* CAR */
+
+.reportCustomerServicePill.car {
+
+    color:
+        #d8b4fe;
+
+    border-color:
+        rgba(139,92,246,.13);
+
+    background:
+        rgba(139,92,246,.065);
+
+}
+
+
+/* PACKAGE */
+
+.reportCustomerServicePill.package {
+
+    color:
+        #5eead4;
+
+    border-color:
+        rgba(20,184,166,.13);
+
+    background:
+        rgba(20,184,166,.065);
+
+}
+
+
+/* QUOTE */
+
+.reportCustomerServicePill.quote {
+
+    color:
+        #f9a8d4;
+
+    border-color:
+        rgba(236,72,153,.13);
+
+    background:
+        rgba(236,72,153,.065);
+
+}
+
+
+.reportCustomerNoService {
+
+    color:
+        #475569;
+
+}
+
+
+/*====================================================
+CUSTOMER REVENUE
+====================================================*/
+
+.reportCustomerRevenue {
+
+    min-width:
+        110px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid
+        rgba(34,197,94,.11);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(34,197,94,.055);
+
+}
+
+
+.reportCustomerRevenueIcon {
+
+    color:
+        #4ade80;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportCustomerRevenue > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportCustomerRevenue small {
+
+    color:
+        #4c8763;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .42px;
+
+}
+
+
+.reportCustomerRevenue strong {
+
+    color:
+        #86efac;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+/* TOP CUSTOMER REVENUE */
+
+.reportCustomerRevenue.top {
+
+    border-color:
+        rgba(245,158,11,.14);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(245,158,11,.075),
+            rgba(34,197,94,.045)
+        );
+
+}
+
+
+.reportCustomerRevenue.top
+.reportCustomerRevenueIcon {
+
+    color:
+        #fcd34d;
+
+}
+
+
+/*====================================================
+AVERAGE BOOKING VALUE
+====================================================*/
+
+.reportCustomerAverage {
+
+    min-width:
+        105px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid
+        rgba(139,92,246,.10);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(139,92,246,.045);
+
+}
+
+
+.reportCustomerAverageIcon {
+
+    color:
+        #c4b5fd;
+
+    font-size:
+        10px;
+
+}
+
+
+.reportCustomerAverage > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportCustomerAverage small {
+
+    color:
+        #71658f;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+.reportCustomerAverage strong {
+
+    color:
+        #ddd6fe;
+
+    font-size:
+        9px;
+
+    font-weight:
+        850;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+/*====================================================
+LAST TRAVEL
+====================================================*/
+
+.reportCustomerTravelDate {
+
+    min-width:
+        105px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid
+        rgba(56,189,248,.09);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(56,189,248,.04);
+
+}
+
+
+.reportCustomerTravelDate > span {
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        10px;
+
+}
+
+
+.reportCustomerTravelDate > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportCustomerTravelDate small {
+
+    color:
+        #52778a;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+.reportCustomerTravelDate strong {
+
+    color:
+        #bae6fd;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.reportCustomerTravelNone {
+
+    padding:
+        4px 7px;
+
+    display:
+        inline-flex;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(100,116,139,.06);
+
+    color:
+        #64748b;
+
+    font-size:
+        7px;
+
+}
+
+
+/*====================================================
+TOP CUSTOMER ROW ACCENT
+====================================================*/
+
+.reportCustomerValueRow:first-child td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(245,158,11,.62);
+
+}
+
+
+/*====================================================
+EMPTY STATE
+====================================================*/
+
+.reportCustomerValueEmpty {
+
+    padding:
+        24px
+        !important;
+
+    color:
+        #64748b
+        !important;
+
+    text-align:
+        center;
+
+    font-size:
+        9px
+        !important;
+
+}
+
+
+/*====================================================
+MOBILE
+====================================================*/
+
+@media (max-width: 760px) {
+
+    .reportCustomerIdentity {
+
+        min-width:
+            150px;
+
+    }
+
+
+    .reportCustomerServices {
+
+        min-width:
+            140px;
+
+    }
+
+}
+
+/*====================================================
+UPCOMING TRAVEL - MODERN OPERATIONS TABLE
+====================================================*/
+
+.reportUpcomingRow {
+
+    position:
+        relative;
+
+    transition:
+        background .15s ease;
+
+}
+
+
+.reportUpcomingRow:hover {
+
+    background:
+        rgba(56,189,248,.025)
+        !important;
+
+}
+
+
+/*====================================================
+ROW URGENCY ACCENT
+====================================================*/
+
+.reportUpcomingRow.today td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(239,68,68,.72);
+
+}
+
+
+.reportUpcomingRow.tomorrow td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(245,158,11,.68);
+
+}
+
+
+.reportUpcomingRow.week td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(56,189,248,.58);
+
+}
+
+
+.reportUpcomingRow.upcoming td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(139,92,246,.48);
+
+}
+
+
+/*====================================================
+TRAVEL DATE
+====================================================*/
+
+.reportUpcomingDate {
+
+    min-width:
+        130px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.reportUpcomingDateIcon {
+
+    flex:
+        0 0 auto;
+
+    width:
+        31px;
+
+    height:
+        31px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(148,163,184,.11);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(148,163,184,.05);
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* TODAY */
+
+.reportUpcomingDateIcon.today {
+
+    color:
+        #fca5a5;
+
+    border-color:
+        rgba(239,68,68,.16);
+
+    background:
+        rgba(239,68,68,.075);
+
+}
+
+
+/* TOMORROW */
+
+.reportUpcomingDateIcon.tomorrow {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.16);
+
+    background:
+        rgba(245,158,11,.075);
+
+}
+
+
+/* THIS WEEK */
+
+.reportUpcomingDateIcon.week {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(56,189,248,.15);
+
+    background:
+        rgba(56,189,248,.07);
+
+}
+
+
+/* UPCOMING */
+
+.reportUpcomingDateIcon.upcoming {
+
+    color:
+        #c4b5fd;
+
+    border-color:
+        rgba(139,92,246,.14);
+
+    background:
+        rgba(139,92,246,.065);
+
+}
+
+
+/*====================================================
+DATE TEXT
+====================================================*/
+
+.reportUpcomingDateInfo {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        4px;
+
+}
+
+
+.reportUpcomingDateInfo > strong {
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        9px;
+
+    font-weight:
+        850;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/*====================================================
+URGENCY PILL
+====================================================*/
+
+.reportUpcomingUrgency {
+
+    padding:
+        3px 6px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    border-radius:
+        999px;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .45px;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.reportUpcomingUrgency.today {
+
+    color:
+        #fca5a5;
+
+    background:
+        rgba(239,68,68,.09);
+
+}
+
+
+.reportUpcomingUrgency.tomorrow {
+
+    color:
+        #fcd34d;
+
+    background:
+        rgba(245,158,11,.09);
+
+}
+
+
+.reportUpcomingUrgency.week {
+
+    color:
+        #7dd3fc;
+
+    background:
+        rgba(56,189,248,.08);
+
+}
+
+
+.reportUpcomingUrgency.upcoming {
+
+    color:
+        #c4b5fd;
+
+    background:
+        rgba(139,92,246,.075);
+
+}
+
+
+/*====================================================
+BOOKING ID
+====================================================*/
+
+.reportUpcomingBooking {
+
+    min-height:
+        27px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        rgba(99,102,241,.12);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(99,102,241,.055);
+
+}
+
+
+.reportUpcomingBookingIcon {
+
+    color:
+        #818cf8;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportUpcomingBooking strong {
+
+    max-width:
+        105px;
+
+    overflow:
+        hidden;
+
+    color:
+        #c7d2fe;
+
+    font-size:
+        8px;
+
+    font-weight:
+        850;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+/*====================================================
+CUSTOMER
+====================================================*/
+
+.reportUpcomingCustomer {
+
+    min-width:
+        150px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.reportUpcomingCustomerAvatar {
+
+    flex:
+        0 0 auto;
+
+    width:
+        31px;
+
+    height:
+        31px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(56,189,248,.12);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(56,189,248,.055);
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportUpcomingCustomer > div {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.reportUpcomingCustomer strong {
+
+    max-width:
+        130px;
+
+    overflow:
+        hidden;
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        9px;
+
+    font-weight:
+        850;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+}
+
+
+.reportUpcomingCustomer small {
+
+    color:
+        #58677b;
+
+    font-size:
+        6px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .35px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*====================================================
+SERVICE PILL
+====================================================*/
+
+.reportUpcomingService {
+
+    min-height:
+        28px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        rgba(148,163,184,.10);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(148,163,184,.045);
+
+    color:
+        #cbd5e1;
+
+}
+
+
+.reportUpcomingServiceIcon {
+
+    font-size:
+        9px;
+
+}
+
+
+.reportUpcomingService strong {
+
+    font-size:
+        8px;
+
+    font-weight:
+        850;
+
+}
+
+
+/* FLIGHT */
+
+.reportUpcomingService.flight {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(14,165,233,.13);
+
+    background:
+        rgba(14,165,233,.065);
+
+}
+
+
+/* TRAIN */
+
+.reportUpcomingService.train {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34,197,94,.13);
+
+    background:
+        rgba(34,197,94,.065);
+
+}
+
+
+/* BUS */
+
+.reportUpcomingService.bus {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.13);
+
+    background:
+        rgba(245,158,11,.065);
+
+}
+
+
+/* CAR */
+
+.reportUpcomingService.car {
+
+    color:
+        #d8b4fe;
+
+    border-color:
+        rgba(139,92,246,.13);
+
+    background:
+        rgba(139,92,246,.065);
+
+}
+
+
+/* PACKAGE */
+
+.reportUpcomingService.package {
+
+    color:
+        #5eead4;
+
+    border-color:
+        rgba(20,184,166,.13);
+
+    background:
+        rgba(20,184,166,.065);
+
+}
+
+
+/* QUOTE */
+
+.reportUpcomingService.quote {
+
+    color:
+        #f9a8d4;
+
+    border-color:
+        rgba(236,72,153,.13);
+
+    background:
+        rgba(236,72,153,.065);
+
+}
+
+
+/*====================================================
+PASSENGERS
+====================================================*/
+
+.reportUpcomingPassengers {
+
+    min-height:
+        27px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        rgba(20,184,166,.11);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(20,184,166,.055);
+
+    color:
+        #5eead4;
+
+}
+
+
+.reportUpcomingPassengers > span {
+
+    font-size:
+        9px;
+
+}
+
+
+.reportUpcomingPassengers strong {
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportUpcomingPassengers small {
+
+    color:
+        currentColor;
+
+    opacity:
+        .62;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+.reportUpcomingPassengers.none {
+
+    color:
+        #64748b;
+
+    border-color:
+        rgba(100,116,139,.10);
+
+    background:
+        rgba(100,116,139,.045);
+
+}
+
+
+/*====================================================
+STATUS
+====================================================*/
+
+.reportUpcomingStatus {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+}
+
+
+/*====================================================
+TODAY ROW SUBTLE GLOW
+====================================================*/
+
+.reportUpcomingRow.today {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(239,68,68,.025),
+            transparent 30%
+        );
+
+}
+
+
+/*====================================================
+TOMORROW ROW
+====================================================*/
+
+.reportUpcomingRow.tomorrow {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(245,158,11,.018),
+            transparent 28%
+        );
+
+}
+
+
+/*====================================================
+EMPTY STATE
+====================================================*/
+
+.reportUpcomingEmpty {
+
+    padding:
+        30px
+        !important;
+
+}
+
+
+.reportUpcomingEmptyState {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        #64748b;
+
+}
+
+
+.reportUpcomingEmptyIcon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    margin-bottom:
+        3px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(56,189,248,.06);
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        13px;
+
+}
+
+
+.reportUpcomingEmptyState strong {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        9px;
+
+}
+
+
+.reportUpcomingEmptyState small {
+
+    color:
+        #526073;
+
+    font-size:
+        7px;
+
+}
+
+
+/*====================================================
+MOBILE
+====================================================*/
+
+@media (max-width: 760px) {
+
+    .reportUpcomingDate {
+
+        min-width:
+            125px;
+
+    }
+
+
+    .reportUpcomingCustomer {
+
+        min-width:
+            135px;
+
+    }
+
+}
+
+/*====================================================
+PASSENGER VOLUME - MODERN TABLE
+====================================================*/
+
+.reportPassengerRow {
+
+    transition:
+        background .15s ease;
+
+}
+
+
+.reportPassengerRow:hover {
+
+    background:
+        rgba(56,189,248,.025)
+        !important;
+
+}
+
+
+/*====================================================
+SERVICE IDENTITY
+====================================================*/
+
+.reportPassengerService {
+
+    min-width:
+        135px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.reportPassengerServiceIcon {
+
+    flex:
+        0 0 auto;
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(148,163,184,.12);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(148,163,184,.055);
+
+    color:
+        #cbd5e1;
+
+    font-size:
+        12px;
+
+}
+
+
+.reportPassengerServiceInfo {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.reportPassengerServiceInfo strong {
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        10px;
+
+    font-weight:
+        850;
+
+}
+
+
+.reportPassengerServiceInfo span {
+
+    color:
+        #58677b;
+
+    font-size:
+        6px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .35px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/*====================================================
+SERVICE COLORS
+====================================================*/
+
+.reportPassengerServiceIcon.flight {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(14,165,233,.15);
+
+    background:
+        rgba(14,165,233,.075);
+
+}
+
+
+.reportPassengerServiceIcon.train {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34,197,94,.15);
+
+    background:
+        rgba(34,197,94,.075);
+
+}
+
+
+.reportPassengerServiceIcon.bus {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.15);
+
+    background:
+        rgba(245,158,11,.075);
+
+}
+
+
+.reportPassengerServiceIcon.car {
+
+    color:
+        #d8b4fe;
+
+    border-color:
+        rgba(139,92,246,.15);
+
+    background:
+        rgba(139,92,246,.075);
+
+}
+
+
+.reportPassengerServiceIcon.package {
+
+    color:
+        #5eead4;
+
+    border-color:
+        rgba(20,184,166,.15);
+
+    background:
+        rgba(20,184,166,.075);
+
+}
+
+
+.reportPassengerServiceIcon.quote {
+
+    color:
+        #f9a8d4;
+
+    border-color:
+        rgba(236,72,153,.15);
+
+    background:
+        rgba(236,72,153,.075);
+
+}
+
+
+/*====================================================
+BOOKINGS
+====================================================*/
+
+.reportPassengerBookings {
+
+    min-width:
+        68px;
+
+    min-height:
+        30px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    border:
+        1px solid
+        rgba(99,102,241,.11);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(99,102,241,.05);
+
+}
+
+
+.reportPassengerBookingsIcon {
+
+    color:
+        #a5b4fc;
+
+    font-size:
+        9px;
+
+}
+
+
+.reportPassengerBookings > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportPassengerBookings strong {
+
+    color:
+        #c7d2fe;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportPassengerBookings small {
+
+    color:
+        #686f9a;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+/*====================================================
+PASSENGER VOLUME
+====================================================*/
+
+.reportPassengerVolume {
+
+    width:
+        150px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.reportPassengerVolumeTop {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        7px;
+
+}
+
+
+.reportPassengerCount {
+
+    min-height:
+        28px;
+
+    padding:
+        4px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        rgba(56,189,248,.12);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(56,189,248,.06);
+
+    color:
+        #7dd3fc;
+
+}
+
+
+.reportPassengerCount strong {
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportPassengerCount small {
+
+    opacity:
+        .65;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+.reportPassengerShare {
+
+    color:
+        #64748b;
+
+    font-size:
+        7px;
+
+    font-weight:
+        850;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+/*====================================================
+PASSENGER VOLUME BAR
+====================================================*/
+
+.reportPassengerVolumeTrack {
+
+    width:
+        100%;
+
+    height:
+        5px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.055);
+
+}
+
+
+.reportPassengerVolumeFill {
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    transition:
+        width .35s ease;
+
+}
+
+
+.reportPassengerVolumeMeta {
+
+    color:
+        #536174;
+
+    font-size:
+        6px;
+
+    font-weight:
+        750;
+
+}
+
+
+/*====================================================
+SERVICE PASSENGER BAR COLORS
+====================================================*/
+
+.reportPassengerVolumeFill.flight {
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #7dd3fc
+        );
+
+}
+
+
+.reportPassengerVolumeFill.train {
+
+    background:
+        linear-gradient(
+            90deg,
+            #16a34a,
+            #86efac
+        );
+
+}
+
+
+.reportPassengerVolumeFill.bus {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d97706,
+            #fcd34d
+        );
+
+}
+
+
+.reportPassengerVolumeFill.car {
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #d8b4fe
+        );
+
+}
+
+
+.reportPassengerVolumeFill.package {
+
+    background:
+        linear-gradient(
+            90deg,
+            #0f766e,
+            #5eead4
+        );
+
+}
+
+
+.reportPassengerVolumeFill.quote {
+
+    background:
+        linear-gradient(
+            90deg,
+            #db2777,
+            #f9a8d4
+        );
+
+}
+
+
+.reportPassengerVolumeFill.other {
+
+    background:
+        linear-gradient(
+            90deg,
+            #475569,
+            #94a3b8
+        );
+
+}
+
+
+/*====================================================
+PASSENGER COUNT SERVICE COLORS
+====================================================*/
+
+.reportPassengerCount.flight {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(14,165,233,.13);
+
+    background:
+        rgba(14,165,233,.065);
+
+}
+
+
+.reportPassengerCount.train {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34,197,94,.13);
+
+    background:
+        rgba(34,197,94,.065);
+
+}
+
+
+.reportPassengerCount.bus {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.13);
+
+    background:
+        rgba(245,158,11,.065);
+
+}
+
+
+.reportPassengerCount.car {
+
+    color:
+        #d8b4fe;
+
+    border-color:
+        rgba(139,92,246,.13);
+
+    background:
+        rgba(139,92,246,.065);
+
+}
+
+
+.reportPassengerCount.package {
+
+    color:
+        #5eead4;
+
+    border-color:
+        rgba(20,184,166,.13);
+
+    background:
+        rgba(20,184,166,.065);
+
+}
+
+
+.reportPassengerCount.quote {
+
+    color:
+        #f9a8d4;
+
+    border-color:
+        rgba(236,72,153,.13);
+
+    background:
+        rgba(236,72,153,.065);
+
+}
+
+
+/*====================================================
+AVERAGE PAX
+====================================================*/
+
+.reportPassengerAverage {
+
+    min-width:
+        95px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid
+        rgba(139,92,246,.10);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(139,92,246,.045);
+
+}
+
+
+.reportPassengerAverageIcon {
+
+    color:
+        #c4b5fd;
+
+    font-size:
+        10px;
+
+}
+
+
+.reportPassengerAverage > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportPassengerAverage small {
+
+    color:
+        #71658f;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .35px;
+
+}
+
+
+.reportPassengerAverage strong {
+
+    color:
+        #ddd6fe;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportPassengerAverage strong span {
+
+    color:
+        #85799f;
+
+    font-size:
+        6px;
+
+    font-weight:
+        800;
+
+}
+
+
+/*====================================================
+DATA COVERAGE
+====================================================*/
+
+.reportPassengerCoverage {
+
+    margin-top:
+        5px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    color:
+        #64748b;
+
+    font-size:
+        6px;
+
+    font-weight:
+        750;
+
+}
+
+
+.reportPassengerCoverageDot {
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+}
+
+
+.reportPassengerCoverageDot.high {
+
+    background:
+        #4ade80;
+
+}
+
+
+.reportPassengerCoverageDot.medium {
+
+    background:
+        #fbbf24;
+
+}
+
+
+.reportPassengerCoverageDot.low {
+
+    background:
+        #f87171;
+
+}
+
+
+.reportPassengerMissing {
+
+    margin-left:
+        2px;
+
+    padding:
+        2px 4px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(245,158,11,.065);
+
+    color:
+        #d9a947;
+
+}
+
+
+/*====================================================
+REVENUE
+====================================================*/
+
+.reportPassengerRevenue {
+
+    min-width:
+        105px;
+
+    padding:
+        5px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid
+        rgba(34,197,94,.11);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(34,197,94,.05);
+
+}
+
+
+.reportPassengerRevenueIcon {
+
+    color:
+        #4ade80;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportPassengerRevenue > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        1px;
+
+}
+
+
+.reportPassengerRevenue small {
+
+    color:
+        #4c8763;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .4px;
+
+}
+
+
+.reportPassengerRevenue strong {
+
+    color:
+        #86efac;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+/*====================================================
+SERVICE ROW ACCENTS
+====================================================*/
+
+.reportPassengerRow.flight td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(14,165,233,.50);
+
+}
+
+
+.reportPassengerRow.train td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(34,197,94,.50);
+
+}
+
+
+.reportPassengerRow.bus td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(245,158,11,.50);
+
+}
+
+
+.reportPassengerRow.car td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(139,92,246,.50);
+
+}
+
+
+.reportPassengerRow.package td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(20,184,166,.50);
+
+}
+
+
+.reportPassengerRow.quote td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(236,72,153,.50);
+
+}
+
+
+/*====================================================
+EMPTY STATE
+====================================================*/
+
+.reportPassengerEmpty {
+
+    padding:
+        28px
+        !important;
+
+}
+
+
+.reportPassengerEmptyState {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+}
+
+
+.reportPassengerEmptyIcon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        11px;
+
+    background:
+        rgba(56,189,248,.06);
+
+    color:
+        #7dd3fc;
+
+    font-size:
+        13px;
+
+}
+
+
+.reportPassengerEmptyState strong {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        9px;
+
+}
+
+
+.reportPassengerEmptyState small {
+
+    color:
+        #526073;
+
+    font-size:
+        7px;
+
+}
+
+/*====================================================
+CRM DATA QUALITY - MODERN QUALITY MONITOR
+====================================================*/
+
+.reportQualityRow {
+
+    transition:
+        background .15s ease;
+
+}
+
+
+.reportQualityRow:hover {
+
+    background:
+        rgba(56,189,248,.022)
+        !important;
+
+}
+
+
+.reportQualityRow.healthy {
+
+    opacity:
+        .82;
+
+}
+
+
+/*====================================================
+QUALITY CHECK IDENTITY
+====================================================*/
+
+.reportQualityCheck {
+
+    min-width:
+        165px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+}
+
+
+.reportQualityCheckIcon {
+
+    flex:
+        0 0 auto;
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid
+        rgba(148,163,184,.12);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(148,163,184,.055);
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* HIGH */
+
+.reportQualityCheckIcon.high {
+
+    color:
+        #fca5a5;
+
+    border-color:
+        rgba(239,68,68,.14);
+
+    background:
+        rgba(239,68,68,.065);
+
+}
+
+
+/* MEDIUM */
+
+.reportQualityCheckIcon.medium {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.14);
+
+    background:
+        rgba(245,158,11,.065);
+
+}
+
+
+/* LOW */
+
+.reportQualityCheckIcon.low {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(56,189,248,.13);
+
+    background:
+        rgba(56,189,248,.06);
+
+}
+
+
+/*====================================================
+QUALITY CHECK TEXT
+====================================================*/
+
+.reportQualityCheckInfo {
+
+    min-width:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.reportQualityCheckInfo strong {
+
+    color:
+        #e2e8f0;
+
+    font-size:
+        9px;
+
+    font-weight:
+        850;
+
+}
+
+
+.reportQualityCheckInfo span {
+
+    color:
+        #59677a;
+
+    font-size:
+        6px;
+
+    font-weight:
+        750;
+
+    letter-spacing:
+        .2px;
+
+}
+
+
+/*====================================================
+ISSUE METRIC
+====================================================*/
+
+.reportQualityIssueMetric {
+
+    width:
+        125px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        5px;
+
+}
+
+
+.reportQualityIssueTop {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        6px;
+
+}
+
+
+.reportQualityIssueCount {
+
+    min-height:
+        27px;
+
+    padding:
+        4px 7px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        999px;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+.reportQualityIssueCount strong {
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportQualityIssueCount small {
+
+    opacity:
+        .65;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .3px;
+
+}
+
+
+/* HEALTHY */
+
+.reportQualityIssueCount.healthy {
+
+    color:
+        #86efac;
+
+    border-color:
+        rgba(34,197,94,.12);
+
+    background:
+        rgba(34,197,94,.06);
+
+}
+
+
+/* LOW IMPACT */
+
+.reportQualityIssueCount.low {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(56,189,248,.12);
+
+    background:
+        rgba(56,189,248,.06);
+
+}
+
+
+/* MEDIUM IMPACT */
+
+.reportQualityIssueCount.medium {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.13);
+
+    background:
+        rgba(245,158,11,.065);
+
+}
+
+
+/* HIGH IMPACT */
+
+.reportQualityIssueCount.high {
+
+    color:
+        #fca5a5;
+
+    border-color:
+        rgba(239,68,68,.14);
+
+    background:
+        rgba(239,68,68,.07);
+
+}
+
+
+/*====================================================
+ISSUE RATE
+====================================================*/
+
+.reportQualityIssueRate {
+
+    color:
+        #64748b;
+
+    font-size:
+        7px;
+
+    font-weight:
+        850;
+
+    font-variant-numeric:
+        tabular-nums;
+
+}
+
+
+/*====================================================
+ISSUE RATE TRACK
+====================================================*/
+
+.reportQualityIssueTrack {
+
+    width:
+        100%;
+
+    height:
+        4px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.055);
+
+}
+
+
+.reportQualityIssueFill {
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    transition:
+        width .35s ease;
+
+}
+
+
+.reportQualityIssueFill.healthy {
+
+    background:
+        #22c55e;
+
+}
+
+
+.reportQualityIssueFill.low {
+
+    background:
+        linear-gradient(
+            90deg,
+            #0284c7,
+            #7dd3fc
+        );
+
+}
+
+
+.reportQualityIssueFill.medium {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d97706,
+            #fcd34d
+        );
+
+}
+
+
+.reportQualityIssueFill.high {
+
+    background:
+        linear-gradient(
+            90deg,
+            #dc2626,
+            #fca5a5
+        );
+
+}
+
+
+/*====================================================
+SEVERITY
+====================================================*/
+
+.reportQualitySeverityWrap {
+
+    display:
+        inline-flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        flex-start;
+
+    gap:
+        4px;
+
+}
+
+
+.reportQualitySeverity {
+
+    min-width:
+        58px;
+
+    padding:
+        4px 7px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    border:
+        1px solid
+        transparent;
+
+    border-radius:
+        999px;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .45px;
+
+}
+
+
+.reportQualitySeverityDot {
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        currentColor;
+
+}
+
+
+/* HIGH */
+
+.reportQualitySeverity.high {
+
+    color:
+        #fca5a5;
+
+    border-color:
+        rgba(239,68,68,.13);
+
+    background:
+        rgba(239,68,68,.065);
+
+}
+
+
+/* MEDIUM */
+
+.reportQualitySeverity.medium {
+
+    color:
+        #fcd34d;
+
+    border-color:
+        rgba(245,158,11,.13);
+
+    background:
+        rgba(245,158,11,.065);
+
+}
+
+
+/* LOW */
+
+.reportQualitySeverity.low {
+
+    color:
+        #7dd3fc;
+
+    border-color:
+        rgba(56,189,248,.12);
+
+    background:
+        rgba(56,189,248,.06);
+
+}
+
+
+.reportQualitySeverityWrap > small {
+
+    padding-left:
+        4px;
+
+    color:
+        #566477;
+
+    font-size:
+        6px;
+
+    font-weight:
+        750;
+
+}
+
+
+/*====================================================
+RECOMMENDATION
+====================================================*/
+
+.reportQualityRecommendation {
+
+    max-width:
+        330px;
+
+    padding:
+        6px 8px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        7px;
+
+    border:
+        1px solid
+        rgba(148,163,184,.09);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(148,163,184,.035);
+
+}
+
+
+.reportQualityRecommendationIcon {
+
+    flex:
+        0 0 auto;
+
+    margin-top:
+        1px;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+}
+
+
+.reportQualityRecommendation > div {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        2px;
+
+}
+
+
+.reportQualityRecommendation small {
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .4px;
+
+}
+
+
+.reportQualityRecommendation strong {
+
+    color:
+        #aeb9c8;
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1.45;
+
+}
+
+
+/* HIGH RECOMMENDATION */
+
+.reportQualityRecommendation.high {
+
+    border-color:
+        rgba(239,68,68,.09);
+
+    background:
+        rgba(239,68,68,.035);
+
+}
+
+
+.reportQualityRecommendation.high
+.reportQualityRecommendationIcon,
+.reportQualityRecommendation.high small {
+
+    color:
+        #f87171;
+
+}
+
+
+/* MEDIUM RECOMMENDATION */
+
+.reportQualityRecommendation.medium {
+
+    border-color:
+        rgba(245,158,11,.09);
+
+    background:
+        rgba(245,158,11,.03);
+
+}
+
+
+.reportQualityRecommendation.medium
+.reportQualityRecommendationIcon,
+.reportQualityRecommendation.medium small {
+
+    color:
+        #fbbf24;
+
+}
+
+
+/* LOW RECOMMENDATION */
+
+.reportQualityRecommendation.low {
+
+    border-color:
+        rgba(56,189,248,.08);
+
+    background:
+        rgba(56,189,248,.025);
+
+}
+
+
+.reportQualityRecommendation.low
+.reportQualityRecommendationIcon,
+.reportQualityRecommendation.low small {
+
+    color:
+        #38bdf8;
+
+}
+
+
+/* HEALTHY CHECK */
+
+.reportQualityRecommendation.healthy {
+
+    border-color:
+        rgba(34,197,94,.09);
+
+    background:
+        rgba(34,197,94,.03);
+
+}
+
+
+.reportQualityRecommendation.healthy
+.reportQualityRecommendationIcon,
+.reportQualityRecommendation.healthy small {
+
+    color:
+        #4ade80;
+
+}
+
+
+.reportQualityRecommendation.healthy strong {
+
+    color:
+        #769987;
+
+}
+
+
+/*====================================================
+ROW ACCENT
+====================================================*/
+
+.reportQualityRow.has-issue td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(245,158,11,.25);
+
+}
+
+
+.reportQualityRow.healthy td:first-child {
+
+    box-shadow:
+        inset 2px 0 0
+        rgba(34,197,94,.32);
+
+}
+
+
+/*====================================================
+MOBILE
+====================================================*/
+
+@media (max-width: 760px) {
+
+    .reportQualityCheck {
+
+        min-width:
+            145px;
+
+    }
+
+
+    .reportQualityRecommendation {
+
+        min-width:
+            240px;
+
+    }
+
+}
+
+/*====================================================
+ADVANCED REPORTS - GLOBAL READABILITY ENHANCEMENT
+Applies to all 9 advanced reports
+====================================================*/
+
+
+/*====================================================
+BASE FONT SIZE
+====================================================*/
+
+#reportAdvancedReports {
+
+    font-size:
+        13px;
+
+}
+
+
+/*====================================================
+TABLE BODY
+====================================================*/
+
+#reportAdvancedReports table tbody td {
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.45 !important;
+
+    padding-top:
+        10px !important;
+
+    padding-bottom:
+        10px !important;
+
+}
+
+
+/*====================================================
+TABLE HEADERS
+====================================================*/
+
+#reportAdvancedReports table thead th {
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.3 !important;
+
+    padding-top:
+        10px !important;
+
+    padding-bottom:
+        10px !important;
+
+    letter-spacing:
+        .35px !important;
+
+}
+
+
+/*====================================================
+MAIN TEXT / STRONG TEXT
+====================================================*/
+
+#reportAdvancedReports td strong {
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.4 !important;
+
+}
+
+
+/*====================================================
+SECONDARY TEXT
+====================================================*/
+
+#reportAdvancedReports td small {
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.35 !important;
+
+}
+
+
+/*====================================================
+GENERIC SPAN TEXT
+====================================================*/
+
+#reportAdvancedReports td span {
+
+    line-height:
+        1.35;
+
+}
+
+
+/*====================================================
+ADVANCED REPORT BADGES
+====================================================*/
+
+#reportAdvancedReports .reportAdvancedBadge {
+
+    font-size:
+        10px !important;
+
+    min-height:
+        26px;
+
+    padding:
+        5px 9px !important;
+
+}
+
+
+/*====================================================
+STATUS PILLS
+====================================================*/
+
+#reportAdvancedReports .reportStatusPill {
+
+    font-size:
+        9px !important;
+
+    min-height:
+        25px;
+
+    padding:
+        5px 9px !important;
+
+}
+
+
+/*====================================================
+SERVICE OVERVIEW / SERVICE PERFORMANCE
+====================================================*/
+
+#reportAdvancedReports .reportOverviewServiceName,
+#reportAdvancedReports .reportServicePerformanceName strong {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportOverviewRecords,
+#reportAdvancedReports .reportOverviewDone,
+#reportAdvancedReports .reportOverviewFollow,
+#reportAdvancedReports .reportOverviewCancelled {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportConversionBadge,
+#reportAdvancedReports .reportServiceConversionBadge {
+
+    font-size:
+        9px !important;
+
+}
+
+
+/*====================================================
+SALES & REVENUE
+====================================================*/
+
+#reportAdvancedReports .reportRevenueServiceBadge {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportRevenueAmount {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportRevenueServiceMeta {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportRevenueSummaryLabel {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportRevenueSummaryItem strong,
+#reportAdvancedReports .reportRevenueSummaryMoney {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportRevenueSummaryPill {
+
+    font-size:
+        9px !important;
+
+}
+
+
+/*====================================================
+LEAD CONVERSION FUNNEL
+====================================================*/
+
+#reportAdvancedReports .reportModernFunnelName {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportModernFunnelCount {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportModernFunnelRate {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportModernFunnelMeta {
+
+    font-size:
+        9px !important;
+
+}
+
+
+/*====================================================
+SOURCE PERFORMANCE
+====================================================*/
+
+#reportAdvancedReports .reportSourceName {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportSourceMetric {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportSourceConversionPill {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportSourceRevenue,
+#reportAdvancedReports .reportSourceAverage {
+
+    font-size:
+        10px !important;
+
+}
+
+
+/*====================================================
+SERVICE PERFORMANCE
+====================================================*/
+
+#reportAdvancedReports .reportServiceTotalBadge strong,
+#reportAdvancedReports .reportServiceStatusMetric strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportServiceTotalBadge small,
+#reportAdvancedReports .reportServiceRevenueBadge small,
+#reportAdvancedReports .reportServiceAverageBadge small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportServiceRevenueBadge strong,
+#reportAdvancedReports .reportServiceAverageBadge strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportServiceFollowupMetric small,
+#reportAdvancedReports .reportServiceCancelledMetric small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+/*====================================================
+CANCELLATION ANALYSIS
+====================================================*/
+
+#reportAdvancedReports .reportCancellationServiceName strong {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationServiceName span {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationTotal strong,
+#reportAdvancedReports .reportCancellationCount strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationTotal small,
+#reportAdvancedReports .reportCancellationCountWrap > small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationRatePill {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationRiskBadge {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationLostRevenue small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCancellationLostRevenue strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+/*====================================================
+CUSTOMER VALUE
+====================================================*/
+
+#reportAdvancedReports .reportCustomerName {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportCustomerTier {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCustomerBookings strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportCustomerBookings small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCustomerServicePill {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportCustomerRevenue small,
+#reportAdvancedReports .reportCustomerAverage small,
+#reportAdvancedReports .reportCustomerTravelDate small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportCustomerRevenue strong,
+#reportAdvancedReports .reportCustomerAverage strong,
+#reportAdvancedReports .reportCustomerTravelDate strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+/*====================================================
+UPCOMING TRAVEL
+====================================================*/
+
+#reportAdvancedReports .reportUpcomingDateInfo > strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingUrgency {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingBooking strong {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingCustomer strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingCustomer small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingService strong {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingPassengers strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportUpcomingPassengers small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+/*====================================================
+PASSENGER VOLUME
+====================================================*/
+
+#reportAdvancedReports .reportPassengerServiceInfo strong {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerServiceInfo span {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerBookings strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerBookings small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerCount strong {
+
+    font-size:
+        11px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerCount small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerShare {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerVolumeMeta {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerAverage small,
+#reportAdvancedReports .reportPassengerRevenue small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerAverage strong,
+#reportAdvancedReports .reportPassengerRevenue strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportPassengerCoverage {
+
+    font-size:
+        8px !important;
+
+}
+
+
+/*====================================================
+DATA QUALITY
+====================================================*/
+
+#reportAdvancedReports .reportQualityCheckInfo strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualityCheckInfo span {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualityIssueCount strong {
+
+    font-size:
+        10px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualityIssueCount small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualityIssueRate {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualitySeverity {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualitySeverityWrap > small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualityRecommendation small {
+
+    font-size:
+        8px !important;
+
+}
+
+
+#reportAdvancedReports .reportQualityRecommendation strong {
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.5 !important;
+
+}
+
+
+/*====================================================
+KPI / METRIC CARDS
+====================================================*/
+
+#reportAdvancedReports .reportAdvancedMetric {
+
+    min-height:
+        82px;
+
+}
+
+
+#reportAdvancedReports .reportAdvancedMetricLabel {
+
+    font-size:
+        9px !important;
+
+}
+
+
+#reportAdvancedReports .reportAdvancedMetricValue {
+
+    font-size:
+        19px !important;
+
+}
+
+
+#reportAdvancedReports .reportAdvancedMetricMeta {
+
+    font-size:
+        9px !important;
+
+}
+
+
+/*====================================================
+ADVANCED REPORT TAB BUTTONS
+====================================================*/
+
+#reportAdvancedReports [data-advanced-report] {
+
+    font-size:
+        10px !important;
+
+    padding:
+        8px 11px !important;
+
+}
+
+
+/*====================================================
+LARGER DESKTOP SCREEN
+====================================================*/
+
+@media (min-width: 1200px) {
+
+    #reportAdvancedReports table tbody td {
+
+        font-size:
+            13px !important;
+
+    }
+
+
+    #reportAdvancedReports table thead th {
+
+        font-size:
+            12px !important;
+
+    }
+
+
+    #reportAdvancedReports td strong {
+
+        font-size:
+            12px !important;
+
+    }
+
+}

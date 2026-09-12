@@ -1,0 +1,3219 @@
+/* =========================================================
+   RANSAN TRAVELS
+   MOBILE WORKSPACES V1
+   ---------------------------------------------------------
+   Customer Drawer
+   Booking Progress
+   Booking Documents
+   Lead Center Modal
+   Priority Support Modal
+
+   IMPORTANT
+   ---------------------------------------------------------
+   Load AFTER:
+   - dashboard-responsive-v2.css
+   - customerDrawerV2.css
+   - customerDrawerV3.css
+   - lead-center.css
+   - priority-support.css
+   - dashboard-documents.css
+
+   No JavaScript or backend behaviour is changed.
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL MOBILE WORKSPACE FOUNDATION
+   ========================================================= */
+
+@media (
+    max-width: 767px
+) {
+
+    body.crmGlassV2DrawerOpen {
+        overflow:
+            hidden !important;
+    }
+
+
+    /*
+     * Avoid horizontal page escape from very long IDs,
+     * routes, supplier references, etc.
+     */
+
+    .crmGlassV2Drawer,
+    .crmGlassV2Container,
+    .crmGlassV2Content,
+    .crmGlassV2Workspace,
+    #bookingProgressContainer,
+    .leadCenterModalV2,
+    .leadCenterWindowV2,
+    .leadCenterTableWrapV2,
+    .priorityModal,
+    .priorityModalContent,
+    .priorityTableWrap {
+
+        min-width:
+            0;
+    }
+
+}
+
+
+
+/* =========================================================
+   CUSTOMER WORKSPACE — MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 767px
+) {
+
+    /* -----------------------------------------------------
+       ROOT DRAWER
+
+       Existing HTML contains:
+
+       #customerDrawerV2
+          .crmGlassV2Container
+          #bookingProgressContainer
+
+       The progress panel is a SIBLING, not inside container.
+       Therefore mobile must stack both vertically.
+       ----------------------------------------------------- */
+
+    #customerDrawerV2.crmGlassV2Drawer {
+
+        display:
+            block !important;
+
+        width:
+            100vw !important;
+
+        height:
+            100dvh !important;
+
+        max-width:
+            100vw !important;
+
+        overflow-x:
+            hidden !important;
+
+        overflow-y:
+            auto !important;
+
+        overscroll-behavior:
+            contain;
+
+        background:
+            #0b0d10 !important;
+
+        backdrop-filter:
+            none !important;
+
+        -webkit-backdrop-filter:
+            none !important;
+    }
+
+
+    /*
+     * Your JS already applies crmGlassV2Mobile
+     * below 768px.
+     *
+     * Keep that behaviour and improve its layout.
+     */
+
+    #customerDrawerV2.crmGlassV2Mobile
+    .crmGlassV2Container {
+
+        width:
+            100% !important;
+
+        max-width:
+            100% !important;
+
+        height:
+            auto !important;
+
+        min-height:
+            auto !important;
+
+        overflow:
+            visible !important;
+
+        border:
+            0 !important;
+
+        border-radius:
+            0 !important;
+
+        box-shadow:
+            none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TOP BAR
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2TopBar {
+
+        position:
+            sticky !important;
+
+        top:
+            0;
+
+        z-index:
+            100;
+
+        min-height:
+            64px;
+
+        padding:
+            max(
+                12px,
+                env(safe-area-inset-top)
+            )
+            14px
+            12px;
+
+        background:
+            rgba(
+                13,
+                15,
+                18,
+                .97
+            );
+
+        border-bottom:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                .07
+            );
+
+        backdrop-filter:
+            blur(18px);
+
+        -webkit-backdrop-filter:
+            blur(18px);
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Title {
+
+        font-size:
+            17px;
+
+        line-height:
+            1.25;
+
+        font-weight:
+            800;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2CloseBtn {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        min-width:
+            42px;
+
+        flex:
+            0 0 42px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENT
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2Content {
+
+        flex:
+            none !important;
+
+        width:
+            100%;
+
+        height:
+            auto !important;
+
+        overflow:
+            visible !important;
+
+        padding:
+            0 !important;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Workspace {
+
+        width:
+            100%;
+
+        min-height:
+            0;
+
+        gap:
+            12px;
+
+        padding:
+            12px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CUSTOMER PROFILE HEADER
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2Header {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            14px;
+
+        padding:
+            15px;
+
+        border-radius:
+            16px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2HeaderLeft {
+
+        width:
+            100%;
+
+        gap:
+            12px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Avatar {
+
+        width:
+            58px;
+
+        height:
+            58px;
+
+        min-width:
+            58px;
+
+        flex:
+            0 0 58px;
+
+        font-size:
+            25px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2HeaderInfo {
+
+        min-width:
+            0;
+
+        gap:
+            7px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2HeaderTop {
+
+        align-items:
+            flex-start;
+
+        gap:
+            8px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2HeaderContact {
+
+        gap:
+            8px 12px;
+
+        font-size:
+            12px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2HeaderChips {
+
+        gap:
+            7px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassMiniChip {
+
+        padding:
+            5px 9px;
+
+        font-size:
+            11px;
+    }
+
+
+    /* RIGHT SIDE STATUS / EDIT */
+
+    #customerDrawerV2
+    .crmGlassV2HeaderRight {
+
+        width:
+            100%;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            space-between;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            8px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2HeaderActions {
+
+        width:
+            100%;
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            8px;
+    }
+
+
+    /* -----------------------------------------------------
+       CRM PROGRESS
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmCustomerProgress {
+
+        margin:
+            0;
+
+        padding:
+            14px;
+
+        border-radius:
+            15px;
+    }
+
+
+    #customerDrawerV2
+    .crmCustomerProgressHeader {
+
+        align-items:
+            flex-start;
+
+        gap:
+            10px;
+    }
+
+
+    #customerDrawerV2
+    .crmCustomerProgressTitle {
+
+        font-size:
+            14px;
+    }
+
+
+    #customerDrawerV2
+    .crmCustomerProgressPercent {
+
+        font-size:
+            22px;
+    }
+
+
+    /*
+     * Existing V3 uses 4 columns.
+     * Two columns is much more usable on phone.
+     */
+
+    #customerDrawerV2
+    .crmCustomerChecklist {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:
+            7px;
+
+        margin-top:
+            12px;
+    }
+
+
+    #customerDrawerV2
+    .crmCustomerChecklistItem {
+
+        min-height:
+            44px;
+
+        padding:
+            8px 7px;
+
+        gap:
+            6px;
+
+        border-radius:
+            11px;
+
+        font-size:
+            11px;
+    }
+
+
+    /* -----------------------------------------------------
+       SNAPSHOT CARDS
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2Snapshot {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            ) !important;
+
+        gap:
+            8px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2SnapshotItem {
+
+        min-width:
+            0;
+
+        gap:
+            9px;
+
+        padding:
+            11px;
+
+        border-radius:
+            13px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2SnapshotTitle {
+
+        font-size:
+            9px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2SnapshotValue {
+
+        overflow-wrap:
+            anywhere;
+
+        font-size:
+            12px;
+    }
+
+
+    /* -----------------------------------------------------
+       GENERAL SECTIONS
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2Section {
+
+        min-width:
+            0;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2SectionTitle {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.3;
+    }
+
+
+    /* -----------------------------------------------------
+       INFO / DETAIL GRID
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2InfoGrid {
+
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            8px !important;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Field {
+
+        min-width:
+            0;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Field input,
+    #customerDrawerV2
+    .crmGlassV2Field select,
+    #customerDrawerV2
+    .crmGlassV2Field textarea {
+
+        width:
+            100%;
+
+        min-width:
+            0;
+
+        font-size:
+            16px;
+    }
+
+
+    /* -----------------------------------------------------
+       QUICK ACTIONS
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2ActionBar {
+
+        display:
+            grid !important;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:
+            8px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2ActionBtn {
+
+        width:
+            100%;
+
+        min-width:
+            0;
+
+        min-height:
+            46px;
+
+        justify-content:
+            flex-start;
+
+        padding:
+            7px 9px;
+
+        font-size:
+            11px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2ActionIcon {
+
+        flex:
+            0 0 auto;
+    }
+
+
+    /* -----------------------------------------------------
+       SAVE / DELETE AREA
+       ----------------------------------------------------- */
+
+    #customerDrawerV2
+    .crmGlassV2FooterActions {
+
+        display:
+            grid !important;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            8px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2FooterActions button {
+
+        width:
+            100%;
+
+        min-height:
+            44px;
+    }
+
+
+    /* -----------------------------------------------------
+       BOOKING PROGRESS
+       -----------------------------------------------------
+
+       CRITICAL FIX:
+       bookingProgressContainer is outside
+       crmGlassV2Container.
+
+       On mobile it must become a normal stacked section.
+       ----------------------------------------------------- */
+
+    #customerDrawerV2.crmGlassV2Mobile
+    #bookingProgressContainer {
+
+        position:
+            relative !important;
+
+        top:
+            auto !important;
+
+        right:
+            auto !important;
+
+        bottom:
+            auto !important;
+
+        left:
+            auto !important;
+
+        width:
+            auto !important;
+
+        min-width:
+            0 !important;
+
+        max-width:
+            none !important;
+
+        height:
+            auto !important;
+
+        max-height:
+            none !important;
+
+        flex:
+            none !important;
+
+        margin:
+            0 12px
+            max(
+                18px,
+                env(safe-area-inset-bottom)
+            );
+
+        padding:
+            0 !important;
+
+        overflow:
+            visible !important;
+
+        background:
+            transparent !important;
+
+        border:
+            0 !important;
+    }
+
+
+    #customerDrawerV2
+    #bookingProgressContainer
+    .bookingProgressCard {
+
+        width:
+            100%;
+
+        margin:
+            0;
+
+        padding:
+            14px;
+
+        border-radius:
+            16px;
+
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                .035
+            );
+    }
+
+
+    #customerDrawerV2
+    .bookingProgressHeader {
+
+        margin-bottom:
+            12px;
+    }
+
+
+    #customerDrawerV2
+    .bookingProgressTitle {
+
+        font-size:
+            15px;
+    }
+
+
+    #customerDrawerV2
+    .bookingProgressSubtitle {
+
+        font-size:
+            11px;
+    }
+
+
+    #customerDrawerV2
+    .bookingProgressGrid {
+
+        gap:
+            8px;
+    }
+
+
+    #customerDrawerV2
+    .progressItem {
+
+        min-width:
+            0;
+
+        padding:
+            10px;
+
+        gap:
+            10px;
+
+        border-radius:
+            11px;
+    }
+
+
+    #customerDrawerV2
+    .progressItem:hover {
+
+        transform:
+            none;
+    }
+
+
+    #customerDrawerV2
+    .progressLeft {
+
+        min-width:
+            0;
+
+        flex:
+            1;
+
+        font-size:
+            12px;
+
+        line-height:
+            1.35;
+    }
+
+
+    #customerDrawerV2
+    .progressRight {
+
+        width:
+            min(
+                145px,
+                44vw
+            );
+
+        flex:
+            0 0 auto;
+    }
+
+
+    #customerDrawerV2
+    .bookingProgressSelect {
+
+        width:
+            100%;
+
+        min-height:
+            42px;
+
+        padding:
+            7px 9px;
+
+        border-radius:
+            10px;
+
+        font-size:
+            13px;
+    }
+
+
+    #customerDrawerV2
+    .bookingProgressLoading {
+
+        margin:
+            0;
+
+        padding:
+            20px 14px;
+
+        border-radius:
+            15px;
+
+        font-size:
+            12px;
+    }
+
+}
+
+
+
+/* =========================================================
+   EXTRA SMALL CUSTOMER WORKSPACE
+   ========================================================= */
+
+@media (
+    max-width: 420px
+) {
+
+    #customerDrawerV2
+    .crmGlassV2Workspace {
+
+        padding:
+            9px !important;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Header {
+
+        padding:
+            12px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Avatar {
+
+        width:
+            52px;
+
+        height:
+            52px;
+
+        min-width:
+            52px;
+
+        flex-basis:
+            52px;
+
+        font-size:
+            22px;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Snapshot {
+
+        grid-template-columns:
+            1fr 1fr !important;
+    }
+
+
+    #customerDrawerV2
+    #bookingProgressContainer {
+
+        margin-left:
+            9px;
+
+        margin-right:
+            9px;
+    }
+
+
+    #customerDrawerV2
+    .progressRight {
+
+        width:
+            128px;
+    }
+
+}
+
+
+
+/* =========================================================
+   BOOKING DOCUMENT MANAGER — MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 640px
+) {
+
+    #bookingDocumentsModal {
+
+        align-items:
+            stretch !important;
+
+        justify-content:
+            stretch !important;
+
+        padding:
+            0 !important;
+
+        background:
+            #070b11 !important;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsPanel {
+
+        width:
+            100vw !important;
+
+        max-width:
+            100vw !important;
+
+        height:
+            100dvh !important;
+
+        max-height:
+            100dvh !important;
+
+        border:
+            0 !important;
+
+        border-radius:
+            0 !important;
+
+        box-shadow:
+            none !important;
+    }
+
+
+    /* HEADER */
+
+    #bookingDocumentsModal
+    .bookingDocumentsHeader {
+
+        position:
+            sticky;
+
+        top:
+            0;
+
+        z-index:
+            20;
+
+        align-items:
+            flex-start;
+
+        gap:
+            10px;
+
+        padding:
+            max(
+                14px,
+                env(safe-area-inset-top)
+            )
+            14px
+            13px;
+
+        background:
+            rgba(
+                7,
+                11,
+                17,
+                .97
+            );
+
+        backdrop-filter:
+            blur(16px);
+
+        -webkit-backdrop-filter:
+            blur(16px);
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsEyebrow {
+
+        font-size:
+            9px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsHeader h2 {
+
+        font-size:
+            19px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsHeader p {
+
+        max-width:
+            280px;
+
+        font-size:
+            11px;
+
+        line-height:
+            1.45;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsClose {
+
+        flex:
+            0 0 40px;
+
+        width:
+            40px;
+
+        height:
+            40px;
+    }
+
+
+    /* BOOKING CONTEXT */
+
+    #bookingDocumentsModal
+    .bookingDocumentsContext {
+
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            7px;
+
+        padding:
+            12px 14px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsContext > div {
+
+        min-width:
+            0;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsContext strong {
+
+        overflow-wrap:
+            anywhere;
+    }
+
+
+    /* UPLOAD */
+
+    #bookingDocumentsModal
+    .bookingDocumentsUpload {
+
+        padding:
+            14px !important;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsFormGrid {
+
+        grid-template-columns:
+            1fr !important;
+
+        gap:
+            10px;
+    }
+
+
+    #bookingDocumentsModal
+    input,
+    #bookingDocumentsModal
+    select {
+
+        font-size:
+            16px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsUploadBtn {
+
+        width:
+            100%;
+
+        min-height:
+            46px;
+
+        justify-content:
+            center;
+    }
+
+
+    /* DOCUMENT LIST HEADER */
+
+    #bookingDocumentsModal
+    .bookingDocumentsListHeader {
+
+        align-items:
+            center;
+
+        gap:
+            10px;
+
+        padding-left:
+            14px;
+
+        padding-right:
+            14px;
+    }
+
+
+    /* DOCUMENT CARD */
+
+    #bookingDocumentsModal
+    .bookingDocumentItem {
+
+        grid-template-columns:
+            42px
+            minmax(
+                0,
+                1fr
+            ) !important;
+
+        gap:
+            10px;
+
+        padding:
+            12px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentVisibilityState,
+    #bookingDocumentsModal
+    .bookingDocumentActions {
+
+        grid-column:
+            1 / -1 !important;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentActions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap:
+            7px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentActions button {
+
+        width:
+            100%;
+
+        min-height:
+            40px;
+
+        padding:
+            0 8px;
+
+        font-size:
+            10px;
+    }
+
+
+    /* ARCHIVED SECTION */
+
+    #bookingDocumentsModal
+    .bookingDocumentsArchiveToolbar {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+        gap:
+            10px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsArchiveToggle {
+
+        width:
+            100%;
+
+        min-height:
+            42px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsArchivePanelHeader {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsArchiveRefresh {
+
+        width:
+            100%;
+
+        min-height:
+            40px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsArchivedActions {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            7px;
+    }
+
+
+    #bookingDocumentsModal
+    .bookingDocumentsArchivedActions button {
+
+        width:
+            100%;
+
+        min-height:
+            42px;
+    }
+
+
+    /* FOOTER */
+
+    #bookingDocumentsModal
+    .bookingDocumentsFooter {
+
+        gap:
+            10px;
+
+        padding:
+            11px 14px
+            max(
+                11px,
+                env(safe-area-inset-bottom)
+            );
+
+        font-size:
+            9px;
+    }
+
+}
+
+
+
+/* =========================================================
+   LEAD CENTER MODAL — MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 767px
+) {
+
+    .leadCenterModalV2 {
+
+        align-items:
+            stretch !important;
+
+        justify-content:
+            stretch !important;
+
+        padding:
+            0 !important;
+
+        background:
+            #080a0d !important;
+    }
+
+
+    .leadCenterWindowV2 {
+
+        width:
+            100vw !important;
+
+        max-width:
+            100vw !important;
+
+        height:
+            100dvh !important;
+
+        max-height:
+            100dvh !important;
+
+        border:
+            0 !important;
+
+        border-radius:
+            0 !important;
+
+        box-shadow:
+            none !important;
+    }
+
+
+    /* HEADER */
+
+    .leadCenterHeaderV2 {
+
+        flex:
+            0 0 auto;
+
+        padding:
+            max(
+                13px,
+                env(safe-area-inset-top)
+            )
+            14px
+            12px;
+
+        gap:
+            10px;
+    }
+
+
+    .leadCenterTitleV2 {
+
+        font-size:
+            20px;
+    }
+
+
+    .leadCenterSubtitleV2 {
+
+        margin-top:
+            3px;
+
+        font-size:
+            11px;
+    }
+
+
+    .leadCenterCloseV2 {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        min-width:
+            40px;
+
+        border-radius:
+            11px;
+    }
+
+
+    /* SEARCH */
+
+    .leadCenterToolbarV2 {
+
+        flex:
+            0 0 auto;
+
+        flex-direction:
+            row !important;
+
+        align-items:
+            center !important;
+
+        gap:
+            8px;
+
+        padding:
+            10px 14px !important;
+    }
+
+
+    .leadSearchInputV2 {
+
+        min-width:
+            0;
+
+        height:
+            44px;
+
+        padding:
+            0 13px;
+
+        border-radius:
+            11px;
+
+        font-size:
+            16px;
+    }
+
+
+    .leadCenterCountV2 {
+
+        width:
+            auto !important;
+
+        flex:
+            0 0 auto;
+
+        padding:
+            9px 11px;
+
+        border-radius:
+            10px;
+
+        font-size:
+            11px;
+
+        white-space:
+            nowrap;
+    }
+
+
+    /* FILTER CHIPS */
+
+    .leadCenterChipsV2 {
+
+        flex:
+            0 0 auto;
+
+        flex-wrap:
+            nowrap !important;
+
+        gap:
+            7px;
+
+        margin:
+            0 !important;
+
+        padding:
+            8px 14px
+            10px !important;
+
+        overflow-x:
+            auto;
+
+        overflow-y:
+            hidden;
+
+        overscroll-behavior-inline:
+            contain;
+
+        scrollbar-width:
+            thin;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    .leadChipV2 {
+
+        flex:
+            0 0 auto;
+
+        min-height:
+            38px;
+
+        padding:
+            8px 12px;
+
+        font-size:
+            11px;
+
+        white-space:
+            nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLE WRAPPER
+
+       IMPORTANT:
+       The wrapper scrolls.
+       The TABLE remains a table.
+       ----------------------------------------------------- */
+
+    .leadCenterTableWrapV2 {
+
+        flex:
+            1;
+
+        min-height:
+            0;
+
+        width:
+            100%;
+
+        padding:
+            0 12px
+            max(
+                14px,
+                env(safe-area-inset-bottom)
+            );
+
+        overflow-x:
+            auto !important;
+
+        overflow-y:
+            auto !important;
+
+        overscroll-behavior:
+            contain;
+
+        scrollbar-width:
+            thin;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    /*
+     * Override the old:
+     * display:block;
+     * overflow-x:auto;
+     *
+     * placed directly on .leadCenterTable.
+     */
+
+    .leadCenterTable {
+
+        display:
+            table !important;
+
+        width:
+            1080px !important;
+
+        min-width:
+            1080px !important;
+
+        table-layout:
+            auto;
+
+        border-collapse:
+            separate;
+
+        border-spacing:
+            0 7px;
+    }
+
+
+    .leadCenterTable thead {
+
+        display:
+            table-header-group !important;
+    }
+
+
+    .leadCenterTable tbody {
+
+        display:
+            table-row-group !important;
+    }
+
+
+    .leadCenterTable tr {
+
+        display:
+            table-row !important;
+    }
+
+
+    .leadCenterTable th,
+    .leadCenterTable td {
+
+        display:
+            table-cell !important;
+
+        padding:
+            11px 12px !important;
+
+        font-size:
+            11px !important;
+
+        white-space:
+            nowrap;
+    }
+
+
+    .leadCenterTable thead th {
+
+        top:
+            0;
+
+        min-height:
+            42px;
+
+        background:
+            #101318 !important;
+    }
+
+
+    /*
+     * Keep first column visible while swiping sideways.
+     */
+
+    .leadCenterTable th:first-child,
+    .leadCenterTable td:first-child {
+
+        position:
+            sticky;
+
+        left:
+            0;
+
+        z-index:
+            6;
+    }
+
+
+    .leadCenterTable th:first-child {
+
+        background:
+            #101318 !important;
+    }
+
+
+    .leadCenterTable td:first-child {
+
+        background:
+            #15191f !important;
+
+        box-shadow:
+            6px 0 12px
+            rgba(
+                0,
+                0,
+                0,
+                .18
+            );
+    }
+
+
+    .leadCenterTable
+    tbody
+    tr:hover {
+
+        transform:
+            none;
+    }
+
+
+    /* PAGINATION */
+
+    .leadPagination {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            9px;
+
+        min-width:
+            100%;
+
+        padding:
+            11px 2px;
+    }
+
+
+    .leadPaginationCenter {
+
+        justify-content:
+            flex-start;
+
+        overflow-x:
+            auto;
+
+        padding-bottom:
+            3px;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    .leadPageBtn {
+
+        flex:
+            0 0 auto;
+    }
+
+}
+
+
+
+/* =========================================================
+   PRIORITY SUPPORT MODAL — MOBILE
+   ========================================================= */
+
+@media (
+    max-width: 767px
+) {
+
+    #priorityModal.priorityModal {
+
+        align-items:
+            stretch !important;
+
+        justify-content:
+            stretch !important;
+
+        padding:
+            0 !important;
+
+        background:
+            #0b1018 !important;
+    }
+
+
+    #priorityModal
+    .priorityModalContent {
+
+        width:
+            100vw !important;
+
+        max-width:
+            100vw !important;
+
+        height:
+            100dvh !important;
+
+        max-height:
+            100dvh !important;
+
+        border:
+            0 !important;
+
+        border-radius:
+            0 !important;
+
+        box-shadow:
+            none !important;
+    }
+
+
+    /* HEADER */
+
+    #priorityModal
+    .priorityModalHeader {
+
+        flex:
+            0 0 auto;
+
+        padding:
+            max(
+                13px,
+                env(safe-area-inset-top)
+            )
+            14px
+            12px;
+    }
+
+
+    #priorityModal
+    .priorityTitle {
+
+        font-size:
+            18px;
+    }
+
+
+    #priorityModal
+    .prioritySubtitle {
+
+        margin-top:
+            3px;
+
+        font-size:
+            11px;
+    }
+
+
+    #priorityModal
+    .priorityCloseBtn {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        min-width:
+            40px;
+    }
+
+
+    /* TOOLBAR */
+
+    #priorityModal
+    .priorityToolbar {
+
+        position:
+            relative !important;
+
+        top:
+            auto !important;
+
+        flex:
+            0 0 auto;
+
+        gap:
+            8px;
+
+        padding:
+            10px 14px;
+
+        background:
+            rgba(
+                15,
+                23,
+                42,
+                .98
+            );
+    }
+
+
+    #priorityModal
+    .prioritySearch {
+
+        width:
+            auto;
+
+        min-width:
+            0;
+
+        max-width:
+            none;
+
+        height:
+            44px;
+
+        padding:
+            0 13px;
+
+        font-size:
+            16px;
+    }
+
+
+    #priorityModal
+    .priorityRecordCount {
+
+        flex:
+            0 0 auto;
+
+        padding:
+            8px 10px;
+
+        font-size:
+            10px;
+
+        white-space:
+            nowrap;
+    }
+
+
+    /* STATS */
+
+    #priorityModal
+    .priorityStatsRibbon {
+
+        flex:
+            0 0 auto;
+
+        flex-wrap:
+            nowrap !important;
+
+        gap:
+            7px;
+
+        padding:
+            8px 14px;
+
+        overflow-x:
+            auto;
+
+        overflow-y:
+            hidden;
+
+        overscroll-behavior-inline:
+            contain;
+
+        scrollbar-width:
+            thin;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    #priorityModal
+    .priorityStatsRibbon > * {
+
+        flex:
+            0 0 auto;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLE WRAPPER
+       ----------------------------------------------------- */
+
+    #priorityModalBody.priorityTableWrap {
+
+        flex:
+            1;
+
+        min-height:
+            0;
+
+        width:
+            100%;
+
+        max-height:
+            none !important;
+
+        padding:
+            0 12px
+            max(
+                14px,
+                env(safe-area-inset-bottom)
+            );
+
+        overflow-x:
+            auto !important;
+
+        overflow-y:
+            auto !important;
+
+        overscroll-behavior:
+            contain;
+
+        scrollbar-width:
+            thin;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    /*
+     * Priority table has 10 columns.
+     * Do NOT squeeze 10 columns into 400px.
+     *
+     * Preserve readable cell widths and allow swipe.
+     */
+
+    #priorityModal
+    .priorityBusinessTable {
+
+        width:
+            1180px !important;
+
+        min-width:
+            1180px !important;
+
+        table-layout:
+            auto;
+
+        border-collapse:
+            collapse;
+    }
+
+
+    #priorityModal
+    .priorityBusinessTable
+    thead
+    th {
+
+        padding:
+            11px 12px;
+
+        font-size:
+            10px;
+
+        white-space:
+            nowrap;
+
+        background:
+            #192334;
+    }
+
+
+    #priorityModal
+    .priorityBusinessTable
+    tbody
+    td {
+
+        padding:
+            11px 12px;
+
+        font-size:
+            11px;
+
+        line-height:
+            1.45;
+
+        white-space:
+            nowrap;
+    }
+
+
+    /*
+     * Requirement and Notes are allowed to wrap.
+     */
+
+    #priorityModal
+    .priorityBusinessTable
+    th:nth-child(4),
+    #priorityModal
+    .priorityBusinessTable
+    td:nth-child(4),
+    #priorityModal
+    .priorityBusinessTable
+    th:nth-child(8),
+    #priorityModal
+    .priorityBusinessTable
+    td:nth-child(8) {
+
+        min-width:
+            180px;
+
+        white-space:
+            normal;
+    }
+
+
+    /* Sticky Booking ID */
+
+    #priorityModal
+    .priorityBusinessTable
+    th:first-child,
+    #priorityModal
+    .priorityBusinessTable
+    td:first-child {
+
+        position:
+            sticky;
+
+        left:
+            0;
+
+        z-index:
+            6;
+    }
+
+
+    #priorityModal
+    .priorityBusinessTable
+    th:first-child {
+
+        background:
+            #192334;
+    }
+
+
+    #priorityModal
+    .priorityBusinessTable
+    td:first-child {
+
+        background:
+            #111a28;
+
+        box-shadow:
+            6px 0 12px
+            rgba(
+                0,
+                0,
+                0,
+                .20
+            );
+    }
+
+
+    /* PAGINATION */
+
+    #priorityModal
+    .priorityPagination {
+
+        min-width:
+            100%;
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+
+        gap:
+            9px;
+
+        padding:
+            12px 2px;
+    }
+
+
+    #priorityModal
+    .priorityPageInfo {
+
+        width:
+            100%;
+
+        font-size:
+            11px;
+
+        text-align:
+            center;
+    }
+
+
+    #priorityModal
+    .priorityPager {
+
+        width:
+            100%;
+
+        justify-content:
+            flex-start;
+
+        gap:
+            7px;
+
+        overflow-x:
+            auto;
+
+        padding-bottom:
+            4px;
+
+        -webkit-overflow-scrolling:
+            touch;
+    }
+
+
+    #priorityModal
+    .priorityPager button {
+
+        flex:
+            0 0 auto;
+    }
+
+
+    #priorityModal
+    .priorityNavBtn {
+
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+
+    #priorityModal
+    .priorityPageBtn {
+
+        min-width:
+            38px;
+
+        height:
+            38px;
+
+        font-size:
+            12px;
+    }
+
+
+    #priorityModal
+    .priorityPageSize {
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+    }
+
+
+    #priorityModal
+    .priorityPageSize select {
+
+        width:
+            92px;
+
+        height:
+            40px;
+
+        font-size:
+            13px;
+    }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (
+    max-width: 380px
+) {
+
+    #customerDrawerV2
+    .crmGlassV2ActionBar {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    #customerDrawerV2
+    .crmGlassV2Snapshot {
+
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    #customerDrawerV2
+    .crmCustomerChecklist {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .leadCenterToolbarV2,
+    #priorityModal
+    .priorityToolbar {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column !important;
+    }
+
+
+    .leadCenterCountV2,
+    #priorityModal
+    .priorityRecordCount {
+
+        width:
+            100% !important;
+
+        text-align:
+            center;
+    }
+
+}
+
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (
+    max-height: 520px
+)
+and
+(
+    orientation: landscape
+) {
+
+    #customerDrawerV2
+    .crmGlassV2TopBar,
+    .leadCenterHeaderV2,
+    #priorityModal
+    .priorityModalHeader {
+
+        padding-top:
+            8px;
+
+        padding-bottom:
+            8px;
+    }
+
+
+    .leadCenterToolbarV2,
+    #priorityModal
+    .priorityToolbar {
+
+        padding-top:
+            7px;
+
+        padding-bottom:
+            7px;
+    }
+
+}
+
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+    prefers-reduced-motion: reduce
+) {
+
+    #customerDrawerV2 *,
+    .leadCenterModalV2 *,
+    #priorityModal * {
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+
+}
+
+/* =========================================================
+   RANSAN PRIORITY MODAL
+   COMPACT KPI RIBBON — MOBILE FIX V1
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /*
+     * IMPORTANT:
+     * priority-support.css uses display:grid and changes to
+     * a single column below 560px.
+     *
+     * Force a compact horizontal mobile ribbon instead.
+     */
+
+    #priorityModal
+    .priorityStatsRibbon {
+
+        display:
+            flex !important;
+
+        grid-template-columns:
+            none !important;
+
+        flex-direction:
+            row !important;
+
+        flex-wrap:
+            nowrap !important;
+
+        align-items:
+            stretch;
+
+        width:
+            100%;
+
+        gap:
+            8px !important;
+
+        margin:
+            0 !important;
+
+        padding:
+            10px 12px !important;
+
+        overflow-x:
+            auto !important;
+
+        overflow-y:
+            hidden !important;
+
+        scroll-snap-type:
+            x proximity;
+
+        overscroll-behavior-x:
+            contain;
+
+        -webkit-overflow-scrolling:
+            touch;
+
+        scrollbar-width:
+            none;
+    }
+
+
+    #priorityModal
+    .priorityStatsRibbon::-webkit-scrollbar {
+
+        display:
+            none;
+    }
+
+
+    /*
+     * Compact KPI card.
+     *
+     * Five cards remain horizontally scrollable rather
+     * than each becoming a huge full-width card.
+     */
+
+    #priorityModal
+    .priorityStatCard {
+
+        flex:
+            0 0 104px !important;
+
+        width:
+            104px !important;
+
+        min-width:
+            104px !important;
+
+        min-height:
+            88px !important;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        gap:
+            3px;
+
+        margin:
+            0 !important;
+
+        padding:
+            10px 8px !important;
+
+        border-radius:
+            12px !important;
+
+        scroll-snap-align:
+            start;
+
+        backdrop-filter:
+            blur(10px);
+
+        -webkit-backdrop-filter:
+            blur(10px);
+    }
+
+
+    /*
+     * Use top accent instead of large left accent.
+     */
+
+    #priorityModal
+    .priorityStatCard.high,
+    #priorityModal
+    .priorityStatCard.today,
+    #priorityModal
+    .priorityStatCard.overdue,
+    #priorityModal
+    .priorityStatCard.revenue,
+    #priorityModal
+    .priorityStatCard.total {
+
+        border-left-width:
+            1px !important;
+
+        border-top-width:
+            3px !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard.high {
+
+        border-top-color:
+            #ff4d4d !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard.today {
+
+        border-top-color:
+            #ffb020 !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard.overdue {
+
+        border-top-color:
+            #ff6b6b !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard.revenue {
+
+        border-top-color:
+            #00d26a !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard.total {
+
+        border-top-color:
+            #4da3ff !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard
+    .statIcon {
+
+        margin:
+            0 0 2px !important;
+
+        font-size:
+            17px !important;
+
+        line-height:
+            1;
+    }
+
+
+    #priorityModal
+    .priorityStatCard
+    .statLabel {
+
+        margin:
+            0 !important;
+
+        font-size:
+            10px !important;
+
+        line-height:
+            1.2;
+
+        white-space:
+            nowrap;
+    }
+
+
+    #priorityModal
+    .priorityStatCard
+    .statValue {
+
+        margin-top:
+            2px;
+
+        font-size:
+            18px !important;
+
+        line-height:
+            1.1;
+
+        white-space:
+            nowrap;
+    }
+
+}
+
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #priorityModal
+    .priorityStatCard {
+
+        flex-basis:
+            94px !important;
+
+        width:
+            94px !important;
+
+        min-width:
+            94px !important;
+
+        min-height:
+            82px !important;
+    }
+
+
+    #priorityModal
+    .priorityStatCard
+    .statValue {
+
+        font-size:
+            16px !important;
+    }
+
+}
+
+/* =========================================================
+   RANSAN MOBILE DASHBOARD NAVIGATION V1
+   ========================================================= */
+
+
+/*
+ * Desktop / tablet default.
+ */
+
+.ranSanMobileNav {
+
+    display:
+        none;
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /*
+     * Give the page breathing room so the final content
+     * does not hide behind the fixed navigation.
+     */
+
+    body {
+
+        padding-bottom:
+            calc(
+                76px +
+                env(
+                    safe-area-inset-bottom
+                )
+            );
+
+    }
+
+
+    .ranSanMobileNav {
+
+        position:
+            fixed;
+
+        right:
+            10px;
+
+        bottom:
+            max(
+                9px,
+                env(
+                    safe-area-inset-bottom
+                )
+            );
+
+        left:
+            10px;
+
+        z-index:
+            8500;
+
+        height:
+            62px;
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(
+                5,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        align-items:
+            stretch;
+
+        gap:
+            3px;
+
+        padding:
+            5px;
+
+        border:
+            1px solid
+            rgba(
+                255,
+                255,
+                255,
+                .09
+            );
+
+        border-radius:
+            18px;
+
+        background:
+            rgba(
+                12,
+                15,
+                20,
+                .93
+            );
+
+        backdrop-filter:
+            blur(22px)
+            saturate(140%);
+
+        -webkit-backdrop-filter:
+            blur(22px)
+            saturate(140%);
+
+        box-shadow:
+            0 16px 42px
+            rgba(
+                0,
+                0,
+                0,
+                .58
+            );
+
+        transform:
+            translateY(
+                calc(
+                    100% +
+                    30px
+                )
+            );
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        pointer-events:
+            none;
+
+        transition:
+            transform .28s ease,
+            opacity .22s ease,
+            visibility .22s ease;
+    }
+
+
+    .ranSanMobileNav.visible {
+
+        transform:
+            translateY(0);
+
+        opacity:
+            1;
+
+        visibility:
+            visible;
+
+        pointer-events:
+            auto;
+    }
+
+
+    .ranSanMobileNav.hidden {
+
+        transform:
+            translateY(
+                calc(
+                    100% +
+                    30px
+                )
+            );
+
+        opacity:
+            0;
+
+        visibility:
+            hidden;
+
+        pointer-events:
+            none;
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTON
+       ----------------------------------------------------- */
+
+    .ranSanMobileNavBtn {
+
+        position:
+            relative;
+
+        min-width:
+            0;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        gap:
+            3px;
+
+        padding:
+            4px 2px;
+
+        border:
+            0;
+
+        border-radius:
+            13px;
+
+        outline:
+            none;
+
+        background:
+            transparent;
+
+        color:
+            rgba(
+                226,
+                232,
+                240,
+                .68
+            );
+
+        cursor:
+            pointer;
+
+        -webkit-tap-highlight-color:
+            transparent;
+
+        transition:
+            background .2s ease,
+            color .2s ease,
+            transform .15s ease;
+    }
+
+
+    .ranSanMobileNavBtn:active {
+
+        transform:
+            scale(.95);
+    }
+
+
+    .ranSanMobileNavIcon {
+
+        height:
+            22px;
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+        font-size:
+            18px;
+
+        line-height:
+            1;
+    }
+
+
+    .ranSanMobileNavLabel {
+
+        max-width:
+            100%;
+
+        overflow:
+            hidden;
+
+        font-size:
+            9px;
+
+        font-weight:
+            750;
+
+        line-height:
+            1;
+
+        letter-spacing:
+            .01em;
+
+        text-overflow:
+            ellipsis;
+
+        white-space:
+            nowrap;
+    }
+
+
+    /* -----------------------------------------------------
+       ACTIVE
+       ----------------------------------------------------- */
+
+    .ranSanMobileNavBtn.active {
+
+        background:
+            linear-gradient(
+                145deg,
+                rgba(
+                    59,
+                    130,
+                    246,
+                    .18
+                ),
+                rgba(
+                    124,
+                    58,
+                    237,
+                    .10
+                )
+            );
+
+        color:
+            #dbeafe;
+    }
+
+
+    .ranSanMobileNavBtn.active::after {
+
+        content:
+            "";
+
+        position:
+            absolute;
+
+        right:
+            25%;
+
+        bottom:
+            2px;
+
+        left:
+            25%;
+
+        height:
+            2px;
+
+        border-radius:
+            999px;
+
+        background:
+            #60a5fa;
+
+        box-shadow:
+            0 0 9px
+            rgba(
+                96,
+                165,
+                250,
+                .65
+            );
+    }
+
+
+    /*
+     * Offset anchors so the target section does not
+     * appear flush against the viewport.
+     */
+
+    #mobileCrmSection,
+    #mobileLeadCenterSection,
+    #mobilePrioritySection,
+    #mobileDashboardActions {
+
+        scroll-margin-top:
+            14px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .ranSanMobileNav {
+
+        right:
+            6px;
+
+        left:
+            6px;
+
+        gap:
+            1px;
+
+        padding:
+            4px;
+
+        border-radius:
+            16px;
+    }
+
+
+    .ranSanMobileNavIcon {
+
+        font-size:
+            16px;
+    }
+
+
+    .ranSanMobileNavLabel {
+
+        font-size:
+            8px;
+    }
+
+}
+
+
+
+/* =========================================================
+   HIDE NAV WHILE PRINTING
+   ========================================================= */
+
+@media print {
+
+    .ranSanMobileNav {
+
+        display:
+            none !important;
+
+    }
+
+}

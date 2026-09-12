@@ -1,0 +1,3121 @@
+/* =========================================================
+   RANSAN TRAVELS
+   REFUND HISTORY + RECEIPT V1
+   ========================================================= */
+
+body.refundHistoryOpen {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CUSTOMER DRAWER ACTION
+   ========================================================= */
+
+/* =========================================================
+   REFUND HISTORY CUSTOMER DRAWER ACTION
+   ---------------------------------------------------------
+   Purple / violet = read-only financial audit/history
+   Red / rose remains reserved for the actual Refund action.
+   ========================================================= */
+
+.crmGlassV2RefundHistoryBtn {
+
+    border-color:
+        rgba(167, 139, 250, .22) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(109, 40, 217, .14),
+            rgba(76, 29, 149, .07)
+        ) !important;
+
+    color:
+        #f5f3ff !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255, 255, 255, .025) !important;
+
+}
+
+
+/* ICON */
+
+.crmGlassV2RefundHistoryBtn
+.crmGlassV2ActionIcon {
+
+    color:
+        #c4b5fd !important;
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(139, 92, 246, .20)
+        );
+
+}
+
+
+/* TEXT */
+
+.crmGlassV2RefundHistoryBtn > span:last-child {
+
+    color:
+        #f5f3ff !important;
+
+}
+
+
+/* HOVER */
+
+.crmGlassV2RefundHistoryBtn:hover {
+
+    border-color:
+        rgba(167, 139, 250, .42) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(109, 40, 217, .22),
+            rgba(76, 29, 149, .12)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(255, 255, 255, .04),
+        0 8px 24px
+            rgba(76, 29, 149, .10) !important;
+
+}
+
+
+/* ACTIVE / CLICK */
+
+.crmGlassV2RefundHistoryBtn:active {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(91, 33, 182, .25),
+            rgba(76, 29, 149, .15)
+        ) !important;
+
+}
+
+/* =========================================================
+   HISTORY OVERLAY
+   ========================================================= */
+
+#refundHistoryModal.refundHistoryModal {
+
+    position:
+        fixed !important;
+
+    inset:
+        0 !important;
+
+    z-index:
+        2147483420 !important;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        18px;
+
+    box-sizing:
+        border-box;
+
+    background:
+        rgba(1, 4, 8, .88);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+#refundHistoryModal.refundHistoryModal.active {
+
+    display:
+        flex !important;
+}
+
+
+/* =========================================================
+   HISTORY PANEL
+   ========================================================= */
+
+.refundHistoryPanel {
+
+    width:
+        min(
+            880px,
+            calc(100vw - 28px)
+        );
+
+    max-height:
+        calc(100vh - 30px);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .085);
+
+    border-radius:
+        22px;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(244, 63, 94, .055),
+            transparent 30%
+        ),
+        #070b11;
+
+    box-shadow:
+        0 42px 130px
+        rgba(0, 0, 0, .82);
+
+    color:
+        #dbe4ed;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.refundHistoryHeader {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        15px;
+
+    padding:
+        20px 22px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .055);
+}
+
+
+.refundHistoryHeaderLeft {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        13px;
+}
+
+
+.refundHistoryHeaderIcon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    flex:
+        0 0 45px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .17);
+
+    border-radius:
+        13px;
+
+    background:
+        rgba(244, 63, 94, .055);
+
+    color:
+        #fda4af;
+
+    font-size:
+        19px;
+}
+
+
+.refundHistoryEyebrow,
+.refundReceiptEyebrow {
+
+    color:
+        #fb7185;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .12em;
+}
+
+
+.refundHistoryHeader h2,
+.refundReceiptModalHeader h2 {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #f1f5f9;
+
+    font-size:
+        21px;
+}
+
+
+.refundHistoryHeader p {
+
+    margin:
+        5px 0 0;
+
+    color:
+        #7f8b98;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+}
+
+
+.refundHistoryClose,
+.refundReceiptClose {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    flex:
+        0 0 38px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #9aa6b3;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   BOOKING
+   ========================================================= */
+
+.refundHistoryBooking {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.4fr 1.2fr .6fr;
+
+    gap:
+        9px;
+
+    padding:
+        13px 22px 9px;
+}
+
+
+.refundHistoryBooking > div {
+
+    padding:
+        11px 12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, .014);
+}
+
+
+.refundHistoryBooking small,
+.refundHistoryBooking strong,
+.refundHistoryBooking span {
+
+    display:
+        block;
+}
+
+
+.refundHistoryBooking small {
+
+    color:
+        #768392;
+
+    font-size:
+        9px;
+}
+
+
+.refundHistoryBooking strong {
+
+    margin-top:
+        4px;
+
+    color:
+        #e4e9ef;
+
+    font-size:
+        12px;
+}
+
+
+.refundHistoryBooking span {
+
+    margin-top:
+        3px;
+
+    color:
+        #84909d;
+
+    font-size:
+        10px;
+}
+
+
+.refundHistoryEnvironment {
+
+    display:
+        inline-flex !important;
+
+    width:
+        fit-content;
+
+    padding:
+        4px 7px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .14);
+
+    border-radius:
+        999px;
+
+    color:
+        #86efac !important;
+}
+
+
+.refundHistoryEnvironment.test {
+
+    border-color:
+        rgba(245, 158, 11, .18);
+
+    color:
+        #fcd34d !important;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.refundHistorySummary {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        8px;
+
+    padding:
+        0 22px 12px;
+}
+
+
+.refundHistorySummary > div {
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, .014);
+}
+
+
+.refundHistorySummary small {
+
+    display:
+        block;
+
+    color:
+        #778492;
+
+    font-size:
+        9px;
+}
+
+
+.refundHistorySummary strong {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #dde5ed;
+
+    font-size:
+        15px;
+}
+
+
+.refundHistorySummary
+.refundHistoryTotalAmount {
+
+    color:
+        #fda4af;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.refundHistoryToolbar {
+
+    display:
+        flex;
+
+    gap:
+        9px;
+
+    padding:
+        0 22px 12px;
+}
+
+
+.refundHistorySearchWrap {
+
+    flex:
+        1;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    min-height:
+        40px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .065);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(0, 0, 0, .2);
+}
+
+
+.refundHistorySearchWrap input {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+    border:
+        0;
+
+    outline:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        #e0e7ef;
+
+    font-size:
+        11px;
+}
+
+
+.refundHistoryRefreshBtn {
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #b6c0cb;
+
+    font-size:
+        10px;
+
+    font-weight:
+        750;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   LIST
+   ========================================================= */
+
+.refundHistoryList {
+
+    flex:
+        1;
+
+    min-height:
+        0;
+
+    overflow-y:
+        auto;
+
+    padding:
+        0 22px 15px;
+}
+
+
+.refundHistoryItem {
+
+    margin-bottom:
+        9px;
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .075);
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244, 63, 94, .025),
+            rgba(255, 255, 255, .012)
+        );
+}
+
+
+.refundHistoryItemTop {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        10px;
+}
+
+
+.refundHistoryItemTop > div:first-child {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+}
+
+
+.refundHistoryTypeBadge {
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .15);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(244, 63, 94, .045);
+
+    color:
+        #fda4af;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+}
+
+
+.refundHistoryAmount {
+
+    color:
+        #fb7185;
+
+    font-size:
+        17px;
+}
+
+
+.refundHistoryDate {
+
+    color:
+        #85919e;
+
+    font-size:
+        10px;
+}
+
+
+.refundHistoryMetaGrid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        7px;
+
+    margin-top:
+        12px;
+}
+
+
+.refundHistoryMetaGrid > div {
+
+    padding:
+        9px;
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(0, 0, 0, .16);
+}
+
+
+.refundHistoryMetaGrid small {
+
+    display:
+        block;
+
+    color:
+        #73808e;
+
+    font-size:
+        8px;
+}
+
+
+.refundHistoryMetaGrid strong {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        #cdd6df;
+
+    font-size:
+        10px;
+}
+
+
+.refundHistoryPosition {
+
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    margin-top:
+        9px;
+}
+
+
+.refundHistoryPosition span {
+
+    padding:
+        6px 8px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .04);
+
+    border-radius:
+        7px;
+
+    color:
+        #8996a3;
+
+    font-size:
+        9px;
+}
+
+
+.refundHistoryNotes {
+
+    margin-top:
+        9px;
+
+    padding:
+        9px;
+
+    border-left:
+        2px solid
+        rgba(251, 113, 133, .25);
+
+    background:
+        rgba(255, 255, 255, .012);
+
+    color:
+        #98a4b0;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+    white-space:
+        pre-wrap;
+}
+
+
+.refundHistoryItemFooter {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-top:
+        11px;
+}
+
+
+.refundHistoryItemFooter > span {
+
+    color:
+        #707d8b;
+
+    font-size:
+        9px;
+}
+
+
+.refundHistoryItemFooter button {
+
+    min-height:
+        31px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .13);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(244, 63, 94, .045);
+
+    color:
+        #fda4af;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY
+   ========================================================= */
+
+.refundHistoryLoading,
+.refundHistoryEmpty {
+
+    padding:
+        38px 20px;
+
+    text-align:
+        center;
+
+    color:
+        #82909d;
+
+    font-size:
+        11px;
+}
+
+
+.refundHistoryLoading[hidden],
+.refundHistoryEmpty[hidden] {
+
+    display:
+        none !important;
+}
+
+
+.refundHistorySpinner {
+
+    display:
+        inline-block;
+
+    width:
+        15px;
+
+    height:
+        15px;
+
+    margin-right:
+        7px;
+
+    vertical-align:
+        middle;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, .12);
+
+    border-top-color:
+        #fb7185;
+
+    border-radius:
+        50%;
+
+    animation:
+        refundHistorySpin .65s linear infinite;
+}
+
+
+@keyframes refundHistorySpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.refundHistoryEmptyIcon {
+
+    margin-bottom:
+        8px;
+
+    color:
+        #fb7185;
+
+    font-size:
+        25px;
+}
+
+
+.refundHistoryEmpty strong {
+
+    display:
+        block;
+
+    color:
+        #d4dce5;
+
+    font-size:
+        13px;
+}
+
+
+.refundHistoryEmpty p {
+
+    max-width:
+        390px;
+
+    margin:
+        7px auto 0;
+
+    color:
+        #768391;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================================
+   HISTORY FOOTER
+   ========================================================= */
+
+.refundHistoryFooter {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        12px 22px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    color:
+        #758290;
+
+    font-size:
+        9px;
+}
+
+
+.refundHistoryFooter button {
+
+    min-height:
+        34px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #a9b4bf;
+
+    font-size:
+        10px;
+
+    cursor:
+        pointer;
+}
+
+
+/* =========================================================
+   RECEIPT MODAL
+   ========================================================= */
+
+#refundReceiptModal.refundReceiptModal {
+
+    position:
+        fixed !important;
+
+    inset:
+        0 !important;
+
+    z-index:
+        2147483440 !important;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        18px;
+
+    background:
+        rgba(0, 0, 0, .9);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+}
+
+
+#refundReceiptModal.refundReceiptModal.active {
+
+    display:
+        flex !important;
+}
+
+
+.refundReceiptPanel {
+
+    width:
+        min(
+            700px,
+            calc(100vw - 28px)
+        );
+
+    max-height:
+        calc(100vh - 28px);
+
+    overflow-y:
+        auto;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+    border-radius:
+        20px;
+
+    background:
+        #080c12;
+
+    box-shadow:
+        0 40px 130px
+        rgba(0, 0, 0, .85);
+
+    color:
+        #dbe4ec;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+.refundReceiptModalHeader {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    padding:
+        18px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .05);
+}
+
+
+/* =========================================================
+   RECEIPT DOCUMENT
+   ========================================================= */
+
+.refundReceiptDocument {
+
+    margin:
+        16px;
+
+    padding:
+        22px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .06);
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(255, 255, 255, .015);
+}
+
+
+.refundReceiptBrand {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+}
+
+
+.refundReceiptBrand h1 {
+
+    margin:
+        0;
+
+    color:
+        #f4f7fa;
+
+    font-size:
+        23px;
+}
+
+
+.refundReceiptBrand p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #7f8c99;
+
+    font-size:
+        10px;
+}
+
+
+.refundReceiptMark {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .15);
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(244, 63, 94, .045);
+
+    color:
+        #fda4af;
+
+    font-size:
+        18px;
+}
+
+
+.refundReceiptStatus {
+
+    width:
+        fit-content;
+
+    margin-top:
+        15px;
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(52, 211, 153, .14);
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(52, 211, 153, .035);
+
+    color:
+        #86efac;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+}
+
+
+.refundReceiptReferenceGrid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        8px;
+
+    margin-top:
+        15px;
+}
+
+
+.refundReceiptReferenceGrid > div,
+.refundReceiptFinanceGrid > div {
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .045);
+
+    border-radius:
+        9px;
+
+    background:
+        rgba(0, 0, 0, .14);
+}
+
+
+.refundReceiptReferenceGrid small,
+.refundReceiptFinanceGrid small {
+
+    display:
+        block;
+
+    color:
+        #74818f;
+
+    font-size:
+        8px;
+}
+
+
+.refundReceiptReferenceGrid strong,
+.refundReceiptFinanceGrid strong {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        #d6dee7;
+
+    font-size:
+        11px;
+}
+
+
+.refundReceiptAmountCard {
+
+    margin-top:
+        14px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .12);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(244, 63, 94, .035);
+
+    text-align:
+        center;
+}
+
+
+.refundReceiptAmountCard small {
+
+    display:
+        block;
+
+    color:
+        #a98791;
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.refundReceiptAmountCard strong {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #fda4af;
+
+    font-size:
+        24px;
+}
+
+
+.refundReceiptSection {
+
+    margin-top:
+        15px;
+}
+
+
+.refundReceiptSection[hidden] {
+
+    display:
+        none !important;
+}
+
+
+.refundReceiptSectionTitle {
+
+    margin-bottom:
+        7px;
+
+    color:
+        #72808e;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .09em;
+}
+
+
+.refundReceiptRows > div {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+    padding:
+        8px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .04);
+
+    font-size:
+        10px;
+}
+
+
+.refundReceiptRows span {
+
+    color:
+        #778492;
+}
+
+
+.refundReceiptRows strong {
+
+    max-width:
+        65%;
+
+    overflow-wrap:
+        anywhere;
+
+    color:
+        #ced7e0;
+
+    text-align:
+        right;
+}
+
+
+.refundReceiptFinanceGrid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        7px;
+}
+
+
+.refundReceiptNotes {
+
+    padding:
+        10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .045);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(0, 0, 0, .14);
+
+    color:
+        #9ba7b4;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.55;
+
+    white-space:
+        pre-wrap;
+}
+
+
+.refundReceiptAudit {
+
+    margin-top:
+        17px;
+
+    padding-top:
+        12px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .05);
+
+    color:
+        #697684;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.55;
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   RECEIPT ACTIONS
+   ========================================================= */
+
+.refundReceiptActions {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        8px;
+
+    padding:
+        13px 18px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, .05);
+}
+
+
+.refundReceiptBackBtn,
+.refundReceiptPrintBtn {
+
+    min-height:
+        37px;
+
+    padding:
+        0 13px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+}
+
+
+.refundReceiptBackBtn {
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .07);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    color:
+        #9eabb7;
+}
+
+
+.refundReceiptPrintBtn {
+
+    border:
+        1px solid
+        rgba(251, 113, 133, .15);
+
+    background:
+        linear-gradient(
+            135deg,
+            #be123c,
+            #9f1239
+        );
+
+    color:
+        #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+    #refundHistoryModal.refundHistoryModal,
+    #refundReceiptModal.refundReceiptModal {
+
+        padding:
+            7px;
+    }
+
+
+    .refundHistoryPanel,
+    .refundReceiptPanel {
+
+        width:
+            calc(100vw - 14px);
+
+        max-height:
+            calc(100vh - 14px);
+    }
+
+
+    .refundHistoryBooking {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .refundHistorySummary {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .refundHistoryMetaGrid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .refundHistoryToolbar {
+
+        flex-direction:
+            column;
+    }
+
+
+    .refundHistoryRefreshBtn {
+
+        min-height:
+            39px;
+    }
+
+
+    .refundHistoryPosition {
+
+        flex-direction:
+            column;
+    }
+
+
+    .refundReceiptFinanceGrid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .refundReceiptReferenceGrid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+/* =========================================================
+   RANSAN TRAVELS
+   REFUND HISTORY + REFUND RECEIPT
+   READABILITY V2
+   ---------------------------------------------------------
+   CSS ONLY
+
+   Purpose:
+   - Increase all modal typography
+   - Improve contrast
+   - Improve labels and values
+   - Improve transaction cards
+   - Improve receipt readability
+   - Improve buttons/search
+   - Preserve all existing functionality
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL MODAL FONT
+   ========================================================= */
+
+#refundHistoryModal,
+#refundHistoryModal *,
+#refundReceiptModal,
+#refundReceiptModal * {
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif !important;
+
+}
+
+
+/* =========================================================
+   2. MAIN HISTORY PANEL
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryPanel {
+
+    color:
+        #e5edf5 !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.5 !important;
+
+}
+
+
+/* =========================================================
+   3. HISTORY HEADER
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryEyebrow {
+
+    color:
+        #fb8fa0 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        800 !important;
+
+    letter-spacing:
+        .11em !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryHeader h2 {
+
+    margin-top:
+        5px !important;
+
+    color:
+        #f8fafc !important;
+
+    font-size:
+        23px !important;
+
+    line-height:
+        1.25 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryHeader p {
+
+    margin-top:
+        7px !important;
+
+    color:
+        #aab6c3 !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.55 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryHeaderIcon {
+
+    color:
+        #fda4af !important;
+
+    font-size:
+        21px !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryClose {
+
+    color:
+        #d4dde6 !important;
+
+    font-size:
+        15px !important;
+
+}
+
+
+/* =========================================================
+   4. CUSTOMER / BOOKING INFORMATION
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryBooking small {
+
+    color:
+        #9aa8b6 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryBooking strong {
+
+    margin-top:
+        5px !important;
+
+    color:
+        #f0f4f8 !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        750 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryBooking span {
+
+    margin-top:
+        4px !important;
+
+    color:
+        #a9b5c1 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+/* =========================================================
+   5. ENVIRONMENT BADGE
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryEnvironment {
+
+    padding:
+        5px 9px !important;
+
+    color:
+        #9af3c4 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryEnvironment.test {
+
+    color:
+        #fde68a !important;
+
+}
+
+
+/* =========================================================
+   6. SUMMARY CARDS
+   ========================================================= */
+
+#refundHistoryModal .refundHistorySummary small {
+
+    color:
+        #9ca9b6 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+#refundHistoryModal .refundHistorySummary strong {
+
+    margin-top:
+        6px !important;
+
+    color:
+        #f0f5fa !important;
+
+    font-size:
+        17px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+#refundHistoryModal
+.refundHistorySummary
+.refundHistoryTotalAmount {
+
+    color:
+        #fda4af !important;
+
+    font-size:
+        18px !important;
+
+}
+
+
+/* =========================================================
+   7. SEARCH FIELD
+   ========================================================= */
+
+#refundHistoryModal .refundHistorySearchWrap {
+
+    min-height:
+        45px !important;
+
+}
+
+
+#refundHistoryModal .refundHistorySearchWrap input {
+
+    color:
+        #eef3f8 !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+#refundHistoryModal
+.refundHistorySearchWrap
+input::placeholder {
+
+    color:
+        #82909e !important;
+
+    opacity:
+        1 !important;
+
+}
+
+
+/* =========================================================
+   8. REFRESH BUTTON
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryRefreshBtn {
+
+    min-height:
+        45px !important;
+
+    padding:
+        0 16px !important;
+
+    color:
+        #d7e0e9 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        750 !important;
+
+}
+
+
+/* =========================================================
+   9. TRANSACTION TYPE BADGE
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryTypeBadge {
+
+    padding:
+        6px 9px !important;
+
+    color:
+        #fda4af !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .04em !important;
+
+}
+
+
+/* =========================================================
+   10. REFUND AMOUNT
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryAmount {
+
+    color:
+        #fb8fa0 !important;
+
+    font-size:
+        20px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        850 !important;
+
+}
+
+
+/* =========================================================
+   11. REFUND DATE
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryDate {
+
+    color:
+        #b1bdc9 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        600 !important;
+
+}
+
+
+/* =========================================================
+   12. TRANSACTION META LABELS
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryMetaGrid small {
+
+    color:
+        #94a2b0 !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        750 !important;
+
+    text-transform:
+        uppercase !important;
+
+    letter-spacing:
+        .035em !important;
+
+}
+
+
+/* =========================================================
+   13. TRANSACTION META VALUES
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryMetaGrid strong {
+
+    margin-top:
+        5px !important;
+
+    color:
+        #e4ebf2 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.45 !important;
+
+    font-weight:
+        650 !important;
+
+}
+
+
+/* =========================================================
+   14. FINANCIAL POSITION
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryPosition span {
+
+    padding:
+        8px 10px !important;
+
+    color:
+        #bdc8d3 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        600 !important;
+
+}
+
+
+/* =========================================================
+   15. REFUND NOTES
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryNotes {
+
+    padding:
+        11px !important;
+
+    color:
+        #bec9d4 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.6 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+/* =========================================================
+   16. RECORDED BY
+   ========================================================= */
+
+#refundHistoryModal
+.refundHistoryItemFooter > span {
+
+    color:
+        #9eabb8 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+/* =========================================================
+   17. VIEW RECEIPT BUTTON
+   ========================================================= */
+
+#refundHistoryModal
+.refundHistoryItemFooter button {
+
+    min-height:
+        36px !important;
+
+    padding:
+        0 13px !important;
+
+    color:
+        #ffc0c9 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+/* =========================================================
+   18. EMPTY / LOADING STATE
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryLoading,
+#refundHistoryModal .refundHistoryEmpty {
+
+    color:
+        #aebac6 !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.55 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryEmpty strong {
+
+    color:
+        #edf3f8 !important;
+
+    font-size:
+        15px !important;
+
+    font-weight:
+        750 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryEmpty p {
+
+    color:
+        #a5b1bd !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.6 !important;
+
+}
+
+
+/* =========================================================
+   19. HISTORY FOOTER
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryFooter {
+
+    color:
+        #9eabb8 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.4 !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryFooter button {
+
+    min-height:
+        38px !important;
+
+    padding:
+        0 15px !important;
+
+    color:
+        #d7e0e8 !important;
+
+    font-size:
+        12px !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+/* =========================================================
+   20. REFUND RECEIPT MAIN PANEL
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptPanel {
+
+    color:
+        #e5edf5 !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.5 !important;
+
+}
+
+
+/* =========================================================
+   21. RECEIPT HEADER
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptEyebrow {
+
+    color:
+        #fb8fa0 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .1em !important;
+
+}
+
+
+#refundReceiptModal
+.refundReceiptModalHeader h2 {
+
+    margin-top:
+        5px !important;
+
+    color:
+        #f8fafc !important;
+
+    font-size:
+        22px !important;
+
+    line-height:
+        1.25 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+#refundReceiptModal .refundReceiptClose {
+
+    color:
+        #d3dce5 !important;
+
+    font-size:
+        15px !important;
+
+}
+
+
+/* =========================================================
+   22. RANSAN BRAND
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptBrand h1 {
+
+    color:
+        #f8fafc !important;
+
+    font-size:
+        25px !important;
+
+    line-height:
+        1.25 !important;
+
+    font-weight:
+        850 !important;
+
+}
+
+
+#refundReceiptModal .refundReceiptBrand p {
+
+    margin-top:
+        6px !important;
+
+    color:
+        #a5b1bd !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.4 !important;
+
+    font-weight:
+        550 !important;
+
+}
+
+
+/* =========================================================
+   23. RECEIPT STATUS
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptStatus {
+
+    padding:
+        6px 9px !important;
+
+    color:
+        #9af3c4 !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .045em !important;
+
+}
+
+
+/* =========================================================
+   24. RECEIPT REFERENCE LABELS
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptReferenceGrid small {
+
+    color:
+        #9aa8b6 !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        750 !important;
+
+    text-transform:
+        uppercase !important;
+
+}
+
+
+/* =========================================================
+   25. RECEIPT REFERENCE VALUES
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptReferenceGrid strong {
+
+    margin-top:
+        5px !important;
+
+    color:
+        #edf3f8 !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.45 !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+/* =========================================================
+   26. REFUND AMOUNT CARD
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptAmountCard small {
+
+    color:
+        #d3a5ad !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .08em !important;
+
+}
+
+
+#refundReceiptModal
+.refundReceiptAmountCard strong {
+
+    margin-top:
+        7px !important;
+
+    color:
+        #fda4af !important;
+
+    font-size:
+        28px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        850 !important;
+
+}
+
+
+/* =========================================================
+   27. RECEIPT SECTION TITLES
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptSectionTitle {
+
+    margin-bottom:
+        9px !important;
+
+    color:
+        #a6b2be !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.3 !important;
+
+    font-weight:
+        850 !important;
+
+    letter-spacing:
+        .075em !important;
+
+    text-transform:
+        uppercase !important;
+
+}
+
+
+/* =========================================================
+   28. RECEIPT ROW LABELS
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptRows span {
+
+    color:
+        #a7b3bf !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.45 !important;
+
+    font-weight:
+        550 !important;
+
+}
+
+
+/* =========================================================
+   29. RECEIPT ROW VALUES
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptRows strong {
+
+    color:
+        #edf3f8 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.45 !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+/* =========================================================
+   30. FINANCIAL POSITION LABELS
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptFinanceGrid small {
+
+    color:
+        #99a7b5 !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        700 !important;
+
+}
+
+
+/* =========================================================
+   31. FINANCIAL POSITION VALUES
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptFinanceGrid strong {
+
+    margin-top:
+        6px !important;
+
+    color:
+        #f0f5f9 !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.35 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+/* =========================================================
+   32. RECEIPT NOTES
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptNotes {
+
+    color:
+        #c3cdd7 !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.65 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+/* =========================================================
+   33. AUDIT MESSAGE
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptAudit {
+
+    color:
+        #98a5b2 !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.65 !important;
+
+    font-weight:
+        500 !important;
+
+}
+
+
+/* =========================================================
+   34. RECEIPT BUTTONS
+   ========================================================= */
+
+#refundReceiptModal
+.refundReceiptBackBtn,
+#refundReceiptModal
+.refundReceiptPrintBtn {
+
+    min-height:
+        42px !important;
+
+    padding:
+        0 16px !important;
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.2 !important;
+
+    font-weight:
+        800 !important;
+
+}
+
+
+#refundReceiptModal
+.refundReceiptBackBtn {
+
+    color:
+        #d4dde6 !important;
+
+}
+
+
+#refundReceiptModal
+.refundReceiptPrintBtn {
+
+    color:
+        #ffffff !important;
+
+}
+
+
+/* =========================================================
+   35. IMPROVE CARD SPACING
+   ========================================================= */
+
+#refundHistoryModal .refundHistoryItem {
+
+    padding:
+        16px !important;
+
+}
+
+
+#refundHistoryModal .refundHistoryMetaGrid {
+
+    gap:
+        9px !important;
+
+    margin-top:
+        14px !important;
+
+}
+
+
+#refundHistoryModal
+.refundHistoryMetaGrid > div {
+
+    padding:
+        11px !important;
+
+}
+
+
+/* =========================================================
+   36. RECEIPT DOCUMENT SPACING
+   ========================================================= */
+
+#refundReceiptModal .refundReceiptDocument {
+
+    padding:
+        24px !important;
+
+}
+
+
+#refundReceiptModal .refundReceiptSection {
+
+    margin-top:
+        18px !important;
+
+}
+
+
+#refundReceiptModal .refundReceiptRows > div {
+
+    padding:
+        10px 0 !important;
+
+}
+
+
+/* =========================================================
+   37. MOBILE READABILITY
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+    #refundHistoryModal
+    .refundHistoryHeader h2 {
+
+        font-size:
+            20px !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryHeader p {
+
+        font-size:
+            12px !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryBooking small,
+    #refundHistoryModal
+    .refundHistorySummary small {
+
+        font-size:
+            10px !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryBooking strong {
+
+        font-size:
+            13px !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryMetaGrid {
+
+        grid-template-columns:
+            1fr !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryMetaGrid small {
+
+        font-size:
+            10px !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryMetaGrid strong {
+
+        font-size:
+            12px !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryItemFooter {
+
+        align-items:
+            flex-start !important;
+
+        flex-direction:
+            column !important;
+
+    }
+
+
+    #refundHistoryModal
+    .refundHistoryItemFooter button {
+
+        width:
+            100% !important;
+
+        min-height:
+            40px !important;
+
+    }
+
+
+    #refundReceiptModal
+    .refundReceiptModalHeader h2 {
+
+        font-size:
+            19px !important;
+
+    }
+
+
+    #refundReceiptModal
+    .refundReceiptBrand h1 {
+
+        font-size:
+            22px !important;
+
+    }
+
+
+    #refundReceiptModal
+    .refundReceiptFinanceGrid {
+
+        grid-template-columns:
+            1fr 1fr !important;
+
+    }
+
+
+    #refundReceiptModal
+    .refundReceiptRows span,
+    #refundReceiptModal
+    .refundReceiptRows strong {
+
+        font-size:
+            12px !important;
+
+    }
+
+
+    #refundReceiptModal
+    .refundReceiptActions {
+
+        flex-direction:
+            column-reverse !important;
+
+    }
+
+
+    #refundReceiptModal
+    .refundReceiptBackBtn,
+    #refundReceiptModal
+    .refundReceiptPrintBtn {
+
+        width:
+            100% !important;
+
+        min-height:
+            44px !important;
+
+    }
+
+}

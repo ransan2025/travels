@@ -1,0 +1,3222 @@
+
+/* =========================================================
+   BOOKING MODIFICATION CENTER
+   BLACK GLASS / GLOSSY GLASSMORPHISM
+   ========================================================= */
+
+.modificationCenter {
+    --mod-bg: #050505;
+    --mod-surface: #090909;
+    --mod-surface-2: #0d0d0d;
+    --mod-surface-3: #111111;
+
+    --mod-border: rgba(255, 255, 255, 0.09);
+    --mod-border-soft: rgba(255, 255, 255, 0.055);
+
+    --mod-text: #f5f5f5;
+    --mod-text-soft: rgba(255, 255, 255, 0.62);
+    --mod-text-muted: rgba(255, 255, 255, 0.42);
+
+    position: relative;
+
+    margin: 20px 0;
+    padding: 22px;
+
+    border: 1px solid var(--mod-border);
+    border-radius: 20px;
+
+    /*
+     * IMPORTANT:
+     * Use black instead of transparent white.
+     * This prevents gray showing through from the page.
+     */
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 18, 18, 0.98),
+            rgba(5, 5, 5, 0.99)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    color: var(--mod-text);
+}
+
+
+/* =========================================================
+   TOP GLASS HIGHLIGHT
+   ========================================================= */
+
+.modificationCenter::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.14),
+        transparent
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.modificationHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.modificationHeader h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
+}
+
+
+.modificationSubtitle {
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.modificationHeaderActions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+   ========================================================= */
+
+.modFilterBtn,
+.modRefreshBtn {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 35px;
+
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(25, 25, 25, 0.95),
+            rgba(10, 10, 10, 0.98)
+        );
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 5px 18px rgba(0, 0, 0, 0.3);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.modFilterBtn:hover,
+.modRefreshBtn:hover {
+    transform: translateY(-1px);
+
+    background:
+        linear-gradient(
+            180deg,
+            #1a1a1a,
+            #0d0d0d
+        );
+
+    border-color: rgba(255, 255, 255, 0.15);
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+
+.modFilterBtn:active,
+.modRefreshBtn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ACTIVE FILTER PILL
+   ========================================================= */
+
+.modFilterBtn.active {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.28),
+            rgba(29, 78, 216, 0.12)
+        );
+
+    border-color:
+        rgba(96, 165, 250, 0.42);
+
+    color: #93c5fd;
+
+    box-shadow:
+        0 0 20px rgba(37, 99, 235, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+.modFilterBtn span {
+    margin-left: 5px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.modificationToolbar {
+    margin-top: 16px;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+#modificationSearch {
+    width: 100%;
+    height: 43px;
+
+    box-sizing: border-box;
+
+    padding: 0 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 12px;
+
+    outline: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111111,
+            #070707
+        );
+
+    color: #f5f5f5;
+
+    font-size: 13px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.8),
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+#modificationSearch::placeholder {
+    color: rgba(255, 255, 255, 0.32);
+}
+
+
+#modificationSearch:hover {
+    border-color:
+        rgba(255, 255, 255, 0.13);
+}
+
+
+#modificationSearch:focus {
+    border-color:
+        rgba(96, 165, 250, 0.42);
+
+    background:
+        linear-gradient(
+            145deg,
+            #141414,
+            #080808
+        );
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.08),
+        0 12px 35px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   REQUEST LIST
+   ---------------------------------------------------------
+   Only the booking list scrolls.
+   Header + search remain visible.
+   ========================================================= */
+
+.modificationRequestList {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 17px;
+
+    /*
+     * Main scrolling area.
+     * Adjust 560px if you want the list taller/shorter.
+     */
+    max-height: 560px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /*
+     * Keep scrollbar from changing content width.
+     */
+    scrollbar-gutter: stable;
+
+    /*
+     * Small inner spacing so cards don't touch scrollbar.
+     */
+    padding: 2px 6px 6px 2px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   REQUEST LIST SCROLLBAR
+   ========================================================= */
+
+.modificationRequestList {
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(255, 255, 255, 0.18)
+        transparent;
+}
+
+.modificationRequestList::-webkit-scrollbar {
+    width: 7px;
+}
+
+.modificationRequestList::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modificationRequestList::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.22),
+            rgba(255, 255, 255, 0.10)
+        );
+
+    border-radius: 999px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modificationRequestList::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.32),
+            rgba(255, 255, 255, 0.16)
+        );
+}
+
+
+
+/* =========================================================
+   REQUEST CARD
+   ========================================================= */
+
+/* =========================================================
+   REQUEST CARD
+   ========================================================= */
+
+.modificationRequestCard {
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    padding: 16px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.095);
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 18, 18, 0.98),
+            rgba(7, 7, 7, 0.99)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.42),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.modificationRequestCard:hover {
+    transform: translateY(-1px);
+
+    border-color:
+        rgba(255, 255, 255, 0.16);
+
+    box-shadow:
+        0 16px 38px rgba(0, 0, 0, 0.55),
+        0 0 24px rgba(59, 130, 246, 0.025),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   CARD TOP SHINE
+   ========================================================= */
+
+.modificationRequestCard::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 7%;
+    right: 7%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.13),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.modificationRequestTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   BOOKING ID
+   ========================================================= */
+
+.modificationBookingId {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    line-height: 1.4;
+
+    letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   CUSTOMER
+   ========================================================= */
+
+.modificationCustomer {
+    margin-top: 4px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   STATUS PILL
+   ========================================================= */
+
+.modificationStatus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 27px;
+
+    padding: 5px 11px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    border: 1px solid transparent;
+
+    white-space: nowrap;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   PENDING PILL
+   ========================================================= */
+
+.modificationStatus.pending {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(245, 158, 11, 0.20),
+            rgba(120, 53, 15, 0.12)
+        );
+
+    border-color:
+        rgba(245, 158, 11, 0.30);
+
+    color: #fbbf24;
+
+    box-shadow:
+        0 0 18px rgba(245, 158, 11, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   APPROVED PILL
+   ========================================================= */
+
+.modificationStatus.approved {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.20),
+            rgba(20, 83, 45, 0.12)
+        );
+
+    border-color:
+        rgba(34, 197, 94, 0.30);
+
+    color: #4ade80;
+
+    box-shadow:
+        0 0 18px rgba(34, 197, 94, 0.07);
+}
+
+/* =========================================================
+   MODERN METADATA PILLS
+========================================================= */
+
+/* =========================================================
+   BOOKING META
+   ========================================================= */
+
+.modificationMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 12px;
+    padding-top: 1px;
+}
+
+
+/* Base pill */
+
+.modificationTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    min-height: 30px;
+    padding: 4px 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 11px;
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035),
+        0 4px 14px rgba(0, 0, 0, 0.10);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.modificationTag:hover {
+    transform: translateY(-1px);
+
+    border-color:
+        rgba(255, 255, 255, 0.14);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   PILL ICON
+========================================================= */
+
+.modificationTagIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.modificationTagLabel {
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.modificationTagValue {
+    font-size: 11px;
+    font-weight: 750;
+
+    color: #f8fafc;
+}
+
+
+/* =========================================================
+   SERVICE PILL
+========================================================= */
+
+.modificationServiceTag {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.13),
+            rgba(59, 130, 246, 0.035)
+        );
+
+    border-color:
+        rgba(96, 165, 250, 0.16);
+}
+
+
+.modificationServiceTag .modificationTagIcon {
+    background:
+        rgba(59, 130, 246, 0.18);
+
+    color: #93c5fd;
+}
+
+
+.modificationServiceTag .modificationTagLabel {
+    color: #93c5fd;
+}
+
+
+/* =========================================================
+   CHANGE TYPE PILL
+========================================================= */
+
+.modificationTypeTag {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.13),
+            rgba(139, 92, 246, 0.035)
+        );
+
+    border-color:
+        rgba(167, 139, 250, 0.16);
+}
+
+
+.modificationTypeTag .modificationTagIcon {
+    background:
+        rgba(139, 92, 246, 0.18);
+
+    color: #c4b5fd;
+}
+
+
+.modificationTypeTag .modificationTagLabel {
+    color: #c4b5fd;
+}
+
+
+/* =========================================================
+   DATE PILL
+========================================================= */
+
+.modificationDateTag {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    border-color:
+        rgba(255, 255, 255, 0.075);
+}
+
+
+.modificationDateTag .modificationTagIcon {
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color:
+        rgba(255, 255, 255, 0.68);
+}
+
+
+.modificationDateTag .modificationTagLabel {
+    color:
+        rgba(255, 255, 255, 0.48);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .modificationMeta {
+        gap: 6px;
+    }
+
+    .modificationTag {
+        min-height: 29px;
+        padding: 4px 9px;
+    }
+
+    .modificationTagLabel {
+        font-size: 8px;
+    }
+
+    .modificationTagValue {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================================
+   REJECTED PILL
+   ========================================================= */
+
+.modificationStatus.rejected {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 68, 68, 0.20),
+            rgba(127, 29, 29, 0.12)
+        );
+
+    border-color:
+        rgba(239, 68, 68, 0.30);
+
+    color: #f87171;
+
+    box-shadow:
+        0 0 18px rgba(239, 68, 68, 0.07);
+}
+
+
+
+
+/* =========================================================
+   SERVICE PILL
+   ========================================================= */
+
+.modificationTag:first-child {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.20),
+            rgba(30, 64, 175, 0.08)
+        );
+
+    border-color:
+        rgba(96, 165, 250, 0.22);
+
+    color: #93c5fd;
+
+    box-shadow:
+        0 0 14px rgba(59, 130, 246, 0.05);
+}
+
+
+/* =========================================================
+   REQUEST TYPE PILL
+   ========================================================= */
+
+.modificationTag:nth-child(2) {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.20),
+            rgba(76, 29, 149, 0.08)
+        );
+
+    border-color:
+        rgba(167, 139, 250, 0.22);
+
+    color: #c4b5fd;
+
+    box-shadow:
+        0 0 14px rgba(139, 92, 246, 0.05);
+}
+
+
+/* =========================================================
+   DATE / TIMESTAMP PILL
+   ========================================================= */
+
+.modificationTag:nth-child(3) {
+    background:
+        linear-gradient(
+            180deg,
+            #151515,
+            #0a0a0a
+        );
+
+    border-color:
+        rgba(255, 255, 255, 0.075);
+
+    color:
+        rgba(255, 255, 255, 0.58);
+}
+
+
+/* =========================================================
+   REQUESTED CHANGE PANEL
+   ========================================================= */
+
+/* =========================================================
+   REQUESTED CHANGE
+   ========================================================= */
+
+.modificationDetails {
+    position: relative;
+
+    margin-top: 12px;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.065);
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b0b0b,
+            #050505
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.035),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================================================
+   REQUESTED CHANGE TITLE
+   ========================================================= */
+
+.modificationDetails > strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #f1f5f9;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHANGE ROW
+   ========================================================= */
+
+.modificationChangeRow {
+    display: grid;
+
+    grid-template-columns:
+        minmax(120px, 0.45fr)
+        minmax(220px, 1fr);
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+
+.modificationChangeRow:last-child {
+    border-bottom: 0;
+
+    padding-bottom: 0;
+}
+
+
+/* =========================================================
+   CHANGE LABEL
+   ========================================================= */
+
+.modificationChangeLabel {
+    color: rgba(255, 255, 255, 0.56);
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   VALUE CONTAINER
+   ========================================================= */
+
+.modificationChangeValues {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   OLD VALUE PILL
+   ========================================================= */
+
+.modificationOldValue {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 68, 68, 0.13),
+            rgba(127, 29, 29, 0.07)
+        );
+
+    border: 1px solid rgba(239, 68, 68, 0.18);
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   ARROW
+   ========================================================= */
+
+.modificationArrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.055);
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   NEW VALUE PILL
+   ========================================================= */
+
+.modificationNewValue {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+
+    max-width: 100%;
+
+    padding: 4px 11px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.18),
+            rgba(20, 83, 45, 0.08)
+        );
+
+    border: 1px solid rgba(34, 197, 94, 0.23);
+
+    color: #86efac;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+
+    box-shadow:
+        0 0 15px rgba(34, 197, 94, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   NO CHANGE
+   ========================================================= */
+
+.modificationNoChange {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 29px;
+
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    background:
+        #101010;
+
+    border: 1px solid rgba(255, 255, 255, 0.055);
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   REASON
+   ========================================================= */
+
+.modificationReason {
+    margin-top: 12px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+.modificationReason strong {
+    margin-right: 4px;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.modificationActions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 13px;
+
+    flex-wrap: wrap;
+}
+
+
+.modificationActions button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    border: 1px solid transparent;
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.modificationActions button:hover {
+    transform: translateY(-1px);
+}
+
+
+.modificationActions button:active {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 800px) {
+
+    .modificationRequestList {
+        max-height: 520px;
+
+        gap: 12px;
+
+        padding-right: 5px;
+    }
+
+    .modificationRequestCard {
+        padding: 14px;
+        border-radius: 15px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .modificationRequestList {
+        max-height: 500px;
+
+        gap: 11px;
+
+        padding-right: 4px;
+    }
+
+}
+
+
+
+/* =========================================================
+   VIEW BOOKING
+   ========================================================= */
+
+.modViewBtn {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.18),
+            rgba(30, 64, 175, 0.08)
+        );
+
+    border-color:
+        rgba(96, 165, 250, 0.20) !important;
+
+    color: #60a5fa;
+
+    box-shadow:
+        0 6px 20px rgba(59, 130, 246, 0.07);
+}
+
+
+.modViewBtn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59, 130, 246, 0.28),
+            rgba(30, 64, 175, 0.12)
+        );
+
+    border-color:
+        rgba(96, 165, 250, 0.34) !important;
+
+    box-shadow:
+        0 8px 25px rgba(59, 130, 246, 0.12);
+}
+
+
+/* =========================================================
+   APPROVE
+   ========================================================= */
+
+.modApproveBtn {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.19),
+            rgba(20, 83, 45, 0.08)
+        );
+
+    border-color:
+        rgba(74, 222, 128, 0.20) !important;
+
+    color: #4ade80;
+
+    box-shadow:
+        0 6px 20px rgba(34, 197, 94, 0.06);
+}
+
+
+.modApproveBtn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.29),
+            rgba(20, 83, 45, 0.13)
+        );
+
+    border-color:
+        rgba(74, 222, 128, 0.35) !important;
+
+    box-shadow:
+        0 8px 25px rgba(34, 197, 94, 0.11);
+}
+
+
+/* =========================================================
+   REJECT
+   ========================================================= */
+
+.modRejectBtn {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 68, 68, 0.18),
+            rgba(127, 29, 29, 0.08)
+        );
+
+    border-color:
+        rgba(248, 113, 113, 0.20) !important;
+
+    color: #f87171;
+
+    box-shadow:
+        0 6px 20px rgba(239, 68, 68, 0.06);
+}
+
+
+.modRejectBtn:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239, 68, 68, 0.29),
+            rgba(127, 29, 29, 0.13)
+        );
+
+    border-color:
+        rgba(248, 113, 113, 0.35) !important;
+
+    box-shadow:
+        0 8px 25px rgba(239, 68, 68, 0.11);
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.modificationEmpty,
+.modificationLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 120px;
+
+    padding: 25px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+
+    background:
+        #090909;
+
+    color: rgba(255, 255, 255, 0.40);
+
+    font-size: 13px;
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .modificationCenter {
+        padding: 15px;
+
+        border-radius: 17px;
+    }
+
+
+    .modificationHeader {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 14px;
+    }
+
+
+    .modificationHeaderActions {
+        justify-content: flex-start;
+    }
+
+
+    .modificationRequestCard {
+        padding: 14px;
+
+        border-radius: 15px;
+    }
+
+
+    .modificationRequestTop {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .modificationStatus {
+        align-self: flex-start;
+    }
+
+
+    .modificationMeta {
+        gap: 6px;
+    }
+
+
+    .modificationDetails {
+        padding: 12px;
+    }
+
+
+    .modificationChangeRow {
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+
+        padding: 10px 0;
+    }
+
+
+    .modificationChangeLabel {
+        font-size: 11px;
+
+        color: rgba(255, 255, 255, 0.45);
+    }
+
+
+    .modificationChangeValues {
+        gap: 6px;
+    }
+
+
+    .modificationActions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 7px;
+    }
+
+
+    .modificationActions button {
+        width: 100%;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .modificationCenter {
+        margin-top: 12px;
+        margin-bottom: 12px;
+
+        padding: 10px;
+
+        border-radius: 14px;
+    }
+
+
+    .modificationRequestCard {
+        padding: 12px;
+
+        border-radius: 13px;
+    }
+
+
+    .modificationHeader h2 {
+        font-size: 16px;
+    }
+
+
+    .modificationSubtitle {
+        font-size: 12px;
+    }
+
+
+    .modificationHeaderActions {
+        width: 100%;
+    }
+
+
+    .modFilterBtn,
+    .modRefreshBtn {
+        flex: 1;
+
+        min-width: 0;
+
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+
+    .modificationChangeValues {
+        width: 100%;
+    }
+
+
+    .modificationOldValue,
+    .modificationNewValue {
+        max-width: 100%;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    .modificationActions {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .modificationRequestCard,
+    .modFilterBtn,
+    .modRefreshBtn,
+    .modificationActions button {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   VIEW BOOKING MODAL
+   MODERN BLACK GLASS / GLASSMORPHISM
+========================================================= */
+
+.modificationBookingModal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.78);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    animation: modificationModalFadeIn 0.18s ease;
+}
+
+
+/* =========================================================
+   MODAL PANEL
+========================================================= */
+
+.modificationBookingModalContent {
+    position: relative;
+
+    width: min(900px, 100%);
+    max-height: min(820px, 90vh);
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 12, 14, 0.98),
+            rgba(5, 5, 7, 0.98)
+        );
+
+    box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.75),
+        0 0 50px rgba(59, 130, 246, 0.035),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+    color: #f8fafc;
+
+    animation: modificationModalSlideIn 0.22s ease;
+}
+
+
+/* =========================================================
+   TOP HIGHLIGHT
+========================================================= */
+
+.modificationBookingModalContent::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.20),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modificationBookingModalHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 22px 16px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+
+.modificationBookingModalTitle {
+    margin: 0;
+
+    font-size: 17px;
+    font-weight: 850;
+
+    letter-spacing: -0.02em;
+
+    color: #f8fafc;
+}
+
+
+.modificationBookingModalSubtitle {
+    margin-top: 5px;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.modificationBookingModalClose {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color:
+        rgba(255, 255, 255, 0.60);
+
+    font-size: 19px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.modificationBookingModalClose:hover {
+    background:
+        rgba(239, 68, 68, 0.12);
+
+    border-color:
+        rgba(248, 113, 113, 0.25);
+
+    color: #f87171;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.modificationBookingModalBody {
+    padding: 18px 22px;
+
+    max-height:
+        calc(90vh - 150px);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   BOOKING SUMMARY
+========================================================= */
+
+.modificationBookingSummary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 9px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   SUMMARY ITEM
+========================================================= */
+
+.modificationBookingSummaryItem {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.075);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.050),
+            rgba(255, 255, 255, 0.014)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.030),
+        0 8px 24px rgba(0, 0, 0, 0.16);
+
+    transition:
+        border-color 0.18s ease,
+        transform 0.18s ease,
+        background 0.18s ease;
+}
+
+.modificationBookingSummaryItem:hover {
+    transform: translateY(-1px);
+
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.060),
+            rgba(255, 255, 255, 0.018)
+        );
+}
+
+/* =========================================================
+   SUMMARY LABEL
+========================================================= */
+
+.modificationBookingSummaryLabel {
+    margin-bottom: 5px;
+
+    color:
+        rgba(255, 255, 255, 0.40);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   SUMMARY VALUE
+========================================================= */
+
+.modificationBookingSummaryValue {
+    min-width: 0;
+
+    color: #f1f5f9;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   STATUS PILL
+========================================================= */
+
+.modificationBookingStatusPill {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    min-height: 22px;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.02em;
+
+    border: 1px solid transparent;
+
+    white-space: nowrap;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+.modificationBookingStatusPill.confirmed {
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, 0.10);
+
+    border-color:
+        rgba(34, 197, 94, 0.18);
+}
+
+
+.modificationBookingStatusPill.pending {
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, 0.10);
+
+    border-color:
+        rgba(245, 158, 11, 0.18);
+}
+
+
+.modificationBookingStatusPill.called {
+    color: #60a5fa;
+
+    background:
+        rgba(59, 130, 246, 0.10);
+
+    border-color:
+        rgba(59, 130, 246, 0.18);
+}
+
+
+.modificationBookingStatusPill.new {
+    color: #c4b5fd;
+
+    background:
+        rgba(139, 92, 246, 0.10);
+
+    border-color:
+        rgba(139, 92, 246, 0.18);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.modificationBookingSection {
+    margin-top: 16px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.modificationBookingSectionTitle {
+    display: flex;
+
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 9px;
+
+    color: #f1f5f9;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: -0.01em;
+}
+
+
+.modificationBookingSectionTitle::before {
+    content: "";
+
+    width: 4px;
+    height: 15px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #60a5fa,
+            #818cf8
+        );
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.modificationBookingDetailGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.modificationBookingDetailItem {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(110px, 0.42fr)
+        minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    padding: 10px 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.075);
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 5px 18px rgba(0, 0, 0, 0.12);
+
+    transition:
+        border-color 0.18s ease,
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+.modificationBookingDetailItem:hover {
+    border-color:
+        rgba(255, 255, 255, 0.12);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.020)
+        );
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   DETAIL LABEL
+========================================================= */
+
+.modificationBookingDetailLabel {
+    color: rgba(255, 255, 255, 0.52);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.07em;
+}
+
+
+/* =========================================================
+   DETAIL VALUE
+========================================================= */
+
+.modificationBookingDetailValue {
+    min-width: 0;
+
+    color: #f1f5f9;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   RAW DATA SECTION
+========================================================= */
+
+.modificationBookingRawSection {
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+
+    border-radius: 13px;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   RAW GRID
+========================================================= */
+
+.modificationBookingRawGrid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 6px;
+}
+
+
+/* =========================================================
+   RAW ITEM
+========================================================= */
+
+.modificationBookingRawItem {
+    min-width: 0;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+
+/* =========================================================
+   RAW LABEL
+========================================================= */
+
+.modificationBookingRawLabel {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color:
+        rgba(255, 255, 255, 0.34);
+
+    font-size: 9px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   RAW VALUE
+========================================================= */
+
+.modificationBookingRawValue {
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.modificationBookingModalFooter {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding: 13px 22px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.065);
+}
+
+
+/* =========================================================
+   CLOSE FOOTER BUTTON
+========================================================= */
+
+.modificationBookingModalDone {
+    min-height: 35px;
+
+    padding: 8px 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    font-size: 11px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        color 0.18s ease;
+}
+
+
+.modificationBookingModalDone:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.15);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   MODAL SCROLLBAR
+========================================================= */
+
+.modificationBookingModalBody::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modificationBookingModalBody::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modificationBookingModalBody::-webkit-scrollbar-thumb {
+    background:
+        rgba(255, 255, 255, 0.11);
+
+    border-radius: 999px;
+}
+
+.modificationBookingModalBody::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(255, 255, 255, 0.19);
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes modificationModalFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes modificationModalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .modificationBookingModal {
+        padding: 10px;
+    }
+
+    .modificationBookingModalContent {
+        max-height: 94vh;
+
+        border-radius: 17px;
+    }
+
+    .modificationBookingModalHeader {
+        padding: 16px;
+    }
+
+    .modificationBookingModalBody {
+        padding: 15px;
+
+        max-height: calc(94vh - 135px);
+    }
+
+    .modificationBookingSummary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .modificationBookingDetailGrid,
+    .modificationBookingRawGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .modificationBookingModalFooter {
+        padding: 12px 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .modificationBookingSummary {
+        grid-template-columns: 1fr;
+    }
+
+    .modificationBookingDetailItem {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .modificationBookingModalTitle {
+        font-size: 15px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .modificationBookingModal,
+    .modificationBookingModalContent {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   NOTES VALUE
+========================================================= */
+
+.modificationBookingNotesBox {
+    position: relative;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(255, 255, 255, 0.065);
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.035),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 11px;
+    font-weight: 550;
+
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025),
+        0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+/* subtle left accent */
+
+.modificationBookingNotesBox::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+
+    width: 3px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #60a5fa,
+            #818cf8
+        );
+
+    opacity: 0.9;
+}
+
+/* =========================================================
+   RANSAN DASHBOARD — NAVIGATION ACTIONS V2
+   Isolated from legacy reportShortcutBtn styles
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   NAVIGATION CONTAINER
+   --------------------------------------------------------- */
+
+.dashNavActions {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+
+    gap: 10px !important;
+
+    flex: 0 0 auto !important;
+
+    position: relative !important;
+
+    min-width: max-content !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   COMMON BUTTON
+   --------------------------------------------------------- */
+
+.dashNavBtn {
+    position: relative !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    transform: none !important;
+
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    min-width: 96px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+
+    margin: 0 !important;
+
+    padding: 6px 11px 6px 7px !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    gap: 8px !important;
+
+    border-radius: 14px !important;
+
+    cursor: pointer;
+
+    white-space: nowrap !important;
+
+    overflow: hidden;
+
+    box-sizing: border-box !important;
+
+    font-family: inherit;
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        background .18s ease,
+        box-shadow .18s ease !important;
+}
+
+
+/* Hover movement */
+.dashNavBtn:hover {
+    transform: translateY(-1px) !important;
+}
+
+
+/* ---------------------------------------------------------
+   ICON
+   --------------------------------------------------------- */
+
+.dashNavIcon {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 32px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+}
+
+
+/* ---------------------------------------------------------
+   TEXT
+   --------------------------------------------------------- */
+
+.dashNavCopy {
+    min-width: 0;
+
+    display: block;
+
+    text-align: left;
+
+    line-height: 1.05;
+}
+
+
+.dashNavCopy strong {
+    display: block;
+
+    margin: 0;
+
+    font-size: 9px;
+    font-weight: 850;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+
+.dashNavCopy small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 7px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CUSTOMERS — EMERALD
+   ========================================================= */
+
+.dashNavCustomers {
+    border:
+        1px solid rgba(52, 211, 153, .18) !important;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(52, 211, 153, .12),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(52, 211, 153, .09),
+            rgba(20, 184, 166, .035)
+        ),
+        rgba(8, 18, 20, .82) !important;
+
+    color: #eafff5 !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .045),
+        0 10px 28px rgba(0, 0, 0, .22) !important;
+}
+
+
+.dashNavCustomers .dashNavIcon {
+    border:
+        1px solid rgba(52, 211, 153, .18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(52, 211, 153, .16),
+            rgba(20, 184, 166, .06)
+        );
+
+    color: #a7f3d0;
+}
+
+
+.dashNavCustomers .dashNavCopy strong {
+    color: #dffbed;
+}
+
+
+.dashNavCustomers .dashNavCopy small {
+    color: #6e9987;
+}
+
+
+.dashNavCustomers:hover {
+    border-color:
+        rgba(52, 211, 153, .32) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .06),
+        0 13px 32px rgba(0, 0, 0, .28),
+        0 0 20px rgba(52, 211, 153, .04) !important;
+}
+
+
+/* =========================================================
+   REPORTS — INDIGO / BLUE
+   ========================================================= */
+
+.dashNavReports {
+    border:
+        1px solid rgba(99, 102, 241, .18) !important;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(99, 102, 241, .13),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(99, 102, 241, .10),
+            rgba(59, 130, 246, .035)
+        ),
+        rgba(10, 14, 32, .84) !important;
+
+    color: #eef0ff !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .045),
+        0 10px 28px rgba(0, 0, 0, .22) !important;
+}
+
+
+.dashNavReports .dashNavIcon {
+    border:
+        1px solid rgba(99, 102, 241, .18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(99, 102, 241, .17),
+            rgba(59, 130, 246, .06)
+        );
+
+    color: #c7d2fe;
+}
+
+
+.dashNavReports .dashNavCopy strong {
+    color: #e5e7ff;
+}
+
+
+.dashNavReports .dashNavCopy small {
+    color: #747da9;
+}
+
+
+.dashNavReports:hover {
+    border-color:
+        rgba(99, 102, 241, .34) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .06),
+        0 13px 32px rgba(0, 0, 0, .28),
+        0 0 20px rgba(99, 102, 241, .05) !important;
+}
+
+
+/* =========================================================
+   LOGOUT — ROSE
+   ========================================================= */
+
+.dashNavLogout {
+    min-width: 92px !important;
+
+    border:
+        1px solid rgba(251, 113, 133, .15) !important;
+
+    background:
+        radial-gradient(
+            circle at 0 0,
+            rgba(251, 113, 133, .11),
+            transparent 48%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(251, 113, 133, .075),
+            rgba(244, 63, 94, .025)
+        ),
+        rgba(24, 13, 27, .82) !important;
+
+    color: #fecdd3 !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .04),
+        0 10px 28px rgba(0, 0, 0, .22) !important;
+}
+
+
+.dashNavLogout .dashNavIcon {
+    border:
+        1px solid rgba(251, 113, 133, .15);
+
+    background:
+        rgba(251, 113, 133, .09);
+
+    color: #fb7185;
+}
+
+
+.dashNavLogout .dashNavCopy strong {
+    color: #fecdd3;
+}
+
+
+.dashNavLogout .dashNavCopy small {
+    color: #9b6c76;
+}
+
+
+.dashNavLogout:hover {
+    border-color:
+        rgba(251, 113, 133, .30) !important;
+}
+
+
+/* =========================================================
+   PREVENT TOPBAR COLLISION
+   ========================================================= */
+
+.top-actions {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: flex-end !important;
+
+    gap: 10px !important;
+
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* Search should absorb width reduction first */
+.top-actions .globalSearchWrap {
+    flex: 1 1 300px !important;
+
+    min-width: 180px !important;
+
+    max-width: 400px;
+}
+
+
+/* Fixed controls should never collapse */
+.top-actions .envSwitcher,
+.top-actions .notificationWrap,
+.top-actions .dashNavActions {
+    flex-shrink: 0 !important;
+}
+
+
+/* =========================================================
+   SMALLER LAPTOP
+   Hide secondary labels first
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .dashNavBtn {
+        min-width: auto !important;
+
+        padding-right: 9px !important;
+    }
+
+
+    .dashNavCopy small {
+        display: none;
+    }
+
+
+    .top-actions .globalSearchWrap {
+        max-width: 320px;
+    }
+
+}
+
+
+/* =========================================================
+   COMPACT LAPTOP
+   ========================================================= */
+
+@media (max-width: 1080px) {
+
+    .topbar {
+        flex-wrap: wrap !important;
+    }
+
+
+    .top-actions {
+        flex: 1 1 100% !important;
+
+        flex-wrap: wrap !important;
+    }
+
+
+    .top-actions .globalSearchWrap {
+        flex: 1 1 280px !important;
+
+        max-width: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .top-actions {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto !important;
+
+        gap: 8px !important;
+    }
+
+
+    .top-actions .globalSearchWrap {
+        grid-column: 1 / -1;
+
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+
+    .top-actions .envSwitcher {
+        grid-column: 1;
+    }
+
+
+    .top-actions .notificationWrap {
+        grid-column: 2;
+    }
+
+
+    .dashNavActions {
+        grid-column: 1 / -1;
+
+        width: 100%;
+
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            minmax(0, 1fr) !important;
+
+        gap: 7px !important;
+
+        min-width: 0 !important;
+    }
+
+
+    .dashNavBtn {
+        width: 100% !important;
+
+        min-width: 0 !important;
+
+        justify-content: center !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 460px) {
+
+    .dashNavBtn {
+        height: 44px !important;
+        min-height: 44px !important;
+
+        padding: 5px 7px !important;
+
+        gap: 5px !important;
+    }
+
+
+    .dashNavIcon {
+        width: 28px;
+        height: 28px;
+
+        flex-basis: 28px;
+
+        font-size: 11px;
+    }
+
+
+    .dashNavCopy strong {
+        font-size: 8px;
+    }
+
+}
+/* =========================================================
+   RANSAN — BOOKING DETAILS MODAL PREMIUM V2
+   Final visual override. No JS/API/backend changes required.
+   ========================================================= */
+.modificationBookingModal {
+    padding: 24px !important;
+    background:
+        radial-gradient(circle at 18% 12%, rgba(59,130,246,.12), transparent 28%),
+        radial-gradient(circle at 82% 88%, rgba(139,92,246,.10), transparent 30%),
+        rgba(0,0,0,.82) !important;
+    backdrop-filter: blur(20px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(120%) !important;
+}
+
+.modificationBookingModalContent {
+    width: min(980px, 100%) !important;
+    max-height: min(860px, 92vh) !important;
+    border: 1px solid rgba(148,163,184,.16) !important;
+    border-radius: 26px !important;
+    background:
+        radial-gradient(circle at 0 0, rgba(59,130,246,.095), transparent 34%),
+        radial-gradient(circle at 100% 0, rgba(139,92,246,.07), transparent 30%),
+        linear-gradient(145deg, rgba(13,16,23,.985), rgba(4,6,10,.99)) !important;
+    box-shadow:
+        0 45px 120px rgba(0,0,0,.78),
+        0 0 0 1px rgba(255,255,255,.025),
+        0 0 70px rgba(59,130,246,.055),
+        inset 0 1px 0 rgba(255,255,255,.07) !important;
+}
+
+.modificationBookingModalContent::before {
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent 4%, #3b82f6 26%, #8b5cf6 54%, #22d3ee 78%, transparent 96%) !important;
+    opacity: .8;
+}
+
+.modificationBookingModalHeader {
+    position: relative;
+    padding: 22px 24px 20px 76px !important;
+    min-height: 72px;
+    align-items: center !important;
+    background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.006));
+    border-bottom: 1px solid rgba(148,163,184,.10) !important;
+}
+
+.modificationBookingModalHeader::before {
+    content: "✦";
+    position: absolute;
+    left: 24px;
+    top: 22px;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    color: #bfdbfe;
+    font-size: 16px;
+    background: linear-gradient(145deg, rgba(59,130,246,.24), rgba(139,92,246,.12));
+    border: 1px solid rgba(96,165,250,.22);
+    box-shadow: 0 10px 28px rgba(37,99,235,.12), inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.modificationBookingModalTitle {
+    font-size: 20px !important;
+    font-weight: 850 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -.025em !important;
+    color: #f8fafc !important;
+}
+
+.modificationBookingModalSubtitle {
+    margin-top: 6px !important;
+    font-size: 12px !important;
+    font-weight: 550;
+    color: rgba(203,213,225,.62) !important;
+}
+
+.modificationBookingModalClose {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(148,163,184,.13) !important;
+    background: linear-gradient(145deg, rgba(255,255,255,.065), rgba(255,255,255,.025)) !important;
+    color: #94a3b8 !important;
+    font-size: 20px !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.045), 0 8px 22px rgba(0,0,0,.18);
+}
+
+.modificationBookingModalClose:hover {
+    color: #fecaca !important;
+    border-color: rgba(248,113,113,.30) !important;
+    background: rgba(239,68,68,.12) !important;
+}
+
+.modificationBookingModalBody {
+    padding: 22px 24px 24px !important;
+    max-height: calc(92vh - 158px) !important;
+}
+
+.modificationBookingSummary {
+    grid-template-columns: repeat(3, minmax(0,1fr)) !important;
+    gap: 11px !important;
+    margin-bottom: 22px !important;
+}
+
+.modificationBookingSummaryItem {
+    min-height: 66px;
+    padding: 14px 15px !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(148,163,184,.11) !important;
+    background:
+        radial-gradient(circle at 0 0, rgba(59,130,246,.055), transparent 48%),
+        linear-gradient(145deg, rgba(255,255,255,.048), rgba(255,255,255,.014)) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 9px 26px rgba(0,0,0,.16) !important;
+}
+
+.modificationBookingSummaryItem:nth-child(2) {
+    background: radial-gradient(circle at 0 0, rgba(139,92,246,.07), transparent 48%), linear-gradient(145deg, rgba(255,255,255,.048), rgba(255,255,255,.014)) !important;
+}
+.modificationBookingSummaryItem:nth-child(3) {
+    background: radial-gradient(circle at 0 0, rgba(34,211,238,.06), transparent 48%), linear-gradient(145deg, rgba(255,255,255,.048), rgba(255,255,255,.014)) !important;
+}
+.modificationBookingSummaryItem:nth-child(5) {
+    background: radial-gradient(circle at 0 0, rgba(52,211,153,.055), transparent 48%), linear-gradient(145deg, rgba(255,255,255,.048), rgba(255,255,255,.014)) !important;
+}
+
+.modificationBookingSummaryLabel {
+    margin-bottom: 7px !important;
+    color: #64748b !important;
+    font-size: 10px !important;
+    font-weight: 850 !important;
+    letter-spacing: .085em !important;
+}
+
+.modificationBookingSummaryValue {
+    color: #f1f5f9 !important;
+    font-size: 13px !important;
+    font-weight: 750 !important;
+    line-height: 1.35;
+}
+
+.modificationBookingStatusPill {
+    min-height: 26px !important;
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+}
+
+.modificationBookingSection {
+    margin-top: 20px !important;
+}
+
+.modificationBookingSectionTitle {
+    position: relative;
+    gap: 10px !important;
+    margin-bottom: 11px !important;
+    font-size: 14px !important;
+    font-weight: 850 !important;
+    color: #e2e8f0 !important;
+}
+
+.modificationBookingSectionTitle::before {
+    width: 4px !important;
+    height: 18px !important;
+    box-shadow: 0 0 14px rgba(96,165,250,.24);
+}
+
+.modificationBookingDetailGrid {
+    gap: 9px !important;
+}
+
+.modificationBookingDetailItem {
+    min-height: 44px;
+    grid-template-columns: minmax(112px,.42fr) minmax(0,1fr) !important;
+    gap: 14px !important;
+    padding: 11px 13px !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(148,163,184,.10) !important;
+    background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.011)) !important;
+}
+
+.modificationBookingDetailItem:hover {
+    border-color: rgba(96,165,250,.20) !important;
+    background: linear-gradient(145deg, rgba(59,130,246,.06), rgba(255,255,255,.014)) !important;
+}
+
+.modificationBookingDetailLabel {
+    color: #64748b !important;
+    font-size: 10px !important;
+    font-weight: 850 !important;
+    letter-spacing: .075em !important;
+}
+
+.modificationBookingDetailValue {
+    color: #e5e7eb !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.45 !important;
+}
+
+/* Financial rows receive subtle semantic emphasis */
+.modificationBookingDetailItem:nth-child(6) .modificationBookingDetailValue {
+    color: #dbeafe !important;
+}
+.modificationBookingDetailItem:nth-child(7) .modificationBookingDetailValue {
+    color: #86efac !important;
+}
+.modificationBookingDetailItem:nth-child(8) .modificationBookingDetailValue {
+    color: #fbbf24 !important;
+}
+.modificationBookingDetailItem:nth-child(9) .modificationBookingDetailValue {
+    color: #fde68a !important;
+}
+
+.modificationBookingNotesBox {
+    position: relative;
+    min-height: 48px;
+    padding: 14px 15px 14px 18px !important;
+    border-radius: 13px !important;
+    border: 1px solid rgba(148,163,184,.10) !important;
+    background: linear-gradient(145deg, rgba(59,130,246,.035), rgba(255,255,255,.012)) !important;
+    color: #cbd5e1 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.modificationBookingNotesBox::before {
+    background: linear-gradient(180deg,#60a5fa,#8b5cf6) !important;
+}
+
+.modificationBookingModalFooter {
+    padding: 14px 24px !important;
+    background: rgba(2,4,8,.52);
+    border-top: 1px solid rgba(148,163,184,.09) !important;
+}
+
+.modificationBookingModalDone {
+    min-width: 86px;
+    min-height: 38px !important;
+    padding: 8px 16px !important;
+    border-radius: 11px !important;
+    border: 1px solid rgba(96,165,250,.20) !important;
+    background: linear-gradient(145deg, rgba(59,130,246,.18), rgba(99,102,241,.10)) !important;
+    color: #dbeafe !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 8px 22px rgba(37,99,235,.08);
+}
+
+.modificationBookingModalDone:hover {
+    color: #fff !important;
+    border-color: rgba(96,165,250,.38) !important;
+    background: linear-gradient(145deg, rgba(59,130,246,.28), rgba(99,102,241,.16)) !important;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+    .modificationBookingModal { padding: 10px !important; }
+    .modificationBookingModalContent { border-radius: 20px !important; max-height: 95vh !important; }
+    .modificationBookingModalHeader { padding: 18px 16px 16px 64px !important; min-height: 66px; }
+    .modificationBookingModalHeader::before { left: 16px; top: 18px; width: 36px; height: 36px; }
+    .modificationBookingModalTitle { font-size: 18px !important; }
+    .modificationBookingModalBody { padding: 16px !important; max-height: calc(95vh - 145px) !important; }
+    .modificationBookingSummary { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+    .modificationBookingDetailGrid { grid-template-columns: 1fr !important; }
+    .modificationBookingModalFooter { padding: 12px 16px !important; }
+}
+
+@media (max-width: 480px) {
+    .modificationBookingSummary { grid-template-columns: 1fr !important; }
+    .modificationBookingDetailItem { grid-template-columns: 1fr !important; gap: 4px !important; }
+    .modificationBookingModalSubtitle { font-size: 11px !important; }
+}

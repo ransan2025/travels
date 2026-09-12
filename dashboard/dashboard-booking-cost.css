@@ -1,0 +1,1006 @@
+/* =========================================================
+   RANSAN BOOKING COST / ACTUAL PROFIT V1
+   READABLE COMMERCIAL UI
+   ========================================================= */
+
+body.bookingCostOpen {
+    overflow: hidden;
+}
+
+
+.bookingCostModal {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 14px;
+}
+
+
+.bookingCostModal.active {
+    display: flex;
+}
+
+
+.bookingCostBackdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(1, 5, 9, .88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+.bookingCostWindow {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(1080px, calc(100vw - 32px));
+    height: min(820px, calc(100dvh - 32px));
+
+    overflow: hidden;
+
+    border: 1px solid rgba(34, 211, 238, .13);
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(14, 165, 233, .055),
+            transparent 30%
+        ),
+        #070b11;
+
+    color: #e8eef5;
+
+    box-shadow:
+        0 45px 150px rgba(0,0,0,.88);
+}
+
+
+/* HEADER */
+
+.bookingCostHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding: 22px 24px 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+
+.bookingCostEyebrow {
+    color: #38bdf8;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .1em;
+}
+
+
+.bookingCostHeader h2,
+.bookingCostForm h3 {
+    margin: 5px 0 0;
+
+    color: #f8fafc;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+
+.bookingCostHeader p {
+    margin: 6px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+.bookingCostClose {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 auto;
+
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.025);
+
+    color: #cbd5e1;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* CONTEXT */
+
+.bookingCostContext {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    padding: 15px 24px 0;
+}
+
+
+.bookingCostContext > div {
+    padding: 11px 13px;
+
+    border: 1px solid rgba(255,255,255,.055);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.018);
+}
+
+
+.bookingCostContext span {
+    display: block;
+
+    color: #82909d;
+
+    font-size: 11px;
+}
+
+
+.bookingCostContext strong {
+    display: block;
+
+    margin-top: 4px;
+
+    overflow: hidden;
+
+    color: #dce7ee;
+
+    font-size: 13px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* KPI */
+
+.bookingProfitKpis {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 11px;
+
+    padding: 14px 24px;
+}
+
+
+.bookingProfitKpi {
+    padding: 15px;
+
+    border: 1px solid rgba(255,255,255,.065);
+    border-radius: 13px;
+
+    background: rgba(255,255,255,.02);
+}
+
+
+.bookingProfitKpi > span {
+    display: block;
+
+    color: #8e9ca8;
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+
+.bookingProfitKpi > strong {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #f8fafc;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    letter-spacing: -.02em;
+}
+
+
+.bookingProfitKpi small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #697784;
+
+    font-size: 11px;
+}
+
+
+.bookingProfitKpi.selling {
+    border-color: rgba(56,189,248,.13);
+}
+
+
+.bookingProfitKpi.cost {
+    border-color: rgba(251,191,36,.12);
+}
+
+
+.bookingProfitKpi.profit {
+    border-color: rgba(52,211,153,.15);
+}
+
+
+.bookingProfitKpi.profit > strong,
+.bookingProfitKpi.margin > strong {
+    color: #6ee7b7;
+}
+
+
+.bookingProfitKpi.negative {
+    border-color: rgba(251,113,133,.18);
+
+    background: rgba(225,29,72,.035);
+}
+
+
+.bookingProfitKpi.negative > strong {
+    color: #fda4af;
+}
+
+
+/* SUPPLIER PAYMENT SUMMARY */
+
+.bookingCostPaymentSummary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin: 0 24px 14px;
+
+    padding: 11px 13px;
+
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 11px;
+
+    background: rgba(255,255,255,.014);
+}
+
+
+.bookingCostPaymentSummary div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+
+.bookingCostPaymentSummary span {
+    color: #8795a1;
+
+    font-size: 12px;
+}
+
+
+.bookingCostPaymentSummary strong {
+    color: #d9e4eb;
+
+    font-size: 14px;
+}
+
+
+/* TOOLBAR */
+
+.bookingCostToolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    padding: 13px 24px;
+
+    border-top: 1px solid rgba(255,255,255,.05);
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+
+.bookingCostToolbar > div:first-child strong {
+    display: block;
+
+    color: #eef4f8;
+
+    font-size: 14px;
+}
+
+
+.bookingCostToolbar > div:first-child span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #7d8b97;
+
+    font-size: 11px;
+}
+
+
+.bookingCostToolbarActions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.bookingCostPrimaryBtn,
+.bookingCostSecondaryBtn,
+.bookingCostArchiveBtn {
+    min-height: 40px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+
+.bookingCostPrimaryBtn {
+    border: 1px solid rgba(34,211,238,.23);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0284c7,
+            #0369a1
+        );
+
+    color: white;
+}
+
+
+.bookingCostSecondaryBtn {
+    border: 1px solid rgba(255,255,255,.08);
+
+    background: rgba(255,255,255,.025);
+
+    color: #cbd5e1;
+}
+
+
+/* LIST */
+
+.bookingCostBody {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    padding: 15px 24px 24px;
+}
+
+
+.bookingCostList {
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.bookingCostCard {
+    display: flex;
+
+    gap: 13px;
+
+    padding: 14px;
+
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.023),
+            rgba(4,8,13,.18)
+        );
+}
+
+
+.bookingCostCardIcon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 44px;
+
+    border: 1px solid rgba(56,189,248,.11);
+    border-radius: 10px;
+
+    background: rgba(14,165,233,.035);
+
+    font-size: 18px;
+}
+
+
+.bookingCostCardMain {
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.bookingCostCardTop {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 14px;
+}
+
+
+.bookingCostCardTop strong {
+    display: block;
+
+    color: #edf4f8;
+
+    font-size: 14px;
+    font-weight: 750;
+}
+
+
+.bookingCostCardTop span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8a98a4;
+
+    font-size: 12px;
+}
+
+
+.bookingCostCardAmount {
+    color: #fde68a !important;
+
+    font-size: 16px !important;
+
+    white-space: nowrap;
+}
+
+
+.bookingCostCard p {
+    margin: 8px 0 0;
+
+    color: #91a0ab;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.bookingCostCardMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    color: #768591;
+
+    font-size: 11px;
+}
+
+
+.bookingCostPaymentBadge {
+    padding: 4px 8px;
+
+    border-radius: 999px;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.bookingCostPaymentBadge.paid {
+    border: 1px solid rgba(52,211,153,.15);
+
+    color: #a7f3d0;
+}
+
+
+.bookingCostPaymentBadge.partial {
+    border: 1px solid rgba(250,204,21,.15);
+
+    color: #fde68a;
+}
+
+
+.bookingCostPaymentBadge.pending {
+    border: 1px solid rgba(251,113,133,.14);
+
+    color: #fecdd3;
+}
+
+
+.bookingCostCardActions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    margin-top: 10px;
+}
+
+
+.bookingCostCardActions button {
+    min-height: 34px;
+
+    padding: 0 10px;
+
+    border: 1px solid rgba(255,255,255,.075);
+    border-radius: 8px;
+
+    background: rgba(255,255,255,.02);
+
+    color: #cbd5e1;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.bookingCostCardActions
+.bookingCostArchiveLink {
+    border-color: rgba(251,113,133,.13);
+
+    color: #fecdd3;
+}
+
+
+/* STATES */
+
+.bookingCostLoading,
+.bookingCostEmpty {
+    padding: 35px;
+
+    text-align: center;
+
+    color: #82909c;
+
+    font-size: 13px;
+}
+
+
+.bookingCostEmpty div {
+    font-size: 28px;
+}
+
+
+.bookingCostEmpty strong {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #d7e1e8;
+
+    font-size: 15px;
+}
+
+
+.bookingCostEmpty span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+}
+
+
+/* FORM */
+
+.bookingCostFormOverlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 20;
+
+    display: none;
+
+    justify-content: flex-end;
+
+    background: rgba(1,5,9,.72);
+
+    backdrop-filter: blur(7px);
+}
+
+
+.bookingCostFormOverlay.active {
+    display: flex;
+}
+
+
+.bookingCostForm {
+    display: flex;
+    flex-direction: column;
+
+    width: min(520px, 100%);
+    height: 100%;
+
+    border-left: 1px solid rgba(56,189,248,.12);
+
+    background: #080d13;
+
+    box-shadow: -25px 0 90px rgba(0,0,0,.62);
+}
+
+
+.bookingCostForm > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 19px 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+
+.bookingCostFormBody {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 19px 20px;
+}
+
+
+.bookingCostField {
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+
+.bookingCostField > span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #b5c0ca;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.bookingCostField input,
+.bookingCostField select {
+    width: 100%;
+    min-height: 44px;
+
+    box-sizing: border-box;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 9px;
+
+    background: #0d141c;
+
+    color: #edf4f8;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.bookingCostField input:focus,
+.bookingCostField select:focus {
+    border-color: rgba(56,189,248,.34);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(14,165,233,.055);
+}
+
+
+.bookingCostFormGrid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 11px;
+}
+
+
+.bookingCostMoneyInput {
+    position: relative;
+}
+
+
+.bookingCostMoneyInput i {
+    position: absolute;
+
+    top: 50%;
+    left: 12px;
+
+    transform: translateY(-50%);
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    font-style: normal;
+}
+
+
+.bookingCostMoneyInput input {
+    padding-left: 30px;
+}
+
+
+.bookingCostFormError {
+    padding: 11px;
+
+    border: 1px solid rgba(251,113,133,.15);
+    border-radius: 9px;
+
+    background: rgba(225,29,72,.04);
+
+    color: #fecdd3;
+
+    font-size: 12px;
+
+    line-height: 1.45;
+}
+
+
+.bookingCostFormError[hidden] {
+    display: none !important;
+}
+
+
+.bookingCostForm > footer {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding: 14px 20px;
+
+    border-top: 1px solid rgba(255,255,255,.055);
+}
+
+
+/* ARCHIVE CONFIRM */
+
+.bookingCostArchiveConfirm {
+    position: absolute;
+    inset: 0;
+
+    z-index: 30;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+
+    background: rgba(1,5,9,.82);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.bookingCostArchiveConfirm.active {
+    display: flex;
+}
+
+
+.bookingCostArchiveDialog {
+    width: min(410px, 100%);
+
+    padding: 24px;
+
+    border: 1px solid rgba(167,139,250,.15);
+    border-radius: 16px;
+
+    background: #090e15;
+
+    text-align: center;
+}
+
+
+.bookingCostArchiveIcon {
+    font-size: 28px;
+}
+
+
+.bookingCostArchiveDialog h3 {
+    margin: 12px 0 0;
+
+    color: #f1f5f9;
+
+    font-size: 18px;
+}
+
+
+.bookingCostArchiveDialog p {
+    margin: 8px auto 0;
+
+    color: #93a1ad;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+}
+
+
+.bookingCostArchiveActions {
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 19px;
+}
+
+
+.bookingCostArchiveBtn {
+    border: 1px solid rgba(167,139,250,.21);
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b21b6,
+            #4c1d95
+        );
+
+    color: white;
+}
+
+
+/* CUSTOMER DRAWER BUTTON */
+
+.crmGlassV2CostProfitBtn {
+    border-color:
+        rgba(34,211,238,.17) !important;
+
+    background:
+        rgba(14,165,233,.055) !important;
+
+    color:
+        #bae6fd !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+
+    .bookingCostModal {
+        padding: 8px;
+    }
+
+
+    .bookingCostWindow {
+        width: calc(100vw - 16px);
+        height: calc(100dvh - 16px);
+
+        border-radius: 16px;
+    }
+
+
+    .bookingCostContext {
+        grid-template-columns: 1fr;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .bookingProfitKpis {
+        grid-template-columns: 1fr 1fr;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .bookingProfitKpi > strong {
+        font-size: 19px;
+    }
+
+
+    .bookingCostToolbar {
+        align-items: stretch;
+        flex-direction: column;
+
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .bookingCostToolbarActions {
+        width: 100%;
+    }
+
+
+    .bookingCostToolbarActions button {
+        flex: 1;
+    }
+
+
+    .bookingCostBody {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .bookingCostFormGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .bookingCostPaymentSummary {
+        grid-template-columns: 1fr;
+
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+}
